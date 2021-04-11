@@ -20,4 +20,10 @@ int main() {
     std::cout << "det(b) = " << Determinant(b) << std::endl;
     std::cout << "b^{-1} = " << Inverse(b) << std::endl;
     std::cout << "b*b^{-1} = " << b*Inverse(b) << std::endl;
+
+    Matrix<float,3,6> c = {
+        {1,0,0,1,0,0}, {2,3,0,0,1,0}, {4,5,6,0,0,1}
+    };
+    std::cout << "c = " << c << std::endl;
+    std::cout << "rref(c) = " << RREF(c) << std::endl;
 }

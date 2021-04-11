@@ -1,5 +1,6 @@
 #pragma once
 #include "Matrix.h"
+#include "Vector.h"
 
 namespace Linear {
     template <size_t P, size_t Q, typename T, size_t M, size_t N, unsigned int Flags>
@@ -85,6 +86,41 @@ namespace Linear {
             }
         }
         return ret;
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> RREF(Matrix<T,M,N,Flags> m) {
+        size_t lead = 0;
+        for (size_t r = 0; r < m.NumRows(); ++r) {
+            if (lead >= m.NumColumns())
+                return m;
+
+            // Find the pivot.
+            size_t i = r;
+            while (m(i, lead) == 0) {
+                i += 1;
+                if (i == m.NumRows()) {
+                    i = r;
+                    lead += 1;
+                    if (lead == m.NumColumns())
+                        return m;
+                }
+            }
+
+            // Swap rows i and r
+            m.SwapRows(i, r);
+            // R_r / pivot -> R_r
+            m.ScaleRow(r, 1/m(r,lead));
+            // For each row i!=r, R_i - R_r*m(i,lead) -> R_i
+            for (size_t i = 0; i < m.NumRows(); ++i) {
+                if (i == r) continue;
+
+                m.AddRows(i, r, -m(i,lead));
+            }
+
+            lead += 1;
+        }
+        return m;
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>

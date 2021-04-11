@@ -209,6 +209,51 @@ namespace Linear {
         size_t NumColumns() const { return this->n; }
         size_t Size() const { return NumRows()*NumColumns(); }
 
+        Matrix<T,1,N> GetRow(size_t r) const {
+            Matrix<T,1,N> ret(NumColumns(), T(0));
+            for (size_t c = 0; c < NumColumns(); ++c)
+                ret(0,c) = (*this)(r,c);
+            return ret;
+        }
+        Matrix<T,M,1> GetColumn(size_t c) const {
+            Matrix<T,M,1> ret(NumRows(),T(0));
+            for (size_t r = 0; r < NumRows(); ++r)
+                ret(r,0) = (*this)(r,c);
+            return ret;
+        }
+        template <size_t P, size_t Q>
+        typename std::enable_if<(P==1||P==Dynamic)&&(Q==N||Q==Dynamic||N==Dynamic),void>::type SetRow(const Matrix<T,P,Q>& row, size_t r) {
+            if (row.NumRows() != 1 || row.NumColumns() != NumColumns())
+                throw "Expected a row vector in Matrix::SetRow()";
+            for (size_t c = 0; c < NumColumns(); ++c)
+                (*this)(r,c) = row(0,c);
+        }
+        template <size_t P, size_t Q>
+        typename std::enable_if<(P==M||P==Dynamic||M==Dynamic)&&(Q==1||Q==Dynamic),void>::type SetColumn(const Matrix<T,P,Q>& column, size_t c) {
+            if (column.NumRows() != NumRows() || column.NumColumns() != 1)
+                throw "Expected a column vector in Matrix::SetColumn()";
+            for (size_t r = 0; r < NumRows(); ++r)
+                (*this)(r,c) = column(r,0);
+        }
+        // R_{r1} <-> R_{r2}
+        void SwapRows(size_t r1, size_t r2) {
+            for (size_t c = 0; c < NumColumns(); ++c) {
+                Complex<T> temp = (*this)(r1,c);
+                (*this)(r1,c) = (*this)(r2,c);
+                (*this)(r2,c) = temp;
+            }
+        }
+        // s*R_r -> R_r
+        void ScaleRow(size_t r, Complex<T> s) {
+            for (size_t c = 0; c < NumColumns(); ++c)
+                (*this)(r,c) *= s;
+        }
+        // R_{r1}+s*R_{r2} -> R_{r1}
+        void AddRows(size_t r1, size_t r2, Complex<T> s) {
+            for (size_t c = 0; c < NumColumns(); ++c)
+                (*this)(r1,c) += s*(*this)(r2,c);
+        }
+
         /// Operators.
         // Access operators
         Complex<T> operator() (size_t r, size_t c) const {
