@@ -10,9 +10,10 @@ namespace Linear {
             this->Re = re;
             this->Im = im;
         }
-        Complex(const Complex& other) {
-            this->Re = other.Re;
-            this->Im = other.Im;
+        template <typename U>
+        Complex(const Complex<U>& other) {
+            this->Re = (T)other.Re;
+            this->Im = (T)other.Im;
         }
 
         bool IsReal() const {
