@@ -59,7 +59,7 @@ namespace Linear {
 
         T Re, Im;
         // Type conversion.
-        template<typename U>
+        template<typename U, typename std::enable_if<std::is_convertible<T,U>::value>::type* = nullptr>
         operator Complex<U>() {
             return Complex<U>((U)this->Re, (U)this->Im);
         }
