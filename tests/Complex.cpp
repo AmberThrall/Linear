@@ -25,4 +25,7 @@ int main() {
     std::cout << "pow(z,w) = " << Complexf::Pow(z,w) << std::endl;
     std::cout << "pow(w,z) = " << Complexf::Pow(w,z) << std::endl;
     std::cout << "z/0 = " << z/0 << std::endl;
+
+    Complexi x = z;
+    std::cout << "x = " << x << std::endl;
 }

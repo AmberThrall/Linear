@@ -58,6 +58,11 @@ namespace Linear {
         }
 
         T Re, Im;
+        // Type conversion.
+        template<typename U>
+        operator Complex<U>() {
+            return Complex<U>((U)this->Re, (U)this->Im);
+        }
         // Assignment operators.
         Complex & operator=(const Complex& other) {
             this->Re = other.Re;
