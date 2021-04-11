@@ -1,6 +1,5 @@
 #pragma once
 #include <sstream>
-#include <iostream>
 #include "Complex.h"
 
 namespace Linear {
@@ -377,6 +376,9 @@ namespace Linear {
         Complex<T> * data;
         size_t m, n;
     };
+
+    template <typename T,size_t N, unsigned int Flags = 0>
+    using SquareMatrix = Matrix<T,N,N,Flags>;
 
     using Matrix2i = Matrix<int,2,2>;
     using Matrix3i = Matrix<int,3,3>;
