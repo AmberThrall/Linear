@@ -3,9 +3,10 @@
 #include <array>
 #include "Matrix.h"
 #include "Vector.h"
+#include "Basics.h"
 
 namespace Linear {
-    template <typename T, size_t N, typename = std::enable_if<(N>0)>>
+    template <typename T, size_t N>
     typename std::enable_if<(N>0), SquareMatrix<T,N>>::type Identity() {
         SquareMatrix<T,N> ret(T(0));
         for (size_t i = 0; i < N; ++i)
@@ -45,6 +46,6 @@ namespace Linear {
     }
     template<typename T, size_t N>
     SquareMatrix<T,N> Diag(RowVector<T,N> v) {
-        return Diag(v.Transpose());
+        return Diag(Transpose(v));
     }
 }

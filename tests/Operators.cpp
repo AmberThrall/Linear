@@ -24,5 +24,4 @@ int main() {
     std::cout << "b*a = " << b*a << std::endl;
     std::cout << "a==b = " << (a==b ? "true" : "false") << std::endl;
     std::cout << "a!=b = " << (a!=b ? "true" : "false") << std::endl;
-    std::cout << "b^T = " << b.Transpose() << std::endl;
 }

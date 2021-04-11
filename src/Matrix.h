@@ -210,16 +210,6 @@ namespace Linear {
         size_t Size() const { return NumRows()*NumColumns(); }
 
         /// Operators.
-        Matrix<T,N,M,Flags> Transpose() {
-            Matrix<T,N,M,Flags> ret(NumColumns(), NumRows());
-            for (size_t r = 0; r < NumColumns(); ++r) {
-                for (size_t c = 0; c < NumRows(); ++c) {
-                    ret(r,c) = (*this)(c,r);
-                }
-            }
-            return ret;
-        }
-
         // Access operators
         Complex<T> operator() (size_t r, size_t c) const {
             if (Flags & ColumnMajor)
@@ -279,7 +269,7 @@ namespace Linear {
             *this = (*this) * other;
             return *this;
         }
-        Matrix<T,M,N,Flags> & operator*=(const T& other) {
+        Matrix<T,M,N,Flags> & operator*=(const Complex<T>& other) {
             for (size_t r = 0; r < NumRows(); ++r) {
                 for (size_t c = 0; c < NumColumns(); ++c) {
                     (*this)(r,c) *= other;
@@ -287,7 +277,7 @@ namespace Linear {
             }
             return *this;
         }
-        Matrix<T,M,N,Flags> & operator/=(const T& other) {
+        Matrix<T,M,N,Flags> & operator/=(const Complex<T>& other) {
             for (size_t r = 0; r < NumRows(); ++r) {
                 for (size_t c = 0; c < NumColumns(); ++c) {
                     (*this)(r,c) /= other;
@@ -300,9 +290,9 @@ namespace Linear {
         friend Matrix<T,M,N,Flags> operator+(Matrix<T,M,N,Flags> a, const Matrix<T,P,Q,Flags2>& b) { return a += b; }
         template <size_t P, size_t Q, unsigned int Flags2>
         friend Matrix<T,M,N,Flags> operator-(Matrix<T,M,N,Flags> a, const Matrix<T,P,Q,Flags2>& b) { return a -= b; }
-        friend Matrix<T,M,N,Flags> operator*(Matrix<T,M,N,Flags> a, const T& b) { return a *= b; }
-        friend Matrix<T,M,N,Flags> operator*(const T& b, Matrix<T,M,N,Flags> a) { return a *= b; }
-        friend Matrix<T,M,N,Flags> operator/(Matrix<T,M,N,Flags> a, const T& b) { return a /= b; }
+        friend Matrix<T,M,N,Flags> operator*(Matrix<T,M,N,Flags> a, const Complex<T>& b) { return a *= b; }
+        friend Matrix<T,M,N,Flags> operator*(const Complex<T>& b, Matrix<T,M,N,Flags> a) { return a *= b; }
+        friend Matrix<T,M,N,Flags> operator/(Matrix<T,M,N,Flags> a, const Complex<T>& b) { return a /= b; }
         template <size_t P, size_t Q, unsigned int Flags2>
         friend Matrix<T,M,Q,Flags> operator*(Matrix<T,M,N,Flags> a, const Matrix<T,P,Q,Flags2>& b) {
             if (a.NumColumns() != b.NumRows())
@@ -337,7 +327,7 @@ namespace Linear {
                     stream << m(r,c);
                     std::string asstring = stream.str();
                     if (asstring.length() > longest) {
-                        longest = asstring.length();
+                        longest = asstring.length()+1;
                     }
                 }
             }
