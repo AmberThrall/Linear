@@ -132,10 +132,8 @@ namespace Linear {
         friend Complex<T> operator/(Complex<T> z, const T& x) { return z /= x; }
         friend Complex<T> operator/(const T& x, const Complex<T>& z) { return Complex<T>(x,0) /= z; }
         // Unary operators.
-        Complex<T> & operator-() {
-            this->Re *= -1;
-            this->Im *= -1;
-            return *this;
+        Complex<T> operator-() {
+            return Complex(-this->Re, -this->Im);
         }
         Complex<T> & operator++() { //prefix
             ++this->Re;

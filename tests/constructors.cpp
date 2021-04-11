@@ -52,9 +52,6 @@ int main() {
     Matrix3f matrix_copy_1(matrix_static_3);
     std::cout << "matrix_copy_1 = " << matrix_copy_1 << std::endl;
 
-    Matrix3f matrix_copy_2(matrix_static_2);
-    std::cout << "matrix_copy_2 = " << matrix_copy_2 << std::endl;
-
     Matrix3f matrix_copy_3(matrix_dynamic_7);
     std::cout << "matrix_copy_3 = " << matrix_copy_3 << std::endl;
 
