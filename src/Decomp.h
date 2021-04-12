@@ -5,6 +5,7 @@
 #include "Vector.h"
 #include "Basics.h"
 #include "Construction.h"
+#include "Eigen.h"
 #include "Global.h"
 
 namespace Linear {
@@ -135,5 +136,25 @@ namespace Linear {
         }
 
         return std::make_pair(l, d);
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type Eigendecomposition(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            throw "Eigendecomposition is only defined for square matrices.";
+
+        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigens = Eigen(a);
+
+        SquareMatrix<T,N,Flags> q(a.NumRows(), T(0));
+        SquareMatrix<T,N,Flags> d(a.NumRows(), T(0));
+        for (size_t i = 0; i < a.NumRows(); ++i) {
+            q.SetColumn(i, eigens[i].second);
+            d(i,i) = eigens[i].first;
+        }
+
+        if (Determinant(q) == T(0))
+            throw "The matrix is not diagonalizable.";
+
+        return std::make_pair(q, d);
     }
 }

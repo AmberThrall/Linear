@@ -40,6 +40,16 @@ int main() {
         std::cout << "l = " << ld.first << std::endl;
         std::cout << "d = " << ld.second << std::endl;
         std::cout << "ldl* = " << ld.first*ld.second*ConjugateTranspose(ld.first) << std::endl;
+
+        Matrix2f d = {
+            {1,0}, {1,3}
+        };
+        std::pair<Matrix2f,Matrix2f> qd = Eigendecomposition(d);
+        std::cout << "d = " << d << std::endl;
+        std::cout << "q = " << qd.first << std::endl;
+        std::cout << "d = " << qd.second << std::endl;
+        std::cout << "q^{-1} = " << Inverse(qd.first) << std::endl;
+        std::cout << "qdq^{-1} = " << qd.first*qd.second*Inverse(qd.first) << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;
