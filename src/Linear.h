@@ -4,3 +4,4 @@
 #include "Vector.h"
 #include "Basics.h"
 #include "Construction.h"
+#include "Eigen.h"

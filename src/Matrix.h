@@ -257,7 +257,7 @@ namespace Linear {
         /// Operators.
         // Access operators
         Complex<T> operator[] (size_t i) const { return this->data[i]; }
-        Complex<T> & operator[] (size_t i) { return this->data[i]; } 
+        Complex<T> & operator[] (size_t i) { return this->data[i]; }
         Complex<T> operator() (size_t r, size_t c) const {
             if (Flags & ColumnMajor)
                 return this->data[c*this->m+r];
@@ -316,7 +316,7 @@ namespace Linear {
             *this = (*this) * other;
             return *this;
         }
-        Matrix<T,M,N,Flags> & operator*=(const Complex<T>& other) {
+        Matrix<T,M,N,Flags> & operator*=(Complex<T> other) {
             for (size_t r = 0; r < NumRows(); ++r) {
                 for (size_t c = 0; c < NumColumns(); ++c) {
                     (*this)(r,c) *= other;
@@ -324,7 +324,7 @@ namespace Linear {
             }
             return *this;
         }
-        Matrix<T,M,N,Flags> & operator/=(const Complex<T>& other) {
+        Matrix<T,M,N,Flags> & operator/=(Complex<T> other) {
             for (size_t r = 0; r < NumRows(); ++r) {
                 for (size_t c = 0; c < NumColumns(); ++c) {
                     (*this)(r,c) /= other;
@@ -374,10 +374,11 @@ namespace Linear {
                     stream << m(r,c);
                     std::string asstring = stream.str();
                     if (asstring.length() > longest) {
-                        longest = asstring.length()+1;
+                        longest = asstring.length();
                     }
                 }
             }
+            longest += 1;
 
             std::string padding = "";
             for (unsigned int i = 0; i <= longest; ++i)

@@ -33,6 +33,12 @@ int main() {
         MatrixXf one2 = One<float>(2,3);
         std::cout << "one2 = " << one2 << std::endl;
 
+        SeedRandom(129);
+        Matrix2f random1 = Random<float,2,2>();
+        std::cout << "random1 = " << random1 << std::endl;
+        Matrix2f random2 = Random<float,2,2>(Complexf(0), Complexf(0,1));
+        std::cout << "random2 = " << random2 << std::endl;
+
         Matrix2f constant1 = Constant<float,2,2>(Complex<float>::i());
         std::cout << "constant1 = " << constant1 << std::endl;
         MatrixXf constant2 = Constant<float>(2,3,Complex<float>::i());
@@ -57,6 +63,11 @@ int main() {
         Matrix3f block3 = Block(blockbr2, blockbl2, blocktr2, blocktl2);
         std::cout << "block2 = " << block2 << std::endl;
         std::cout << "block3 = " << block3 << std::endl;
+
+        Matrix<float,2,5> augmented1 = Augmented(blocktl1,blocktr1);
+        std::cout << "augmented1 = " << augmented1 << std::endl;
+        Matrix<float,4,2> augmented2 = RowAugmented(blocktl1, blockbr1);
+        std::cout << "augmented2 = " << augmented2 << std::endl;
 
         Matrix3f companion = CompanionMatrix(std::vector<Complexf>({1,2,3}));
         std::cout << "companion = " << companion << std::endl;

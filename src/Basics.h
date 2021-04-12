@@ -89,6 +89,17 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,N,M,Flags> ConjugateTranspose(Matrix<T,M,N,Flags> m) {
+        Matrix<T,N,M,Flags> ret(m.NumColumns(), m.NumRows());
+        for (size_t r = 0; r < m.NumColumns(); ++r) {
+            for (size_t c = 0; c < m.NumRows(); ++c) {
+                ret(r,c) = m(c,r).Conjugate();
+            }
+        }
+        return ret;
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,M,N,Flags> RREF(Matrix<T,M,N,Flags> m) {
         size_t lead = 0;
         for (size_t r = 0; r < m.NumRows(); ++r) {

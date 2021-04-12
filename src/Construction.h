@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <array>
+#include <random>
 #include "Matrix.h"
 #include "Vector.h"
 #include "Basics.h"
@@ -48,6 +49,72 @@ namespace Linear {
     template<typename T, unsigned int Flags = 0>
     Matrix<T,Dynamic,Dynamic,Flags> Constant(size_t nrows, size_t ncols, Complex<T> v) {
         Matrix<T,Dynamic,Dynamic,Flags> ret(nrows, ncols, v);
+        return ret;
+    }
+    std::mt19937 random_number_generator;
+    void SeedRandom(unsigned int seed) {
+        random_number_generator.seed(seed);
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags = 0>
+    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type Random(Complex<T> min = Complex<T>(0.0), Complex<T> max = Complex<T>(1.0)) {
+        std::uniform_real_distribution<T> distrRe(min.Re, max.Re);
+        std::uniform_real_distribution<T> distrIm(min.Im, max.Im);
+        Matrix<T,M,N,Flags> ret(T(0));
+        for (size_t r = 0; r < ret.NumRows(); ++r) {
+            for (size_t c = 0; c < ret.NumColumns(); ++c) {
+                ret(r,c) = Complex<T>(distrRe(random_number_generator), distrIm(random_number_generator));
+            }
+        }
+        return ret;
+    }
+    template<typename T, unsigned int Flags = 0>
+    Matrix<T,Dynamic,Dynamic,Flags> Random(size_t nrows, size_t ncols, Complex<T> min = Complex<T>(0.0), Complex<T> max = Complex<T>(1.0)) {
+        std::uniform_real_distribution<T> distrRe(min.Re, max.Re);
+        std::uniform_real_distribution<T> distrIm(min.Im, max.Im);
+        Matrix<T,Dynamic,Dynamic,Flags> ret(nrows, ncols, T(0));
+        for (size_t r = 0; r < ret.NumRows(); ++r) {
+            for (size_t c = 0; c < ret.NumColumns(); ++c) {
+                ret(r,c) = Complex<T>(distrRe(random_number_generator), distrIm(random_number_generator));
+            }
+        }
+        return ret;
+    }
+
+
+    template<typename T, size_t M1, size_t N1, unsigned int Flags1, size_t M2, size_t N2, unsigned int Flags2>
+    typename std::enable_if<(M1==M2||M1==Dynamic||M2==Dynamic), Matrix<T,M1,(N1==Dynamic||N2==Dynamic?Dynamic:N1+N2),Flags1>>::type
+    Augmented(const Matrix<T,M1,N1,Flags1>& left, const Matrix<T,M2,N2,Flags2>& right) {
+        if (left.NumRows() != right.NumRows())
+            throw "Malformed augmented matrix. Differing number of rows.";
+        Matrix<T,M1,(N1==Dynamic||N2==Dynamic?Dynamic:N1+N2),Flags1> ret(left.NumRows(),left.NumColumns()+right.NumColumns(),T(0));
+        for (size_t r = 0; r < left.NumRows(); ++r) {
+            for (size_t c = 0; c < left.NumColumns(); ++c) {
+                ret(r,c) = left(r,c);
+            }
+        }
+        for (size_t r = 0; r < right.NumRows(); ++r) {
+            for (size_t c = 0; c < right.NumColumns(); ++c) {
+                ret(r,c+left.NumColumns()) = right(r,c);
+            }
+        }
+        return ret;
+    }
+    template<typename T, size_t M1, size_t N1, unsigned int Flags1, size_t M2, size_t N2, unsigned int Flags2>
+    typename std::enable_if<(N1==N2||N1==Dynamic||N2==Dynamic), Matrix<T,(M1==Dynamic||M2==Dynamic?Dynamic:M1+M2),N1,Flags1>>::type
+    RowAugmented(const Matrix<T,M1,N1,Flags1>& top, const Matrix<T,M2,N2,Flags2>& bottom) {
+        if (top.NumColumns() != bottom.NumColumns())
+            throw "Malformed row augmented matrix. Differing number of columns.";
+        Matrix<T,(M1==Dynamic||M2==Dynamic?Dynamic:M1+M2),N1,Flags1> ret(top.NumRows()+bottom.NumRows(),top.NumColumns(),T(0));
+        for (size_t r = 0; r < top.NumRows(); ++r) {
+            for (size_t c = 0; c < top.NumColumns(); ++c) {
+                ret(r,c) = top(r,c);
+            }
+        }
+        for (size_t r = 0; r < bottom.NumRows(); ++r) {
+            for (size_t c = 0; c < bottom.NumColumns(); ++c) {
+                ret(r+top.NumColumns(),c) = bottom(r,c);
+            }
+        }
         return ret;
     }
 
