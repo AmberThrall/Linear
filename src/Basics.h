@@ -1,6 +1,7 @@
 #pragma once
 #include "Matrix.h"
 #include "Vector.h"
+#include "Global.h"
 
 namespace Linear {
     template <size_t P, size_t Q, typename T, size_t M, size_t N, unsigned int Flags>

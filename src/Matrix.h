@@ -1,13 +1,13 @@
 #pragma once
 #include <sstream>
 #include "Complex.h"
+#include "Global.h"
 
 namespace Linear {
     const unsigned int Dynamic = 0;
     const unsigned int RowMajor = 0x0000;
     const unsigned int ColumnMajor = 0x0001;
 
-    typedef unsigned int size_t;
     template<typename T, size_t M, size_t N, unsigned int Flags = 0>
     class Matrix {
     public:
@@ -222,14 +222,14 @@ namespace Linear {
             return ret;
         }
         template <size_t P, size_t Q>
-        typename std::enable_if<(P==1||P==Dynamic)&&(Q==N||Q==Dynamic||N==Dynamic),void>::type SetRow(const Matrix<T,P,Q>& row, size_t r) {
+        typename std::enable_if<(P==1||P==Dynamic)&&(Q==N||Q==Dynamic||N==Dynamic),void>::type SetRow(size_t r, const Matrix<T,P,Q>& row) {
             if (row.NumRows() != 1 || row.NumColumns() != NumColumns())
                 throw "Expected a row vector in Matrix::SetRow()";
             for (size_t c = 0; c < NumColumns(); ++c)
                 (*this)(r,c) = row(0,c);
         }
         template <size_t P, size_t Q>
-        typename std::enable_if<(P==M||P==Dynamic||M==Dynamic)&&(Q==1||Q==Dynamic),void>::type SetColumn(const Matrix<T,P,Q>& column, size_t c) {
+        typename std::enable_if<(P==M||P==Dynamic||M==Dynamic)&&(Q==1||Q==Dynamic),void>::type SetColumn(size_t c, const Matrix<T,P,Q>& column) {
             if (column.NumRows() != NumRows() || column.NumColumns() != 1)
                 throw "Expected a column vector in Matrix::SetColumn()";
             for (size_t r = 0; r < NumRows(); ++r)

@@ -1,5 +1,8 @@
 #pragma once
+#include <vector>
 #include "Matrix.h"
+#include "Basics.h"
+#include "Global.h"
 
 namespace Linear {
     template<typename T, size_t N>
@@ -107,5 +110,65 @@ namespace Linear {
     template<typename T, size_t P, size_t Q>
     typename std::enable_if<(P==3||P==Dynamic)&&(Q==3||Q==Dynamic),RowVector<T,3>>::type Cross(RowVector<T,P> a, RowVector<T,Q> b) {
         return Transpose(Cross(Transpose(a), Transpose(b)));
+    }
+
+    template<typename T, size_t P, size_t Q>
+    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(Vector<T,P> v, Vector<T,Q> onto) {
+        if (v.Size() != onto.Size())
+            throw "Cannot project vector onto a vector of differing dimension.";
+        if (Length(onto) < T(Tol)) { // Special case: Proj_0(v) = 0
+            for (size_t i = 0; i < onto.Size(); ++i)
+                onto[i] = T(0);
+            return onto;
+        }
+        return (Dot(onto,v)/Dot(onto,onto))*onto;
+    }
+    template<typename T, size_t P, size_t Q>
+    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(RowVector<T,P> v, Vector<T,Q> onto) {
+        return Proj(Transpose(v),onto);
+    }
+    template<typename T, size_t P, size_t Q>
+    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(Vector<T,P> v, RowVector<T,Q> onto) {
+        return Proj(v,Transpose(onto));
+    }
+    template<typename T, size_t P, size_t Q>
+    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(RowVector<T,P> v, RowVector<T,Q> onto) {
+        return Proj(Transpose(v),Transpose(onto));
+    }
+
+    template <typename T, size_t N>
+    std::vector<Vector<T,N>> GramSchmidt(const std::vector<Vector<T,N>>& v) {
+        std::vector<Vector<T,N>> u;
+        for (size_t k = 0; k < v.size(); ++k) {
+            u.push_back(v[k]);
+            for (size_t i = 0; i < k; ++i) {
+                u[k] = u[k] - Proj(u[k], u[i]);
+            }
+            T len = Length(u[k]);
+            if (len >= T(Tol))
+                u[k] = u[k] / len;
+        }
+        return u;
+    }
+    template <typename T, size_t N>
+    std::vector<RowVector<T,N>> GramSchmidt(const std::vector<RowVector<T,N>>& v) {
+        std::vector<Vector<T,N>> vT;
+        for (size_t i = 0; i < v.size(); ++i)
+            vT.push_back(Transpose(v[i]));
+        vT = GramSchmidt(vT);
+        std::vector<RowVector<T,N>> res;
+        for (size_t i = 0; i < v.size(); ++i)
+            res.push_back(Transpose(vT[i]));
+        return res;
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> GramSchmidt(Matrix<T,M,N,Flags> m) {
+        std::vector<Vector<T,M>> columns;
+        for (size_t i = 0; i < m.NumColumns(); ++i)
+            columns.push_back(m.GetColumn(i));
+        columns = GramSchmidt(columns);
+        for (size_t i = 0; i < m.NumColumns(); ++i)
+            m.SetColumn(i, columns[i]);
+        return m;
     }
 }

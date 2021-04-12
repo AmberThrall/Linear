@@ -27,4 +27,10 @@ int main() {
     std::cout << "a x b = " << Cross(a,b) << std::endl;
 
     std::cout << "Normalize(c) = " << Normalize(c) << std::endl;
+
+    Matrix3f gramschmidt = { {1,0,0}, {2,3,0}, {4,5,6} };
+    Matrix3f orthogonal = GramSchmidt(gramschmidt);
+    std::cout << "gramschmidt before = " << gramschmidt << std::endl;
+    std::cout << "gramschmidt after = " << orthogonal << std::endl;
+    std::cout << "gramschmidt test = " << Transpose(orthogonal)*orthogonal << std::endl;
 }

@@ -5,6 +5,7 @@
 #include "Matrix.h"
 #include "Vector.h"
 #include "Basics.h"
+#include "Global.h"
 
 namespace Linear {
     template <typename T, size_t N, unsigned int Flags = 0>
