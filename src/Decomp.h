@@ -89,4 +89,51 @@ namespace Linear {
 
         return std::make_pair(q, r);
     }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), SquareMatrix<T,N,Flags>>::type LL(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            throw "LL* Decomposition is only defined for square matrices.";
+
+        SquareMatrix<T,N,Flags> ret(a.NumRows(), T(0));
+        for (size_t j = 0; j < a.NumRows(); ++j) {
+            ret(j,j) = a(j,j);
+            for (size_t k = 0; k < j; ++k)
+                ret(j,j) -= ret(j,k)*ret(j,k).Conjugate();
+            ret(j,j) = Complex<T>::Sqrt(ret(j,j));
+
+            for (size_t i = j+1; i < a.NumRows(); ++i) {
+                ret(i,j) = a(i,j);
+                for (size_t k = 0; k < j; ++k)
+                    ret(i,j) -= ret(i,k)*ret(j,k).Conjugate();
+                ret(i,j) /= ret(j,j);
+            }
+        }
+
+        return ret;
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type LDL(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            throw "LDL* Decomposition is only defined for square matrices.";
+
+        SquareMatrix<T,N,Flags> l(a.NumRows(), T(0));
+        SquareMatrix<T,N,Flags> d(a.NumRows(), T(0));
+        for (size_t j = 0; j < a.NumRows(); ++j) {
+            d(j,j) = a(j,j);
+            for (size_t k = 0; k < j; ++k)
+                d(j,j) -= l(j,k)*l(j,k).Conjugate()*d(k,k);
+
+            l(j,j) = 1;
+            for (size_t i = j+1; i < a.NumRows(); ++i) {
+                l(i,j) = a(i,j);
+                for (size_t k = 0; k < j; ++k)
+                    l(i,j) -= l(i,k)*l(j,k).Conjugate()*d(k,k);
+                l(i,j) /= d(j,j);
+            }
+        }
+
+        return std::make_pair(l, d);
+    }
 }

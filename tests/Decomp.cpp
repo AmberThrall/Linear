@@ -25,6 +25,21 @@ int main() {
         std::cout << "p = " << std::get<2>(lup) << std::endl;
         std::cout << "pb = " << std::get<2>(lup)*b << std::endl;
         std::cout << "lu = " << std::get<0>(lup)*std::get<1>(lup) << std::endl;
+
+        Matrix3f c = {
+            {4,12,-16}, {12,37,-43}, {-16,-43,98}
+        };
+
+        Matrix3f l = LL(c);
+        std::cout << "c = " << c << std::endl;
+        std::cout << "l = " << l << std::endl;
+        std::cout << "ll* = " << l*ConjugateTranspose(l) << std::endl;
+
+        std::pair<Matrix3f,Matrix3f> ld = LDL(c);
+        std::cout << "c = " << c << std::endl;
+        std::cout << "l = " << ld.first << std::endl;
+        std::cout << "d = " << ld.second << std::endl;
+        std::cout << "ldl* = " << ld.first*ld.second*ConjugateTranspose(ld.first) << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;
