@@ -79,8 +79,8 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,N,M,Flags> Transpose(Matrix<T,M,N,Flags> m) {
-        Matrix<T,N,M,Flags> ret(m.NumColumns(), m.NumRows());
+    Matrix<T,N,M,Flags> Transpose(const Matrix<T,M,N,Flags>& m) {
+        Matrix<T,N,M,Flags> ret(m.NumColumns(), m.NumRows(), T(0));
         for (size_t r = 0; r < m.NumColumns(); ++r) {
             for (size_t c = 0; c < m.NumRows(); ++c) {
                 ret(r,c) = m(c,r);
@@ -91,7 +91,7 @@ namespace Linear {
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,N,M,Flags> ConjugateTranspose(Matrix<T,M,N,Flags> m) {
-        Matrix<T,N,M,Flags> ret(m.NumColumns(), m.NumRows());
+        Matrix<T,N,M,Flags> ret(m.NumColumns(), m.NumRows(), T(0));
         for (size_t r = 0; r < m.NumColumns(); ++r) {
             for (size_t c = 0; c < m.NumRows(); ++c) {
                 ret(r,c) = m(c,r).Conjugate();

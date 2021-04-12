@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <iostream>
 #include "Matrix.h"
 #include "Vector.h"
 #include "Basics.h"

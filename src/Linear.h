@@ -5,3 +5,4 @@
 #include "Basics.h"
 #include "Construction.h"
 #include "Eigen.h"
+#include "Decomp.h"

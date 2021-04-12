@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <iostream>
 #include "Matrix.h"
 #include "Basics.h"
 #include "Global.h"
@@ -38,6 +39,19 @@ namespace Linear {
     template<typename T, size_t M, size_t N, unsigned int Flags>
     bool IsVector(const Matrix<T,M,N,Flags>& m) {
         return (m.NumColumns() == 1 || m.NumRows() == 1);
+    }
+
+    template<typename T,size_t N>
+    typename std::enable_if<(N>0), Vector<T,N>>::type Basis(size_t i) {
+        Vector<T,N> ret(T(0));
+        ret[i] = T(1);
+        return ret;
+    }
+    template<typename T>
+    Vector<T,Dynamic> Basis(size_t dim, size_t i) {
+        Vector<T,Dynamic> ret(dim, T(0));
+        ret[i] = T(1);
+        return ret;
     }
 
     template<typename T, size_t P, size_t Q>
@@ -142,11 +156,11 @@ namespace Linear {
         for (size_t k = 0; k < v.size(); ++k) {
             u.push_back(v[k]);
             for (size_t i = 0; i < k; ++i) {
-                u[k] = u[k] - Proj(u[k], u[i]);
+                u[k] -= Proj(u[k], u[i]);
             }
             T len = Length(u[k]);
             if (len >= T(Tol))
-                u[k] = u[k] / len;
+                u[k] = u[k]/len;
         }
         return u;
     }

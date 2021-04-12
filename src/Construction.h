@@ -52,6 +52,18 @@ namespace Linear {
         Matrix<T,Dynamic,Dynamic,Flags> ret(nrows, ncols, v);
         return ret;
     }
+    template<typename T,size_t M,size_t N, unsigned int Flags = 0>
+    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type Basis(size_t i, size_t j) {
+        Matrix<T,M,N,Flags> ret(T(0));
+        ret(i,j) = T(1);
+        return ret;
+    }
+    template<typename T, unsigned int Flags = 0>
+    Matrix<T,Dynamic,Dynamic,Flags> Basis(size_t nrows, size_t ncols, size_t i, size_t j) {
+        Matrix<T,Dynamic,Dynamic,Flags> ret(nrows, ncols, T(0));
+        ret(i,j) = T(1);
+        return ret;
+    }
     std::mt19937 random_number_generator;
     void SeedRandom(unsigned int seed) {
         random_number_generator.seed(seed);
