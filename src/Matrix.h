@@ -256,6 +256,8 @@ namespace Linear {
 
         /// Operators.
         // Access operators
+        Complex<T> operator[] (size_t i) const { return this->data[i]; }
+        Complex<T> & operator[] (size_t i) { return this->data[i]; } 
         Complex<T> operator() (size_t r, size_t c) const {
             if (Flags & ColumnMajor)
                 return this->data[c*this->m+r];
