@@ -60,7 +60,7 @@ namespace Linear {
             throw "Cannot take the dot product of two different sized vectors.";
         Complex<T> ret;
         for (size_t i = 0; i < a.Size(); ++i) {
-            ret += a[i].Conjugate()*b[i];
+            ret += Conjugate(a[i])*b[i];
         }
         return ret;
     }
@@ -96,11 +96,17 @@ namespace Linear {
 
     template <typename T, size_t N>
     Vector<T,N> Normalize(Vector<T,N> v) {
-        return v / Length(v);
+        T len = Length(v);
+        if (len < T(Tol)) {
+            for (size_t i = 0; i < v.Size(); ++i)
+                v[i] = 0;
+            return v;
+        }
+        return v / len;
     }
     template <typename T, size_t N>
     RowVector<T,N> Normalize(RowVector<T,N> v) {
-        return v / Length(v);
+        return Transpose(Normalize(Transpose(v)));
     }
 
     template<typename T, size_t P, size_t Q>

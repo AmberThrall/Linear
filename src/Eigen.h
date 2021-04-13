@@ -81,7 +81,7 @@ namespace Linear {
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags> a, unsigned int num_simulations = 15) {
+    WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& a, unsigned int num_simulations = 15) {
         if (!IsSquare(a))
             throw "Eigenvalues are only defined for square matrices.";
 
@@ -103,12 +103,12 @@ namespace Linear {
         size_t p = 0;
         T max = T(0);
         for (size_t i = 0; i < a.NumRows(); ++i) {
-            if (max < x1[i].Abs()) {
+            if (max < Abs(x1[i])) {
                 p = i;
-                max = x1[i].Abs();
+                max = Abs(x1[i]);
             }
         }
-        if (x1[p] != T(0))
+        if (max > T(Tol))
             x1 = x1 / x1[p];
 
         // Step 3/4: Compute Ap and remove row p and column p
@@ -148,6 +148,17 @@ namespace Linear {
                 std::vector<Vector<T,N>> basis = Nullspace(a - lambda*eye);
                 eigenpairs.push_back(std::make_pair(lambda, Normalize(basis[0])));
             }
+            return eigenpairs;
+        }
+
+        if (a.NumRows() == 2) {
+            SquareMatrix<T,N,Flags> eye = Identity<T,2>();
+            Complex<T> lambda1 = (Trace(a)+Complex<T>::Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
+            Complex<T> lambda2 = (Trace(a)-Complex<T>::Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
+            std::vector<Vector<T,N>> basis1 = Nullspace(a - lambda1*eye);
+            std::vector<Vector<T,N>> basis2 = Nullspace(a - lambda2*eye);
+            eigenpairs.push_back(std::make_pair(lambda1, Normalize(basis1[0])));
+            eigenpairs.push_back(std::make_pair(lambda2, Normalize(basis2[0])));
             return eigenpairs;
         }
 

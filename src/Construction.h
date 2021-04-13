@@ -273,16 +273,4 @@ namespace Linear {
     SquareMatrix<T,N> Diag(RowVector<T,N> v) {
         return Diag(Transpose(v));
     }
-
-    template<typename T, unsigned int Flags = 0>
-    SquareMatrix<T,Dynamic,Flags> CompanionMatrix(std::vector<Complex<T>> coeffs) {
-        if (coeffs.size() == 0)
-            throw "Cannot create a 0x0 matrix.";
-        SquareMatrix<T,Dynamic,Flags> ret(coeffs.size(), coeffs.size(), T(0));
-        for (size_t i = 0; i < coeffs.size()-1; ++i)
-            ret(i+1,i) = T(1);
-        for (size_t i = 0; i < coeffs.size(); ++i)
-            ret(i,coeffs.size()-1) = -coeffs[i];
-        return ret;
-    }
 }

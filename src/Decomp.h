@@ -177,18 +177,17 @@ namespace Linear {
             Complex<T> sval;
             T abs = T(0);
             for (size_t j = 0; j < std::min(left.size(), right.size()); ++j) {
-                if (left.size() <= right.size() && left[j].first.Abs() > abs) {
+                if (left.size() <= right.size() && Abs(left[j].first) > abs) {
                     ileft = j;
                     sval = left[j].first;
-                    abs = sval.Abs();
-
+                    abs = Abs(sval);
                 }
                 else if (left.size() > right.size() && right[j].first.Abs() > abs) {
                     iright = j;
                     sval = right[j].first;
-                    abs = sval.Abs();
+                    abs = Abs(sval);
                     for (size_t k = 0; k < left.size(); ++k) {
-                        if ((sval-left[k].first).Abs() < T(Tol)) {
+                        if (Abs(sval-left[k].first) < T(Tol)) {
                             ileft = k;
                             break;
                         }
@@ -199,10 +198,10 @@ namespace Linear {
                 // Find iright by taking the closest to the value.
                 abs = T(-1);
                 for (size_t k = 0; k < right.size(); ++k) {
-                    Complex<T> diff = sval - right[k].first;
-                    if (diff.Abs() < abs || abs < 0) {
+                    T diff = Abs(sval - right[k].first);
+                    if (diff < abs || abs < 0) {
                         iright = k;
-                        abs = diff.Abs();
+                        abs = diff;
                     }
                 }
             }
@@ -210,17 +209,17 @@ namespace Linear {
                 // Find ileft by taking the closest to the value.
                 abs = T(-1);
                 for (size_t k = 0; k < left.size(); ++k) {
-                    Complex<T> diff = sval - left[k].first;
-                    if (diff.Abs() < abs || abs < 0) {
+                    T diff = Abs(sval - left[k].first);
+                    if (diff < abs || abs < 0) {
                         ileft = k;
-                        abs = diff.Abs();
+                        abs = diff;
                     }
                 }
             }
 
             // Add it.
             u.SetColumn(i, left[ileft].second);
-            s(i,i) = Complex<T>::Sqrt(sval);
+            s(i,i) = Sqrt(sval);
             v.SetColumn(i, right[iright].second);
             i += 1;
 
@@ -230,5 +229,71 @@ namespace Linear {
         }
 
         return std::make_tuple(u,s,v);
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsSymmetric(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            return false;
+        for (size_t r = 0; r < a.NumRows(); ++r) {
+            for (size_t c = 0; c < r+1; ++c) {
+                if (Abs(a(r,c)-a(c,r)) > T(Tol))
+                    return false;
+            }
+        }
+        return true;
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsHermitian(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            return false;
+        for (size_t r = 0; r < a.NumRows(); ++r) {
+            for (size_t c = 0; c < r+1; ++c) {
+                if (Abs(a(r,c)-Conjugate(a(c,r))) > T(Tol))
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
+    HouseholderDecompose(const Matrix<T,M,N,Flags>& A) {
+        if (!IsSquare(A))
+            throw "Householder decomposition requires a squire matrix.";
+
+        size_t n = A.NumRows();
+        SquareMatrix<T,N,Flags> Q = Identity<T>(n);
+        SquareMatrix<T,N,Flags> H = A;
+
+        for (size_t j = 0; j < n-1; ++j) {
+            Vector<T,Dynamic> u = SubMatrix(H.GetColumn(j), n-(j+1), 1, j+1, 0);
+            u[0] = u[0] + Sign(u[0])*Length(u);
+            Vector<T,Dynamic> v = u/Length(u);
+
+            Matrix<T,Dynamic,Dynamic> sub = SubMatrix(H, n-(j+1),n,j+1,0);
+            Matrix<T,Dynamic,Dynamic> p = sub - 2*v*ConjugateTranspose(v)*sub;
+            for (size_t r = 0; r < p.NumRows(); ++r) {
+                for (size_t c = 0; c < p.NumColumns(); ++c) {
+                    H(r+j+1,c) = p(r,c);
+                }
+            }
+            sub = SubMatrix(H,n,n-(j+1),0,j+1);
+            p = sub - sub*2*v*ConjugateTranspose(v);
+            for (size_t r = 0; r < p.NumRows(); ++r) {
+                for (size_t c = 0; c < p.NumColumns(); ++c) {
+                    H(r,c+j+1) = p(r,c);
+                }
+            }
+            sub = SubMatrix(Q,n,n-(j+1),0,j+1);
+            p = sub - sub*2*v*ConjugateTranspose(v);
+            for (size_t r = 0; r < p.NumRows(); ++r) {
+                for (size_t c = 0; c < p.NumColumns(); ++c) {
+                    Q(r,c+j+1) = p(r,c);
+                }
+            }
+        }
+
+        return std::make_pair(H, Q);
     }
 }
