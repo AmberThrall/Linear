@@ -48,7 +48,11 @@ namespace Linear {
         for (unsigned int i = 0; i < num_simulations; ++i) {
             Vector<T,P> b_next = a*b;
             lambda = Dot(b,b_next)/Dot(b,b);
-            b = b_next/Length(b_next);
+            T len = Length(b_next);
+            if (len > T(Tol))
+                b = b_next/len;
+            else
+                return std::make_pair(T(0),Zero<T>(b.Size(),1));
         }
         return std::make_pair(lambda, b);
     }
@@ -104,7 +108,8 @@ namespace Linear {
                 max = x1[i].Abs();
             }
         }
-        x1 = x1 / x1[p];
+        if (x1[p] != T(0))
+            x1 = x1 / x1[p];
 
         // Step 3/4: Compute Ap and remove row p and column p
         RowVector<T,N> ap = a.GetRow(p);

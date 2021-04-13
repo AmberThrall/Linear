@@ -44,12 +44,24 @@ int main() {
         Matrix2f d = {
             {1,0}, {1,3}
         };
-        std::pair<Matrix2f,Matrix2f> qd = Eigendecomposition(d);
+        std::tuple<Matrix2f,Matrix2f,Matrix2f> qd = Eigendecomposition(d);
         std::cout << "d = " << d << std::endl;
-        std::cout << "q = " << qd.first << std::endl;
-        std::cout << "d = " << qd.second << std::endl;
-        std::cout << "q^{-1} = " << Inverse(qd.first) << std::endl;
-        std::cout << "qdq^{-1} = " << qd.first*qd.second*Inverse(qd.first) << std::endl;
+        std::cout << "q = " << std::get<0>(qd) << std::endl;
+        std::cout << "d = " << std::get<1>(qd) << std::endl;
+        std::cout << "q^{-1} = " << std::get<2>(qd) << std::endl;
+        std::cout << "qdq^{-1} = " << std::get<0>(qd)*std::get<1>(qd)*std::get<2>(qd) << std::endl;
+
+        Matrix<float,4,5> e = {
+            {1,0,0,0,2}, {0,0,3,0,0}, {0,0,0,0,0}, {0,2,0,0,0}
+        };
+        std::tuple<Matrix4f,Matrix<float,4,5>,Matrix<float,5,5>> svd = SVD(e);
+        std::cout << "e = " << e << std::endl;
+        std::cout << "u = " << std::get<0>(svd) << std::endl;
+        std::cout << "sigma = " << std::get<1>(svd) << std::endl;
+        std::cout << "v* = " << ConjugateTranspose(std::get<2>(svd)) << std::endl;
+        std::cout << "u*sigma*v* = " << std::get<0>(svd)*std::get<1>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
+        std::cout << "u*u* = " << std::get<0>(svd)*ConjugateTranspose(std::get<0>(svd)) << std::endl;
+        std::cout << "v*v* = " << std::get<2>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

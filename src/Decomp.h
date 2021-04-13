@@ -59,9 +59,9 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M>=N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type QR(const Matrix<T,M,N,Flags>& a) {
+    typename std::enable_if<(M>=N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,Matrix<T,M,N,Flags>>>::type QR(const Matrix<T,M,N,Flags>& a) {
         if (a.NumRows() < a.NumColumns())
-            throw "QR Decomposition is only defined for m-by-n matrices where m>=n.";
+            throw "QR Decomposition is defined for m-by-n matrices where m>=n.";
 
         // Perform Householder reflections.
         std::vector<SquareMatrix<T,M,Flags>> qs;
@@ -139,7 +139,8 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type Eigendecomposition(const Matrix<T,M,N,Flags>& a) {
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
+    Eigendecomposition(const Matrix<T,M,N,Flags>& a) {
         if (!IsSquare(a))
             throw "Eigendecomposition is only defined for square matrices.";
 
@@ -155,6 +156,79 @@ namespace Linear {
         if (Determinant(q) == T(0))
             throw "The matrix is not diagonalizable.";
 
-        return std::make_pair(q, d);
+        return std::make_tuple(q, d, Inverse(q));
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    std::tuple<SquareMatrix<T,M,Flags>,Matrix<T,M,N,Flags>,SquareMatrix<T,N,Flags>> SVD(const Matrix<T,M,N,Flags>& a) {
+        std::vector<std::pair<Complex<T>,Vector<T,M>>> left = Eigen(a*ConjugateTranspose(a),50);
+        std::vector<std::pair<Complex<T>,Vector<T,N>>> right = Eigen(ConjugateTranspose(a)*a,50);
+
+        SquareMatrix<T,M,Flags> u(a.NumRows(), T(0));
+        Matrix<T,M,N,Flags> s(a.NumRows(), a.NumColumns(), T(0));
+        SquareMatrix<T,N,Flags> v(a.NumColumns(), T(0));
+
+        // Sort singular values by largest.
+        size_t i = 0;
+        while (left.size() > 0 && right.size() > 0) {
+            std::cout << std::endl;
+
+            size_t ileft = 0, iright = 0;
+            Complex<T> sval;
+            T abs = T(0);
+            for (size_t j = 0; j < std::min(left.size(), right.size()); ++j) {
+                if (left.size() <= right.size() && left[j].first.Abs() > abs) {
+                    ileft = j;
+                    sval = left[j].first;
+                    abs = sval.Abs();
+
+                }
+                else if (left.size() > right.size() && right[j].first.Abs() > abs) {
+                    iright = j;
+                    sval = right[j].first;
+                    abs = sval.Abs();
+                    for (size_t k = 0; k < left.size(); ++k) {
+                        if ((sval-left[k].first).Abs() < T(Tol)) {
+                            ileft = k;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (left.size() <= right.size()) {
+                // Find iright by taking the closest to the value.
+                abs = T(-1);
+                for (size_t k = 0; k < right.size(); ++k) {
+                    Complex<T> diff = sval - right[k].first;
+                    if (diff.Abs() < abs || abs < 0) {
+                        iright = k;
+                        abs = diff.Abs();
+                    }
+                }
+            }
+            else  {
+                // Find ileft by taking the closest to the value.
+                abs = T(-1);
+                for (size_t k = 0; k < left.size(); ++k) {
+                    Complex<T> diff = sval - left[k].first;
+                    if (diff.Abs() < abs || abs < 0) {
+                        ileft = k;
+                        abs = diff.Abs();
+                    }
+                }
+            }
+
+            // Add it.
+            u.SetColumn(i, left[ileft].second);
+            s(i,i) = Complex<T>::Sqrt(sval);
+            v.SetColumn(i, right[iright].second);
+            i += 1;
+
+            // Remove entries
+            left.erase(left.begin()+ileft);
+            right.erase(right.begin()+iright);
+        }
+
+        return std::make_tuple(u,s,v);
     }
 }
