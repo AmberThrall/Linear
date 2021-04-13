@@ -22,8 +22,8 @@ namespace Linear {
             T maxA = T(0);
             size_t imax = i;
             for (size_t j = i; j < a.NumRows(); ++j) {
-                if (a(j,i).Abs() > maxA) {
-                    maxA = a(j,i).Abs();
+                if (Abs(a(j,i)) > maxA) {
+                    maxA = Abs(a(j,i));
                     imax = j;
                 }
             }
@@ -100,13 +100,13 @@ namespace Linear {
         for (size_t j = 0; j < a.NumRows(); ++j) {
             ret(j,j) = a(j,j);
             for (size_t k = 0; k < j; ++k)
-                ret(j,j) -= ret(j,k)*ret(j,k).Conjugate();
-            ret(j,j) = Complex<T>::Sqrt(ret(j,j));
+                ret(j,j) -= ret(j,k)*Conjugate(ret(j,k));
+            ret(j,j) = Sqrt(ret(j,j));
 
             for (size_t i = j+1; i < a.NumRows(); ++i) {
                 ret(i,j) = a(i,j);
                 for (size_t k = 0; k < j; ++k)
-                    ret(i,j) -= ret(i,k)*ret(j,k).Conjugate();
+                    ret(i,j) -= ret(i,k)*Conjugate(ret(j,k));
                 ret(i,j) /= ret(j,j);
             }
         }
@@ -124,13 +124,13 @@ namespace Linear {
         for (size_t j = 0; j < a.NumRows(); ++j) {
             d(j,j) = a(j,j);
             for (size_t k = 0; k < j; ++k)
-                d(j,j) -= l(j,k)*l(j,k).Conjugate()*d(k,k);
+                d(j,j) -= l(j,k)*Conjugate(l(j,k))*d(k,k);
 
             l(j,j) = 1;
             for (size_t i = j+1; i < a.NumRows(); ++i) {
                 l(i,j) = a(i,j);
                 for (size_t k = 0; k < j; ++k)
-                    l(i,j) -= l(i,k)*l(j,k).Conjugate()*d(k,k);
+                    l(i,j) -= l(i,k)*Conjugate(l(j,k))*d(k,k);
                 l(i,j) /= d(j,j);
             }
         }
@@ -182,7 +182,7 @@ namespace Linear {
                     sval = left[j].first;
                     abs = Abs(sval);
                 }
-                else if (left.size() > right.size() && right[j].first.Abs() > abs) {
+                else if (left.size() > right.size() && Abs(right[j].first) > abs) {
                     iright = j;
                     sval = right[j].first;
                     abs = Abs(sval);
@@ -258,9 +258,9 @@ namespace Linear {
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
-    HouseholderDecompose(const Matrix<T,M,N,Flags>& A) {
+    Hessenberg(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
-            throw "Householder decomposition requires a squire matrix.";
+            throw "Hessenberg decomposition requires a squire matrix.";
 
         size_t n = A.NumRows();
         SquareMatrix<T,N,Flags> Q = Identity<T>(n);

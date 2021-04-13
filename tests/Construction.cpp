@@ -68,9 +68,6 @@ int main() {
         std::cout << "augmented1 = " << augmented1 << std::endl;
         Matrix<float,4,2> augmented2 = RowAugmented(blocktl1, blockbr1);
         std::cout << "augmented2 = " << augmented2 << std::endl;
-
-        Matrix3f companion = CompanionMatrix(std::vector<Complexf>({1,2,3}));
-        std::cout << "companion = " << companion << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

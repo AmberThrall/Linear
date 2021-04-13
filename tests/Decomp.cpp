@@ -64,7 +64,7 @@ int main() {
         std::cout << "vv* = " << std::get<2>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
 
         Matrix4f f = Random<float,4,4>(Complexf(0,0), Complexf(1,1));
-        std::pair<Matrix4f,Matrix4f> hq = HouseholderDecompose(f);
+        std::pair<Matrix4f,Matrix4f> hq = Hessenberg(f);
         std::cout << "f = " << f << std::endl;
         std::cout << "h = " << hq.first << std::endl;
         std::cout << "q = " << hq.second << std::endl;

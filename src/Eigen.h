@@ -153,8 +153,8 @@ namespace Linear {
 
         if (a.NumRows() == 2) {
             SquareMatrix<T,N,Flags> eye = Identity<T,2>();
-            Complex<T> lambda1 = (Trace(a)+Complex<T>::Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
-            Complex<T> lambda2 = (Trace(a)-Complex<T>::Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
+            Complex<T> lambda1 = (Trace(a)+Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
+            Complex<T> lambda2 = (Trace(a)-Sqrt(Trace(a)*Trace(a)-4*Determinant(a)))/2;
             std::vector<Vector<T,N>> basis1 = Nullspace(a - lambda1*eye);
             std::vector<Vector<T,N>> basis2 = Nullspace(a - lambda2*eye);
             eigenpairs.push_back(std::make_pair(lambda1, Normalize(basis1[0])));
