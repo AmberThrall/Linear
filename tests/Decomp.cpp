@@ -63,8 +63,10 @@ int main() {
         std::cout << "uu* = " << std::get<0>(svd)*ConjugateTranspose(std::get<0>(svd)) << std::endl;
         std::cout << "vv* = " << std::get<2>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
 
-        Matrix4f f = Random<float,4,4>(Complexf(0,0), Complexf(1,1));
-        std::pair<Matrix4f,Matrix4f> hq = Hessenberg(f);
+        Matrix4d f  = {
+            {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}
+        };
+        std::pair<Matrix4d,Matrix4d> hq = Hessenberg(f);
         std::cout << "f = " << f << std::endl;
         std::cout << "h = " << hq.first << std::endl;
         std::cout << "q = " << hq.second << std::endl;

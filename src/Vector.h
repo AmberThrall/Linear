@@ -41,6 +41,35 @@ namespace Linear {
         return (m.NumColumns() == 1 || m.NumRows() == 1);
     }
 
+    template <size_t P, typename T, size_t N>
+    typename std::enable_if<(P>0),Vector<T,P>>::type SubVector(const Vector<T,N>& v, size_t off = 0) {
+        if (off+P > v.Size())
+            throw "Cannot create subvector, indices out of bounds.";
+        Vector<T,P> ret(T(0));
+        for (size_t i = 0; i < ret.Size(); ++i) {
+            ret[i] = v[off+i];
+        }
+        return ret;
+    }
+    template <typename T, size_t N>
+    Vector<T,Dynamic> SubVector(const Vector<T,N>& v, size_t size, size_t off = 0) {
+        if (off+size > v.Size())
+            throw "Cannot create subvector, indices out of bounds.";
+        Vector<T,Dynamic> ret(size,T(0));
+        for (size_t i = 0; i < ret.Size(); ++i) {
+            ret[i] = v[off+i];
+        }
+        return ret;
+    }
+    template <size_t P, typename T, size_t N>
+    typename std::enable_if<(P>0),RowVector<T,P>>::type SubVector(const RowVector<T,N>& v, size_t off = 0) {
+        return Transpose(SubVector<T,P>(Transpose(v), off));
+    }
+    template <typename T, size_t N>
+    RowVector<T,Dynamic> SubVector(const RowVector<T,N>& v, size_t size, size_t off = 0) {
+        return Transpose(SubVector<T>(Transpose(v), size, off));
+    }
+
     template<typename T,size_t N>
     typename std::enable_if<(N>0), Vector<T,N>>::type Basis(size_t i) {
         Vector<T,N> ret(T(0));

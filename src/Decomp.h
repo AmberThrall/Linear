@@ -257,41 +257,54 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsUpperHessenberg(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            return false;
+        for (size_t c = 0; c < a.NumColumns(); ++c) {
+            for (size_t r = c+2; r < a.NumRows(); ++r) {
+                if (Abs(a(r,c)) > T(Tol))
+                    return false;
+            }
+        }
+        return true;
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsLowerHessenberg(const Matrix<T,M,N,Flags>& a) {
+        if (!IsSquare(a))
+            return false;
+        for (size_t r = 0; r < a.NumRows(); ++r) {
+            for (size_t c = r+2; c < a.NumColumns(); ++c) {
+                if (Abs(a(r,c)) > T(Tol))
+                    return false;
+            }
+        }
+        return true;
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsHessenberg(const Matrix<T,M,N,Flags>& a) {
+        return (IsLowerHessenberg(a) || IsUpperHessenberg(a));
+    }
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsTridiagonal(const Matrix<T,M,N,Flags>& a) {
+        return (IsLowerHessenberg(a) && IsUpperHessenberg(a));
+    }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
     Hessenberg(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Hessenberg decomposition requires a squire matrix.";
 
-        size_t n = A.NumRows();
-        SquareMatrix<T,N,Flags> Q = Identity<T>(n);
+        SquareMatrix<T,N,Flags> Q = Identity<T>(A.NumRows());
         SquareMatrix<T,N,Flags> H = A;
+        SquareMatrix<T,Dynamic,Flags> Aprime = A;
 
-        for (size_t j = 0; j < n-1; ++j) {
-            Vector<T,Dynamic> u = SubMatrix(H.GetColumn(j), n-(j+1), 1, j+1, 0);
-            u[0] = u[0] + Sign(u[0])*Length(u);
-            Vector<T,Dynamic> v = u/Length(u);
-
-            Matrix<T,Dynamic,Dynamic> sub = SubMatrix(H, n-(j+1),n,j+1,0);
-            Matrix<T,Dynamic,Dynamic> p = sub - 2*v*ConjugateTranspose(v)*sub;
-            for (size_t r = 0; r < p.NumRows(); ++r) {
-                for (size_t c = 0; c < p.NumColumns(); ++c) {
-                    H(r+j+1,c) = p(r,c);
-                }
-            }
-            sub = SubMatrix(H,n,n-(j+1),0,j+1);
-            p = sub - sub*2*v*ConjugateTranspose(v);
-            for (size_t r = 0; r < p.NumRows(); ++r) {
-                for (size_t c = 0; c < p.NumColumns(); ++c) {
-                    H(r,c+j+1) = p(r,c);
-                }
-            }
-            sub = SubMatrix(Q,n,n-(j+1),0,j+1);
-            p = sub - sub*2*v*ConjugateTranspose(v);
-            for (size_t r = 0; r < p.NumRows(); ++r) {
-                for (size_t c = 0; c < p.NumColumns(); ++c) {
-                    Q(r,c+j+1) = p(r,c);
-                }
-            }
+        for (size_t j = 0; j < A.NumRows()-2; ++j) {
+            SquareMatrix<T,Dynamic,Flags> P = Householder(Aprime.GetColumn(0), Aprime.NumRows()-2);
+            SquareMatrix<T,N,Flags> P2 = (j > 0 ? Diag(Identity<T,Flags>(j), P) : P);
+            Aprime = RemoveRowAndColumn(ConjugateTranspose(P)*Aprime*P, 0, 0);
+            H = ConjugateTranspose(P2)*H*P2;
+            Q = Q*P2;
         }
 
         return std::make_pair(H, Q);

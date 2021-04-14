@@ -93,6 +93,56 @@ namespace Linear {
         return ret;
     }
 
+    template <size_t P, typename T, size_t N, unsigned int Flags = 0>
+    typename std::enable_if<(P>0), SquareMatrix<T,P,Flags>>::type Givens(size_t i, size_t j, Complex<T> theta) {
+        if (i >= P || j >= P)
+            throw "Cannot create Givens rotation, indices are out of bounds.";
+        SquareMatrix<T,P,Flags> ret = Identity<T,P,Flags>();
+        ret(i,i) = Cos(theta);
+        ret(i,j) = Sin(theta);
+        ret(j,i) = Sin(theta);
+        ret(j,j) = Cos(theta);
+        return ret;
+    }
+    template <typename T, size_t N, unsigned int Flags = 0>
+    SquareMatrix<T,Dynamic,Flags> Givens(size_t size, size_t i, size_t j, Complex<T> theta) {
+        if (i >= size || j >= size)
+            throw "Cannot create Givens rotation, indices are out of bounds.";
+        SquareMatrix<T,Dynamic,Flags> ret = Identity<T,Flags>(size);
+        ret(i,i) = Cos(theta);
+        ret(i,j) = Sin(theta);
+        ret(j,i) = Sin(theta);
+        ret(j,j) = Cos(theta);
+        return ret;
+    }
+
+    template <typename T, size_t N, unsigned int Flags = 0>
+    SquareMatrix<T,N,Flags> Householder(Vector<T,N> v) {
+        T len = Length(v);
+        if (len > T(Tol))
+            v = v/len;
+        SquareMatrix<T,N,Flags> ret = Identity<T,Flags>(v.Size()) - T(2)*v*ConjugateTranspose(v);
+        return ret;
+    }
+    template <typename T, size_t N, unsigned int Flags = 0>
+    SquareMatrix<T,N,Flags> Householder(const Vector<T,N>& x, size_t k) {
+        if (k == 0 || k >= x.Size())
+            throw "Cannot create Householder matrix, k must be such that 1<k<x.Size().";
+
+        size_t index = x.Size()-k-1;
+        Vector<T,Dynamic> x2 = SubVector(x,k+1,index);
+        Complex<T> alpha = -Sign(x[index])*Length(x2);
+        if (Abs(alpha) < T(Tol))
+            alpha = Sqrt(2);
+        Vector<T,N> v(x.Size(),T(0));
+        for (size_t i = 0; i < index; ++i)
+            v[i] = T(0);
+        for (size_t i = 0; i < x2.Size(); ++i)
+            v[index+i] = x2[i];
+        v[index] = x2[0] - alpha;
+        return Householder<T,Flags>(v);
+    }
+
 
     template<typename T, size_t M1, size_t N1, unsigned int Flags1, size_t M2, size_t N2, unsigned int Flags2>
     typename std::enable_if<(M1==M2||M1==Dynamic||M2==Dynamic), Matrix<T,M1,(N1==Dynamic||N2==Dynamic?Dynamic:N1+N2),Flags1>>::type

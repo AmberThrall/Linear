@@ -430,4 +430,15 @@ namespace Linear {
     using Matrix3d = Matrix<double,3,3>;
     using Matrix4d = Matrix<double,4,4>;
     using MatrixXd = Matrix<double,Dynamic,Dynamic>;
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsReal(const Matrix<T,M,N,Flags>& a) {
+        for (size_t r = 0; r < a.NumRows(); ++r) {
+            for (size_t c = 0; c < a.NumColumns(); ++c) {
+                if (!IsReal(a(r,c)))
+                    return false;
+            }
+        }
+        return true;
+    }
 }
