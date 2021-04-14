@@ -309,4 +309,31 @@ namespace Linear {
 
         return std::make_pair(H, Q);
     }
+
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
+    Schur(const Matrix<T,M,N,Flags>& A) {
+        if (!IsSquare(A))
+            throw "Schur decomposition requires a squire matrix.";
+
+        SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumRows());
+        SquareMatrix<T,N,Flags> U = Identity<T>(A.NumRows());
+        SquareMatrix<T,N,Flags> H = A;
+        if (!IsHessenberg(A)) {
+            std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> pair = Hessenberg(A);
+            H = pair.first;
+            U = pair.second;
+        }
+
+        for (size_t i = A.NumRows()-1; i >= 1; i--) {
+            while (Abs(H(i,i-1)) > T(Tol)) {
+                Complex<T> sigma = H(i,i);
+                std::pair<SquareMatrix<T,N,Flags>,Matrix<T,M,N,Flags>> qr = QR(H-sigma*eye);
+                H = qr.second*qr.first + sigma*eye;
+                U = U*qr.first;
+            }
+        }
+
+        return std::make_pair(H, U);
+    }
 }

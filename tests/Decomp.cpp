@@ -72,6 +72,13 @@ int main() {
         std::cout << "q = " << hq.second << std::endl;
         std::cout << "q*fq = " << ConjugateTranspose(hq.second)*f*hq.second << std::endl;
         std::cout << "qq* = " << hq.second*ConjugateTranspose(hq.second);
+
+        std::pair<Matrix4d,Matrix4d> schur = Schur(f);
+        std::cout << "f = " << f << std::endl;
+        std::cout << "t = " << schur.first << std::endl;
+        std::cout << "u = " << schur.second << std::endl;
+        std::cout << "utu* = " << schur.second*schur.first*ConjugateTranspose(schur.second) << std::endl;
+        std::cout << "uu* = " << schur.second*ConjugateTranspose(schur.second);
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;
