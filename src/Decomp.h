@@ -312,7 +312,7 @@ namespace Linear {
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
-    Schur(const Matrix<T,M,N,Flags>& A) {
+    Schur(const Matrix<T,M,N,Flags>& A, size_t max_iterations = 100) {
         if (!IsSquare(A))
             throw "Schur decomposition requires a squire matrix.";
 
@@ -326,11 +326,13 @@ namespace Linear {
         }
 
         for (size_t i = A.NumRows()-1; i >= 1; i--) {
-            while (Abs(H(i,i-1)) > T(Tol)) {
+            size_t k = 0;
+            while (k < max_iterations && Abs(H(i,i-1)) > T(Tol)) {
                 Complex<T> sigma = H(i,i);
                 std::pair<SquareMatrix<T,N,Flags>,Matrix<T,M,N,Flags>> qr = QR(H-sigma*eye);
                 H = qr.second*qr.first + sigma*eye;
                 U = U*qr.first;
+                k += 1;
             }
         }
 

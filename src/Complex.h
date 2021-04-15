@@ -202,8 +202,10 @@ namespace Linear {
     }
 
     template <typename T>
-    T Sqrt(T x) {
-        return std::sqrt(x);
+    Complex<T> Sqrt(T x) {
+        if (x < T(0))
+            return Complex<T>(T(0), std::sqrt(-1*x));
+        return Complex<T>(std::sqrt(x), T(0));
     }
     template <typename T>
     Complex<T> Sqrt(const Complex<T>& z) {

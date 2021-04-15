@@ -323,4 +323,23 @@ namespace Linear {
     SquareMatrix<T,N> Diag(RowVector<T,N> v) {
         return Diag(Transpose(v));
     }
+
+    template <typename T, size_t N, unsigned int Flags=0>
+    typename std::enable_if<(N>1||N==Dynamic), SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags>>::type Companion(const Vector<T,N>& c) {
+        if (c.Size() <= 1)
+            throw "Cannot create a 0x0 companion matrix.";
+        if (Abs(c[c.Size()-1]) < T(Tol))
+            throw "Leading coefficient cannot be zero.";
+        // Create the matrix.
+        SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags> ret(c.Size()-1,T(0));
+        for (size_t i = 0; i < ret.NumColumns()-1; ++i)
+            ret(i+1,i) = T(1);
+        for (size_t i = 0; i < ret.NumColumns(); ++i)
+            ret(i,ret.NumColumns()-1) = -c[i]/c[c.Size()-1];
+        return ret;
+    }
+    template <typename T, size_t N, unsigned int Flags=0>
+    typename std::enable_if<(N>1||N==Dynamic), SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags>>::type Companion(const RowVector<T,N>& c) {
+        return Companion<Flags>(Transpose(c));
+    }
 }

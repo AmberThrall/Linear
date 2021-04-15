@@ -69,6 +69,18 @@ namespace Linear {
     RowVector<T,Dynamic> SubVector(const RowVector<T,N>& v, size_t size, size_t off = 0) {
         return Transpose(SubVector<T>(Transpose(v), size, off));
     }
+    template <size_t P, typename T>
+    typename std::enable_if<(P==1),Vector<T,1>>::type SubVector(const RowVector<T,1>& v, size_t off = 0) {
+        if (off != 0)
+            throw "Cannot create subvector, indices out of bounds.";
+        return v;
+    }
+    template <typename T>
+    Vector<T,Dynamic> SubVector(const RowVector<T,1>& v, size_t size, size_t off = 0) {
+        if (off != 0 || size != 1)
+            throw "Cannot create subvector, indices out of bounds.";
+        return v;
+    }
 
     template<typename T,size_t N>
     typename std::enable_if<(N>0), Vector<T,N>>::type Basis(size_t i) {
@@ -83,8 +95,11 @@ namespace Linear {
         return ret;
     }
 
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Complex<T>>::type Dot(const Vector<T,P>& a, const Vector<T,Q>& b) {
+    template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
+    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Complex<T>>::type
+    Dot(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
+        if (!IsVector(a) || !IsVector(b))
+            throw "Dot product is only defined for vectors.";
         if (a.Size() != b.Size())
             throw "Cannot take the dot product of two different sized vectors.";
         Complex<T> ret;
@@ -93,34 +108,16 @@ namespace Linear {
         }
         return ret;
     }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Complex<T>>::type Dot(const Vector<T,P>& a, const RowVector<T,Q>& b) {
-        return Dot(a, Transpose(b));
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Complex<T>>::type Dot(const RowVector<T,P>& a, const Vector<T,Q>& b) {
-        return Dot(Transpose(a), b);
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Complex<T>>::type Dot(const RowVector<T,P>& a, const RowVector<T,Q>& b) {
-        return Dot(Transpose(a), Transpose(b));
-    }
 
-    template <typename T, size_t N>
-    T SquaredLength(Vector<T,N> v) {
+    template<typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==1||N==1||M==Dynamic||N==Dynamic), T>::type SquaredLength(const Matrix<T,M,N,Flags>& v) {
+        if (!IsVector(v))
+            throw "Cannot calculate the length of a matrix.";
         return Dot(v,v).Re;
     }
-    template <typename T, size_t N>
-    T SquaredLength(RowVector<T,N> v) {
-        return Dot(v,v).Re;
-    }
-    template <typename T, size_t N>
-    T Length(Vector<T,N> v) {
-        return std::sqrt(SquaredLength(v));
-    }
-    template <typename T, size_t N>
-    T Length(RowVector<T,N> v) {
-        return std::sqrt(SquaredLength(v));
+    template<typename T, size_t M, size_t N, unsigned int Flags>
+    typename std::enable_if<(M==1||N==1||M==Dynamic||N==Dynamic), T>::type Length(const Matrix<T,M,N,Flags>& v) {
+        return Sqrt(SquaredLength(v)).Re;
     }
 
     template <typename T, size_t N>
@@ -137,32 +134,31 @@ namespace Linear {
     RowVector<T,N> Normalize(RowVector<T,N> v) {
         return Transpose(Normalize(Transpose(v)));
     }
+    template <typename T>
+    Vector<T,1> Normalize(Vector<T,1> v) {
+        v[0] = T(1);
+        return v;
+    }
 
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==3||P==Dynamic)&&(Q==3||Q==Dynamic),Vector<T,3>>::type Cross(Vector<T,P> a, Vector<T,Q> b) {
+    template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
+    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Matrix<T,M,N,Flags>>::type
+    Cross(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
+        if (!IsVector(a) || !IsVector(b))
+            throw "Cross product is only defined for vectors.";
         if (a.Size() != 3 || b.Size() != 3)
             throw "The cross product is only defined for the 3-dimensional vectors.";
-        Vector<T,3> ret(T(0));
+        Matrix<T,M,N,Flags> ret(a.NumRows(), a.NumColumns(),T(0));
         ret[0] = a[1]*b[2] - a[2]*b[1];
         ret[1] = a[2]*b[0] - a[0]*b[2];
         ret[2] = a[0]*b[1] - a[1]*b[0];
         return ret;
     }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==3||P==Dynamic)&&(Q==3||Q==Dynamic),Vector<T,3>>::type Cross(Vector<T,P> a, RowVector<T,Q> b) {
-        return Cross(a, Transpose(b));
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==3||P==Dynamic)&&(Q==3||Q==Dynamic),RowVector<T,3>>::type Cross(RowVector<T,P> a, Vector<T,Q> b) {
-        return Transpose(Cross(Transpose(a), b));
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==3||P==Dynamic)&&(Q==3||Q==Dynamic),RowVector<T,3>>::type Cross(RowVector<T,P> a, RowVector<T,Q> b) {
-        return Transpose(Cross(Transpose(a), Transpose(b)));
-    }
 
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(Vector<T,P> v, Vector<T,Q> onto) {
+    template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
+    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Matrix<T,P,Q,Flags2>>::type
+    Proj(const Matrix<T,M,N,Flags>& v, const Matrix<T,P,Q,Flags2>& onto) {
+        if (!IsVector(v) || !IsVector(onto))
+            throw "Vector projection doesn't work on matrices.";
         if (v.Size() != onto.Size())
             throw "Cannot project vector onto a vector of differing dimension.";
         if (Length(onto) < T(Tol)) { // Special case: Proj_0(v) = 0
@@ -172,21 +168,11 @@ namespace Linear {
         }
         return (Dot(onto,v)/Dot(onto,onto))*onto;
     }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(RowVector<T,P> v, Vector<T,Q> onto) {
-        return Proj(Transpose(v),onto);
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(Vector<T,P> v, RowVector<T,Q> onto) {
-        return Proj(v,Transpose(onto));
-    }
-    template<typename T, size_t P, size_t Q>
-    typename std::enable_if<(P==Q||P==Dynamic||Q==Dynamic),Vector<T,P>>::type Proj(RowVector<T,P> v, RowVector<T,Q> onto) {
-        return Proj(Transpose(v),Transpose(onto));
-    }
 
     template <typename T, size_t N>
     std::vector<Vector<T,N>> GramSchmidt(const std::vector<Vector<T,N>>& v) {
+        if (v.size() == 0)
+            return v;
         std::vector<Vector<T,N>> u;
         for (size_t k = 0; k < v.size(); ++k) {
             u.push_back(v[k]);
@@ -201,6 +187,8 @@ namespace Linear {
     }
     template <typename T, size_t N>
     std::vector<RowVector<T,N>> GramSchmidt(const std::vector<RowVector<T,N>>& v) {
+        if (v.size() == 0)
+            return v;
         std::vector<Vector<T,N>> vT;
         for (size_t i = 0; i < v.size(); ++i)
             vT.push_back(Transpose(v[i]));
@@ -219,5 +207,13 @@ namespace Linear {
         for (size_t i = 0; i < m.NumColumns(); ++i)
             m.SetColumn(i, columns[i]);
         return m;
+    }
+    template <typename T>
+    std::vector<Vector<T,1>> GramSchmidt(const std::vector<Vector<T,1>>& v) {
+        if (v.size() == 0)
+            return v;
+        std::vector<Vector<T,1>> res;
+        res.push_back(Normalize(v[0]));
+        return res;
     }
 }
