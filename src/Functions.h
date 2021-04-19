@@ -399,4 +399,341 @@ namespace Linear {
     Matrix<T,M,N,Flags> Mod(Matrix<T,M,N,Flags> A, U y) {
         return Mod(A, Complex<T>(T(y), 0));
     }
+
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sin a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Sin(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Sin(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cos a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Cos(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Cos(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\tan a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Tan(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Tan(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\csc a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Csc(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Csc(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sec a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Sec(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Sec(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cot a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Cot(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Cot(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sin^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ASin(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ASin(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cos^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACos(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACos(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\tan^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ATan(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ATan(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\csc^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACsc(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACsc(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sec^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ASec(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ASec(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cot^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACot(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACot(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sinh a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Sinh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Sinh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cosh a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Cosh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Cosh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\tanh a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Tanh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Tanh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=csch a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Csch(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Csch(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=sech a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Sech(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Sech(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\coth a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Coth(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = Coth(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\sinh^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ASinh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ASinh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\cosh^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACosh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACosh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\tanh^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ATanh(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ATanh(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=csch^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACsch(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACsch(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=sech^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ASech(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ASech(A(r,c));
+              }
+         }
+         return A;
+    }
+    /**
+     * Computes the MxN Matrix$B$ defined by $b_{ij}=\coth^{-1} a_{ij}$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> ACoth(Matrix<T,M,N,Flags> A) {
+         for (size_t r = 0; r < A.NumRows(); ++r) {
+              for (size_t c = 0; c < A.NumColumns(); ++c) {
+                   A(r,c) = ACoth(A(r,c));
+              }
+         }
+         return A;
+    }
 }
