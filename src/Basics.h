@@ -1,6 +1,6 @@
 #pragma once
+#include <vector>
 #include "Matrix.h"
-#include "Vector.h"
 #include "Global.h"
 
 namespace Linear {
@@ -200,23 +200,13 @@ namespace Linear {
     }
 
     /**
-     * Checks if the matrix is squre.
-     * @param A MxN matrix
-     * @return True if M=N.
-     */
-    template <typename T, size_t M, size_t N, unsigned int Flags>
-    bool IsSquare(Matrix<T,M,N,Flags> A) {
-        return (A.NumRows() == A.NumColumns());
-    }
-
-    /**
      * Computes the trace of a square matrix \f$\sum_{i=0}^{N-1}a_{ii}\f$. If A is not square, an exception is thrown.
      * @param A MxN matrix
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Trace(Matrix<T,M,N,Flags> A) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Trace(const Matrix<T,M,N,Flags>& A) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the trace of a non-square matrix.";
         Complex<T> ret;
         for (size_t r = 0; r < A.NumRows(); ++r) {
@@ -232,8 +222,8 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Determinant(Matrix<T,M,N,Flags> A) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Determinant(const Matrix<T,M,N,Flags>& A) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the determinant of a non-square matrix.";
 
         if (A.NumRows() == 1)
@@ -243,7 +233,10 @@ namespace Linear {
 
         Complex<T> ret;
         for (size_t i = 0; i < A.NumRows(); ++i) {
-            ret += A(0,i)*Cofactor(A, 0, i);
+            if (i % 2 == 0)
+                ret += A(0,i)*Determinant(RemoveRowAndColumn(A, 0, i));
+            else
+                ret += A(0,i)*Determinant(RemoveRowAndColumn(A, 0, i));
         }
         return ret;
     }
@@ -258,15 +251,14 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Minor(Matrix<T,M,N,Flags> A, size_t i, size_t j) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Minor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the minor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Minor coordinates out of bounds.";
         if (A.NumRows() == 1)
             return A(0,0);
 
-        Complex<T> ret;
         return Determinant(RemoveRowAndColumn(A, i, j));
     }
 
@@ -280,14 +272,14 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Cofactor(Matrix<T,M,N,Flags> A, size_t i, size_t j) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Cofactor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the cofactor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Cofactor coordinates out of bounds.";
         if (i+j % 2 == 0)
-            return Minor(A, i, j);
-        return -Minor(A, i, j);
+            return Determinant(RemoveRowAndColumn(A, i, j));
+        return -Determinant(RemoveRowAndColumn(A, i, j));
     }
 
     /**
@@ -297,8 +289,8 @@ namespace Linear {
      * @return NxN matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Adjugate(Matrix<T,M,N,Flags> A) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Adjugate(const Matrix<T,M,N,Flags>& A) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the adjugate of a non-square matrix.";
         Matrix<T,M,N,Flags> ret(A.NumRows(), A.NumColumns(), T(0));
         for (size_t r = 0; r < A.NumRows(); ++r) {
@@ -316,8 +308,8 @@ namespace Linear {
      * @return NxN matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Inverse(Matrix<T,M,N,Flags> A) {
-        if (!IsSquare(A))
+    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Inverse(const Matrix<T,M,N,Flags>& A) {
+        if (A.NumRows() != A.NumColumns())
             throw "Cannot take the inverse of a non-square matrix.";
         Complex<T> det = Determinant(A);
         if (det == 0)

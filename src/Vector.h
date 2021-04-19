@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream>
 #include "Matrix.h"
-#include "Basics.h"
+#include "Types.h"
 #include "Global.h"
 
 namespace Linear {
@@ -35,16 +35,6 @@ namespace Linear {
     using RowVector3d = RowVector<double,3>;
     using RowVector4d = RowVector<double,4>;
     using RowVectorXd = RowVector<double,Dynamic>;
-
-    /**
-     * Checks if a matrix is a row or column vector.
-     * @param A MxN matrix
-     * @return True if M=1 or N=1
-     */
-    template<typename T, size_t M, size_t N, unsigned int Flags>
-    bool IsVector(const Matrix<T,M,N,Flags>& A) {
-        return (A.NumColumns() == 1 || A.NumRows() == 1);
-    }
 
     /**
      * Constructs a subvector of a column vector. If P<1 or off+P>N, an exception is thrown.

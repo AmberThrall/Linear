@@ -7,4 +7,5 @@
 #include "Eigen.h"
 #include "Decomp.h"
 #include "Functions.h"
+#include "Misc.h"
 #include "Types.h"

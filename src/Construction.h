@@ -417,7 +417,7 @@ namespace Linear {
         }
         for (size_t r = 0; r < bottom.NumRows(); ++r) {
             for (size_t c = 0; c < bottom.NumColumns(); ++c) {
-                ret(r+top.NumColumns(),c) = bottom(r,c);
+                ret(r+top.NumRows(),c) = bottom(r,c);
             }
         }
         return ret;
