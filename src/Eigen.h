@@ -167,7 +167,7 @@ namespace Linear {
                 }
             }
 
-            std::vector<Vector<T,N>> basis = Nullspace(A - eigenvalues[i]*eye);
+            std::vector<Vector<T,N>> basis = NullSpace(A - eigenvalues[i]*eye);
             if (basis.size() != multiplicity) {
                 Vector<T,N> b0;
                 if (!isReal || !IsReal(eigenvalues[i]))

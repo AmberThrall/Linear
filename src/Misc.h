@@ -7,13 +7,13 @@
 
 namespace Linear {
     /**
-     * Computes a basis for the nullspace of A.
-     * The nullspace of a matrix is the set of vectors v such that Av=0.
+     * Computes a basis for the null space of A.
+     * The null space of a matrix is the set of vectors v such that Av=0.
      * @param A MxN matrix
      * @return List of vectors v such that \f$Null(A)=span\{v[0],\dots,v[len(v)-1]\}\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    std::vector<Vector<T,N>> Nullspace(const Matrix<T,M,N,Flags>& A) {
+    std::vector<Vector<T,N>> NullSpace(const Matrix<T,M,N,Flags>& A) {
         std::vector<Vector<T,N>> basis;
 
         SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumColumns());
@@ -34,13 +34,13 @@ namespace Linear {
         return basis;
     }
     /**
-     * Computes the dimension of the A's nullspace.
+     * Computes the dimension of the A's null space.
      * @param A MxN matrix
      * @return dim(Null(A))
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     unsigned int Nullity(const Matrix<T,M,N,Flags>& A) {
-        return Nullspace(A).size();
+        return NullSpace(A).size();
     }
 
     /**

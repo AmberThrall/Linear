@@ -915,13 +915,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a2b9c870a4ba5a81549ab3a52deffc0c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2b9c870a4ba5a81549ab3a52deffc0c5">ACoth</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A)</td></tr>
 <tr class="memdesc:a2b9c870a4ba5a81549ab3a52deffc0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the MxN Matrix$B$ defined by $b_{ij}=\coth^{-1} a_{ij}$.  <a href="namespace_linear.html#a2b9c870a4ba5a81549ab3a52deffc0c5">More...</a><br /></td></tr>
 <tr class="separator:a2b9c870a4ba5a81549ab3a52deffc0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a41ef88c81f2f9b08dd3a483b8a13c013">Nullspace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a basis for the nullspace of A.  <a href="namespace_linear.html#a41ef88c81f2f9b08dd3a483b8a13c013">More...</a><br /></td></tr>
-<tr class="separator:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379225b58ff09eb6efdd4ecf979ca426"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a379225b58ff09eb6efdd4ecf979ca426"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a379225b58ff09eb6efdd4ecf979ca426">NullSpace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a379225b58ff09eb6efdd4ecf979ca426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a basis for the null space of A.  <a href="namespace_linear.html#a379225b58ff09eb6efdd4ecf979ca426">More...</a><br /></td></tr>
+<tr class="separator:a379225b58ff09eb6efdd4ecf979ca426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8435044a6bea68c8fd3dcf308127b850"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a8435044a6bea68c8fd3dcf308127b850"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850">Nullity</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a8435044a6bea68c8fd3dcf308127b850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dimension of the A's nullspace.  <a href="namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850">More...</a><br /></td></tr>
+<tr class="memdesc:a8435044a6bea68c8fd3dcf308127b850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dimension of the A's null space.  <a href="namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850">More...</a><br /></td></tr>
 <tr class="separator:a8435044a6bea68c8fd3dcf308127b850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019cb48619ba9090d5fe63b679b34abd"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a019cb48619ba9090d5fe63b679b34abd"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a019cb48619ba9090d5fe63b679b34abd">ColumnSpace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
@@ -6815,7 +6815,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the dimension of the A's nullspace. </p>
+<p>Computes the dimension of the A's null space. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
@@ -6826,8 +6826,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a41ef88c81f2f9b08dd3a483b8a13c013"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41ef88c81f2f9b08dd3a483b8a13c013">&#9670;&nbsp;</a></span>Nullspace()</h2>
+<a id="a379225b58ff09eb6efdd4ecf979ca426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379225b58ff09eb6efdd4ecf979ca426">&#9670;&nbsp;</a></span>NullSpace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6835,7 +6835,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; Linear::Nullspace </td>
+          <td class="memname">std::vector&lt;<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; Linear::NullSpace </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -6844,8 +6844,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Computes a basis for the nullspace of A. </p>
-<p>The nullspace of a matrix is the set of vectors v such that Av=0. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Computes a basis for the null space of A. </p>
+<p>The null space of a matrix is the set of vectors v such that Av=0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
   </table>

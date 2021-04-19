@@ -469,10 +469,10 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the MxN Matrix \$B \$ defined by \$b\+\_\+\{ij\}=sech$^\wedge$\{-\/1\} a\+\_\+\{ij\} \$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a2b9c870a4ba5a81549ab3a52deffc0c5}{ACoth}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ A)
 \begin{DoxyCompactList}\small\item\em Computes the MxN Matrix \$B \$ defined by \$b\+\_\+\{ij\}=\textbackslash{}coth$^\wedge$\{-\/1\} a\+\_\+\{ij\} \$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a41ef88c81f2f9b08dd3a483b8a13c013}{Nullspace}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes a basis for the nullspace of A. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a379225b58ff09eb6efdd4ecf979ca426}{Null\+Space}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes a basis for the null space of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a8435044a6bea68c8fd3dcf308127b850}{Nullity}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s nullspace. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s null space. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a019cb48619ba9090d5fe63b679b34abd}{Column\+Space}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes a basis for the column space of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a821339a5ae70e69525e21978c45c1262}{Rank}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
@@ -3956,7 +3956,7 @@ unsigned int Linear\+::\+Nullity (\begin{DoxyParamCaption}\item[{const \mbox{\hy
 
 
 
-Computes the dimension of the A\textquotesingle{}s nullspace. 
+Computes the dimension of the A\textquotesingle{}s null space. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -3966,18 +3966,18 @@ Computes the dimension of the A\textquotesingle{}s nullspace.
 \begin{DoxyReturn}{Returns}
 dim(\+Null(\+A)) 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a41ef88c81f2f9b08dd3a483b8a13c013}\label{namespace_linear_a41ef88c81f2f9b08dd3a483b8a13c013}} 
-\index{Linear@{Linear}!Nullspace@{Nullspace}}
-\index{Nullspace@{Nullspace}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Nullspace()}{Nullspace()}}
+\mbox{\Hypertarget{namespace_linear_a379225b58ff09eb6efdd4ecf979ca426}\label{namespace_linear_a379225b58ff09eb6efdd4ecf979ca426}} 
+\index{Linear@{Linear}!NullSpace@{NullSpace}}
+\index{NullSpace@{NullSpace}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{NullSpace()}{NullSpace()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ Linear\+::\+Nullspace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::vector$<$\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ Linear\+::\+Null\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
-Computes a basis for the nullspace of A. 
+Computes a basis for the null space of A. 
 
-The nullspace of a matrix is the set of vectors v such that Av=0. 
+The null space of a matrix is the set of vectors v such that Av=0. 
 \begin{DoxyParams}{Parameters}
 {\em A} & MxN matrix \\
 \hline
