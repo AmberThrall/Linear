@@ -3,7 +3,7 @@
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Basics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -68,8 +68,6 @@ using \mbox{\hyperlink{namespace_linear_a1b1b5a12d11bdb75ae13a725c9889f5e}{Linea
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a5afdda12123cb445b1c801e85ba1ebe7}{Linear\+::\+Is\+Vector}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Checks if a matrix is a row or column vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N$>$ }\\std\+::enable\+\_\+if$<$(P $>$0), Vector$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a109539c9bbbd6137cdb23248a57b947a}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, N $>$ \&v, size\+\_\+t off=0)
 \begin{DoxyCompactList}\small\item\em Constructs a subvector of a column vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\Vector$<$ T, Dynamic $>$ \mbox{\hyperlink{namespace_linear_ad13f35e7fe5c5fc14e44a480adf058a0}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, N $>$ \&v, size\+\_\+t size, size\+\_\+t off=0)

@@ -13,6 +13,18 @@ int main() {
             std::cout << "null_basis["<<i<<"] = " << Transpose(null_basis[i]) << std::endl;
             std::cout << "A*null_basis["<<i<<"] = " << Transpose(A*null_basis[i]) << std::endl;
         }
+
+        Matrix4d B = {
+            {1,3,1,4}, {2,7,3,9}, {1,5,3,1}, {1,2,0,8}
+        };
+        std::cout << "B = " << B << std::endl;
+        std::vector<Vector4d> cs_basis = ColumnSpace(B);
+        for (unsigned int i = 0; i < null_basis.size(); ++i)
+            std::cout << "cs_basis["<<i<<"] = " << Transpose(cs_basis[i]) << std::endl;
+
+        unsigned int rank = Rank(B);
+        unsigned int nullity = Nullity(B);
+        std::cout << "rank(B)+nullity(B) = " << rank << " + " << nullity << " = " << rank+nullity << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

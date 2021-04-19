@@ -87,6 +87,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="_construction_8h_source.html">Construction.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_global_8h_source.html">Global.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_types_8h_source.html">Types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_misc_8h_source.html">Misc.h</a>&quot;</code><br />
 </div>
 <p><a href="_eigen_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -105,14 +106,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==Dynamic||N==Dynamic)&amp;&amp;(P==N||P==Dynamic||N==Dynamic)), Vector&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0e9be843fcf339cd408ee4126bbcfe1d">Linear::InverseIteration</a> (const Matrix&lt; T, M, N, Flags &gt; &amp;A, Vector&lt; T, P &gt; b0, Complex&lt; T &gt; mu, unsigned int max_iterations)</td></tr>
 <tr class="memdesc:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inverse iteration on A with guess mu.  <a href="namespace_linear.html#a0e9be843fcf339cd408ee4126bbcfe1d">More...</a><br /></td></tr>
 <tr class="separator:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Vector&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a41ef88c81f2f9b08dd3a483b8a13c013">Linear::Nullspace</a> (const Matrix&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a basis for the nullspace of A.  <a href="namespace_linear.html#a41ef88c81f2f9b08dd3a483b8a13c013">More...</a><br /></td></tr>
-<tr class="separator:a41ef88c81f2f9b08dd3a483b8a13c013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8435044a6bea68c8fd3dcf308127b850"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a8435044a6bea68c8fd3dcf308127b850"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850">Linear::Nullity</a> (const Matrix&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a8435044a6bea68c8fd3dcf308127b850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dimension of the A's nullspace.  <a href="namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850">More...</a><br /></td></tr>
-<tr class="separator:a8435044a6bea68c8fd3dcf308127b850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adff372de27f66c561383c891ca004a4b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:adff372de27f66c561383c891ca004a4b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==Dynamic||N==Dynamic)), std::vector&lt; std::pair&lt; Complex&lt; T &gt;, Vector&lt; T, N &gt; &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adff372de27f66c561383c891ca004a4b">Linear::WielandtDeflationAlgorithm</a> (const Matrix&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
 <tr class="memdesc:adff372de27f66c561383c891ca004a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#adff372de27f66c561383c891ca004a4b">More...</a><br /></td></tr>

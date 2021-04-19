@@ -1,0 +1,23 @@
+\hypertarget{_misc_8h}{}\doxysection{src/\+Misc.h File Reference}
+\label{_misc_8h}\index{src/Misc.h@{src/Misc.h}}
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Basics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Vector$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a41ef88c81f2f9b08dd3a483b8a13c013}{Linear\+::\+Nullspace}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes a basis for the nullspace of A. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a8435044a6bea68c8fd3dcf308127b850}{Linear\+::\+Nullity}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s nullspace. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Vector$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a019cb48619ba9090d5fe63b679b34abd}{Linear\+::\+Column\+Space}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes a basis for the column space of A. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a821339a5ae70e69525e21978c45c1262}{Linear\+::\+Rank}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s column space. \end{DoxyCompactList}\end{DoxyCompactItemize}

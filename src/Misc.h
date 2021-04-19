@@ -42,4 +42,36 @@ namespace Linear {
     unsigned int Nullity(const Matrix<T,M,N,Flags>& A) {
         return Nullspace(A).size();
     }
+
+    /**
+     * Computes a basis for the column space of A.
+     * The column space of a matrix is the set of vectors v such that Ax=v for some vector x.
+     * @param A MxN matrix
+     * @return List of vectors v such that \f$colsp(A)=span\{v[0],\dots,v[len(v)-1]\}\f$
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    std::vector<Vector<T,N>> ColumnSpace(const Matrix<T,M,N,Flags>& A) {
+        std::vector<Vector<T,N>> basis;
+
+        Matrix<T,M,N,Flags> B = RREF(A);
+        std::cout << "B = " << B << std::endl;
+        size_t pivot = 0;
+        for (size_t c = 0; c < A.NumColumns(); ++c) {
+            bool add = true;
+            if (B(pivot, c) == T(1)) {
+                basis.push_back(A.GetColumn(c));
+                pivot += 1;
+            }
+        }
+        return basis;
+    }
+    /**
+     * Computes the dimension of the A's column space.
+     * @param A MxN matrix
+     * @return dim(colsp(A))
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    unsigned int Rank(const Matrix<T,M,N,Flags>& A) {
+        return ColumnSpace(A).size();
+    }
 }

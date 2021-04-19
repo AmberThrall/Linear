@@ -8,6 +8,7 @@
 {\ttfamily \#include \char`\"{}Construction.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Misc.\+h\char`\"{}}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,10 +21,6 @@
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==Dynamic$\vert$$\vert$N==Dynamic)\&\&(P==N$\vert$$\vert$P==Dynamic$\vert$$\vert$N==Dynamic)), Vector$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a0e9be843fcf339cd408ee4126bbcfe1d}{Linear\+::\+Inverse\+Iteration}} (const Matrix$<$ T, M, N, Flags $>$ \&A, Vector$<$ T, P $>$ b0, Complex$<$ T $>$ mu, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs inverse iteration on A with guess mu. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Vector$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a41ef88c81f2f9b08dd3a483b8a13c013}{Linear\+::\+Nullspace}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes a basis for the nullspace of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a8435044a6bea68c8fd3dcf308127b850}{Linear\+::\+Nullity}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s nullspace. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==Dynamic$\vert$$\vert$N==Dynamic)), std\+::vector$<$ std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, N $>$ $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adff372de27f66c561383c891ca004a4b}{Linear\+::\+Wielandt\+Deflation\+Algorithm}} (const Matrix$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
 \begin{DoxyCompactList}\small\item\em Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==Dynamic$\vert$$\vert$N==Dynamic)), std\+::vector$<$ std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, N $>$ $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae76e997c89ba14102a6f292866cad3b0}{Linear\+::\+Eigenvector\+Helper}} (const Matrix$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ Complex$<$ T $>$$>$ eigenvalues)
