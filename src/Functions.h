@@ -6,51 +6,68 @@
 #include "Types.h"
 
 namespace Linear {
+    /**
+     * Computes the matrix \f$C\f$ defined by \f$c_{ij}=a_{ij}b_{ij}\f$. If \f$M\ne P\f$ or \f$N\ne Q\f$ an exception is thrown.
+     * @param A MxN Matrix
+     * @param B PxQ Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
     typename std::enable_if<((M==P||M==Dynamic||P==Dynamic)&&(N==Q||N==Dynamic||Q==Dynamic)), Matrix<T,M,N,Flags>>::type
-    EntrywiseProduct(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
-        if (a.NumRows() != b.NumRows() || a.NumColumns() != b.NumColumns())
+    EntrywiseProduct(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
+        if (A.NumRows() != B.NumRows() || A.NumColumns() != B.NumColumns())
             throw "Cannot perform entrywise product when matrices have varying sizes.";
 
-        Matrix<T,M,N,Flags> ret(a.NumRows(),a.NumColumns(),T(0));
-        for (size_t i = 0; i < a.NumRows(); ++i) {
-            for (size_t j = 0; j < a.NumColumns(); ++j)
-                ret(i,j) = a(i,j)*b(i,j);
+        Matrix<T,M,N,Flags> ret(A.NumRows(),A.NumColumns(),T(0));
+        for (size_t i = 0; i < A.NumRows(); ++i) {
+            for (size_t j = 0; j < A.NumColumns(); ++j)
+                ret(i,j) = A(i,j)*B(i,j);
         }
         return ret;
     }
+    /**
+     * Computes the matrix \f$C\f$ defined by \f$c_{ij}=a_{ij}/b_{ij}\f$. If \f$M\ne P\f$ or \f$N\ne Q\f$ an exception is thrown.
+     * @param A MxN Matrix
+     * @param B PxQ Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
     typename std::enable_if<((M==P||M==Dynamic||P==Dynamic)&&(N==Q||N==Dynamic||Q==Dynamic)), Matrix<T,M,N,Flags>>::type
-    EntrywiseDivision(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
-        if (a.NumRows() != b.NumRows() || a.NumColumns() != b.NumColumns())
+    EntrywiseDivision(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
+        if (A.NumRows() != B.NumRows() || A.NumColumns() != B.NumColumns())
             throw "Cannot perform entrywise division when matrices have varying sizes.";
 
-        Matrix<T,M,N,Flags> ret(a.NumRows(),a.NumColumns(),T(0));
-        for (size_t i = 0; i < a.NumRows(); ++i) {
-            for (size_t j = 0; j < a.NumColumns(); ++j)
-                ret(i,j) = a(i,j)/b(i,j);
+        Matrix<T,M,N,Flags> ret(A.NumRows(),A.NumColumns(),T(0));
+        for (size_t i = 0; i < A.NumRows(); ++i) {
+            for (size_t j = 0; j < A.NumColumns(); ++j)
+                ret(i,j) = A(i,j)/B(i,j);
         }
         return ret;
     }
 
+    /**
+     * If \f$A\f$ is a vector, it computes the entrywise vector p-norm \f$\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}\f$.
+     * Otherwise it computes the matrix norm \f$\|A\|_p\f$.
+     * If p=1, it returns \f$\max_{j=0,\dots,N-1}\sum_{i=0}^{M-1}|a_{ij}|\f$.
+     * If p=2, it returns the largest singular value of \f$A\f$.
+     * Otherwise an error is returned.
+     * @param A MxN Matrix
+     * @param p Real number (default = 2)
+     * @return Real number
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T Norm(const Matrix<T,M,N,Flags>& a, T p = T(2)) {
-        if (IsVector(a)) {
-            T outerSum = T(0);
-            for (size_t j = 0; j < a.NumColumns(); ++j) {
-                for (size_t i = 0; i < a.NumRows(); ++i)
-                    outerSum += Pow(Abs(a(i,j)), p);
-            }
-            return Pow(outerSum, 1/p);
+    T Norm(const Matrix<T,M,N,Flags>& A, T p = T(2)) {
+        if (IsVector(A)) {
+            return EntrywiseNorm(A, p);
         }
         if (p != T(1) && p != T(2))
             throw "Only p=1 and p=2 are supported for matrix norm.";
         if (p == T(1)) {
             T ret = T(0);
-            for (size_t j = 0; j < a.NumColumns(); ++j) {
+            for (size_t j = 0; j < A.NumColumns(); ++j) {
                 T sum = T(0);
-                for (size_t i = 0; i < a.NumRows(); ++i) {
-                    sum += Abs(a(i,j));
+                for (size_t i = 0; i < A.NumRows(); ++i) {
+                    sum += Abs(A(i,j));
                 }
                 if (sum > ret)
                     ret = sum;
@@ -58,45 +75,66 @@ namespace Linear {
             return ret;
         }
         else if (p == T(2)) {
-            Vector<T,N> b = Random<T,N,1>(a.NumRows(),1);
-            std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(ConjugateTranspose(a)*a, b, 25);
-            return Sqrt(pair.first.Re);
+            Vector<T,N> b = Random<T,N,1>(A.NumRows(),1);
+            std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(ConjugateTranspose(A)*A, b, 25);
+            return Sqrt(pair.first).Re;
         }
         else
             throw "Only p=1 and p=2 are supported for matrix norm.";
     }
+    /**
+     * Computes the entrywise p-norm \f$\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}\f$.
+     * @param A MxN Matrix
+     * @param p Real number (default = 2)
+     * @return Real number
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T EntrywiseNorm(const Matrix<T,M,N,Flags>& a, T p = T(2)) {
+    T EntrywiseNorm(const Matrix<T,M,N,Flags>& A, T p = T(2)) {
         T outerSum = T(0);
-        for (size_t j = 0; j < a.NumColumns(); ++j) {
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                outerSum += Pow(Abs(a(i,j)), T(p));
+        for (size_t j = 0; j < A.NumColumns(); ++j) {
+            for (size_t i = 0; i < A.NumRows(); ++i) {
+                outerSum += Pow(Abs(A(i,j)), T(p));
             }
         }
         return Pow(outerSum, 1/T(p));
     }
+    /**
+     * Computes the Frobenius norm. This is identical to the entrywise 2-norm.
+     * @param A MxN Matrix
+     * @return Real number
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T FrobeniusNorm(const Matrix<T,M,N,Flags>& a) {
-        return EntrywiseNorm(a, 2,  2);
+    T FrobeniusNorm(const Matrix<T,M,N,Flags>& A) {
+        return EntrywiseNorm(A, 2,  2);
     }
+    /**
+     * Computes the max norm \f$\max_{ij}|a_{ij}|\f$.
+     * @param A MxN Matrix
+     * @return Real number
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T MaxNorm(const Matrix<T,M,N,Flags>& a) {
+    T MaxNorm(const Matrix<T,M,N,Flags>& A) {
         T ret = T(0);
-        for (size_t j = 0; j < a.NumColumns(); ++j) {
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                if (Abs(a(i,j)) > ret)
-                    ret = Abs(a(i,j));
+        for (size_t j = 0; j < A.NumColumns(); ++j) {
+            for (size_t i = 0; i < A.NumRows(); ++i) {
+                if (Abs(A(i,j)) > ret)
+                    ret = Abs(A(i,j));
             }
         }
         return ret;
     }
+    /**
+     * Computes the infinity norm \f$\max_{i=0,...M-1}\sum_{j=0}^{N-1}|a_{ij}|\f$.
+     * @param A MxN Matrix
+     * @return Real number
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T InfinityNorm(const Matrix<T,M,N,Flags>& a) {
+    T InfinityNorm(const Matrix<T,M,N,Flags>& A) {
         T ret = T(0);
-        for (size_t i = 0; i < a.NumRows(); ++i) {
+        for (size_t i = 0; i < A.NumRows(); ++i) {
             T sum = T(0);
-            for (size_t j = 0; j < a.NumColumns(); ++j) {
-                sum += Abs(a(i,j));
+            for (size_t j = 0; j < A.NumColumns(); ++j) {
+                sum += Abs(A(i,j));
             }
             if (sum > ret)
                 ret = sum;
@@ -104,182 +142,261 @@ namespace Linear {
         return ret;
     }
 
+    /**
+     * Determines if a matrix is real or complex.
+     * @param A MxN Matrix
+     * @return Returns true if every entry of A is real.
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    bool IsReal(const Matrix<T,M,N,Flags>& a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                if (!IsReal(a(r,c)))
+    bool IsReal(const Matrix<T,M,N,Flags>& A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                if (!IsReal(A(r,c)))
                     return false;
             }
         }
         return true;
     }
 
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=|a_{ij}|\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Abs(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Abs(a(r,c));
+    Matrix<T,M,N,Flags> Abs(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Abs(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=sgn(a_{ij})\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Sign(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Sign(a(r,c));
+    Matrix<T,M,N,Flags> Sign(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Sign(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=arg(a_{ij})\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Arg(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Arg(a(r,c));
+    Matrix<T,M,N,Flags> Arg(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Arg(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=\overline{a_{ij}}\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Conjugate(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Conjugate(a(r,c));
+    Matrix<T,M,N,Flags> Conjugate(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Conjugate(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=\sqrt{a_{ij}}\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Sqrt(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Sqrt(a(r,c));
+    Matrix<T,M,N,Flags> Sqrt(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Sqrt(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * If \f$A\f$ is not square, it computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=e^{a_{ij}}\f$. Otherwise it computes the matrix
+     * exponential \f$e^A=\sum_{k=0}^\infty\frac{1}{k!}A^k\f$. If \f$A=VDV^{-1}\f$ with \f$D=diag(d_1,\dots,d_N)\f$ a diagonal matrix,
+     * then \f$e^{A}=Ve^{D}V^{-1}\f$ and \f$e^D=diag(e^{d_1},\dots,e^{d_N})\f$. If no such decomposition can be found, it simply estimates
+     * the series upto the first 10 terms.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Exp(Matrix<T,M,N,Flags> a) {
-        if (!IsSquare(a)) {
-            for (size_t r = 0; r < a.NumRows(); ++r) {
-                for (size_t c = 0; c < a.NumColumns(); ++c) {
-                    a(r,c) = Exp(a(r,c));
+    Matrix<T,M,N,Flags> Exp(Matrix<T,M,N,Flags> A) {
+        if (!IsSquare(A)) {
+            for (size_t r = 0; r < A.NumRows(); ++r) {
+                for (size_t c = 0; c < A.NumColumns(); ++c) {
+                    A(r,c) = Exp(A(r,c));
                 }
             }
-            return a;
+            return A;
         }
-        if (IsDiagonal(a)) {
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                a(i,i) = Exp(a(i,i));
+        if (IsDiagonal(A)) {
+            for (size_t i = 0; i < A.NumRows(); ++i) {
+                A(i,i) = Exp(A(i,i));
             }
-            return a;
+            return A;
         }
 
         try {
-            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(a);
-            SquareMatrix<T,N,Flags> d = std::get<1>(decomp);
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                d(i,i) = Exp(d(i,i));
+            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(A);
+            SquareMatrix<T,N,Flags> D = std::get<1>(decomp);
+            for (size_t i = 0; i < D.NumRows(); ++i) {
+                D(i,i) = Exp(D(i,i));
             }
-            return std::get<0>(decomp)*d*std::get<2>(decomp);
+            return std::get<0>(decomp)*D*std::get<2>(decomp);
         }
         catch (...) {}
 
         T factorial = 1;
-        Matrix<T,M,N,Flags> ret = Identity<T,Flags>(a.NumRows());
+        Matrix<T,M,N,Flags> ret = Identity<T,Flags>(A.NumRows());
         for (size_t k = 1; k < 10; ++k) {
             factorial *= k;
-            ret += Pow(a, T(k)) / factorial;
+            ret += Pow(A, T(k)) / factorial;
         }
         return ret;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=\log a_{ij}\f$.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> a) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Log(a(r,c));
+    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> A) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Log(A(r,c));
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=\log_{base} a_{ij}\f$.
+     * @param A MxN Matrix
+     * @param base Real number
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> a, T base) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Log(a(r,c), base);
+    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> A, T base) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Log(A(r,c), base);
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=\log_{base} a_{ij}\f$.
+     * @param A MxN Matrix
+     * @param base Complex number
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> a, Complex<T> base) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Log(a(r,c), base);
+    Matrix<T,M,N,Flags> Log(Matrix<T,M,N,Flags> A, Complex<T> base) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Log(A(r,c), base);
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * If \f$A\f$ is not square, it computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=a_{ij}^{power}\f$. Otherwise it attempts to computes the matrix
+     * power \f$A^{power}\f$. If \f$A=VDV^{-1}\f$ with \f$D=diag(d_1,\dots,d_N)\f$ a diagonal matrix,
+     * then \f$A^{power}=VD^{power}V^{-1}\f$ and \f$D^{power}=diag(d_1^{power},\dots,d_N^{power})\f$.
+     * If no such decomposition can be found and power is an integer, it multiplies A by itself |power|-times then taking the inverse if power<0.
+     * Otherwise it gives up and throws an exception.
+     * @param A MxN Matrix
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Pow(Matrix<T,M,N,Flags> a, Complex<T> power) {
-        if (!IsSquare(a)) {
-            for (size_t r = 0; r < a.NumRows(); ++r) {
-                for (size_t c = 0; c < a.NumColumns(); ++c) {
-                    a(r,c) = Pow(a(r,c), power);
+    Matrix<T,M,N,Flags> Pow(Matrix<T,M,N,Flags> A, Complex<T> power) {
+        if (!IsSquare(A)) {
+            for (size_t r = 0; r < A.NumRows(); ++r) {
+                for (size_t c = 0; c < A.NumColumns(); ++c) {
+                    A(r,c) = Pow(A(r,c), power);
                 }
             }
-            return a;
+            return A;
         }
-        if (power == T(0)) {
-            return Identity<T,Flags>(a.NumRows());
-        }
+        if (power == T(0))
+            return Identity<T,Flags>(A.NumRows());
+        if (power == T(1))
+            return A;
 
-        if (IsDiagonal(a)) {
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                a(i,i) = Pow(a(i,i), power);
+        if (IsDiagonal(A)) {
+            for (size_t i = 0; i < A.NumRows(); ++i) {
+                A(i,i) = Pow(A(i,i), power);
             }
-            return a;
+            return A;
         }
 
         try {
-            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(a);
-            SquareMatrix<T,N,Flags> d = std::get<1>(decomp);
-            for (size_t i = 0; i < a.NumRows(); ++i) {
-                d(i,i) = Pow(d(i,i), power);
+            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(A);
+            SquareMatrix<T,N,Flags> D = std::get<1>(decomp);
+            for (size_t i = 0; i < D.NumRows(); ++i) {
+                D(i,i) = Pow(D(i,i), power);
             }
-            return std::get<0>(decomp)*d*std::get<2>(decomp);
+            return std::get<0>(decomp)*D*std::get<2>(decomp);
         }
         catch (...) {}
 
         if (IsReal(power) && Floor(power.Re) == power.Re) {
-            for (size_t k = 0; k < Abs(power.Re); ++k) {
-                a = a*a;
+            SquareMatrix<T,N,Flags> B = A;
+            for (size_t k = 0; k < Abs(power.Re)-1; ++k) {
+                B = B*A;
             }
 
             if (power.Re < T(0))
-                return Inverse(a);
-            return a;
+                return Inverse(B);
+            return B;
         }
 
         throw "Couldn't perform matrix power.";
     }
     template <typename T, size_t M, size_t N, unsigned int Flags, typename U>
-    Matrix<T,M,N,Flags> Pow(const Matrix<T,M,N,Flags>& a, U power) {
-        return Pow(a, Complex<T>(T(power), 0));
+    Matrix<T,M,N,Flags> Pow(const Matrix<T,M,N,Flags>& A, U power) {
+        return Pow(A, Complex<T>(T(power), 0));
     }
+
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=a_{ij}\bmod z\f$.
+     * @param A MxN Matrix
+     * @param z Complex number
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Matrix<T,M,N,Flags> Mod(Matrix<T,M,N,Flags> a, Complex<T> y) {
-        for (size_t r = 0; r < a.NumRows(); ++r) {
-            for (size_t c = 0; c < a.NumColumns(); ++c) {
-                a(r,c) = Mod(a(r,c), y);
+    Matrix<T,M,N,Flags> Mod(Matrix<T,M,N,Flags> A, Complex<T> z) {
+        for (size_t r = 0; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns(); ++c) {
+                A(r,c) = Mod(A(r,c), z);
             }
         }
-        return a;
+        return A;
     }
+    /**
+     * Computes the MxN Matrix \f$B\f$ defined by \f$b_{ij}=a_{ij}\bmod y\f$.
+     * @param A MxN Matrix
+     * @param y Real number
+     * @return MxN Matrix
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags, typename U>
-    Matrix<T,M,N,Flags> Mod(Matrix<T,M,N,Flags> a, U y) {
-        return Mod(a, Complex<T>(T(y), 0));
+    Matrix<T,M,N,Flags> Mod(Matrix<T,M,N,Flags> A, U y) {
+        return Mod(A, Complex<T>(T(y), 0));
     }
 }

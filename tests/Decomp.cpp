@@ -63,22 +63,22 @@ int main() {
         std::cout << "uu* = " << std::get<0>(svd)*ConjugateTranspose(std::get<0>(svd)) << std::endl;
         std::cout << "vv* = " << std::get<2>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
 
-        Matrix4d f  = {
+        Matrix4d F  = {
             {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}
         };
-        std::pair<Matrix4d,Matrix4d> hq = Hessenberg(f);
-        std::cout << "f = " << f << std::endl;
-        std::cout << "h = " << hq.first << std::endl;
-        std::cout << "q = " << hq.second << std::endl;
-        std::cout << "q*fq = " << ConjugateTranspose(hq.second)*f*hq.second << std::endl;
-        std::cout << "qq* = " << hq.second*ConjugateTranspose(hq.second);
+        std::pair<Matrix4d,Matrix4d> qh = Hessenberg(F);
+        std::cout << "F = " << F << std::endl;
+        std::cout << "Q = " << qh.first << std::endl;
+        std::cout << "H = " << qh.second << std::endl;
+        std::cout << "QHQ* = " << qh.first*qh.second*ConjugateTranspose(qh.first) << std::endl;
+        std::cout << "QQ* = " << qh.first*ConjugateTranspose(qh.first);
 
-        std::pair<Matrix4d,Matrix4d> schur = Schur(f);
-        std::cout << "f = " << f << std::endl;
-        std::cout << "t = " << schur.first << std::endl;
-        std::cout << "u = " << schur.second << std::endl;
-        std::cout << "utu* = " << schur.second*schur.first*ConjugateTranspose(schur.second) << std::endl;
-        std::cout << "uu* = " << schur.second*ConjugateTranspose(schur.second);
+        std::pair<Matrix4d,Matrix4d> schur = Schur(F);
+        std::cout << "F = " << F << std::endl;
+        std::cout << "Q = " << schur.first << std::endl;
+        std::cout << "U = " << schur.second << std::endl;
+        std::cout << "QUQ* = " << schur.second*schur.first*ConjugateTranspose(schur.second) << std::endl;
+        std::cout << "UU* = " << schur.second*ConjugateTranspose(schur.second);
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

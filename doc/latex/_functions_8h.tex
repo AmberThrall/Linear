@@ -1,0 +1,57 @@
+\hypertarget{_functions_8h}{}\doxysection{src/\+Functions.h File Reference}
+\label{_functions_8h}\index{src/Functions.h@{src/Functions.h}}
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eigen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==Dynamic$\vert$$\vert$P==Dynamic)\&\&(N==Q$\vert$$\vert$N==Dynamic$\vert$$\vert$Q==Dynamic)), Matrix$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a0901d6ab693df7f4d1bb1e27fde92319}{Linear\+::\+Entrywise\+Product}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Matrix$<$ T, P, Q, Flags2 $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Computes the matrix $C$ defined by $c_{ij}=a_{ij}b_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==Dynamic$\vert$$\vert$P==Dynamic)\&\&(N==Q$\vert$$\vert$N==Dynamic$\vert$$\vert$Q==Dynamic)), Matrix$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae38c42b559a32d9061616a18fa360053}{Linear\+::\+Entrywise\+Division}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Matrix$<$ T, P, Q, Flags2 $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Computes the matrix $C$ defined by $c_{ij}=a_{ij}/b_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_ada0f7fca4f12be3eb4abd7d8988529f5}{Linear\+::\+Norm}} (const Matrix$<$ T, M, N, Flags $>$ \&A, T p=T(2))
+\begin{DoxyCompactList}\small\item\em If $A$ is a vector, it computes the entrywise vector p-\/norm $\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_a8332a6dc23b76e0416c6587688b149b7}{Linear\+::\+Entrywise\+Norm}} (const Matrix$<$ T, M, N, Flags $>$ \&A, T p=T(2))
+\begin{DoxyCompactList}\small\item\em Computes the entrywise p-\/norm $\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_a538d89df01ac745502b47c24f155fd6b}{Linear\+::\+Frobenius\+Norm}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the Frobenius norm. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_abd31b68aefb3b7b5479ac11b708631ad}{Linear\+::\+Max\+Norm}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the max norm $\max_{ij}|a_{ij}|$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_a1b9ef9ef248d27da98eb8d8853df8037}{Linear\+::\+Infinity\+Norm}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the infinity norm $\max_{i=0,...M-1}\sum_{j=0}^{N-1}|a_{ij}|$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a92f213698dc5f499317d6bdaae326649}{Linear\+::\+Is\+Real}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Determines if a matrix is real or complex. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_af37d9173d6d203acfd0e47487ecf25c6}{Linear\+::\+Abs}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=|a_{ij}|$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0fd87afee655f3f469c4a407b4f5a2fa}{Linear\+::\+Sign}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=sgn(a_{ij})$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a650191b2369f0409841d3020264778c1}{Linear\+::\+Arg}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=arg(a_{ij})$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a9cb6084f9598406ac53d92620f7c8983}{Linear\+::\+Conjugate}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=\overline{a_{ij}}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ac8aa955b799bef4978cc951b10fa42ca}{Linear\+::\+Sqrt}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=\sqrt{a_{ij}}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ab592565faf3e1401d951a37d7cf75664}{Linear\+::\+Exp}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em If $A$ is not square, it computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=e^{a_{ij}}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a00ec3ef62fa5a80175c7132962209ec2}{Linear\+::\+Log}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=\log a_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a9e40af4c49bb1d3e247193e6c0ccbc5d}{Linear\+::\+Log}} (Matrix$<$ T, M, N, Flags $>$ A, T base)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=\log_{base} a_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ac3d77813e4ddeb508015384017c182c4}{Linear\+::\+Log}} (Matrix$<$ T, M, N, Flags $>$ a, Complex$<$ T $>$ base)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=\log_{base} a_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_af9dec09dae9751ec926b2a2edf9307c3}{Linear\+::\+Pow}} (Matrix$<$ T, M, N, Flags $>$ A, Complex$<$ T $>$ power)
+\begin{DoxyCompactList}\small\item\em If $A$ is not square, it computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=a_{ij}^{power}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, typename U $>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a591be3ccb6d45eb46874e4a994775fbc}{Linear\+::\+Pow}} (const Matrix$<$ T, M, N, Flags $>$ \&A, U power)
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ae20e512b04ddba701c1f0072e96bf4f9}{Linear\+::\+Mod}} (Matrix$<$ T, M, N, Flags $>$ A, Complex$<$ T $>$ z)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=a_{ij}\bmod z$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, typename U $>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aac00030bbbe44e83375df65ad058fce0}{Linear\+::\+Mod}} (Matrix$<$ T, M, N, Flags $>$ A, U y)
+\begin{DoxyCompactList}\small\item\em Computes the MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} $B$ defined by $b_{ij}=a_{ij}\bmod y$. \end{DoxyCompactList}\end{DoxyCompactItemize}

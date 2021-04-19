@@ -9,6 +9,17 @@
 #include "Types.h"
 
 namespace Linear {
+    /**
+     * Performs power iteration on A.
+     * Power iteration, defined by the sequence \f$b_{k+1}=\frac{Ab_k}{\|Ab_k\|}\f$ is a simple algorithm that computes the greatest
+     * (in magnitude) eigenvalue of A along with it's corresponding eigenvector. Convergence is often slow.
+     *
+     * More information: https://en.wikipedia.org/wiki/Power_iteration
+     * @param A MxN matrix
+     * @param b0 Initial vector of length P to start the sequence.
+     * @param max_iterations Maximum number of iterations to perform
+     * @return Pair \f$(\lambda,v)\f$ such that \f$Av\approx \lambda v\f$
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
     typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)&&(P==N||P==Dynamic||N==Dynamic)), std::pair<Complex<T>,Vector<T,P>>>::type
     PowerIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, unsigned int max_iterations) {
@@ -16,34 +27,41 @@ namespace Linear {
             throw "Eigenvalues are only defined for square matrices.";
         if (A.NumRows() != b0.NumRows())
             throw "Size mismatch in PowerIteration().";
-        if (Length(b0) < T(Tol))
+        if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in PowerIteration().";
 
         Complex<T> lambda;
-        Vector<T,N> q = b0/Length(b0);
+        Vector<T,N> q = b0/Norm(b0);
         Vector<T,N> b = A*q;
         RowVector<T,N> q2 = ConjugateTranspose(q);
         RowVector<T,N> b2 = ConjugateTranspose(b);
         T res = T(Tol+1);
         for (unsigned int i = 0; res >= T(Tol) && i < max_iterations; ++i) {
-            T len = Length(b);
-            if (len > T(Tol))
-                q = b/len;
-            else
-                return std::make_pair(lambda,b);
+            q = Normalize(b);
             b = A*q;
             lambda = Dot(q,b);
 
             b2 = q2*A;
-            q2 = b2/Length(b2);
+            q2 = Normalize(b2);
             T costheta = Abs(Dot(q2,q));
             if (costheta < T(Tol)) // Eigenvalues multiplicity >1 ?
                 break;
-            res = Length(b-lambda*q)/costheta;
+            res = Norm(b-lambda*q)/costheta;
         }
         return std::make_pair(lambda, b);
     }
-
+    /**
+     * Performs inverse iteration on A with guess mu.
+     * Inverse iteration, defined by the sequence \f$b_{k+1}=\frac{(A-\mu I)^{-1}b_k}{\|(A-\mu I)^{-1}b_k\|}\f$ is a simple algorithm that computes the
+     * eigenvalue of A closest to mu along with it's corresponding eigenvector. Convergence rate depends on how close mu is.
+     *
+     * More information: https://en.wikipedia.org/wiki/Inverse_iteration
+     * @param A MxN matrix
+     * @param b0 Initial vector of length P to start the sequence
+     * @param mu Original guess at an eigenvalue
+     * @param max_iterations Maximum number of iterations to perform
+     * @return Vector v such that \f$Av\approx\lambda v\f$ where \f$\lambda\f$ is the eigenvalue of A closest to mu
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
     typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)&&(P==N||P==Dynamic||N==Dynamic)), Vector<T,P>>::type
     InverseIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, Complex<T> mu, unsigned int max_iterations) {
@@ -51,7 +69,7 @@ namespace Linear {
             throw "Eigenvectors are only defined for square matrices.";
         if (A.NumRows() != b0.NumRows())
             throw "Size mismatch in PowerIteration().";
-        if (Length(b0) < T(Tol))
+        if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in InverseIteration().";
 
         SquareMatrix<T,N,Flags> eye = Identity<T,Flags>(A.NumRows());
@@ -59,26 +77,28 @@ namespace Linear {
         Vector<T,N> b = b0;
         for (unsigned int i = 0; i < max_iterations; ++i) {
             Vector<T,N> bnext = B*b;
-            T len = Length(bnext);
-            if (len > T(Tol))
-                b = bnext/len;
-            else
-                return b;
+            b = Normalize(bnext);
         }
         return b;
     }
 
+    /**
+     * Computes a basis for the nullspace of A.
+     * The nullspace of a matrix is the set of vectors v such that Av=0.
+     * @param A MxN matrix
+     * @return List of vectors v such that \f$Null(A)=span\{v[0],\dots,v[len(v)-1]\}\f$
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    std::vector<Vector<T,N>> Nullspace(const Matrix<T,M,N,Flags>& m) {
+    std::vector<Vector<T,N>> Nullspace(const Matrix<T,M,N,Flags>& A) {
         std::vector<Vector<T,N>> basis;
 
-        SquareMatrix<T,N,Flags> eye = Identity<T>(m.NumColumns());
-        Matrix<T,(M==Dynamic||N==Dynamic?Dynamic:M+N),N,Flags> aug = RowAugmented(m, eye);
+        SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumColumns());
+        Matrix<T,(M==Dynamic||N==Dynamic?Dynamic:M+N),N,Flags> aug = RowAugmented(A, eye);
         aug = Transpose(RREF(Transpose(aug)));
-        SquareMatrix<T,N,Flags> c = SubMatrix(aug, m.NumColumns(), m.NumColumns(), m.NumRows(), 0);
-        for (size_t col = 0; col < m.NumColumns(); ++col) {
+        SquareMatrix<T,N,Flags> c = SubMatrix(aug, A.NumColumns(), A.NumColumns(), A.NumRows(), 0);
+        for (size_t col = 0; col < A.NumColumns(); ++col) {
             bool add = true;
-            for (size_t row = 0; row < m.NumRows(); ++row) {
+            for (size_t row = 0; row < A.NumRows(); ++row) {
                 if (aug(row, col) != T(0)) {
                     add = false;
                     break;
@@ -89,24 +109,42 @@ namespace Linear {
         }
         return basis;
     }
+    /**
+     * Computes the dimension of the A's nullspace.
+     * @param A MxN matrix
+     * @return dim(Null(A))
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    unsigned int Nullity(const Matrix<T,M,N,Flags>& A) {
+        return Nullspace(A).size();
+    }
 
+    /**
+     * Performs a combination of deflation and power iteration to get every eigenpair of A
+     * Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.
+     * The general idea is that once an eigenvalue is calculated, we reduce A to a slightly smaller matrix which has the same eigenvalues
+     * except removing the one we just calculated. Repeating this process eventually computes all eigenvalues.
+     * @param A MxN matrix
+     * @param max_iterations Maximum number of iterations to perform for each call of PowerIteration
+     * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& a, unsigned int num_simulations = 15) {
-        if (!IsSquare(a))
+    WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
+        if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
         // Final step: 1x1 matrix.
-        if (a.NumRows() == 1) {
+        if (A.NumRows() == 1) {
             std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
-            eigenpairs.push_back(std::make_pair(a(0,0), Vector<T,1>(T(1))));
+            eigenpairs.push_back(std::make_pair(A(0,0), Vector<T,1>(T(1))));
             return eigenpairs;
         }
 
         // Step 1: Computer the dominant eigenvalue and vector.
         std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
-        Vector<T,N> b = Random<T>(a.NumRows(),1,Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
-        std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(a, b, num_simulations);
+        Vector<T,N> b = Random<T>(A.NumRows(),1,Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
+        std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(A, b, max_iterations);
         // Sanity check:
         Complex<T> lambda1 = pair.first;
         Vector<T,N> x1 = pair.second;
@@ -114,7 +152,7 @@ namespace Linear {
         // Step 2: Find the p such x1[p] is maximal.
         size_t p = 0;
         T max = T(0);
-        for (size_t i = 0; i < a.NumRows(); ++i) {
+        for (size_t i = 0; i < A.NumRows(); ++i) {
             if (max < Abs(x1[i])) {
                 p = i;
                 max = Abs(x1[i]);
@@ -124,14 +162,14 @@ namespace Linear {
             x1 = x1 / x1[p];
 
         // Step 3/4: Compute Ap and remove row p and column p
-        RowVector<T,N> ap = a.GetRow(p);
-        SquareMatrix<T,Dynamic,Flags> Ap = RemoveRowAndColumn(a - x1*ap, p, p);
+        RowVector<T,N> ap = A.GetRow(p);
+        SquareMatrix<T,Dynamic,Flags> Ap = RemoveRowAndColumn(A - x1*ap, p, p);
 
         // Step 5: Repeat.
         eigenpairs.push_back(std::make_pair(lambda1, x1));
-        std::vector<std::pair<Complex<T>,Vector<T,Dynamic>>> res = WielandtDeflationAlgorithm(Ap, num_simulations);
+        std::vector<std::pair<Complex<T>,Vector<T,Dynamic>>> res = WielandtDeflationAlgorithm(Ap, max_iterations);
         for (size_t i = 0; i < res.size(); ++i) {
-            Vector<T,N> yi(a.NumRows(), T(0));
+            Vector<T,N> yi(A.NumRows(), T(0));
             for (size_t j = 0; j < yi.Size(); ++j) {
                 if (j == p)
                     yi[j] = T(0);
@@ -178,16 +216,27 @@ namespace Linear {
             }
             else {
                 for (size_t j = 0; j < multiplicity; ++j)
-                    eigenpairs.push_back(std::make_pair(eigenvalues[i], basis[j]));
+                    eigenpairs.push_back(std::make_pair(eigenvalues[i], Normalize(basis[j])));
             }
         }
 
         return eigenpairs;
     }
 
+    /**
+     * Calculates all eigenpairs of A
+     *
+     * This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the
+     * diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or InverseIteration to calculate their corresponding
+     * eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely
+     * \f$(tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2\f$. Third, if neither of the first two cases handles the matrix, we attempt to calculate the
+     * Schur decomposition of A. If that fails, we resort to calling WielandtDeflationAlgorithm.
+     * @param A MxN matrix
+     * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    Eigen(const Matrix<T,M,N,Flags>& A, unsigned int num_simulations = 15) {
+    Eigen(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
@@ -211,10 +260,10 @@ namespace Linear {
         bool schurFailed = false;
         std::vector<Complex<T>> eigenvalues;
         for (size_t i = 0; i < A.NumRows(); ++i) {
-            if (i == A.NumRows()-1 || Abs(schur.first(i+1,i)) < T(Tol)) { // 1x1 block.
+            if (i == A.NumRows()-1 || Abs(schur.second(i+1,i)) < T(Tol)) { // 1x1 block.
                 // Check it's all zeros below
                 for (size_t r=i+2; r < A.NumRows(); ++r) {
-                    if (Abs(schur.first(r,i)) >= T(Tol)) {
+                    if (Abs(schur.second(r,i)) >= T(Tol)) {
                         schurFailed = true;
                         break;
                     }
@@ -223,11 +272,11 @@ namespace Linear {
                     break;
                 eigenvalues.push_back(schur.first(i,i));
             }
-            else if (i < A.NumRows()-1 && Abs(schur.first(i+1,i)) >= T(Tol)) { // 2x2 block.
+            else if (i < A.NumRows()-1 && Abs(schur.second(i+1,i)) >= T(Tol)) { // 2x2 block.
                 // Check it's all zeros below
                 for (size_t c=i; c <= i+1; ++c) {
                     for (size_t r=i+2; r < A.NumRows(); ++r) {
-                        if (Abs(schur.first(r,c)) >= T(Tol)) {
+                        if (Abs(schur.second(r,c)) >= T(Tol)) {
                             schurFailed = true;
                             break;
                         }
@@ -252,7 +301,7 @@ namespace Linear {
         }
 
         // Generic case via Deflation and power iteration.
-        return WielandtDeflationAlgorithm(A, num_simulations);
+        return WielandtDeflationAlgorithm(A, 25);
     }
 
     template <typename T>
@@ -271,23 +320,30 @@ namespace Linear {
         }
     }
 
+    /**
+     * Computes the characteristic polynomial.
+     *
+     * This returns the coefficients as a vector c of length N+1 such that \f$\det(A-tI)=c_0+c_1t+\dots+c_{N-1}t^{N-1}+c_Nt^N\f$.
+     * @param A MxN matrix
+     * @return Coefficients of characteristic polynomial
+     */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), Vector<T,(N==Dynamic?Dynamic:N+1)>>::type CharPoly(const Matrix<T,M,N,Flags>& a) {
-        if (!IsSquare(a))
+    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), Vector<T,(N==Dynamic?Dynamic:N+1)>>::type CharPoly(const Matrix<T,M,N,Flags>& A) {
+        if (!IsSquare(A))
             throw "Characteristic polynomial is only defined for square matrices.";
 
-        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs = Eigen(a);
+        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs = Eigen(A);
         std::vector<Complex<T>> eigenvalues;
         for (size_t i = 0; i < eigenpairs.size(); ++i)
             eigenvalues.push_back(eigenpairs[i].first);
-        Vector<T,(N==Dynamic?Dynamic:N+1)> c(a.NumRows()+1, T(0));
-        for (size_t k = 1; k <= a.NumRows(); ++k) {
+        Vector<T,(N==Dynamic?Dynamic:N+1)> c(A.NumRows()+1, T(0));
+        for (size_t k = 1; k <= A.NumRows(); ++k) {
             size_t data[k];
-            VietaFormulaHelper(data, 0, a.NumRows()-1, 0, k, c[k-1], eigenvalues);
+            VietaFormulaHelper(data, 0, A.NumRows()-1, 0, k, c[k-1], eigenvalues);
             if (k % 2 == 1)
                 c[k-1] *= -1;
         }
-        c[a.NumRows()] = T(1);
+        c[A.NumRows()] = T(1);
 
         return c;
     }

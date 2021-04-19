@@ -21,17 +21,12 @@ int main() {
     std::cout << "c+d = " << c+d << std::endl;
     std::cout << "dA = " << d*A << std::endl;
 
-    std::cout << "len(a) = " << Length(a) << std::endl;
-    std::cout << "len(b) = " << Length(b) << std::endl;
+    std::cout << "||a|| = " << Norm(a) << std::endl;
+    std::cout << "||b||= " << Norm(b) << std::endl;
     std::cout << "dot(a,b) = " << Dot(a,b) << std::endl;
     std::cout << "a x b = " << Cross(a,b) << std::endl;
 
     std::cout << "Normalize(c) = " << Normalize(c) << std::endl;
-
-    Vector3f basis1 = Basis<float,3>(0);
-    VectorXf basis2 = Basis<float>(3, 1);
-    std::cout << "basis1 = " << basis1 << std::endl;
-    std::cout << "basis2 = " << basis2 << std::endl;
 
     Matrix3f gramschmidt = { {1,0,0}, {2,3,0}, {4,5,6} };
     Matrix3f orthogonal = GramSchmidt(gramschmidt);

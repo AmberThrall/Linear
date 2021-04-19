@@ -1,0 +1,24 @@
+\hypertarget{_types_8h}{}\doxysection{src/\+Types.h File Reference}
+\label{_types_8h}\index{src/Types.h@{src/Types.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Basics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Construction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a2d87c8b26560550f7503bdca92bd3638}{Linear\+::\+Is\+Upper\+Triangular}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is upper triangular form. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a86de4a2236dce71ea9dc943a988f13a0}{Linear\+::\+Is\+Lower\+Triangular}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is lower triangular form. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a9a25708e52602db0a0e28bf2132bad22}{Linear\+::\+Is\+Triangular}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is lower triangular form or upper triangular form. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a8ace5baab7409ef4333f6e5a7a4a5f5b}{Linear\+::\+Is\+Diagonal}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is a diagonal matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
