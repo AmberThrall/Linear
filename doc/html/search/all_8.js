@@ -5,7 +5,7 @@ var searchData=
   ['im_67',['Im',['../class_linear_1_1_complex.html#a380eb6fb4ff7149ee15acdf72b4b6239',1,'Linear::Complex']]],
   ['infinitynorm_68',['InfinityNorm',['../namespace_linear.html#a1b9ef9ef248d27da98eb8d8853df8037',1,'Linear']]],
   ['inverse_69',['Inverse',['../namespace_linear.html#a72988b2b8fec9ebd3f5b9eed64a96f76',1,'Linear']]],
-  ['inverseiteration_70',['InverseIteration',['../namespace_linear.html#a0e9be843fcf339cd408ee4126bbcfe1d',1,'Linear']]],
+  ['inverseiteration_70',['InverseIteration',['../namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274',1,'Linear']]],
   ['isdiagonal_71',['IsDiagonal',['../namespace_linear.html#a8ace5baab7409ef4333f6e5a7a4a5f5b',1,'Linear']]],
   ['ishermitian_72',['IsHermitian',['../namespace_linear.html#a7070e8382c6b41fbdfb124e4d5718183',1,'Linear']]],
   ['ishessenberg_73',['IsHessenberg',['../namespace_linear.html#add87da41bd664140cbaff6352e01dd6b',1,'Linear']]],

@@ -22,5 +22,5 @@
 \begin{DoxyCompactList}\small\item\em Computes a basis for the column space of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a821339a5ae70e69525e21978c45c1262}{Linear\+::\+Rank}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s column space. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\Vector$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a4c7da63cf834a809af2ab3ac6de19793}{Linear\+::\+Solve}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Vector$<$ T, P $>$ \&b)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==Dynamic$\vert$$\vert$M==Dynamic), Vector$<$ T, N $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}{Linear\+::\+Solve}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Vector$<$ T, P $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Solves the matrix equation Ax=b for x. \end{DoxyCompactList}\end{DoxyCompactItemize}

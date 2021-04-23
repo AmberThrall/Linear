@@ -27,7 +27,7 @@
 \begin{DoxyCompactList}\small\item\em Returns the NxM matrix $B=A^*$ defined by $b_{ij}=\overline{a_{ji}}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0e8389f19477fc0de6573098807b16e6}{Linear\+::\+RREF}} (Matrix$<$ T, M, N, Flags $>$ A)
 \begin{DoxyCompactList}\small\item\em Computes A\textquotesingle{}s reduced row echelon form. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N)$\vert$$\vert$M==Dynamic$\vert$$\vert$N==Dynamic), Complex$<$ T $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a42484731bac25fd916a8d9785384311a}{Linear\+::\+Trace}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Complex$<$ T $>$ \mbox{\hyperlink{namespace_linear_a7beb9c27d40c85c11d4bfc892f557258}{Linear\+::\+Trace}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the trace of a square matrix $\sum_{i=0}^{N-1}a_{ii}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Complex$<$ T $>$ \mbox{\hyperlink{namespace_linear_ac742a1d3567f0f56ad6d2196d2960e85}{Linear\+::\+Determinant}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the determinant of a square matrix defined by $\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})$ where $A_{0i}$ is the (N-\/1)x(N-\/1) matrix obtained by deleting the 0th row and ith column. \end{DoxyCompactList}\item 

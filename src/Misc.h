@@ -89,7 +89,7 @@ namespace Linear {
      * @return Vector of length N
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
-    Vector<T,N> Solve(const Matrix<T,M,N,Flags>& A, const Vector<T,P>& b) {
+    typename std::enable_if<(M==P||P==Dynamic||M==Dynamic), Vector<T,N>>::type Solve(const Matrix<T,M,N,Flags>& A, const Vector<T,P>& b) {
         if (A.NumRows() != b.Size())
             throw "Cannot solve matrix equation Ax=b, b is incorrect size.";
 

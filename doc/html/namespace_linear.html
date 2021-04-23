@@ -213,10 +213,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a0e8389f19477fc0de6573098807b16e6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0e8389f19477fc0de6573098807b16e6">RREF</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A)</td></tr>
 <tr class="memdesc:a0e8389f19477fc0de6573098807b16e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes A's reduced row echelon form.  <a href="namespace_linear.html#a0e8389f19477fc0de6573098807b16e6">More...</a><br /></td></tr>
 <tr class="separator:a0e8389f19477fc0de6573098807b16e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42484731bac25fd916a8d9785384311a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a42484731bac25fd916a8d9785384311a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a42484731bac25fd916a8d9785384311a">Trace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a42484731bac25fd916a8d9785384311a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the trace of a square matrix \(\sum_{i=0}^{N-1}a_{ii}\).  <a href="namespace_linear.html#a42484731bac25fd916a8d9785384311a">More...</a><br /></td></tr>
-<tr class="separator:a42484731bac25fd916a8d9785384311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7beb9c27d40c85c11d4bfc892f557258"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a7beb9c27d40c85c11d4bfc892f557258"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a7beb9c27d40c85c11d4bfc892f557258">Trace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a7beb9c27d40c85c11d4bfc892f557258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the trace of a square matrix \(\sum_{i=0}^{N-1}a_{ii}\).  <a href="namespace_linear.html#a7beb9c27d40c85c11d4bfc892f557258">More...</a><br /></td></tr>
+<tr class="separator:a7beb9c27d40c85c11d4bfc892f557258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac742a1d3567f0f56ad6d2196d2960e85">Determinant</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:ac742a1d3567f0f56ad6d2196d2960e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the determinant of a square matrix defined by \(\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})\) where \(A_{0i}\) is the (N-1)x(N-1) matrix obtained by deleting the 0th row and ith column.  <a href="namespace_linear.html#ac742a1d3567f0f56ad6d2196d2960e85">More...</a><br /></td></tr>
@@ -682,76 +682,76 @@ Functions</h2></td></tr>
 <tr class="memitem:aa26b079aa55163415073496c04c0e7f9"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa26b079aa55163415073496c04c0e7f9">LUP</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A)</td></tr>
 <tr class="memdesc:aa26b079aa55163415073496c04c0e7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#aa26b079aa55163415073496c04c0e7f9">More...</a><br /></td></tr>
 <tr class="separator:aa26b079aa55163415073496c04c0e7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbadd51ca20be7f6be44e552d2104218"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:acbadd51ca20be7f6be44e552d2104218"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M &gt;=N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#acbadd51ca20be7f6be44e552d2104218">QR</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:acbadd51ca20be7f6be44e552d2104218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#acbadd51ca20be7f6be44e552d2104218">More...</a><br /></td></tr>
-<tr class="separator:acbadd51ca20be7f6be44e552d2104218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ff45739b41a1c0fcc45b899b1d646b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a85ff45739b41a1c0fcc45b899b1d646b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a85ff45739b41a1c0fcc45b899b1d646b">LL</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a85ff45739b41a1c0fcc45b899b1d646b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LL* decomposition of A.  <a href="namespace_linear.html#a85ff45739b41a1c0fcc45b899b1d646b">More...</a><br /></td></tr>
-<tr class="separator:a85ff45739b41a1c0fcc45b899b1d646b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd4ac1018f6e2a00cce4286c1e16f06"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a0fd4ac1018f6e2a00cce4286c1e16f06"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0fd4ac1018f6e2a00cce4286c1e16f06">LDL</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a0fd4ac1018f6e2a00cce4286c1e16f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LDL* decomposition of A.  <a href="namespace_linear.html#a0fd4ac1018f6e2a00cce4286c1e16f06">More...</a><br /></td></tr>
-<tr class="separator:a0fd4ac1018f6e2a00cce4286c1e16f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81ef5e912b8116ddd5ebf5429e67c127"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a81ef5e912b8116ddd5ebf5429e67c127"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a81ef5e912b8116ddd5ebf5429e67c127">Eigendecomposition</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a81ef5e912b8116ddd5ebf5429e67c127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Eigendecomposition of A.  <a href="namespace_linear.html#a81ef5e912b8116ddd5ebf5429e67c127">More...</a><br /></td></tr>
-<tr class="separator:a81ef5e912b8116ddd5ebf5429e67c127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3420e34ecc066e096dab30ee75140d1"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ad3420e34ecc066e096dab30ee75140d1"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad3420e34ecc066e096dab30ee75140d1">QR</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:ad3420e34ecc066e096dab30ee75140d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#ad3420e34ecc066e096dab30ee75140d1">More...</a><br /></td></tr>
+<tr class="separator:ad3420e34ecc066e096dab30ee75140d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef85ac416f2414a3621ece9854a90af"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a0ef85ac416f2414a3621ece9854a90af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0ef85ac416f2414a3621ece9854a90af">LL</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a0ef85ac416f2414a3621ece9854a90af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LL* decomposition of A.  <a href="namespace_linear.html#a0ef85ac416f2414a3621ece9854a90af">More...</a><br /></td></tr>
+<tr class="separator:a0ef85ac416f2414a3621ece9854a90af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac447da29fa17099383a35795724dc608"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ac447da29fa17099383a35795724dc608"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac447da29fa17099383a35795724dc608">LDL</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:ac447da29fa17099383a35795724dc608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LDL* decomposition of A.  <a href="namespace_linear.html#ac447da29fa17099383a35795724dc608">More...</a><br /></td></tr>
+<tr class="separator:ac447da29fa17099383a35795724dc608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cca773e4ba2bf13d412c5212448950b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a0cca773e4ba2bf13d412c5212448950b"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0cca773e4ba2bf13d412c5212448950b">Eigendecomposition</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a0cca773e4ba2bf13d412c5212448950b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Eigendecomposition of A.  <a href="namespace_linear.html#a0cca773e4ba2bf13d412c5212448950b">More...</a><br /></td></tr>
+<tr class="separator:a0cca773e4ba2bf13d412c5212448950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40ac3a75e4fa4b638b92bf5ed828b96f"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a40ac3a75e4fa4b638b92bf5ed828b96f"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, M, Flags &gt;, <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a40ac3a75e4fa4b638b92bf5ed828b96f">SVD</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a40ac3a75e4fa4b638b92bf5ed828b96f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the SVD decomposition of A.  <a href="namespace_linear.html#a40ac3a75e4fa4b638b92bf5ed828b96f">More...</a><br /></td></tr>
 <tr class="separator:a40ac3a75e4fa4b638b92bf5ed828b96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be383eb3716a11c987ff3e54238fca8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a4be383eb3716a11c987ff3e54238fca8"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4be383eb3716a11c987ff3e54238fca8">Hessenberg</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a4be383eb3716a11c987ff3e54238fca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the matrix A to Hessenberg.  <a href="namespace_linear.html#a4be383eb3716a11c987ff3e54238fca8">More...</a><br /></td></tr>
-<tr class="separator:a4be383eb3716a11c987ff3e54238fca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2a14f903b5a7da4113aa3884816e773"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:ab2a14f903b5a7da4113aa3884816e773"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab2a14f903b5a7da4113aa3884816e773">Schur</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> max_iterations=100)</td></tr>
-<tr class="memdesc:ab2a14f903b5a7da4113aa3884816e773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that \(A=QUQ^*\) where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks.  <a href="namespace_linear.html#ab2a14f903b5a7da4113aa3884816e773">More...</a><br /></td></tr>
-<tr class="separator:ab2a14f903b5a7da4113aa3884816e773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20475cddebd8e9966b791b36e232e36"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
-<tr class="memitem:ad20475cddebd8e9966b791b36e232e36"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad20475cddebd8e9966b791b36e232e36">PowerIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, unsigned int max_iterations)</td></tr>
-<tr class="memdesc:ad20475cddebd8e9966b791b36e232e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs power iteration on A.  <a href="namespace_linear.html#ad20475cddebd8e9966b791b36e232e36">More...</a><br /></td></tr>
-<tr class="separator:ad20475cddebd8e9966b791b36e232e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
-<tr class="memitem:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0e9be843fcf339cd408ee4126bbcfe1d">InverseIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; mu, unsigned int max_iterations)</td></tr>
-<tr class="memdesc:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inverse iteration on A with guess mu.  <a href="namespace_linear.html#a0e9be843fcf339cd408ee4126bbcfe1d">More...</a><br /></td></tr>
-<tr class="separator:a0e9be843fcf339cd408ee4126bbcfe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adff372de27f66c561383c891ca004a4b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:adff372de27f66c561383c891ca004a4b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adff372de27f66c561383c891ca004a4b">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
-<tr class="memdesc:adff372de27f66c561383c891ca004a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#adff372de27f66c561383c891ca004a4b">More...</a><br /></td></tr>
-<tr class="separator:adff372de27f66c561383c891ca004a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae76e997c89ba14102a6f292866cad3b0"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:ae76e997c89ba14102a6f292866cad3b0"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ae76e997c89ba14102a6f292866cad3b0">EigenvectorHelper</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; eigenvalues)</td></tr>
-<tr class="separator:ae76e997c89ba14102a6f292866cad3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2991d59c0fba2f1fda7e85bea8f38def"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a2991d59c0fba2f1fda7e85bea8f38def"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2991d59c0fba2f1fda7e85bea8f38def">Eigen</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a2991d59c0fba2f1fda7e85bea8f38def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenpairs of A.  <a href="namespace_linear.html#a2991d59c0fba2f1fda7e85bea8f38def">More...</a><br /></td></tr>
-<tr class="separator:a2991d59c0fba2f1fda7e85bea8f38def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec2551c2f8d6c875e695baf1adee679"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a3ec2551c2f8d6c875e695baf1adee679"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3ec2551c2f8d6c875e695baf1adee679">Hessenberg</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a3ec2551c2f8d6c875e695baf1adee679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the matrix A to Hessenberg.  <a href="namespace_linear.html#a3ec2551c2f8d6c875e695baf1adee679">More...</a><br /></td></tr>
+<tr class="separator:a3ec2551c2f8d6c875e695baf1adee679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b63e8a885faf0f6636bbc94e7d1154"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a00b63e8a885faf0f6636bbc94e7d1154"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a00b63e8a885faf0f6636bbc94e7d1154">Schur</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> max_iterations=100)</td></tr>
+<tr class="memdesc:a00b63e8a885faf0f6636bbc94e7d1154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that \(A=QUQ^*\) where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks.  <a href="namespace_linear.html#a00b63e8a885faf0f6636bbc94e7d1154">More...</a><br /></td></tr>
+<tr class="separator:a00b63e8a885faf0f6636bbc94e7d1154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780523f50686e31b35ff8f45223ac4bb"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
+<tr class="memitem:a780523f50686e31b35ff8f45223ac4bb"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a780523f50686e31b35ff8f45223ac4bb">PowerIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, unsigned int max_iterations)</td></tr>
+<tr class="memdesc:a780523f50686e31b35ff8f45223ac4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs power iteration on A.  <a href="namespace_linear.html#a780523f50686e31b35ff8f45223ac4bb">More...</a><br /></td></tr>
+<tr class="separator:a780523f50686e31b35ff8f45223ac4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
+<tr class="memitem:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">InverseIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; mu, unsigned int max_iterations)</td></tr>
+<tr class="memdesc:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inverse iteration on A with guess mu.  <a href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">More...</a><br /></td></tr>
+<tr class="separator:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e151231674c5864c1aac8f7ab752ac"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ad7e151231674c5864c1aac8f7ab752ac"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad7e151231674c5864c1aac8f7ab752ac">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
+<tr class="memdesc:ad7e151231674c5864c1aac8f7ab752ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#ad7e151231674c5864c1aac8f7ab752ac">More...</a><br /></td></tr>
+<tr class="separator:ad7e151231674c5864c1aac8f7ab752ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd5e5b53cac430776fe625ce7744b13"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:aabd5e5b53cac430776fe625ce7744b13"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aabd5e5b53cac430776fe625ce7744b13">EigenvectorHelper</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; eigenvalues)</td></tr>
+<tr class="separator:aabd5e5b53cac430776fe625ce7744b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0419a825faa8b962640dbcb139ea76"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a1d0419a825faa8b962640dbcb139ea76"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1d0419a825faa8b962640dbcb139ea76">Eigen</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a1d0419a825faa8b962640dbcb139ea76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenpairs of A.  <a href="namespace_linear.html#a1d0419a825faa8b962640dbcb139ea76">More...</a><br /></td></tr>
+<tr class="separator:a1d0419a825faa8b962640dbcb139ea76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa7846a684bbbd713d8a38163d0c9ba"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:affa7846a684bbbd713d8a38163d0c9ba"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#affa7846a684bbbd713d8a38163d0c9ba">VietaFormulaHelper</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> data[], <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> start, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> end, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> index, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> k, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;sum, const std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; &amp;roots)</td></tr>
 <tr class="separator:affa7846a684bbbd713d8a38163d0c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4414cb128ad49755f6240ed37555926c"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a4414cb128ad49755f6240ed37555926c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4414cb128ad49755f6240ed37555926c">CharPoly</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a4414cb128ad49755f6240ed37555926c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the characteristic polynomial.  <a href="namespace_linear.html#a4414cb128ad49755f6240ed37555926c">More...</a><br /></td></tr>
-<tr class="separator:a4414cb128ad49755f6240ed37555926c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0901d6ab693df7f4d1bb1e27fde92319"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:a0901d6ab693df7f4d1bb1e27fde92319"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==P||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(N==Q||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0901d6ab693df7f4d1bb1e27fde92319">EntrywiseProduct</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;B)</td></tr>
-<tr class="memdesc:a0901d6ab693df7f4d1bb1e27fde92319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix \(C\) defined by \(c_{ij}=a_{ij}b_{ij}\).  <a href="namespace_linear.html#a0901d6ab693df7f4d1bb1e27fde92319">More...</a><br /></td></tr>
-<tr class="separator:a0901d6ab693df7f4d1bb1e27fde92319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae38c42b559a32d9061616a18fa360053"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:ae38c42b559a32d9061616a18fa360053"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==P||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(N==Q||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ae38c42b559a32d9061616a18fa360053">EntrywiseDivision</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;B)</td></tr>
-<tr class="memdesc:ae38c42b559a32d9061616a18fa360053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix \(C\) defined by \(c_{ij}=a_{ij}/b_{ij}\).  <a href="namespace_linear.html#ae38c42b559a32d9061616a18fa360053">More...</a><br /></td></tr>
-<tr class="separator:ae38c42b559a32d9061616a18fa360053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada0f7fca4f12be3eb4abd7d8988529f5"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:ada0f7fca4f12be3eb4abd7d8988529f5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ada0f7fca4f12be3eb4abd7d8988529f5">Norm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, T p=T(2))</td></tr>
-<tr class="memdesc:ada0f7fca4f12be3eb4abd7d8988529f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">If \(A\) is a vector, it computes the entrywise vector p-norm \(\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}\).  <a href="namespace_linear.html#ada0f7fca4f12be3eb4abd7d8988529f5">More...</a><br /></td></tr>
-<tr class="separator:ada0f7fca4f12be3eb4abd7d8988529f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8332a6dc23b76e0416c6587688b149b7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a8332a6dc23b76e0416c6587688b149b7"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8332a6dc23b76e0416c6587688b149b7">EntrywiseNorm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, T p=T(2))</td></tr>
-<tr class="memdesc:a8332a6dc23b76e0416c6587688b149b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the entrywise p-norm \(\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}\).  <a href="namespace_linear.html#a8332a6dc23b76e0416c6587688b149b7">More...</a><br /></td></tr>
-<tr class="separator:a8332a6dc23b76e0416c6587688b149b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a95ea0604ed3abba521182a7757b38009">CharPoly</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a95ea0604ed3abba521182a7757b38009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the characteristic polynomial.  <a href="namespace_linear.html#a95ea0604ed3abba521182a7757b38009">More...</a><br /></td></tr>
+<tr class="separator:a95ea0604ed3abba521182a7757b38009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa933b89808eb172f86b9c2265f6379b4"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:aa933b89808eb172f86b9c2265f6379b4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa933b89808eb172f86b9c2265f6379b4">EntrywiseProduct</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;B)</td></tr>
+<tr class="memdesc:aa933b89808eb172f86b9c2265f6379b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix \(C\) defined by \(c_{ij}=a_{ij}b_{ij}\).  <a href="namespace_linear.html#aa933b89808eb172f86b9c2265f6379b4">More...</a><br /></td></tr>
+<tr class="separator:aa933b89808eb172f86b9c2265f6379b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b0a5444a9eee2e648e14376fd25120"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:a54b0a5444a9eee2e648e14376fd25120"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a54b0a5444a9eee2e648e14376fd25120">EntrywiseDivision</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;B)</td></tr>
+<tr class="memdesc:a54b0a5444a9eee2e648e14376fd25120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix \(C\) defined by \(c_{ij}=a_{ij}/b_{ij}\).  <a href="namespace_linear.html#a54b0a5444a9eee2e648e14376fd25120">More...</a><br /></td></tr>
+<tr class="separator:a54b0a5444a9eee2e648e14376fd25120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177">Norm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> p=2)</td></tr>
+<tr class="memdesc:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="mdescLeft">&#160;</td><td class="mdescRight">If \(A\) is a vector, it computes the entrywise vector p-norm \(\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}\).  <a href="namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177">More...</a><br /></td></tr>
+<tr class="separator:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5f3c568186586145e8702ea3d5ab60"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:aac5f3c568186586145e8702ea3d5ab60"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aac5f3c568186586145e8702ea3d5ab60">EntrywiseNorm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> p=2)</td></tr>
+<tr class="memdesc:aac5f3c568186586145e8702ea3d5ab60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the entrywise p-norm \(\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}\).  <a href="namespace_linear.html#aac5f3c568186586145e8702ea3d5ab60">More...</a><br /></td></tr>
+<tr class="separator:aac5f3c568186586145e8702ea3d5ab60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a538d89df01ac745502b47c24f155fd6b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a538d89df01ac745502b47c24f155fd6b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a538d89df01ac745502b47c24f155fd6b">FrobeniusNorm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a538d89df01ac745502b47c24f155fd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Frobenius norm.  <a href="namespace_linear.html#a538d89df01ac745502b47c24f155fd6b">More...</a><br /></td></tr>
@@ -931,10 +931,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a821339a5ae70e69525e21978c45c1262"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a821339a5ae70e69525e21978c45c1262">Rank</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a821339a5ae70e69525e21978c45c1262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dimension of the A's column space.  <a href="namespace_linear.html#a821339a5ae70e69525e21978c45c1262">More...</a><br /></td></tr>
 <tr class="separator:a821339a5ae70e69525e21978c45c1262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c7da63cf834a809af2ab3ac6de19793"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
-<tr class="memitem:a4c7da63cf834a809af2ab3ac6de19793"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4c7da63cf834a809af2ab3ac6de19793">Solve</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &amp;b)</td></tr>
-<tr class="memdesc:a4c7da63cf834a809af2ab3ac6de19793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the matrix equation Ax=b for x.  <a href="namespace_linear.html#a4c7da63cf834a809af2ab3ac6de19793">More...</a><br /></td></tr>
-<tr class="separator:a4c7da63cf834a809af2ab3ac6de19793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
+<tr class="memitem:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==P||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">Solve</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &amp;b)</td></tr>
+<tr class="memdesc:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the matrix equation Ax=b for x.  <a href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">More...</a><br /></td></tr>
+<tr class="separator:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">IsVector</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a5afdda12123cb445b1c801e85ba1ebe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a matrix is a row or column vector.  <a href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">More...</a><br /></td></tr>
@@ -1007,30 +1007,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a932c6583bdc57530a86b4c5ee6f74f2f">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> size, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
 <tr class="memdesc:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles subvector in the size 1 case.  <a href="namespace_linear.html#a932c6583bdc57530a86b4c5ee6f74f2f">More...</a><br /></td></tr>
 <tr class="separator:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557b92b1646e47604508e9121d807639"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:a557b92b1646e47604508e9121d807639"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a557b92b1646e47604508e9121d807639">Dot</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;a, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;b)</td></tr>
-<tr class="memdesc:a557b92b1646e47604508e9121d807639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of two vectors a and b both of size N, \(\sum{i=0}^{N-1}\overline{a_i}b_i\).  <a href="namespace_linear.html#a557b92b1646e47604508e9121d807639">More...</a><br /></td></tr>
-<tr class="separator:a557b92b1646e47604508e9121d807639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f787cbae083a9bc4876bd7e023bd113"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:a2f787cbae083a9bc4876bd7e023bd113"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2f787cbae083a9bc4876bd7e023bd113">Normalize</a> (<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; v)</td></tr>
-<tr class="memdesc:a2f787cbae083a9bc4876bd7e023bd113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a column vector, \(v=\frac{v}{\|v\|}\).  <a href="namespace_linear.html#a2f787cbae083a9bc4876bd7e023bd113">More...</a><br /></td></tr>
-<tr class="separator:a2f787cbae083a9bc4876bd7e023bd113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2833583ec9ec44a15965ecf9b2308779"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:a2833583ec9ec44a15965ecf9b2308779"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2833583ec9ec44a15965ecf9b2308779">Normalize</a> (<a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; v)</td></tr>
-<tr class="memdesc:a2833583ec9ec44a15965ecf9b2308779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a row vector, \(v=\frac{v}{\|v\|}\).  <a href="namespace_linear.html#a2833583ec9ec44a15965ecf9b2308779">More...</a><br /></td></tr>
-<tr class="separator:a2833583ec9ec44a15965ecf9b2308779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a035ee67c5ff46f63bfb95946484d73c6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a035ee67c5ff46f63bfb95946484d73c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a035ee67c5ff46f63bfb95946484d73c6">Normalize</a> (<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; v)</td></tr>
-<tr class="memdesc:a035ee67c5ff46f63bfb95946484d73c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a vector of size 1.  <a href="namespace_linear.html#a035ee67c5ff46f63bfb95946484d73c6">More...</a><br /></td></tr>
-<tr class="separator:a035ee67c5ff46f63bfb95946484d73c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd7e523eb66cbab4b39972cf96c0dff7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:abd7e523eb66cbab4b39972cf96c0dff7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#abd7e523eb66cbab4b39972cf96c0dff7">Cross</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;a, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;b)</td></tr>
-<tr class="memdesc:abd7e523eb66cbab4b39972cf96c0dff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cross product of two vectors a and b both of length 3.  <a href="namespace_linear.html#abd7e523eb66cbab4b39972cf96c0dff7">More...</a><br /></td></tr>
-<tr class="separator:abd7e523eb66cbab4b39972cf96c0dff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8870ec51dc242807fd279a5d456990f"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:ad8870ec51dc242807fd279a5d456990f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad8870ec51dc242807fd279a5d456990f">Proj</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;v, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;onto)</td></tr>
-<tr class="memdesc:ad8870ec51dc242807fd279a5d456990f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the vector projection \(\proj_{onto}v = \frac{Dot(onto,v)}{Dot(onto,onto)}onto\).  <a href="namespace_linear.html#ad8870ec51dc242807fd279a5d456990f">More...</a><br /></td></tr>
-<tr class="separator:ad8870ec51dc242807fd279a5d456990f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9824e674e82f6dbaa0435514e64894"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:aea9824e674e82f6dbaa0435514e64894"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aea9824e674e82f6dbaa0435514e64894">Dot</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;a, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;b)</td></tr>
+<tr class="memdesc:aea9824e674e82f6dbaa0435514e64894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of two vectors a and b both of size N, \(\sum{i=0}^{N-1}\overline{a_i}b_i\).  <a href="namespace_linear.html#aea9824e674e82f6dbaa0435514e64894">More...</a><br /></td></tr>
+<tr class="separator:aea9824e674e82f6dbaa0435514e64894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa335597bce965c73014808d379a5e4ef"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:aa335597bce965c73014808d379a5e4ef"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa335597bce965c73014808d379a5e4ef">Normalize</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; v)</td></tr>
+<tr class="memdesc:aa335597bce965c73014808d379a5e4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a vector, \(v=\frac{v}{\|v\|}\).  <a href="namespace_linear.html#aa335597bce965c73014808d379a5e4ef">More...</a><br /></td></tr>
+<tr class="separator:aa335597bce965c73014808d379a5e4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7c9f59b6085207a5a193a64513fb0e"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:a1d7c9f59b6085207a5a193a64513fb0e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1d7c9f59b6085207a5a193a64513fb0e">Cross</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;a, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;b)</td></tr>
+<tr class="memdesc:a1d7c9f59b6085207a5a193a64513fb0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cross product of two vectors a and b both of length 3.  <a href="namespace_linear.html#a1d7c9f59b6085207a5a193a64513fb0e">More...</a><br /></td></tr>
+<tr class="separator:a1d7c9f59b6085207a5a193a64513fb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d94e43e14353375a9623891abf7674"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:a77d94e43e14353375a9623891abf7674"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a77d94e43e14353375a9623891abf7674">Proj</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;v, const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags2 &gt; &amp;onto)</td></tr>
+<tr class="memdesc:a77d94e43e14353375a9623891abf7674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the vector projection \(\proj_{onto}v = \frac{Dot(onto,v)}{Dot(onto,onto)}onto\).  <a href="namespace_linear.html#a77d94e43e14353375a9623891abf7674">More...</a><br /></td></tr>
+<tr class="separator:a77d94e43e14353375a9623891abf7674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52882b24b8703ab5565cec02174f5f43"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a52882b24b8703ab5565cec02174f5f43"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a52882b24b8703ab5565cec02174f5f43">GramSchmidt</a> (const std::vector&lt; <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&gt; &amp;v)</td></tr>
 <tr class="memdesc:a52882b24b8703ab5565cec02174f5f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs Gram-Schmidt on a list of column vectors.  <a href="namespace_linear.html#a52882b24b8703ab5565cec02174f5f43">More...</a><br /></td></tr>
@@ -3265,8 +3257,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4414cb128ad49755f6240ed37555926c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4414cb128ad49755f6240ed37555926c">&#9670;&nbsp;</a></span>CharPoly()</h2>
+<a id="a95ea0604ed3abba521182a7757b38009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ea0604ed3abba521182a7757b38009">&#9670;&nbsp;</a></span>CharPoly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3274,7 +3266,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt; &gt;::type Linear::CharPoly </td>
+          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt; Linear::CharPoly </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -3955,8 +3947,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="abd7e523eb66cbab4b39972cf96c0dff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd7e523eb66cbab4b39972cf96c0dff7">&#9670;&nbsp;</a></span>Cross()</h2>
+<a id="a1d7c9f59b6085207a5a193a64513fb0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7c9f59b6085207a5a193a64513fb0e">&#9670;&nbsp;</a></span>Cross()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3964,7 +3956,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)),<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::Cross </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::Cross </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -4539,8 +4531,8 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
 
 </div>
 </div>
-<a id="a557b92b1646e47604508e9121d807639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a557b92b1646e47604508e9121d807639">&#9670;&nbsp;</a></span>Dot()</h2>
+<a id="aea9824e674e82f6dbaa0435514e64894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9824e674e82f6dbaa0435514e64894">&#9670;&nbsp;</a></span>Dot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4548,7 +4540,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)),<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; &gt;::type Linear::Dot </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; Linear::Dot </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -4583,8 +4575,8 @@ Complexd z = Dot(a,b);
 
 </div>
 </div>
-<a id="a2991d59c0fba2f1fda7e85bea8f38def"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2991d59c0fba2f1fda7e85bea8f38def">&#9670;&nbsp;</a></span>Eigen()</h2>
+<a id="a1d0419a825faa8b962640dbcb139ea76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0419a825faa8b962640dbcb139ea76">&#9670;&nbsp;</a></span>Eigen()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4592,7 +4584,7 @@ Complexd z = Dot(a,b);
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; &gt;::type Linear::Eigen </td>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; Linear::Eigen </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -4612,8 +4604,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a81ef5e912b8116ddd5ebf5429e67c127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81ef5e912b8116ddd5ebf5429e67c127">&#9670;&nbsp;</a></span>Eigendecomposition()</h2>
+<a id="a0cca773e4ba2bf13d412c5212448950b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cca773e4ba2bf13d412c5212448950b">&#9670;&nbsp;</a></span>Eigendecomposition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4621,7 +4613,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::tuple&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; &gt;::type Linear::Eigendecomposition </td>
+          <td class="memname">std::tuple&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; Linear::Eigendecomposition </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -4641,8 +4633,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="ae76e997c89ba14102a6f292866cad3b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae76e997c89ba14102a6f292866cad3b0">&#9670;&nbsp;</a></span>EigenvectorHelper()</h2>
+<a id="aabd5e5b53cac430776fe625ce7744b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd5e5b53cac430776fe625ce7744b13">&#9670;&nbsp;</a></span>EigenvectorHelper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4650,7 +4642,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; &gt;::type Linear::EigenvectorHelper </td>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; Linear::EigenvectorHelper </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -4671,8 +4663,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="ae38c42b559a32d9061616a18fa360053"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae38c42b559a32d9061616a18fa360053">&#9670;&nbsp;</a></span>EntrywiseDivision()</h2>
+<a id="a54b0a5444a9eee2e648e14376fd25120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b0a5444a9eee2e648e14376fd25120">&#9670;&nbsp;</a></span>EntrywiseDivision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4680,7 +4672,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==P||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(N==Q||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::EntrywiseDivision </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::EntrywiseDivision </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -4711,8 +4703,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_
 
 </div>
 </div>
-<a id="a8332a6dc23b76e0416c6587688b149b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8332a6dc23b76e0416c6587688b149b7">&#9670;&nbsp;</a></span>EntrywiseNorm()</h2>
+<a id="aac5f3c568186586145e8702ea3d5ab60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac5f3c568186586145e8702ea3d5ab60">&#9670;&nbsp;</a></span>EntrywiseNorm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4728,8 +4720,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>p</em> = <code>T(2)</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramname"><em>p</em> = <code>2</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4751,8 +4743,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a0901d6ab693df7f4d1bb1e27fde92319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0901d6ab693df7f4d1bb1e27fde92319">&#9670;&nbsp;</a></span>EntrywiseProduct()</h2>
+<a id="aa933b89808eb172f86b9c2265f6379b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa933b89808eb172f86b9c2265f6379b4">&#9670;&nbsp;</a></span>EntrywiseProduct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4760,7 +4752,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==P||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(N==Q||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::EntrywiseProduct </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::EntrywiseProduct </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -4955,7 +4947,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 </div><div class="memdoc">
 
 <p>Computes the Frobenius norm. </p>
-<p>This is identical to the entrywise 2-norm. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is identical EntrywiseNorm(A,2). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </td></tr>
   </table>
@@ -5209,8 +5201,8 @@ Matrix2d B = GramSchmidt(A);
 
 </div>
 </div>
-<a id="a4be383eb3716a11c987ff3e54238fca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be383eb3716a11c987ff3e54238fca8">&#9670;&nbsp;</a></span>Hessenberg()</h2>
+<a id="a3ec2551c2f8d6c875e695baf1adee679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ec2551c2f8d6c875e695baf1adee679">&#9670;&nbsp;</a></span>Hessenberg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5218,7 +5210,7 @@ Matrix2d B = GramSchmidt(A);
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; &gt;::type Linear::Hessenberg </td>
+          <td class="memname">std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; Linear::Hessenberg </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -5430,8 +5422,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a0e9be843fcf339cd408ee4126bbcfe1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e9be843fcf339cd408ee4126bbcfe1d">&#9670;&nbsp;</a></span>InverseIteration()</h2>
+<a id="aa72afaa60a8a2c5a12a9ad62b25fe274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72afaa60a8a2c5a12a9ad62b25fe274">&#9670;&nbsp;</a></span>InverseIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5439,7 +5431,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,P&gt; &gt;::type Linear::InverseIteration </td>
+          <td class="memname">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,P&gt; &gt;::type Linear::InverseIteration </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -5977,8 +5969,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags1, size_t P, size
 
 </div>
 </div>
-<a id="a0fd4ac1018f6e2a00cce4286c1e16f06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fd4ac1018f6e2a00cce4286c1e16f06">&#9670;&nbsp;</a></span>LDL()</h2>
+<a id="ac447da29fa17099383a35795724dc608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac447da29fa17099383a35795724dc608">&#9670;&nbsp;</a></span>LDL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5986,7 +5978,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags1, size_t P, size
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; &gt;::type Linear::LDL </td>
+          <td class="memname">std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; Linear::LDL </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -6006,8 +5998,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a85ff45739b41a1c0fcc45b899b1d646b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85ff45739b41a1c0fcc45b899b1d646b">&#9670;&nbsp;</a></span>LL()</h2>
+<a id="a0ef85ac416f2414a3621ece9854a90af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef85ac416f2414a3621ece9854a90af">&#9670;&nbsp;</a></span>LL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6015,7 +6007,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::LL </td>
+          <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; Linear::LL </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -6668,8 +6660,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ada0f7fca4f12be3eb4abd7d8988529f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada0f7fca4f12be3eb4abd7d8988529f5">&#9670;&nbsp;</a></span>Norm()</h2>
+<a id="ab1a0827063fcbfb3f14c4c1e0c8d4177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a0827063fcbfb3f14c4c1e0c8d4177">&#9670;&nbsp;</a></span>Norm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6685,8 +6677,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>p</em> = <code>T(2)</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramname"><em>p</em> = <code>2</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -6708,96 +6700,34 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a2833583ec9ec44a15965ecf9b2308779"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2833583ec9ec44a15965ecf9b2308779">&#9670;&nbsp;</a></span>Normalize() <span class="overload">[1/3]</span></h2>
+<a id="aa335597bce965c73014808d379a5e4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa335597bce965c73014808d379a5e4ef">&#9670;&nbsp;</a></span>Normalize()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , size_t N&gt; </div>
+template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;T,N&gt; Linear::Normalize </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::Normalize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Normalize a row vector, \(v=\frac{v}{\|v\|}\). </p>
-<p>Example: w is the row vector {1/5, 2/5} </p><pre class="fragment">RowVector2d v = {1, 2};
-RowVector2d w = Normalize(v);
-</pre> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>Row vector </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Row vector </dd></dl>
-
-</div>
-</div>
-<a id="a035ee67c5ff46f63bfb95946484d73c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a035ee67c5ff46f63bfb95946484d73c6">&#9670;&nbsp;</a></span>Normalize() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,1&gt; Linear::Normalize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Normalize a vector of size 1. </p>
-<p>Example: w is the vector {1} </p><pre class="fragment">Vector&lt;double,1&gt; v = {2};
-Vector&lt;double,1&gt; w = Normalize(v);
-</pre> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>Vector of size 1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Vector </dd></dl>
-
-</div>
-</div>
-<a id="a2f787cbae083a9bc4876bd7e023bd113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f787cbae083a9bc4876bd7e023bd113">&#9670;&nbsp;</a></span>Normalize() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t N&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; Linear::Normalize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Normalize a column vector, \(v=\frac{v}{\|v\|}\). </p>
+<p>Normalize a vector, \(v=\frac{v}{\|v\|}\). </p>
 <p>Example: w is the column vector {1/5, 2/5} </p><pre class="fragment">Vector2d v = {1, 2};
 Vector2d w = Normalize(v);
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Column vector </td></tr>
+    <tr><td class="paramname">v</td><td>Row/column vector </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Column vector </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Column vector if v is a column vector, otherwise row vector. </dd></dl>
 
 </div>
 </div>
@@ -7083,8 +7013,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ad20475cddebd8e9966b791b36e232e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20475cddebd8e9966b791b36e232e36">&#9670;&nbsp;</a></span>PowerIteration()</h2>
+<a id="a780523f50686e31b35ff8f45223ac4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780523f50686e31b35ff8f45223ac4bb">&#9670;&nbsp;</a></span>PowerIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7092,7 +7022,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,P&gt; &gt; &gt;::type Linear::PowerIteration </td>
+          <td class="memname">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,P&gt; &gt; &gt;::type Linear::PowerIteration </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -7131,8 +7061,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </
 
 </div>
 </div>
-<a id="ad8870ec51dc242807fd279a5d456990f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8870ec51dc242807fd279a5d456990f">&#9670;&nbsp;</a></span>Proj()</h2>
+<a id="a77d94e43e14353375a9623891abf7674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d94e43e14353375a9623891abf7674">&#9670;&nbsp;</a></span>Proj()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7140,7 +7070,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==1||N==1||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)&amp;&amp;(P==1||Q==1||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||Q==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)),<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,P,Q,Flags2&gt; &gt;::type Linear::Proj </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,P,Q,Flags2&gt; Linear::Proj </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -7175,8 +7105,8 @@ Vector2d w = Proj(v,onto);
 
 </div>
 </div>
-<a id="acbadd51ca20be7f6be44e552d2104218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbadd51ca20be7f6be44e552d2104218">&#9670;&nbsp;</a></span>QR()</h2>
+<a id="ad3420e34ecc066e096dab30ee75140d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3420e34ecc066e096dab30ee75140d1">&#9670;&nbsp;</a></span>QR()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7184,7 +7114,7 @@ Vector2d w = Proj(v,onto);
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M&gt;=N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt; &gt;::type Linear::QR </td>
+          <td class="memname">std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt; Linear::QR </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -7590,8 +7520,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="ab2a14f903b5a7da4113aa3884816e773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2a14f903b5a7da4113aa3884816e773">&#9670;&nbsp;</a></span>Schur()</h2>
+<a id="a00b63e8a885faf0f6636bbc94e7d1154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b63e8a885faf0f6636bbc94e7d1154">&#9670;&nbsp;</a></span>Schur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7599,7 +7529,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; &gt;::type Linear::Schur </td>
+          <td class="memname">std::pair&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; Linear::Schur </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -8090,8 +8020,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4c7da63cf834a809af2ab3ac6de19793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c7da63cf834a809af2ab3ac6de19793">&#9670;&nbsp;</a></span>Solve()</h2>
+<a id="a5fc98fb00f4d366b8879c67c09e2bed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc98fb00f4d366b8879c67c09e2bed6">&#9670;&nbsp;</a></span>Solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8099,7 +8029,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; Linear::Solve </td>
+          <td class="memname">std::enable_if&lt;(M==P||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt;::type Linear::Solve </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -8818,8 +8748,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a42484731bac25fd916a8d9785384311a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42484731bac25fd916a8d9785384311a">&#9670;&nbsp;</a></span>Trace()</h2>
+<a id="a7beb9c27d40c85c11d4bfc892f557258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7beb9c27d40c85c11d4bfc892f557258">&#9670;&nbsp;</a></span>Trace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8827,7 +8757,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; &gt;::type Linear::Trace </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; Linear::Trace </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -8936,8 +8866,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="adff372de27f66c561383c891ca004a4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adff372de27f66c561383c891ca004a4b">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
+<a id="ad7e151231674c5864c1aac8f7ab752ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e151231674c5864c1aac8f7ab752ac">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8945,7 +8875,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; &gt;::type Linear::WielandtDeflationAlgorithm </td>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt;,<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; &gt; &gt; Linear::WielandtDeflationAlgorithm </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>

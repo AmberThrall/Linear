@@ -22,7 +22,7 @@ namespace Linear {
      * @return Pair \f$(\lambda,v)\f$ such that \f$Av\approx \lambda v\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)&&(P==N||P==Dynamic||N==Dynamic)), std::pair<Complex<T>,Vector<T,P>>>::type
+    typename std::enable_if<(P==N||P==Dynamic||N==Dynamic), std::pair<Complex<T>,Vector<T,P>>>::type
     PowerIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, unsigned int max_iterations) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
@@ -64,7 +64,7 @@ namespace Linear {
      * @return Vector v such that \f$Av\approx\lambda v\f$ where \f$\lambda\f$ is the eigenvalue of A closest to mu
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)&&(P==N||P==Dynamic||N==Dynamic)), Vector<T,P>>::type
+    typename std::enable_if<(P==N||P==Dynamic||N==Dynamic), Vector<T,P>>::type
     InverseIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, Complex<T> mu, unsigned int max_iterations) {
         if (!IsSquare(A))
             throw "Eigenvectors are only defined for square matrices.";
@@ -93,8 +93,7 @@ namespace Linear {
      * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
+    std::vector<std::pair<Complex<T>,Vector<T,N>>> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
@@ -149,8 +148,7 @@ namespace Linear {
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    EigenvectorHelper(const Matrix<T,M,N,Flags>& A, std::vector<Complex<T>> eigenvalues) {
+    std::vector<std::pair<Complex<T>,Vector<T,N>>> EigenvectorHelper(const Matrix<T,M,N,Flags>& A, std::vector<Complex<T>> eigenvalues) {
         if (!IsSquare(A))
             throw "Eigenvectors are only defined for square matrices.";
 
@@ -199,8 +197,7 @@ namespace Linear {
      * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)), std::vector<std::pair<Complex<T>,Vector<T,N>>>>::type
-    Eigen(const Matrix<T,M,N,Flags>& A) {
+    std::vector<std::pair<Complex<T>,Vector<T,N>>> Eigen(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
@@ -292,7 +289,7 @@ namespace Linear {
      * @return Coefficients of characteristic polynomial
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), Vector<T,(N==Dynamic?Dynamic:N+1)>>::type CharPoly(const Matrix<T,M,N,Flags>& A) {
+    Vector<T,(N==Dynamic?Dynamic:N+1)> CharPoly(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Characteristic polynomial is only defined for square matrices.";
 

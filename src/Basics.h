@@ -205,7 +205,7 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Trace(const Matrix<T,M,N,Flags>& A) {
+    Complex<T> Trace(const Matrix<T,M,N,Flags>& A) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the trace of a non-square matrix.";
         Complex<T> ret;

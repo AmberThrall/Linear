@@ -171,8 +171,7 @@ namespace Linear {
      * @return Complex number
      */
     template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Complex<T>>::type
-    Dot(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
+    Complex<T> Dot(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
         if (!IsVector(a) || !IsVector(b))
             throw "Dot product is only defined for vectors.";
         if (a.Size() != b.Size())
@@ -185,18 +184,20 @@ namespace Linear {
     }
 
     /**
-     * Normalize a column vector, \f$v=\frac{v}{\|v\|}\f$.
+     * Normalize a vector, \f$v=\frac{v}{\|v\|}\f$.
      *
      * Example: w is the column vector {1/5, 2/5}
      *
      *     Vector2d v = {1, 2};
      *     Vector2d w = Normalize(v);
      *
-     * @param v Column vector
-     * @return Column vector
+     * @param v Row/column vector
+     * @return Column vector if v is a column vector, otherwise row vector.
      */
-    template <typename T, size_t N>
-    Vector<T,N> Normalize(Vector<T,N> v) {
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    Matrix<T,M,N,Flags> Normalize(Matrix<T,M,N,Flags> v) {
+        if (!IsVector(v))
+            throw "Normalize is only defined for vectors.";
         T norm = Norm(v);
         if (norm < T(Tol)) {
             for (size_t i = 0; i < v.Size(); ++i)
@@ -204,37 +205,6 @@ namespace Linear {
             return v;
         }
         return v / norm;
-    }
-    /**
-     * Normalize a row vector, \f$v=\frac{v}{\|v\|}\f$.
-     *
-     * Example: w is the row vector {1/5, 2/5}
-     *
-     *     RowVector2d v = {1, 2};
-     *     RowVector2d w = Normalize(v);
-     *
-     * @param v Row vector
-     * @return Row vector
-     */
-    template <typename T, size_t N>
-    RowVector<T,N> Normalize(RowVector<T,N> v) {
-        return Transpose(Normalize(Transpose(v)));
-    }
-    /**
-     * Normalize a vector of size 1.
-     *
-     * Example: w is the vector {1}
-     *
-     *     Vector<double,1> v = {2};
-     *     Vector<double,1> w = Normalize(v);
-     *
-     * @param v Vector of size 1
-     * @return Vector
-     */
-    template <typename T>
-    Vector<T,1> Normalize(Vector<T,1> v) {
-        v[0] = T(1);
-        return v;
     }
 
     /**
@@ -253,8 +223,7 @@ namespace Linear {
      * @return Column vector if a is a column vector, otherwise row vector.
      */
     template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Matrix<T,M,N,Flags>>::type
-    Cross(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
+    Matrix<T,M,N,Flags> Cross(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
         if (!IsVector(a) || !IsVector(b) || a.Size() != 3 || b.Size() != 3)
             throw "The cross product is only defined for two 3-dimensional vectors.";
         Matrix<T,M,N,Flags> ret(a.NumRows(), a.NumColumns(),T(0));
@@ -280,8 +249,7 @@ namespace Linear {
      * @return Column vector if onto is a column vector, otherwise row vector.
      */
     template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==1||N==1||M==Dynamic||N==Dynamic)&&(P==1||Q==1||P==Dynamic||Q==Dynamic)),Matrix<T,P,Q,Flags2>>::type
-    Proj(const Matrix<T,M,N,Flags>& v, const Matrix<T,P,Q,Flags2>& onto) {
+    Matrix<T,P,Q,Flags2> Proj(const Matrix<T,M,N,Flags>& v, const Matrix<T,P,Q,Flags2>& onto) {
         if (!IsVector(v) || !IsVector(onto))
             throw "Vector projection doesn't work on matrices.";
         if (v.Size() != onto.Size())

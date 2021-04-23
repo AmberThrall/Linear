@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ceil_239',['Ceil',['../namespace_linear.html#a26128d658beb0c88da0e7f4ec89873df',1,'Linear::Ceil(T x)'],['../namespace_linear.html#a28c04c17a25d3d9160059e4a85b7b017',1,'Linear::Ceil(const Complex&lt; T &gt; &amp;z)']]],
-  ['charpoly_240',['CharPoly',['../namespace_linear.html#a4414cb128ad49755f6240ed37555926c',1,'Linear']]],
+  ['charpoly_240',['CharPoly',['../namespace_linear.html#a95ea0604ed3abba521182a7757b38009',1,'Linear']]],
   ['cofactor_241',['Cofactor',['../namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26',1,'Linear']]],
   ['columnspace_242',['ColumnSpace',['../namespace_linear.html#a019cb48619ba9090d5fe63b679b34abd',1,'Linear']]],
   ['companion_243',['Companion',['../namespace_linear.html#abbd0342fc6b8cda1983011b5e599f188',1,'Linear::Companion(const Vector&lt; T, N &gt; &amp;c)'],['../namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23',1,'Linear::Companion(const RowVector&lt; T, N &gt; &amp;c)']]],
@@ -13,7 +13,7 @@ var searchData=
   ['cosh_249',['Cosh',['../namespace_linear.html#a7de61fce0cea8a9c9169356cae376712',1,'Linear::Cosh(T x)'],['../namespace_linear.html#aad3bcb2f2fdc3bb222d8fe89d28ce33d',1,'Linear::Cosh(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a54c2dfd6c12c35d521324d9f91f4345e',1,'Linear::Cosh(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['cot_250',['Cot',['../namespace_linear.html#a63d48a8ad05d5500c095ed69f7e63341',1,'Linear::Cot(T x)'],['../namespace_linear.html#a0271b26e5f5cf5ef2e2975045bcc503b',1,'Linear::Cot(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a2d672c7fb7cfc12949f63260d32bd200',1,'Linear::Cot(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['coth_251',['Coth',['../namespace_linear.html#aafe5fa65c5ab3e1731c88b71922f6399',1,'Linear::Coth(T x)'],['../namespace_linear.html#a9c85fab645f898c747c41db7f3bd4cbe',1,'Linear::Coth(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a4403e9cdedd02570226012f907f02739',1,'Linear::Coth(Matrix&lt; T, M, N, Flags &gt; A)']]],
-  ['cross_252',['Cross',['../namespace_linear.html#abd7e523eb66cbab4b39972cf96c0dff7',1,'Linear']]],
+  ['cross_252',['Cross',['../namespace_linear.html#a1d7c9f59b6085207a5a193a64513fb0e',1,'Linear']]],
   ['csc_253',['Csc',['../namespace_linear.html#a9778a4ee9093c9dc6520ccad636c0b27',1,'Linear::Csc(T x)'],['../namespace_linear.html#a834e1a6349d453345f6c1fd26759edb5',1,'Linear::Csc(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a6edf4fd89e3add9a9c60e089823a69e2',1,'Linear::Csc(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['csch_254',['Csch',['../namespace_linear.html#ada6fafbf85dfaf886b425163481ee203',1,'Linear::Csch(T x)'],['../namespace_linear.html#a7baedd679d0517a648daaed43450a131',1,'Linear::Csch(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#ac7b7908bad9525432774828d859bb3d6',1,'Linear::Csch(Matrix&lt; T, M, N, Flags &gt; A)']]]
 ];

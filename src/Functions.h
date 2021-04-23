@@ -13,8 +13,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==P||M==Dynamic||P==Dynamic)&&(N==Q||N==Dynamic||Q==Dynamic)), Matrix<T,M,N,Flags>>::type
-    EntrywiseProduct(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
+    Matrix<T,M,N,Flags> EntrywiseProduct(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
         if (A.NumRows() != B.NumRows() || A.NumColumns() != B.NumColumns())
             throw "Cannot perform entrywise product when matrices have varying sizes.";
 
@@ -32,8 +31,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==P||M==Dynamic||P==Dynamic)&&(N==Q||N==Dynamic||Q==Dynamic)), Matrix<T,M,N,Flags>>::type
-    EntrywiseDivision(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
+    Matrix<T,M,N,Flags> EntrywiseDivision(const Matrix<T,M,N,Flags>& A, const Matrix<T,P,Q,Flags2>& B) {
         if (A.NumRows() != B.NumRows() || A.NumColumns() != B.NumColumns())
             throw "Cannot perform entrywise division when matrices have varying sizes.";
 
@@ -56,13 +54,11 @@ namespace Linear {
      * @return Real number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T Norm(const Matrix<T,M,N,Flags>& A, T p = T(2)) {
+    T Norm(const Matrix<T,M,N,Flags>& A, size_t p = 2) {
         if (IsVector(A)) {
             return EntrywiseNorm(A, p);
         }
-        if (p != T(1) && p != T(2))
-            throw "Only p=1 and p=2 are supported for matrix norm.";
-        if (p == T(1)) {
+        if (p == 1) {
             T ret = T(0);
             for (size_t j = 0; j < A.NumColumns(); ++j) {
                 T sum = T(0);
@@ -74,8 +70,8 @@ namespace Linear {
             }
             return ret;
         }
-        else if (p == T(2)) {
-            Vector<T,N> b = Random<T,N,1>(A.NumRows(),1);
+        else if (p == 2) {
+            Vector<T,N> b = Random<T>(A.NumRows(),1);
             std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(ConjugateTranspose(A)*A, b, 25);
             return Sqrt(pair.first).Re;
         }
@@ -89,23 +85,23 @@ namespace Linear {
      * @return Real number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    T EntrywiseNorm(const Matrix<T,M,N,Flags>& A, T p = T(2)) {
-        T outerSum = T(0);
+    T EntrywiseNorm(const Matrix<T,M,N,Flags>& A, size_t p = 2) {
+        T sum = T(0);
         for (size_t j = 0; j < A.NumColumns(); ++j) {
             for (size_t i = 0; i < A.NumRows(); ++i) {
-                outerSum += Pow(Abs(A(i,j)), T(p));
+                sum += Pow(Abs(A(i,j)), T(p));
             }
         }
-        return Pow(outerSum, 1/T(p));
+        return Pow(sum, 1/T(p));
     }
     /**
-     * Computes the Frobenius norm. This is identical to the entrywise 2-norm.
+     * Computes the Frobenius norm. This is identical EntrywiseNorm(A,2).
      * @param A MxN Matrix
      * @return Real number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     T FrobeniusNorm(const Matrix<T,M,N,Flags>& A) {
-        return EntrywiseNorm(A, 2,  2);
+        return EntrywiseNorm(A, 2);
     }
     /**
      * Computes the max norm \f$\max_{ij}|a_{ij}|\f$.

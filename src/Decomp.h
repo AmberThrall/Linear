@@ -80,7 +80,7 @@ namespace Linear {
      * @return Pair (Q,R)
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M>=N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,Matrix<T,M,N,Flags>>>::type QR(const Matrix<T,M,N,Flags>& A) {
+    std::pair<SquareMatrix<T,N,Flags>,Matrix<T,M,N,Flags>> QR(const Matrix<T,M,N,Flags>& A) {
         if (A.NumRows() < A.NumColumns())
             throw "QR Decomposition is defined for m-by-n matrices where m>=n.";
 
@@ -118,7 +118,7 @@ namespace Linear {
      * @return L
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), SquareMatrix<T,N,Flags>>::type LL(const Matrix<T,M,N,Flags>& A) {
+    SquareMatrix<T,N,Flags> LL(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "LL* Decomposition is only defined for square matrices.";
 
@@ -148,7 +148,7 @@ namespace Linear {
      * @return Pair (L, D)
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type LDL(const Matrix<T,M,N,Flags>& A) {
+    std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> LDL(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "LDL* Decomposition is only defined for square matrices.";
 
@@ -180,8 +180,7 @@ namespace Linear {
      * @return Tuple \f$(V, D, V^{-1})\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
-    Eigendecomposition(const Matrix<T,M,N,Flags>& A) {
+    std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> Eigendecomposition(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigendecomposition is only defined for square matrices.";
 
@@ -287,8 +286,7 @@ namespace Linear {
      * @return Pair (Q,H)
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
-    Hessenberg(const Matrix<T,M,N,Flags>& A) {
+    std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> Hessenberg(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Hessenberg decomposition requires a squire matrix.";
 
@@ -316,8 +314,7 @@ namespace Linear {
      * @return Pair (Q,U)
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic), std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type
-    Schur(const Matrix<T,M,N,Flags>& A, size_t max_iterations = 100) {
+    std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> Schur(const Matrix<T,M,N,Flags>& A, size_t max_iterations = 100) {
         if (!IsSquare(A))
             throw "Schur decomposition requires a squire matrix.";
 

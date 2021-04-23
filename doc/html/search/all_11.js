@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scalerow_162',['ScaleRow',['../class_linear_1_1_matrix.html#a8a9592c13cc33512d4f8e02069b8fbaa',1,'Linear::Matrix']]],
-  ['schur_163',['Schur',['../namespace_linear.html#ab2a14f903b5a7da4113aa3884816e773',1,'Linear']]],
+  ['schur_163',['Schur',['../namespace_linear.html#a00b63e8a885faf0f6636bbc94e7d1154',1,'Linear']]],
   ['sec_164',['Sec',['../namespace_linear.html#a8d218ed7ea9b9908028d43f441b17b01',1,'Linear::Sec(T x)'],['../namespace_linear.html#ad799370689472fbdaa73efe88026d9af',1,'Linear::Sec(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a524246623bbc3c539347d0708f3647cb',1,'Linear::Sec(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['sech_165',['Sech',['../namespace_linear.html#a8abc4ddede2055a8d6e841d0ec7522f2',1,'Linear::Sech(T x)'],['../namespace_linear.html#a5f2672a4041a92c4dd3c7089dcba81d0',1,'Linear::Sech(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#abd428399c8be198159c37cc45263bb28',1,'Linear::Sech(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['seedrandom_166',['SeedRandom',['../namespace_linear.html#ab5e31f5f6b536b89379af549abdeb1a6',1,'Linear']]],
@@ -12,7 +12,7 @@ var searchData=
   ['sinh_171',['Sinh',['../namespace_linear.html#a93736f8baba80b849a536da70b137921',1,'Linear::Sinh(T x)'],['../namespace_linear.html#a44c4fb92aa85fb95bc4c162334b81247',1,'Linear::Sinh(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#a7fa5cc41cbe113c787828675baba1069',1,'Linear::Sinh(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['size_172',['Size',['../class_linear_1_1_matrix.html#af6d00ed63d7d272d004544c78b4ac908',1,'Linear::Matrix']]],
   ['size_5ft_173',['size_t',['../namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520',1,'Linear']]],
-  ['solve_174',['Solve',['../namespace_linear.html#a4c7da63cf834a809af2ab3ac6de19793',1,'Linear']]],
+  ['solve_174',['Solve',['../namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6',1,'Linear']]],
   ['sqrt_175',['Sqrt',['../namespace_linear.html#a5327d3eb01ec79d93b96dfa8f346b200',1,'Linear::Sqrt(T x)'],['../namespace_linear.html#a9c410068fb3174ea9cb431fb19bbaf8d',1,'Linear::Sqrt(const Complex&lt; T &gt; &amp;z)'],['../namespace_linear.html#ac8aa955b799bef4978cc951b10fa42ca',1,'Linear::Sqrt(Matrix&lt; T, M, N, Flags &gt; A)']]],
   ['squarematrix_176',['SquareMatrix',['../namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8',1,'Linear']]],
   ['submatrix_177',['SubMatrix',['../namespace_linear.html#aa7de4ca66fd8eb12c9855082a5df18db',1,'Linear::SubMatrix(Matrix&lt; T, M, N, Flags &gt; A, size_t i=0, size_t j=0)'],['../namespace_linear.html#a84183e0067bb201a95e286de8e6b4ba6',1,'Linear::SubMatrix(Matrix&lt; T, M, N, Flags &gt; A, size_t nrows, size_t ncols, size_t i=0, size_t j=0)']]],

@@ -115,7 +115,7 @@ using \mbox{\hyperlink{namespace_linear_a1b1b5a12d11bdb75ae13a725c9889f5e}{Row\+
 \begin{DoxyCompactList}\small\item\em Returns the NxM matrix $B=A^*$ defined by $b_{ij}=\overline{a_{ji}}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0e8389f19477fc0de6573098807b16e6}{RREF}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ A)
 \begin{DoxyCompactList}\small\item\em Computes A\textquotesingle{}s reduced row echelon form. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N)$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a42484731bac25fd916a8d9785384311a}{Trace}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{namespace_linear_a7beb9c27d40c85c11d4bfc892f557258}{Trace}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the trace of a square matrix $\sum_{i=0}^{N-1}a_{ii}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{namespace_linear_ac742a1d3567f0f56ad6d2196d2960e85}{Determinant}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the determinant of a square matrix defined by $\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})$ where $A_{0i}$ is the (N-\/1)x(N-\/1) matrix obtained by deleting the 0th row and ith column. \end{DoxyCompactList}\item 
@@ -351,41 +351,41 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_aa26b079aa55163415073496c04c0e7f9}{LUP}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ A)
 \begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M $>$=N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_acbadd51ca20be7f6be44e552d2104218}{QR}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}{QR}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a85ff45739b41a1c0fcc45b899b1d646b}{LL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}{LL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the LL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a0fd4ac1018f6e2a00cce4286c1e16f06}{LDL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ac447da29fa17099383a35795724dc608}{LDL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the LDL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a81ef5e912b8116ddd5ebf5429e67c127}{Eigendecomposition}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}{Eigendecomposition}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the Eigendecomposition of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, M, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a40ac3a75e4fa4b638b92bf5ed828b96f}{SVD}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the SVD decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a4be383eb3716a11c987ff3e54238fca8}{Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}{Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Reduces the matrix A to Hessenberg. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ab2a14f903b5a7da4113aa3884816e773}{Schur}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} max\+\_\+iterations=100)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}{Schur}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} max\+\_\+iterations=100)
 \begin{DoxyCompactList}\small\item\em Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that $A=QUQ^*$ where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ad20475cddebd8e9966b791b36e232e36}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a0e9be843fcf339cd408ee4126bbcfe1d}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs inverse iteration on A with guess mu. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adff372de27f66c561383c891ca004a4b}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
 \begin{DoxyCompactList}\small\item\em Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae76e997c89ba14102a6f292866cad3b0}{Eigenvector\+Helper}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ eigenvalues)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}{Eigenvector\+Helper}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ eigenvalues)
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a2991d59c0fba2f1fda7e85bea8f38def}{Eigen}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}{Eigen}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Calculates all eigenpairs of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}{Vieta\+Formula\+Helper}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} data\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} start, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} end, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} index, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} k, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&sum, const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&roots)
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1)$>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a4414cb128ad49755f6240ed37555926c}{Char\+Poly}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1)$>$ \mbox{\hyperlink{namespace_linear_a95ea0604ed3abba521182a7757b38009}{Char\+Poly}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the characteristic polynomial. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(N==Q$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a0901d6ab693df7f4d1bb1e27fde92319}{Entrywise\+Product}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&B)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aa933b89808eb172f86b9c2265f6379b4}{Entrywise\+Product}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&B)
 \begin{DoxyCompactList}\small\item\em Computes the matrix $C$ defined by $c_{ij}=a_{ij}b_{ij}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(N==Q$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae38c42b559a32d9061616a18fa360053}{Entrywise\+Division}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&B)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}{Entrywise\+Division}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&B)
 \begin{DoxyCompactList}\small\item\em Computes the matrix $C$ defined by $c_{ij}=a_{ij}/b_{ij}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_ada0f7fca4f12be3eb4abd7d8988529f5}{Norm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, T p=T(2))
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_ab1a0827063fcbfb3f14c4c1e0c8d4177}{Norm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} p=2)
 \begin{DoxyCompactList}\small\item\em If $A$ is a vector, it computes the entrywise vector p-\/norm $\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_a8332a6dc23b76e0416c6587688b149b7}{Entrywise\+Norm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, T p=T(2))
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_aac5f3c568186586145e8702ea3d5ab60}{Entrywise\+Norm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} p=2)
 \begin{DoxyCompactList}\small\item\em Computes the entrywise p-\/norm $\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\T \mbox{\hyperlink{namespace_linear_a538d89df01ac745502b47c24f155fd6b}{Frobenius\+Norm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the Frobenius norm. \end{DoxyCompactList}\item 
@@ -477,7 +477,7 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes a basis for the column space of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a821339a5ae70e69525e21978c45c1262}{Rank}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s column space. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a4c7da63cf834a809af2ab3ac6de19793}{Solve}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&b)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}{Solve}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Solves the matrix equation Ax=b for x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a5afdda12123cb445b1c801e85ba1ebe7}{Is\+Vector}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Checks if a matrix is a row or column vector. \end{DoxyCompactList}\item 
@@ -515,17 +515,13 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Handles subvector in the size 1 case. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, \mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}} $>$ \mbox{\hyperlink{namespace_linear_a932c6583bdc57530a86b4c5ee6f74f2f}{Sub\+Vector}} (const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, 1 $>$ \&v, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} size, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} off=0)
 \begin{DoxyCompactList}\small\item\em Handles subvector in the size 1 case. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a557b92b1646e47604508e9121d807639}{Dot}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&b)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{namespace_linear_aea9824e674e82f6dbaa0435514e64894}{Dot}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Computes the dot product of two vectors a and b both of size N, $\sum{i=0}^{N-1}\overline{a_i}b_i$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a2f787cbae083a9bc4876bd7e023bd113}{Normalize}} (\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ v)
-\begin{DoxyCompactList}\small\item\em Normalize a column vector, $v=\frac{v}{\|v\|}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\\mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a2833583ec9ec44a15965ecf9b2308779}{Normalize}} (\mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$ v)
-\begin{DoxyCompactList}\small\item\em Normalize a row vector, $v=\frac{v}{\|v\|}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, 1 $>$ \mbox{\hyperlink{namespace_linear_a035ee67c5ff46f63bfb95946484d73c6}{Normalize}} (\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, 1 $>$ v)
-\begin{DoxyCompactList}\small\item\em Normalize a vector of size 1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_abd7e523eb66cbab4b39972cf96c0dff7}{Cross}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&b)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aa335597bce965c73014808d379a5e4ef}{Normalize}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ v)
+\begin{DoxyCompactList}\small\item\em Normalize a vector, $v=\frac{v}{\|v\|}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a1d7c9f59b6085207a5a193a64513fb0e}{Cross}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Computes the cross product of two vectors a and b both of length 3. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ad8870ec51dc242807fd279a5d456990f}{Proj}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&v, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&onto)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \mbox{\hyperlink{namespace_linear_a77d94e43e14353375a9623891abf7674}{Proj}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&v, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&onto)
 \begin{DoxyCompactList}\small\item\em Computes the vector projection $\proj_{onto}v = \frac{Dot(onto,v)}{Dot(onto,onto)}onto$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\std\+::vector$<$ \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a52882b24b8703ab5565cec02174f5f43}{Gram\+Schmidt}} (const std\+::vector$<$ \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$$>$ \&v)
 \begin{DoxyCompactList}\small\item\em Performs Gram-\/\+Schmidt on a list of column vectors. \end{DoxyCompactList}\item 
@@ -1813,12 +1809,12 @@ Returns the real number $\lceil x\rceil$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a4414cb128ad49755f6240ed37555926c}\label{namespace_linear_a4414cb128ad49755f6240ed37555926c}} 
+\mbox{\Hypertarget{namespace_linear_a95ea0604ed3abba521182a7757b38009}\label{namespace_linear_a95ea0604ed3abba521182a7757b38009}} 
 \index{Linear@{Linear}!CharPoly@{CharPoly}}
 \index{CharPoly@{CharPoly}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{CharPoly()}{CharPoly()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1)$>$ $>$\+::type Linear\+::\+Char\+Poly (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1)$>$ Linear\+::\+Char\+Poly (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -2259,12 +2255,12 @@ Returns the real number $\coth x = 1/\tanh x$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_abd7e523eb66cbab4b39972cf96c0dff7}\label{namespace_linear_abd7e523eb66cbab4b39972cf96c0dff7}} 
+\mbox{\Hypertarget{namespace_linear_a1d7c9f59b6085207a5a193a64513fb0e}\label{namespace_linear_a1d7c9f59b6085207a5a193a64513fb0e}} 
 \index{Linear@{Linear}!Cross@{Cross}}
 \index{Cross@{Cross}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Cross()}{Cross()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
-std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})),\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$\+::type Linear\+::\+Cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{b }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ Linear\+::\+Cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -2582,12 +2578,12 @@ Computes the NxN diagonal matrix.
 \begin{DoxyReturn}{Returns}
 NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a557b92b1646e47604508e9121d807639}\label{namespace_linear_a557b92b1646e47604508e9121d807639}} 
+\mbox{\Hypertarget{namespace_linear_aea9824e674e82f6dbaa0435514e64894}\label{namespace_linear_aea9824e674e82f6dbaa0435514e64894}} 
 \index{Linear@{Linear}!Dot@{Dot}}
 \index{Dot@{Dot}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Dot()}{Dot()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
-std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})),\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ $>$\+::type Linear\+::\+Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{b }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ Linear\+::\+Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -2609,12 +2605,12 @@ Complexd z = Dot(a,b);
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a2991d59c0fba2f1fda7e85bea8f38def}\label{namespace_linear_a2991d59c0fba2f1fda7e85bea8f38def}} 
+\mbox{\Hypertarget{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}\label{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}} 
 \index{Linear@{Linear}!Eigen@{Eigen}}
 \index{Eigen@{Eigen}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Eigen()}{Eigen()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ $>$\+::type Linear\+::\+Eigen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Eigen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -2628,12 +2624,12 @@ This function handles various cases. First, if the matrix is either upper or low
 \begin{DoxyReturn}{Returns}
 List of pairs $(\lambda_i,v_i)$ such that $Av_i\approx \lambda v_i$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a81ef5e912b8116ddd5ebf5429e67c127}\label{namespace_linear_a81ef5e912b8116ddd5ebf5429e67c127}} 
+\mbox{\Hypertarget{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}\label{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}} 
 \index{Linear@{Linear}!Eigendecomposition@{Eigendecomposition}}
 \index{Eigendecomposition@{Eigendecomposition}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Eigendecomposition()}{Eigendecomposition()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::tuple$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ $>$\+::type Linear\+::\+Eigendecomposition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::tuple$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Eigendecomposition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -2647,19 +2643,19 @@ This finds NxN matrix V and NxN matrix D such that $A=VDV^{-1}$, D is diagonal w
 \begin{DoxyReturn}{Returns}
 Tuple $(V, D, V^{-1})$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ae76e997c89ba14102a6f292866cad3b0}\label{namespace_linear_ae76e997c89ba14102a6f292866cad3b0}} 
+\mbox{\Hypertarget{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}\label{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}} 
 \index{Linear@{Linear}!EigenvectorHelper@{EigenvectorHelper}}
 \index{EigenvectorHelper@{EigenvectorHelper}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{EigenvectorHelper()}{EigenvectorHelper()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ $>$\+::type Linear\+::\+Eigenvector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$}]{eigenvalues }\end{DoxyParamCaption})}
+std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Eigenvector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$}]{eigenvalues }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespace_linear_ae38c42b559a32d9061616a18fa360053}\label{namespace_linear_ae38c42b559a32d9061616a18fa360053}} 
+\mbox{\Hypertarget{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}\label{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}} 
 \index{Linear@{Linear}!EntrywiseDivision@{EntrywiseDivision}}
 \index{EntrywiseDivision@{EntrywiseDivision}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{EntrywiseDivision()}{EntrywiseDivision()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
-std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(N==Q$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$\+::type Linear\+::\+Entrywise\+Division (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{B }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ Linear\+::\+Entrywise\+Division (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{B }\end{DoxyParamCaption})}
 
 
 
@@ -2675,12 +2671,12 @@ If $M\ne P$ or $N\ne Q$ an exception is thrown.
 \begin{DoxyReturn}{Returns}
 MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a8332a6dc23b76e0416c6587688b149b7}\label{namespace_linear_a8332a6dc23b76e0416c6587688b149b7}} 
+\mbox{\Hypertarget{namespace_linear_aac5f3c568186586145e8702ea3d5ab60}\label{namespace_linear_aac5f3c568186586145e8702ea3d5ab60}} 
 \index{Linear@{Linear}!EntrywiseNorm@{EntrywiseNorm}}
 \index{EntrywiseNorm@{EntrywiseNorm}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{EntrywiseNorm()}{EntrywiseNorm()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-T Linear\+::\+Entrywise\+Norm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{T}]{p = {\ttfamily T(2)} }\end{DoxyParamCaption})}
+T Linear\+::\+Entrywise\+Norm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{p = {\ttfamily 2} }\end{DoxyParamCaption})}
 
 
 
@@ -2696,12 +2692,12 @@ Computes the entrywise p-\/norm $\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^
 \begin{DoxyReturn}{Returns}
 Real number 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a0901d6ab693df7f4d1bb1e27fde92319}\label{namespace_linear_a0901d6ab693df7f4d1bb1e27fde92319}} 
+\mbox{\Hypertarget{namespace_linear_aa933b89808eb172f86b9c2265f6379b4}\label{namespace_linear_aa933b89808eb172f86b9c2265f6379b4}} 
 \index{Linear@{Linear}!EntrywiseProduct@{EntrywiseProduct}}
 \index{EntrywiseProduct@{EntrywiseProduct}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{EntrywiseProduct()}{EntrywiseProduct()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
-std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(N==Q$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$\+::type Linear\+::\+Entrywise\+Product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{B }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ Linear\+::\+Entrywise\+Product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{B }\end{DoxyParamCaption})}
 
 
 
@@ -2823,7 +2819,7 @@ T Linear\+::\+Frobenius\+Norm (\begin{DoxyParamCaption}\item[{const \mbox{\hyper
 
 Computes the Frobenius norm. 
 
-This is identical to the entrywise 2-\/norm. 
+This is identical Entrywise\+Norm(\+A,2). 
 \begin{DoxyParams}{Parameters}
 {\em A} & MxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
 \hline
@@ -2987,12 +2983,12 @@ Matrix2d B = GramSchmidt(A);
 \begin{DoxyReturn}{Returns}
 MxN matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a4be383eb3716a11c987ff3e54238fca8}\label{namespace_linear_a4be383eb3716a11c987ff3e54238fca8}} 
+\mbox{\Hypertarget{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}\label{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}} 
 \index{Linear@{Linear}!Hessenberg@{Hessenberg}}
 \index{Hessenberg@{Hessenberg}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Hessenberg()}{Hessenberg()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ $>$\+::type Linear\+::\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -3138,12 +3134,12 @@ If A is not square or if A is singular, an exception is thrown.
 \begin{DoxyReturn}{Returns}
 NxN matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a0e9be843fcf339cd408ee4126bbcfe1d}\label{namespace_linear_a0e9be843fcf339cd408ee4126bbcfe1d}} 
+\mbox{\Hypertarget{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}\label{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}} 
 \index{Linear@{Linear}!InverseIteration@{InverseIteration}}
 \index{InverseIteration@{InverseIteration}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{InverseIteration()}{InverseIteration()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
-std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,P$>$ $>$\+::type Linear\+::\+Inverse\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{mu,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
+std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,P$>$ $>$\+::type Linear\+::\+Inverse\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{mu,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
 
 
 
@@ -3473,12 +3469,12 @@ Computes the (NQ)x(\+NQ) Kronecker sum defined by.
 \begin{DoxyReturn}{Returns}
 (NQ)x(\+NQ) \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a0fd4ac1018f6e2a00cce4286c1e16f06}\label{namespace_linear_a0fd4ac1018f6e2a00cce4286c1e16f06}} 
+\mbox{\Hypertarget{namespace_linear_ac447da29fa17099383a35795724dc608}\label{namespace_linear_ac447da29fa17099383a35795724dc608}} 
 \index{Linear@{Linear}!LDL@{LDL}}
 \index{LDL@{LDL}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{LDL()}{LDL()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ $>$\+::type Linear\+::\+LDL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+LDL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -3492,12 +3488,12 @@ This finds NxN matrix L and NxN matrix D such that $A=LDL^*$, L is lower unit tr
 \begin{DoxyReturn}{Returns}
 Pair (L, D) 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a85ff45739b41a1c0fcc45b899b1d646b}\label{namespace_linear_a85ff45739b41a1c0fcc45b899b1d646b}} 
+\mbox{\Hypertarget{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}\label{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}} 
 \index{Linear@{Linear}!LL@{LL}}
 \index{LL@{LL}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{LL()}{LL()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+LL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ Linear\+::\+LL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -3862,12 +3858,12 @@ Computes the floating-\/point modulus $x\bmod y$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ada0f7fca4f12be3eb4abd7d8988529f5}\label{namespace_linear_ada0f7fca4f12be3eb4abd7d8988529f5}} 
+\mbox{\Hypertarget{namespace_linear_ab1a0827063fcbfb3f14c4c1e0c8d4177}\label{namespace_linear_ab1a0827063fcbfb3f14c4c1e0c8d4177}} 
 \index{Linear@{Linear}!Norm@{Norm}}
 \index{Norm@{Norm}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Norm()}{Norm()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-T Linear\+::\+Norm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{T}]{p = {\ttfamily T(2)} }\end{DoxyParamCaption})}
+T Linear\+::\+Norm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{p = {\ttfamily 2} }\end{DoxyParamCaption})}
 
 
 
@@ -3883,71 +3879,27 @@ Otherwise it computes the matrix norm $\|A\|_p$. If p=1, it returns $\max_{j=0,\
 \begin{DoxyReturn}{Returns}
 Real number 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a2833583ec9ec44a15965ecf9b2308779}\label{namespace_linear_a2833583ec9ec44a15965ecf9b2308779}} 
+\mbox{\Hypertarget{namespace_linear_aa335597bce965c73014808d379a5e4ef}\label{namespace_linear_aa335597bce965c73014808d379a5e4ef}} 
 \index{Linear@{Linear}!Normalize@{Normalize}}
 \index{Normalize@{Normalize}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
-\mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$T,N$>$ Linear\+::\+Normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$}]{v }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ Linear\+::\+Normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$}]{v }\end{DoxyParamCaption})}
 
 
 
-Normalize a row vector, $v=\frac{v}{\|v\|}$. 
-
-Example\+: w is the row vector \{1/5, 2/5\} \begin{DoxyVerb}RowVector2d v = {1, 2};
-RowVector2d w = Normalize(v);
-\end{DoxyVerb}
- 
-\begin{DoxyParams}{Parameters}
-{\em v} & Row vector \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Row vector 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a035ee67c5ff46f63bfb95946484d73c6}\label{namespace_linear_a035ee67c5ff46f63bfb95946484d73c6}} 
-\index{Linear@{Linear}!Normalize@{Normalize}}
-\index{Normalize@{Normalize}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,1$>$ Linear\+::\+Normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, 1 $>$}]{v }\end{DoxyParamCaption})}
-
-
-
-Normalize a vector of size 1. 
-
-Example\+: w is the vector \{1\} \begin{DoxyVerb}Vector<double,1> v = {2};
-Vector<double,1> w = Normalize(v);
-\end{DoxyVerb}
- 
-\begin{DoxyParams}{Parameters}
-{\em v} & Vector of size 1 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Vector 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a2f787cbae083a9bc4876bd7e023bd113}\label{namespace_linear_a2f787cbae083a9bc4876bd7e023bd113}} 
-\index{Linear@{Linear}!Normalize@{Normalize}}
-\index{Normalize@{Normalize}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
-\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ Linear\+::\+Normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$}]{v }\end{DoxyParamCaption})}
-
-
-
-Normalize a column vector, $v=\frac{v}{\|v\|}$. 
+Normalize a vector, $v=\frac{v}{\|v\|}$. 
 
 Example\+: w is the column vector \{1/5, 2/5\} \begin{DoxyVerb}Vector2d v = {1, 2};
 Vector2d w = Normalize(v);
 \end{DoxyVerb}
  
 \begin{DoxyParams}{Parameters}
-{\em v} & Column vector \\
+{\em v} & Row/column vector \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Column vector 
+Column vector if v is a column vector, otherwise row vector. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a8435044a6bea68c8fd3dcf308127b850}\label{namespace_linear_a8435044a6bea68c8fd3dcf308127b850}} 
 \index{Linear@{Linear}!Nullity@{Nullity}}
@@ -4109,12 +4061,12 @@ Note this will not safeguard expressions such as $(-1)^{1/2}$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ad20475cddebd8e9966b791b36e232e36}\label{namespace_linear_ad20475cddebd8e9966b791b36e232e36}} 
+\mbox{\Hypertarget{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}\label{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}} 
 \index{Linear@{Linear}!PowerIteration@{PowerIteration}}
 \index{PowerIteration@{PowerIteration}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{PowerIteration()}{PowerIteration()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
-std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,P$>$ $>$ $>$\+::type Linear\+::\+Power\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
+std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,P$>$ $>$ $>$\+::type Linear\+::\+Power\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
 
 
 
@@ -4134,12 +4086,12 @@ More information\+: \href{https://en.wikipedia.org/wiki/Power_iteration}{\texttt
 \begin{DoxyReturn}{Returns}
 Pair $(\lambda,v)$ such that $Av\approx \lambda v$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ad8870ec51dc242807fd279a5d456990f}\label{namespace_linear_ad8870ec51dc242807fd279a5d456990f}} 
+\mbox{\Hypertarget{namespace_linear_a77d94e43e14353375a9623891abf7674}\label{namespace_linear_a77d94e43e14353375a9623891abf7674}} 
 \index{Linear@{Linear}!Proj@{Proj}}
 \index{Proj@{Proj}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Proj()}{Proj()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
-std\+::enable\+\_\+if$<$((M==1$\vert$$\vert$N==1$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(P==1$\vert$$\vert$Q==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})),\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,P,Q,Flags2$>$ $>$\+::type Linear\+::\+Proj (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{v,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{onto }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,P,Q,Flags2$>$ Linear\+::\+Proj (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{v,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{onto }\end{DoxyParamCaption})}
 
 
 
@@ -4161,12 +4113,12 @@ Vector2d w = Proj(v,onto);
 \begin{DoxyReturn}{Returns}
 Column vector if onto is a column vector, otherwise row vector. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_acbadd51ca20be7f6be44e552d2104218}\label{namespace_linear_acbadd51ca20be7f6be44e552d2104218}} 
+\mbox{\Hypertarget{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}\label{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}} 
 \index{Linear@{Linear}!QR@{QR}}
 \index{QR@{QR}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{QR()}{QR()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M$>$=N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$ $>$\+::type Linear\+::\+QR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$ Linear\+::\+QR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -4400,12 +4352,12 @@ Computes A\textquotesingle{}s reduced row echelon form.
 \begin{DoxyReturn}{Returns}
 MxN matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ab2a14f903b5a7da4113aa3884816e773}\label{namespace_linear_ab2a14f903b5a7da4113aa3884816e773}} 
+\mbox{\Hypertarget{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}\label{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}} 
 \index{Linear@{Linear}!Schur@{Schur}}
 \index{Schur@{Schur}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Schur()}{Schur()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$(M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ $>$\+::type Linear\+::\+Schur (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{max\+\_\+iterations = {\ttfamily 100} }\end{DoxyParamCaption})}
+std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Schur (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{max\+\_\+iterations = {\ttfamily 100} }\end{DoxyParamCaption})}
 
 
 
@@ -4719,12 +4671,12 @@ Returns the real number $\sinh x$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a4c7da63cf834a809af2ab3ac6de19793}\label{namespace_linear_a4c7da63cf834a809af2ab3ac6de19793}} 
+\mbox{\Hypertarget{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}\label{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}} 
 \index{Linear@{Linear}!Solve@{Solve}}
 \index{Solve@{Solve}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
-\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ Linear\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&}]{b }\end{DoxyParamCaption})}
+std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$\+::type Linear\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -5158,12 +5110,12 @@ Returns the real number $\tanh x$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a42484731bac25fd916a8d9785384311a}\label{namespace_linear_a42484731bac25fd916a8d9785384311a}} 
+\mbox{\Hypertarget{namespace_linear_a7beb9c27d40c85c11d4bfc892f557258}\label{namespace_linear_a7beb9c27d40c85c11d4bfc892f557258}} 
 \index{Linear@{Linear}!Trace@{Trace}}
 \index{Trace@{Trace}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$((M==N)$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ $>$\+::type Linear\+::\+Trace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ Linear\+::\+Trace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -5203,12 +5155,12 @@ NxM matrix
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void Linear\+::\+Vieta\+Formula\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{data\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{start,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{end,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{sum,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&}]{roots }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespace_linear_adff372de27f66c561383c891ca004a4b}\label{namespace_linear_adff372de27f66c561383c891ca004a4b}} 
+\mbox{\Hypertarget{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}\label{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}} 
 \index{Linear@{Linear}!WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}}
 \index{WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{WielandtDeflationAlgorithm()}{WielandtDeflationAlgorithm()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::enable\+\_\+if$<$((M==N$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ $>$\+::type Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
+std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
 
 
 

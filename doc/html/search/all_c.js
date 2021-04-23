@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['norm_110',['Norm',['../namespace_linear.html#ada0f7fca4f12be3eb4abd7d8988529f5',1,'Linear']]],
-  ['normalize_111',['Normalize',['../namespace_linear.html#a2f787cbae083a9bc4876bd7e023bd113',1,'Linear::Normalize(Vector&lt; T, N &gt; v)'],['../namespace_linear.html#a2833583ec9ec44a15965ecf9b2308779',1,'Linear::Normalize(RowVector&lt; T, N &gt; v)'],['../namespace_linear.html#a035ee67c5ff46f63bfb95946484d73c6',1,'Linear::Normalize(Vector&lt; T, 1 &gt; v)']]],
+  ['norm_110',['Norm',['../namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177',1,'Linear']]],
+  ['normalize_111',['Normalize',['../namespace_linear.html#aa335597bce965c73014808d379a5e4ef',1,'Linear']]],
   ['nullity_112',['Nullity',['../namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850',1,'Linear']]],
   ['nullspace_113',['NullSpace',['../namespace_linear.html#a379225b58ff09eb6efdd4ecf979ca426',1,'Linear']]],
   ['numcolumns_114',['NumColumns',['../class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a',1,'Linear::Matrix']]],
