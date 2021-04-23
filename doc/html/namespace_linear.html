@@ -217,26 +217,26 @@ Functions</h2></td></tr>
 <tr class="memitem:a42484731bac25fd916a8d9785384311a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a42484731bac25fd916a8d9785384311a">Trace</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a42484731bac25fd916a8d9785384311a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the trace of a square matrix \(\sum_{i=0}^{N-1}a_{ii}\).  <a href="namespace_linear.html#a42484731bac25fd916a8d9785384311a">More...</a><br /></td></tr>
 <tr class="separator:a42484731bac25fd916a8d9785384311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52efa4b4378652b6e48221e8c0d1babc"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a52efa4b4378652b6e48221e8c0d1babc"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a52efa4b4378652b6e48221e8c0d1babc">Determinant</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a52efa4b4378652b6e48221e8c0d1babc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the determinant of a square matrix defined by \(\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})\) where \(A_{0i}\) is the (N-1)x(N-1) matrix obtained by deleting the 0th row and ith column.  <a href="namespace_linear.html#a52efa4b4378652b6e48221e8c0d1babc">More...</a><br /></td></tr>
-<tr class="separator:a52efa4b4378652b6e48221e8c0d1babc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb492af86fd1d65b658c0c352e84f8d"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a6cb492af86fd1d65b658c0c352e84f8d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a6cb492af86fd1d65b658c0c352e84f8d">Minor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
-<tr class="memdesc:a6cb492af86fd1d65b658c0c352e84f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-minor of a square matrix defined by \(\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#a6cb492af86fd1d65b658c0c352e84f8d">More...</a><br /></td></tr>
-<tr class="separator:a6cb492af86fd1d65b658c0c352e84f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac43755edc2a77a3084254daf5f4a48de"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:ac43755edc2a77a3084254daf5f4a48de"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac43755edc2a77a3084254daf5f4a48de">Cofactor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
-<tr class="memdesc:ac43755edc2a77a3084254daf5f4a48de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-cofactor of a square matrix defined by \((-1)^{i+j}\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#ac43755edc2a77a3084254daf5f4a48de">More...</a><br /></td></tr>
-<tr class="separator:ac43755edc2a77a3084254daf5f4a48de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099b04720171d2466a2fbc6fab89f644"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a099b04720171d2466a2fbc6fab89f644"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a099b04720171d2466a2fbc6fab89f644">Adjugate</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a099b04720171d2466a2fbc6fab89f644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the NxN adjugate B of a square matrix A defined by \(b_{ij}=c_{ji}\) where \(c_{ij}\) represents the (i,j)-cofactor of A.  <a href="namespace_linear.html#a099b04720171d2466a2fbc6fab89f644">More...</a><br /></td></tr>
-<tr class="separator:a099b04720171d2466a2fbc6fab89f644"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1fadfca96df37ddb81a14300e11a30"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a3b1fadfca96df37ddb81a14300e11a30"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3b1fadfca96df37ddb81a14300e11a30">Inverse</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
-<tr class="memdesc:a3b1fadfca96df37ddb81a14300e11a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the NxN inverse \(A^{-1}=\frac{1}{\det A}Adj\) of a square matrix A where Adj is the adjugate of A.  <a href="namespace_linear.html#a3b1fadfca96df37ddb81a14300e11a30">More...</a><br /></td></tr>
-<tr class="separator:a3b1fadfca96df37ddb81a14300e11a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac742a1d3567f0f56ad6d2196d2960e85">Determinant</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:ac742a1d3567f0f56ad6d2196d2960e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the determinant of a square matrix defined by \(\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})\) where \(A_{0i}\) is the (N-1)x(N-1) matrix obtained by deleting the 0th row and ith column.  <a href="namespace_linear.html#ac742a1d3567f0f56ad6d2196d2960e85">More...</a><br /></td></tr>
+<tr class="separator:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f">Minor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memdesc:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-minor of a square matrix defined by \(\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f">More...</a><br /></td></tr>
+<tr class="separator:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af21abf09659a8df011d15cf6e48f26"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a2af21abf09659a8df011d15cf6e48f26"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26">Cofactor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memdesc:a2af21abf09659a8df011d15cf6e48f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-cofactor of a square matrix defined by \((-1)^{i+j}\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26">More...</a><br /></td></tr>
+<tr class="separator:a2af21abf09659a8df011d15cf6e48f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47539cd2c0b65666a67821896a450d5a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a47539cd2c0b65666a67821896a450d5a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a47539cd2c0b65666a67821896a450d5a">Adjugate</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a47539cd2c0b65666a67821896a450d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the NxN adjugate B of a square matrix A defined by \(b_{ij}=c_{ji}\) where \(c_{ij}\) represents the (i,j)-cofactor of A.  <a href="namespace_linear.html#a47539cd2c0b65666a67821896a450d5a">More...</a><br /></td></tr>
+<tr class="separator:a47539cd2c0b65666a67821896a450d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72988b2b8fec9ebd3f5b9eed64a96f76"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a72988b2b8fec9ebd3f5b9eed64a96f76"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a72988b2b8fec9ebd3f5b9eed64a96f76">Inverse</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a72988b2b8fec9ebd3f5b9eed64a96f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the NxN inverse \(A^{-1}=\frac{1}{\det A}Adj\) of a square matrix A where Adj is the adjugate of A.  <a href="namespace_linear.html#a72988b2b8fec9ebd3f5b9eed64a96f76">More...</a><br /></td></tr>
+<tr class="separator:a72988b2b8fec9ebd3f5b9eed64a96f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a307544e8730170f228411b353fdd4f62"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a307544e8730170f228411b353fdd4f62"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a307544e8730170f228411b353fdd4f62">IsReal</a> (const <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;z)</td></tr>
 <tr class="memdesc:a307544e8730170f228411b353fdd4f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a complex number \(z=a+bi\) is real.  <a href="namespace_linear.html#a307544e8730170f228411b353fdd4f62">More...</a><br /></td></tr>
@@ -678,10 +678,10 @@ Functions</h2></td></tr>
 <tr class="memitem:adb36c8432926ae50addd9fbfc5ff0f23"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(N &gt;1||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23">Companion</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;c)</td></tr>
 <tr class="memdesc:adb36c8432926ae50addd9fbfc5ff0f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (N-1)x(N-1) companion matrix.  <a href="namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23">More...</a><br /></td></tr>
 <tr class="separator:adb36c8432926ae50addd9fbfc5ff0f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fe5c719daaa3d27b44878b077f993be"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a4fe5c719daaa3d27b44878b077f993be"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4fe5c719daaa3d27b44878b077f993be">LUP</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A)</td></tr>
-<tr class="memdesc:a4fe5c719daaa3d27b44878b077f993be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#a4fe5c719daaa3d27b44878b077f993be">More...</a><br /></td></tr>
-<tr class="separator:a4fe5c719daaa3d27b44878b077f993be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa26b079aa55163415073496c04c0e7f9"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:aa26b079aa55163415073496c04c0e7f9"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa26b079aa55163415073496c04c0e7f9">LUP</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A)</td></tr>
+<tr class="memdesc:aa26b079aa55163415073496c04c0e7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#aa26b079aa55163415073496c04c0e7f9">More...</a><br /></td></tr>
+<tr class="separator:aa26b079aa55163415073496c04c0e7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbadd51ca20be7f6be44e552d2104218"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:acbadd51ca20be7f6be44e552d2104218"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M &gt;=N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::pair&lt; <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;, <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#acbadd51ca20be7f6be44e552d2104218">QR</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:acbadd51ca20be7f6be44e552d2104218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the LUP decomposition of A.  <a href="namespace_linear.html#acbadd51ca20be7f6be44e552d2104218">More...</a><br /></td></tr>
@@ -931,6 +931,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a821339a5ae70e69525e21978c45c1262"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a821339a5ae70e69525e21978c45c1262">Rank</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a821339a5ae70e69525e21978c45c1262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dimension of the A's column space.  <a href="namespace_linear.html#a821339a5ae70e69525e21978c45c1262">More...</a><br /></td></tr>
 <tr class="separator:a821339a5ae70e69525e21978c45c1262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7da63cf834a809af2ab3ac6de19793"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
+<tr class="memitem:a4c7da63cf834a809af2ab3ac6de19793"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4c7da63cf834a809af2ab3ac6de19793">Solve</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &amp;b)</td></tr>
+<tr class="memdesc:a4c7da63cf834a809af2ab3ac6de19793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the matrix equation Ax=b for x.  <a href="namespace_linear.html#a4c7da63cf834a809af2ab3ac6de19793">More...</a><br /></td></tr>
+<tr class="separator:a4c7da63cf834a809af2ab3ac6de19793"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">IsVector</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a5afdda12123cb445b1c801e85ba1ebe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a matrix is a row or column vector.  <a href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">More...</a><br /></td></tr>
@@ -2276,8 +2280,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a099b04720171d2466a2fbc6fab89f644"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a099b04720171d2466a2fbc6fab89f644">&#9670;&nbsp;</a></span>Adjugate()</h2>
+<a id="a47539cd2c0b65666a67821896a450d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47539cd2c0b65666a67821896a450d5a">&#9670;&nbsp;</a></span>Adjugate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2285,7 +2289,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::Adjugate </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::Adjugate </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -3290,8 +3294,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="ac43755edc2a77a3084254daf5f4a48de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac43755edc2a77a3084254daf5f4a48de">&#9670;&nbsp;</a></span>Cofactor()</h2>
+<a id="a2af21abf09659a8df011d15cf6e48f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af21abf09659a8df011d15cf6e48f26">&#9670;&nbsp;</a></span>Cofactor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3299,7 +3303,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; &gt;::type Linear::Cofactor </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; Linear::Cofactor </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -4172,8 +4176,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a52efa4b4378652b6e48221e8c0d1babc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52efa4b4378652b6e48221e8c0d1babc">&#9670;&nbsp;</a></span>Determinant()</h2>
+<a id="ac742a1d3567f0f56ad6d2196d2960e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac742a1d3567f0f56ad6d2196d2960e85">&#9670;&nbsp;</a></span>Determinant()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4181,7 +4185,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; &gt;::type Linear::Determinant </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; Linear::Determinant </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -5397,8 +5401,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a3b1fadfca96df37ddb81a14300e11a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b1fadfca96df37ddb81a14300e11a30">&#9670;&nbsp;</a></span>Inverse()</h2>
+<a id="a72988b2b8fec9ebd3f5b9eed64a96f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72988b2b8fec9ebd3f5b9eed64a96f76">&#9670;&nbsp;</a></span>Inverse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5406,7 +5410,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::Inverse </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; Linear::Inverse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -6359,8 +6363,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4fe5c719daaa3d27b44878b077f993be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fe5c719daaa3d27b44878b077f993be">&#9670;&nbsp;</a></span>LUP()</h2>
+<a id="aa26b079aa55163415073496c04c0e7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa26b079aa55163415073496c04c0e7f9">&#9670;&nbsp;</a></span>LUP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6368,7 +6372,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;(M==N||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), std::tuple&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; &gt;::type Linear::LUP </td>
+          <td class="memname">std::tuple&lt;<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt;,<a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt; Linear::LUP </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -6417,8 +6421,8 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="a6cb492af86fd1d65b658c0c352e84f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb492af86fd1d65b658c0c352e84f8d">&#9670;&nbsp;</a></span>Minor()</h2>
+<a id="a2427bd1ff44d2875ca7f07c7d047e39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2427bd1ff44d2875ca7f07c7d047e39f">&#9670;&nbsp;</a></span>Minor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6426,7 +6430,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;((M==N)||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; &gt;::type Linear::Minor </td>
+          <td class="memname"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt;T&gt; Linear::Minor </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -8083,6 +8087,50 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Real number. </dd></dl>
+
+</div>
+</div>
+<a id="a4c7da63cf834a809af2ab3ac6de19793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7da63cf834a809af2ab3ac6de19793">&#9670;&nbsp;</a></span>Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; Linear::Solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solves the matrix equation Ax=b for x. </p>
+<p>This functions breaks into various cases.</p><ol type="1">
+<li>If A is square we have 2 special cases. a. If A is invertible, then \(x=A^{-1}b\). b. If A is upper triangular or lower triangular, then we can use forward/backward subsitution to solve.</li>
+<li>If those two cases don't hold, we employ Guassian elimination. If M != P, an exception is thrown. If there is no solution, an exception is thrown. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
+    <tr><td class="paramname">b</td><td>Vector of length P </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of length N </dd></dl>
+</li>
+</ol>
 
 </div>
 </div>

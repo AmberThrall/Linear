@@ -2,7 +2,7 @@ var searchData=
 [
   ['ceil_20',['Ceil',['../namespace_linear.html#a26128d658beb0c88da0e7f4ec89873df',1,'Linear::Ceil(T x)'],['../namespace_linear.html#a28c04c17a25d3d9160059e4a85b7b017',1,'Linear::Ceil(const Complex&lt; T &gt; &amp;z)']]],
   ['charpoly_21',['CharPoly',['../namespace_linear.html#a4414cb128ad49755f6240ed37555926c',1,'Linear']]],
-  ['cofactor_22',['Cofactor',['../namespace_linear.html#ac43755edc2a77a3084254daf5f4a48de',1,'Linear']]],
+  ['cofactor_22',['Cofactor',['../namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26',1,'Linear']]],
   ['columnmajor_23',['ColumnMajor',['../namespace_linear.html#a2c58d57088f03c630476e0da3e350547',1,'Linear']]],
   ['columnspace_24',['ColumnSpace',['../namespace_linear.html#a019cb48619ba9090d5fe63b679b34abd',1,'Linear']]],
   ['companion_25',['Companion',['../namespace_linear.html#abbd0342fc6b8cda1983011b5e599f188',1,'Linear::Companion(const Vector&lt; T, N &gt; &amp;c)'],['../namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23',1,'Linear::Companion(const RowVector&lt; T, N &gt; &amp;c)']]],

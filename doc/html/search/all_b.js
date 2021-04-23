@@ -15,7 +15,7 @@ var searchData=
   ['matrixxf_104',['MatrixXf',['../namespace_linear.html#a1785cf86a17d782a242c1d0fa02664af',1,'Linear']]],
   ['matrixxi_105',['MatrixXi',['../namespace_linear.html#a850f7d84cd5a1cec3d72a0015b8af049',1,'Linear']]],
   ['maxnorm_106',['MaxNorm',['../namespace_linear.html#abd31b68aefb3b7b5479ac11b708631ad',1,'Linear']]],
-  ['minor_107',['Minor',['../namespace_linear.html#a6cb492af86fd1d65b658c0c352e84f8d',1,'Linear']]],
+  ['minor_107',['Minor',['../namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f',1,'Linear']]],
   ['misc_2eh_108',['Misc.h',['../_misc_8h.html',1,'']]],
   ['mod_109',['Mod',['../namespace_linear.html#abbc208c09383a89c266f76f70bcb73a2',1,'Linear::Mod(T x, T y)'],['../namespace_linear.html#a773b5e807a9c93911b24e1da63d1adf5',1,'Linear::Mod(const Complex&lt; T &gt; &amp;z, T y)'],['../namespace_linear.html#a1f6c11b6faf0b808c39e2c58d48f1770',1,'Linear::Mod(const Complex&lt; T &gt; &amp;z, const Complex&lt; T &gt; &amp;w)'],['../namespace_linear.html#ae20e512b04ddba701c1f0072e96bf4f9',1,'Linear::Mod(Matrix&lt; T, M, N, Flags &gt; A, Complex&lt; T &gt; z)'],['../namespace_linear.html#aac00030bbbe44e83375df65ad058fce0',1,'Linear::Mod(Matrix&lt; T, M, N, Flags &gt; A, U y)']]]
 ];

@@ -18,42 +18,49 @@ namespace Linear {
      * @return Tuple (L,U,P)
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(M==N||M==Dynamic||N==Dynamic),
-        std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>>>::type LUP(Matrix<T,M,N,Flags> A) {
+    std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> LUP(Matrix<T,M,N,Flags> A) {
         if (!IsSquare(A))
             throw "LUP Decomposition is only defined for square matrices.";
+        std::cout << "LUP(A). A = " << A <<std::endl;
 
-        std::vector<size_t> perms;
+        SquareMatrix<T,N,Flags> P(A.NumRows(), T(0));
         for (size_t i = 0; i < A.NumRows(); ++i)
-            perms.push_back(i);
+            P(i,i) = T(1);
+
         for (size_t i = 0; i < A.NumRows(); ++i) {
-            T maxA = T(0);
+            // Step 1. Select the pivot
+            T Amax = T(0);
             size_t imax = i;
             for (size_t j = i; j < A.NumRows(); ++j) {
-                if (Abs(A(j,i)) > maxA) {
-                    maxA = Abs(A(j,i));
+                Complex<T> Aii=A(j,i);
+                for (size_t q = 0; q < i; ++q) {
+                    Aii -= A(j, q)*A(q, j);
+                }
+                if (Abs(Aii) > Amax) {
+                    Amax = Abs(Aii);
                     imax = j;
                 }
+
             }
 
+            // Step 2. Swap rows.
             if (imax != i) {
-                size_t k = perms[i];
-                perms[i] = perms[imax];
-                perms[imax] = k;
+                P.SwapRows(i, imax);
                 A.SwapRows(i, imax);
             }
 
+            for (size_t j = i; j < A.NumRows(); ++j) {
+                for (size_t q = 0; q < i; ++q)
+                    A(i,j) -= A(i,q)*A(q,j);
+            }
             for (size_t j = i+1; j < A.NumRows(); ++j) {
-                A(j,i) /= A(i,i);
-                for (size_t k = i+1; k < A.NumRows(); ++k)
-                    A(j,k) -= A(j,i) * A(i,k);
+                for (size_t q = 0; q < i; ++q)
+                    A(j,i) -= A(j,q)*A(q,i);
+                if (Abs(A(i,i)) > T(Tol))
+                    A(j,i) = A(j,i)/A(i,i);
             }
         }
 
-        // Create the permutation matrix.
-        SquareMatrix<T,N,Flags> P(A.NumRows(), T(0));
-        for (size_t i = 0; i < perms.size(); ++i)
-            P.SetRow(i, Basis<T>(1, A.NumRows(), 0, perms[i]));
         // Get the U matrix.
         SquareMatrix<T,N,Flags> U = A;
         for (size_t c = 0; c < A.NumColumns(); ++c) {
@@ -61,7 +68,7 @@ namespace Linear {
                 U(r,c) = T(0);
         }
         // Get the L matrix.
-        SquareMatrix<T,N,Flags> L = A - U + Identity<T>(A.NumRows());
+        SquareMatrix<T,N,Flags> L = A - U + Identity<T,Flags>(A.NumRows());
         return std::make_tuple(L, U, P);
     }
 

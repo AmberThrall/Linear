@@ -15,16 +15,16 @@ int main() {
         std::cout << "qr = " << qr.first*qr.second << std::endl;
         std::cout << "q^Tq = " << Transpose(qr.first)*qr.first << std::endl;
 
-        Matrix3f b = {
+        Matrix3f B = {
             {1,2,3},{4,5,6},{7,8,9}
         };
-        std::tuple<Matrix3f,Matrix3f,Matrix3f> lup = LUP(b);
-        std::cout << "b = " << b << std::endl;
-        std::cout << "l = " << std::get<0>(lup) << std::endl;
-        std::cout << "u = " << std::get<1>(lup) << std::endl;
-        std::cout << "p = " << std::get<2>(lup) << std::endl;
-        std::cout << "pb = " << std::get<2>(lup)*b << std::endl;
-        std::cout << "lu = " << std::get<0>(lup)*std::get<1>(lup) << std::endl;
+        std::tuple<Matrix3f,Matrix3f,Matrix3f> lup = LUP(B);
+        std::cout << "B = " << B << std::endl;
+        std::cout << "L = " << std::get<0>(lup) << std::endl;
+        std::cout << "U = " << std::get<1>(lup) << std::endl;
+        std::cout << "P = " << std::get<2>(lup) << std::endl;
+        std::cout << "PB = " << std::get<2>(lup)*B << std::endl;
+        std::cout << "LU = " << std::get<0>(lup)*std::get<1>(lup) << std::endl;
 
         Matrix3f c = {
             {4,12,-16}, {12,37,-43}, {-16,-43,98}

@@ -222,7 +222,7 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Determinant(const Matrix<T,M,N,Flags>& A) {
+    Complex<T> Determinant(const Matrix<T,M,N,Flags>& A) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the determinant of a non-square matrix.";
 
@@ -234,9 +234,9 @@ namespace Linear {
         Complex<T> ret;
         for (size_t i = 0; i < A.NumRows(); ++i) {
             if (i % 2 == 0)
-                ret += A(0,i)*Determinant(RemoveRowAndColumn(A, 0, i));
+                ret += A(0,i)*Minor(A, 0, i);
             else
-                ret += A(0,i)*Determinant(RemoveRowAndColumn(A, 0, i));
+                ret -= A(0,i)*Minor(A, 0, i);
         }
         return ret;
     }
@@ -251,7 +251,7 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Minor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
+    Complex<T> Minor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the minor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
@@ -272,14 +272,14 @@ namespace Linear {
      * @return Complex number
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Complex<T>>::type Cofactor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
+    Complex<T> Cofactor(const Matrix<T,M,N,Flags>& A, size_t i, size_t j) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the cofactor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Cofactor coordinates out of bounds.";
-        if (i+j % 2 == 0)
-            return Determinant(RemoveRowAndColumn(A, i, j));
-        return -Determinant(RemoveRowAndColumn(A, i, j));
+        if ((i+j) % 2 == 0)
+            return Minor(A, i, j);
+        return T(-1.0)*Minor(A, i, j);
     }
 
     /**
@@ -289,7 +289,7 @@ namespace Linear {
      * @return NxN matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Adjugate(const Matrix<T,M,N,Flags>& A) {
+    Matrix<T,M,N,Flags> Adjugate(const Matrix<T,M,N,Flags>& A) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the adjugate of a non-square matrix.";
         Matrix<T,M,N,Flags> ret(A.NumRows(), A.NumColumns(), T(0));
@@ -308,7 +308,7 @@ namespace Linear {
      * @return NxN matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<((M==N)||M==Dynamic||N==Dynamic), Matrix<T,M,N,Flags>>::type Inverse(const Matrix<T,M,N,Flags>& A) {
+    Matrix<T,M,N,Flags> Inverse(const Matrix<T,M,N,Flags>& A) {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the inverse of a non-square matrix.";
         Complex<T> det = Determinant(A);
