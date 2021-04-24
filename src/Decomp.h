@@ -427,8 +427,8 @@ namespace Linear {
         * @param A M2xN2 Matrix
         */
         template <size_t M2, size_t N2, unsigned int Flags2>
-        Schur(const Matrix<T,M2,N2,Flags2>& A) {
-            Compute(A);
+        Schur(const Matrix<T,M2,N2,Flags2>& A, unsigned int max_iterations = 100) {
+            Compute(A, max_iterations);
         }
         /**
         * Computes the real Schur decomposition. If A is not square or Q != N, then an exception is thrown.
@@ -444,11 +444,11 @@ namespace Linear {
             SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumRows());
             this->Q = Identity<T>(A.NumRows());
             this->U = A;
-            if (!IsHessenberg(A)) {
-                Hessenberg<T,N,Flags> hess(A);
-                this->Q = hess.Q;
-                this->U = hess.H;
-            }
+            // if (!IsHessenberg(A)) {
+            //     Hessenberg<T,N,Flags> hess(A);
+            //     this->Q = hess.Q;
+            //     this->U = hess.H;
+            // }
 
             for (size_t i = A.NumRows()-1; i >= 1; i--) {
                 size_t k = 0;

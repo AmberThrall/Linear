@@ -10,10 +10,10 @@ int main() {
 
         std::cout << "A = " << A << std::endl;
         std::vector<Eigenpair<double,3>> eigenpairs_a = Eigen(A);
-        for (unsigned int i = 0; i < eigenpairs_a.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_a.size(); ++i) {
             std::cout << "(" << eigenpairs_a[i].value << "," << Transpose(eigenpairs_a[i].vector) << ")" << std::endl;
         }
-        for (unsigned int i = 0; i < eigenpairs_a.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_a.size(); ++i) {
             std::cout << "||Av_i/lambda_i-v_i|| = " << Norm((A*eigenpairs_a[i].vector)/eigenpairs_a[i].value-eigenpairs_a[i].vector) << std::endl;
         }
         std::cout << "==================" << std::endl;
@@ -22,10 +22,10 @@ int main() {
 
         std::cout << "B = " << B << std::endl;
         std::vector<Eigenpair<double,3>> eigenpairs_b = Eigen(B);
-        for (unsigned int i = 0; i < eigenpairs_b.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_b.size(); ++i) {
             std::cout << "(" << eigenpairs_b[i].value << "," << Transpose(eigenpairs_b[i].vector) << ")" << std::endl;
         }
-        for (unsigned int i = 0; i < eigenpairs_b.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_b.size(); ++i) {
             std::cout << "||Bv_i/lambda_i-v_i|| = " << Norm((B*eigenpairs_b[i].vector)/eigenpairs_b[i].value-eigenpairs_b[i].vector) << std::endl;
         }
         std::cout << "==================" << std::endl;
@@ -34,10 +34,10 @@ int main() {
 
         std::cout << "C = " << C << std::endl;
         std::vector<Eigenpair<double,3>> eigenpairs_c = Eigen(C);
-        for (unsigned int i = 0; i < eigenpairs_c.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_c.size(); ++i) {
             std::cout << "(" << eigenpairs_c[i].value << "," << Transpose(eigenpairs_c[i].vector) << ")" << std::endl;
         }
-        for (unsigned int i = 0; i < eigenpairs_c.size(); ++i) {
+        for (size_t i = 0; i < eigenpairs_c.size(); ++i) {
             std::cout << "||Cv_i/lambda_i-v_i|| = " << Norm((C*eigenpairs_c[i].vector)/eigenpairs_c[i].value-eigenpairs_c[i].vector) << std::endl;
         }
         std::cout << "==================" << std::endl;
@@ -48,7 +48,7 @@ int main() {
         std::cout << "coeff = " << Transpose(coeff) << std::endl;
         std::cout << "D = " << D << std::endl;
         std::cout << "eig(D) = ";
-        for (unsigned int i = 0; i < eigenvalues_d.Size(); ++i)
+        for (size_t i = 0; i < eigenvalues_d.Size(); ++i)
             std::cout << (i > 0 ? ", " : "") << eigenvalues_d[i];
         std::cout << std::endl;
         std::cout << "charpoly(D) = " << Transpose(CharPoly(D)) << std::endl;
