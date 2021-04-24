@@ -47,4 +47,4 @@ int main() {
 ```
 
 ## Documentation
-A doxygen generated documentation is available in the docs/ directory. The tests/ directory also contains various examples.
+A doxygen generated documentation is available in the doc/ directory. The tests/ directory also contains various examples.
