@@ -72,8 +72,8 @@ namespace Linear {
         }
         else if (p == 2) {
             Vector<T,N> b = Random<T>(A.NumRows(),1);
-            std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(ConjugateTranspose(A)*A, b, 25);
-            return Sqrt(pair.first).Re;
+            Eigenpair<T,N> pair = PowerIteration(ConjugateTranspose(A)*A, b, 25);
+            return Sqrt(pair.value).Re;
         }
         else
             throw "Only p=1 and p=2 are supported for matrix norm.";

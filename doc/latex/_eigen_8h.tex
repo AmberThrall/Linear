@@ -6,9 +6,15 @@
 {\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Basics.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Construction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Decomp.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Misc.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Linear\+::\+Eigenpair$<$ T, N $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for eigenpairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,15 +23,15 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==Dynamic$\vert$$\vert$N==Dynamic), std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, P $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}{Linear\+::\+Power\+Iteration}} (const Matrix$<$ T, M, N, Flags $>$ \&A, Vector$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==Dynamic$\vert$$\vert$N==Dynamic), Eigenpair$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a08001cdbe10207225ad8a4e77ebe6c4a}{Linear\+::\+Power\+Iteration}} (const Matrix$<$ T, M, N, Flags $>$ \&A, Vector$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==Dynamic$\vert$$\vert$N==Dynamic), Vector$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Linear\+::\+Inverse\+Iteration}} (const Matrix$<$ T, M, N, Flags $>$ \&A, Vector$<$ T, P $>$ b0, Complex$<$ T $>$ mu, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs inverse iteration on A with guess mu. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}{Linear\+::\+Wielandt\+Deflation\+Algorithm}} (const Matrix$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Eigenpair$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a02cec0240170945e1e08ba414d512c85}{Linear\+::\+Wielandt\+Deflation\+Algorithm}} (const Matrix$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
 \begin{DoxyCompactList}\small\item\em Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}{Linear\+::\+Eigenvector\+Helper}} (const Matrix$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ Complex$<$ T $>$$>$ eigenvalues)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Eigenpair$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}{Linear\+::\+Eigenvector\+Helper}} (const Matrix$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ Complex$<$ T $>$$>$ eigenvalues)
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ Complex$<$ T $>$, Vector$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}{Linear\+::\+Eigen}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ Eigenpair$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a498247f6fcf1caa95824099e53ddac04}{Linear\+::\+Eigen}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Calculates all eigenpairs of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}{Linear\+::\+Vieta\+Formula\+Helper}} (size\+\_\+t data\mbox{[}$\,$\mbox{]}, size\+\_\+t start, size\+\_\+t end, size\+\_\+t index, size\+\_\+t k, Complex$<$ T $>$ \&sum, const std\+::vector$<$ Complex$<$ T $>$$>$ \&roots)
 \item 

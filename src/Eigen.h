@@ -5,11 +5,24 @@
 #include "Vector.h"
 #include "Basics.h"
 #include "Construction.h"
+#include "Decomp.h"
 #include "Global.h"
 #include "Types.h"
 #include "Misc.h"
 
 namespace Linear {
+    /**
+     * Struct for eigenpairs.
+     * This struct contains an eigenvalue and it's corresponding eigenvector of a matrix A.
+     * @param T Type to store vector entries as.
+     * @param N Size of eigenvector.
+    */
+    template <typename T, size_t N>
+    struct Eigenpair {
+        Complex<T> value; /*!< Eigenvalue */
+        Vector<T,N> vector; /*!< Eigenvector corresponding to value */
+    };
+
     /**
      * Performs power iteration on A.
      * Power iteration, defined by the sequence \f$b_{k+1}=\frac{Ab_k}{\|Ab_k\|}\f$ is a simple algorithm that computes the greatest
@@ -22,7 +35,7 @@ namespace Linear {
      * @return Pair \f$(\lambda,v)\f$ such that \f$Av\approx \lambda v\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
-    typename std::enable_if<(P==N||P==Dynamic||N==Dynamic), std::pair<Complex<T>,Vector<T,P>>>::type
+    typename std::enable_if<(P==N||P==Dynamic||N==Dynamic), Eigenpair<T,P>>::type
     PowerIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, unsigned int max_iterations) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
@@ -49,7 +62,11 @@ namespace Linear {
                 break;
             res = Norm(b-lambda*q)/costheta;
         }
-        return std::make_pair(lambda, b);
+
+        Eigenpair<T,N> pair;
+        pair.value = lambda;
+        pair.vector = b;
+        return pair;
     }
     /**
      * Performs inverse iteration on A with guess mu.
@@ -93,24 +110,28 @@ namespace Linear {
      * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    std::vector<std::pair<Complex<T>,Vector<T,N>>> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
+    std::vector<Eigenpair<T,N>> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
         // Final step: 1x1 matrix.
         if (A.NumRows() == 1) {
-            std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
-            eigenpairs.push_back(std::make_pair(A(0,0), Vector<T,1>(T(1))));
+            std::vector<Eigenpair<T,N>> eigenpairs;
+            Eigenpair<T,N> pair;
+            pair.value = A(0,0);
+            pair.vector = One<T>(1,1);
+            eigenpairs.push_back(pair);
             return eigenpairs;
         }
 
         // Step 1: Computer the dominant eigenvalue and vector.
-        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
-        Vector<T,N> b = Random<T>(A.NumRows(),1,Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
-        std::pair<Complex<T>,Vector<T,N>> pair = PowerIteration(A, b, max_iterations);
+        std::vector<Eigenpair<T,N>> eigenpairs;
+        Vector<T,N> b0 = Random<T>(A.NumRows(),1,Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
+        Eigenpair<T,N> pair = PowerIteration(A, b0, max_iterations);
         // Sanity check:
-        Complex<T> lambda1 = pair.first;
-        Vector<T,N> x1 = pair.second;
+        Complex<T> lambda1 = pair.value;
+        Vector<T,N> x1 = pair.vector;
+        eigenpairs.push_back(pair);
 
         // Step 2: Find the p such x1[p] is maximal.
         size_t p = 0;
@@ -129,33 +150,35 @@ namespace Linear {
         SquareMatrix<T,Dynamic,Flags> Ap = RemoveRowAndColumn(A - x1*ap, p, p);
 
         // Step 5: Repeat.
-        eigenpairs.push_back(std::make_pair(lambda1, x1));
-        std::vector<std::pair<Complex<T>,Vector<T,Dynamic>>> res = WielandtDeflationAlgorithm(Ap, max_iterations);
+        std::vector<Eigenpair<T,Dynamic>> res = WielandtDeflationAlgorithm(Ap, max_iterations);
         for (size_t i = 0; i < res.size(); ++i) {
             Vector<T,N> yi(A.NumRows(), T(0));
             for (size_t j = 0; j < yi.Size(); ++j) {
                 if (j == p)
                     yi[j] = T(0);
                 else if (j > p)
-                    yi[j] = res[i].second[j-1];
+                    yi[j] = res[i].vector[j-1];
                 else
-                    yi[j] = res[i].second[j];
+                    yi[j] = res[i].vector[j];
             }
-            yi = yi + (Dot(ap, yi)/(res[i].first-lambda1))*x1;
-            eigenpairs.push_back(std::make_pair(res[i].first, yi));
+            yi = yi + (Dot(ap, yi)/(res[i].value-lambda1))*x1;
+            Eigenpair<T,N> pair2;
+            pair2.value = res[i].value;
+            pair2.vector = yi;
+            eigenpairs.push_back(pair2);
         }
         return eigenpairs;
     }
 
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    std::vector<std::pair<Complex<T>,Vector<T,N>>> EigenvectorHelper(const Matrix<T,M,N,Flags>& A, std::vector<Complex<T>> eigenvalues) {
+    std::vector<Eigenpair<T,N>> EigenvectorHelper(const Matrix<T,M,N,Flags>& A, std::vector<Complex<T>> eigenvalues) {
         if (!IsSquare(A))
             throw "Eigenvectors are only defined for square matrices.";
 
         bool isReal = IsReal(A);
 
         SquareMatrix<T,Dynamic,Flags> eye = Identity<T>(A.NumColumns());
-        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
+        std::vector<Eigenpair<T,N>> eigenpairs;
         for (size_t i = 0; i < eigenvalues.size(); ++i) {
             size_t multiplicity = 1;
             for (size_t j = i+1; j < eigenvalues.size(); ++j) {
@@ -166,6 +189,9 @@ namespace Linear {
                 }
             }
 
+            Eigenpair<T,N> pair;
+            pair.value = eigenvalues[i];
+
             std::vector<Vector<T,N>> basis = NullSpace(A - eigenvalues[i]*eye);
             if (basis.size() != multiplicity) {
                 if (Determinant(A-eigenvalues[i]*eye) != T(0)) {
@@ -174,18 +200,21 @@ namespace Linear {
                         b0 = Random<T>(A.NumRows(), 1, Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
                     else
                         b0 = Random<T>(A.NumRows(), 1, T(-1), T(1));
-                    Vector<T,N> eigenvector = InverseIteration(A, b0, eigenvalues[i], 25);
+                    pair.vector = InverseIteration(A, b0, eigenvalues[i], 25);
                     for (size_t j = 0; j < multiplicity; ++j)
-                        eigenpairs.push_back(std::make_pair(eigenvalues[i], eigenvector));
+                        eigenpairs.push_back(pair);
                 }
                 else {
+                    pair.vector = Zero<T>(A.NumColumns(),1);
                     for (size_t j = 0; j < multiplicity; ++j)
-                        eigenpairs.push_back(std::make_pair(eigenvalues[i], Zero<T>(A.NumColumns(),1)));
+                        eigenpairs.push_back(pair);
                 }
             }
             else {
-                for (size_t j = 0; j < multiplicity; ++j)
-                    eigenpairs.push_back(std::make_pair(eigenvalues[i], Normalize(basis[j])));
+                for (size_t j = 0; j < multiplicity; ++j) {
+                    pair.vector = Normalize(basis[j]);
+                    eigenpairs.push_back(pair);
+                }
             }
         }
 
@@ -204,11 +233,11 @@ namespace Linear {
      * @return List of pairs \f$(\lambda_i,v_i)\f$ such that \f$Av_i\approx \lambda v_i\f$
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    std::vector<std::pair<Complex<T>,Vector<T,N>>> Eigen(const Matrix<T,M,N,Flags>& A) {
+    std::vector<Eigenpair<T,N>> Eigen(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
-        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
+        std::vector<Eigenpair<T,N>> eigenpairs;
         if (IsTriangular(A)) {
             std::vector<Complex<T>> eigenvalues;
             for (size_t i = 0; i < A.NumRows(); ++i) {
@@ -254,9 +283,9 @@ namespace Linear {
                     break;
 
                 SquareMatrix<T,2,Flags> block = SubMatrix<2,2>(schur.U, i, i);
-                std::vector<std::pair<Complex<T>,Vector<T,2>>> eig = Eigen(block);
-                eigenvalues.push_back(eig[0].first);
-                eigenvalues.push_back(eig[1].first);
+                std::vector<Eigenpair<T,2>> eig = Eigen(block);
+                eigenvalues.push_back(eig[0].value);
+                eigenvalues.push_back(eig[1].value);
                 i += 1;
             }
             else { // Error?
@@ -300,10 +329,10 @@ namespace Linear {
         if (!IsSquare(A))
             throw "Characteristic polynomial is only defined for square matrices.";
 
-        std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs = Eigen(A);
+        std::vector<Eigenpair<T,N>> eigenpairs = Eigen(A);
         std::vector<Complex<T>> eigenvalues;
         for (size_t i = 0; i < eigenpairs.size(); ++i)
-            eigenvalues.push_back(eigenpairs[i].first);
+            eigenvalues.push_back(eigenpairs[i].value);
         Vector<T,(N==Dynamic?Dynamic:N+1)> c(A.NumRows()+1, T(0));
         for (size_t k = 1; k <= A.NumRows(); ++k) {
             size_t data[k];

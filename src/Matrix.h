@@ -333,7 +333,9 @@ namespace Linear {
 
             size_t oldM = this->m, oldN = this->n;
             if (M == Dynamic) { this->m = newSize; }
+            else { this->m = M; }
             if (N == Dynamic) { this->n = newSize; }
+            else { this->n = N; }
 
             if (this->m == 0 || this->n == 0) {
                 this->m = 0;
@@ -379,7 +381,9 @@ namespace Linear {
 
             size_t oldM = this->m, oldN = this->n;
             if (M == Dynamic) { this->m = newM; }
+            else { this->m = M; }
             if (N == Dynamic) { this->n = newN; }
+            else { this->n = N; }
 
             if (this->m == 0 || this->n == 0) {
                 this->m = 0;

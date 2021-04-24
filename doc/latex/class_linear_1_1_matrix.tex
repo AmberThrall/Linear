@@ -36,6 +36,10 @@ Class for matrices.
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename U , size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix_a0723f1599b94a71339d056656a274f1a}{Matrix}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ U, P, Q, Flags2 $>$ \&other)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_linear_1_1_matrix_a26da687e5c2a5ce0bd4843b6b382f5f1}{Resize}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} new\+Size)
+\begin{DoxyCompactList}\small\item\em Resizes a dynamic matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_linear_1_1_matrix_a745e8bde106315ebcd7c6886ba2498c2}{Resize}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} newM, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} newN)
+\begin{DoxyCompactList}\small\item\em Resizes a dynamic matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows}} () const
 \item 
 \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns}} () const
@@ -134,7 +138,7 @@ Class for matrices.
 
 Constructor. 
 
-Creates the M-\/by-\/N matrix $A$ where $a_{ij}=x$ for all $i,j$. If M or N are set to Dynamic, this constructor will throw an exception. 
+Creates the M-\/by-\/N matrix $A$ where $a_{ij}=x$ for all $i,j$. If M or N are set to Dynamic, a 0x0 matrix will be created. 
 \begin{DoxyParams}{Parameters}
 {\em x} & Real number (default = 0) \\
 \hline
@@ -150,7 +154,7 @@ Creates the M-\/by-\/N matrix $A$ where $a_{ij}=x$ for all $i,j$. If M or N are 
 
 Constructor. 
 
-Creates the M-\/by-\/N matrix $A$ where $a_{ij}=z$ for all $i,j$. If M or N are set to Dynamic, this constructor will throw an exception. 
+Creates the M-\/by-\/N matrix $A$ where $a_{ij}=z$ for all $i,j$. If M or N are set to Dynamic, a 0x0 matrix will be created. 
 \begin{DoxyParams}{Parameters}
 {\em val} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number \\
 \hline
@@ -409,7 +413,7 @@ If $r\ge M$, an exception is thrown.
 \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-N 
+Number of columns 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}\label{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!NumRows@{NumRows}}
@@ -419,7 +423,7 @@ N
 \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-M 
+Number of rows 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_a345070116acdcfbd4ce6d0025d7d0db6}\label{class_linear_1_1_matrix_a345070116acdcfbd4ce6d0025d7d0db6}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!operator Matrix$<$ U, M, N, Flags $>$@{operator Matrix$<$ U, M, N, Flags $>$}}
@@ -548,6 +552,40 @@ Returns the ith entry of the data. This accesses the data directly, the result w
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_matrix_a745e8bde106315ebcd7c6886ba2498c2}\label{class_linear_1_1_matrix_a745e8bde106315ebcd7c6886ba2498c2}} 
+\index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!Resize@{Resize}}
+\index{Resize@{Resize}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{newM,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{newN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resizes a dynamic matrix. 
+
+If M or N are dynamic, this function becomes available. If both M and N are dynamic, it resizes the matrix to new\+MxnewN. Otherwise it resizes the matrix to new\+MxN or MxnewN depending if M or N is dynamic. If neither M nor N are dynamic, this function throws an exception. 
+\begin{DoxyParams}{Parameters}
+{\em newM} & New number of rows. Ignored if M is not dynamic \\
+\hline
+{\em newN} & New number of columns. Ignored if N is not dynamic \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_linear_1_1_matrix_a26da687e5c2a5ce0bd4843b6b382f5f1}\label{class_linear_1_1_matrix_a26da687e5c2a5ce0bd4843b6b382f5f1}} 
+\index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!Resize@{Resize}}
+\index{Resize@{Resize}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resizes a dynamic matrix. 
+
+If M or N is dynamic, this function becomes available. It resizes the matrix to new\+SizexN or Mxnew\+Size depending on if N or M is dynamic. If both M and N are dynamic, it becomes an new\+Sizexnew\+Size matrix. If neither M nor N are dynamic, this function throws an exception. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Size} & New number of rows/columns \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_linear_1_1_matrix_a8a9592c13cc33512d4f8e02069b8fbaa}\label{class_linear_1_1_matrix_a8a9592c13cc33512d4f8e02069b8fbaa}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!ScaleRow@{ScaleRow}}
 \index{ScaleRow@{ScaleRow}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
@@ -612,7 +650,7 @@ If $r\ge M$, an exception is thrown. If $P\ne 1$ or $Q\ne N$, an exception is th
 \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-M$\ast$N 
+Number of cells (Equivalent to \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}}$\ast$\+Num\+Columns()) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}\label{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!SwapRows@{SwapRows}}

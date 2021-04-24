@@ -19,6 +19,8 @@ struct \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}
 \begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}}
 \begin{DoxyCompactList}\small\item\em Struct for real \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}
+\begin{DoxyCompactList}\small\item\em Struct for eigenpairs. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}
 \begin{DoxyCompactList}\small\item\em Class for matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
@@ -370,15 +372,15 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adb36c8432926ae50addd9fbfc5ff0f23}{Companion}} (const \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$ \&c)
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a08001cdbe10207225ad8a4e77ebe6c4a}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs inverse iteration on A with guess mu. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a02cec0240170945e1e08ba414d512c85}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
 \begin{DoxyCompactList}\small\item\em Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}{Eigenvector\+Helper}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ eigenvalues)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}{Eigenvector\+Helper}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ eigenvalues)
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$ $>$ \mbox{\hyperlink{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}{Eigen}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a498247f6fcf1caa95824099e53ddac04}{Eigen}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Calculates all eigenpairs of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}{Vieta\+Formula\+Helper}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} data\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} start, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} end, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} index, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} k, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&sum, const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&roots)
 \item 
@@ -2629,12 +2631,12 @@ Complexd z = Dot(a,b);
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}\label{namespace_linear_a1d0419a825faa8b962640dbcb139ea76}} 
+\mbox{\Hypertarget{namespace_linear_a498247f6fcf1caa95824099e53ddac04}\label{namespace_linear_a498247f6fcf1caa95824099e53ddac04}} 
 \index{Linear@{Linear}!Eigen@{Eigen}}
 \index{Eigen@{Eigen}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Eigen()}{Eigen()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Eigen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+std\+::vector$<$\mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,N$>$ $>$ Linear\+::\+Eigen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
 
 
@@ -2648,12 +2650,12 @@ This function handles various cases. First, if the matrix is either upper or low
 \begin{DoxyReturn}{Returns}
 List of pairs $(\lambda_i,v_i)$ such that $Av_i\approx \lambda v_i$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}\label{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}} 
+\mbox{\Hypertarget{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}\label{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}} 
 \index{Linear@{Linear}!EigenvectorHelper@{EigenvectorHelper}}
 \index{EigenvectorHelper@{EigenvectorHelper}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{EigenvectorHelper()}{EigenvectorHelper()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Eigenvector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$}]{eigenvalues }\end{DoxyParamCaption})}
+std\+::vector$<$\mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,N$>$ $>$ Linear\+::\+Eigenvector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$}]{eigenvalues }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}\label{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}} 
 \index{Linear@{Linear}!EntrywiseDivision@{EntrywiseDivision}}
@@ -3990,12 +3992,12 @@ Note this will not safeguard expressions such as $(-1)^{1/2}$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}\label{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}} 
+\mbox{\Hypertarget{namespace_linear_a08001cdbe10207225ad8a4e77ebe6c4a}\label{namespace_linear_a08001cdbe10207225ad8a4e77ebe6c4a}} 
 \index{Linear@{Linear}!PowerIteration@{PowerIteration}}
 \index{PowerIteration@{PowerIteration}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{PowerIteration()}{PowerIteration()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
-std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,P$>$ $>$ $>$\+::type Linear\+::\+Power\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
+std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,P$>$ $>$\+::type Linear\+::\+Power\+Iteration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{b0,  }\item[{unsigned int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
 
 
 
@@ -5027,12 +5029,12 @@ NxM matrix
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void Linear\+::\+Vieta\+Formula\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{data\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{start,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{end,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{sum,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&}]{roots }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}\label{namespace_linear_ad7e151231674c5864c1aac8f7ab752ac}} 
+\mbox{\Hypertarget{namespace_linear_a02cec0240170945e1e08ba414d512c85}\label{namespace_linear_a02cec0240170945e1e08ba414d512c85}} 
 \index{Linear@{Linear}!WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}}
 \index{WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{WielandtDeflationAlgorithm()}{WielandtDeflationAlgorithm()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$,\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$ $>$ Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
+std\+::vector$<$\mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,N$>$ $>$ Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
 
 
 

@@ -10,6 +10,11 @@
 #include "Global.h"
 
 namespace Linear {
+    /// \cond DO_NOT_DOCUMENT
+    template <typename T, size_t N>
+    struct Eigenpair;
+    /// \endcond
+
     /**
      * Struct for LUP decomposition.
      * This struct finds NxN matrix L, NxN matrix U and NxN matrix P such that \f$PA=LU\f$, L is lower triangular, U is upper triangular
@@ -226,13 +231,13 @@ namespace Linear {
             if (A.NumColumns() != N && N != Dynamic)
                 throw "Cannot perform Cholesky decomposition; size mismatch.";
 
-            std::vector<std::pair<Complex<T>,Vector<T,N>>> eigens = Eigen(A);
+            std::vector<Eigenpair<T,N>> eigens = Eigen(A);
 
             this->Q = Zero<T,Flags>(A.NumRows(), A.NumRows());
             this->D = Zero<T,Flags>(A.NumRows(), A.NumRows());
             for (size_t i = 0; i < A.NumRows(); ++i) {
-                this->Q.SetColumn(i, eigens[i].second);
-                this->D(i,i) = eigens[i].first;
+                this->Q.SetColumn(i, eigens[i].vector);
+                this->D(i,i) = eigens[i].value;
             }
 
             if (Determinant(this->Q) == T(0))
@@ -280,8 +285,8 @@ namespace Linear {
             if ((A.NumRows() != M && M != Dynamic) || (A.NumColumns() != N && N != Dynamic))
                 throw "Cannot perform SVD decomposition; size mismatch.";
 
-            std::vector<std::pair<Complex<T>,Vector<T,M>>> left = Eigen(A*ConjugateTranspose(A));
-            std::vector<std::pair<Complex<T>,Vector<T,N>>> right = Eigen(ConjugateTranspose(A)*A);
+            std::vector<Eigenpair<T,M>> left = Eigen(A*ConjugateTranspose(A));
+            std::vector<Eigenpair<T,N>> right = Eigen(ConjugateTranspose(A)*A);
 
             size_t k = (A.NumRows() > A.NumColumns() ? A.NumColumns() : A.NumRows());
             std::conditional_t<Type==FULL_SVD, SquareMatrix<T,N,Flags>, Matrix<T,N,(M>N?N:M),Flags>> V = Zero<T,Flags>(A.NumColumns(), (Type==FULL_SVD?A.NumColumns():k));
@@ -301,17 +306,17 @@ namespace Linear {
                 Complex<T> sval;
                 T abs = T(0);
                 for (size_t j = 0; j < std::min(left.size(), right.size()); ++j) {
-                    if (left.size() <= right.size() && Abs(left[j].first) > abs) {
+                    if (left.size() <= right.size() && Abs(left[j].value) > abs) {
                         ileft = j;
-                        sval = left[j].first;
+                        sval = left[j].value;
                         abs = Abs(sval);
                     }
-                    else if (left.size() > right.size() && Abs(right[j].first) > abs) {
+                    else if (left.size() > right.size() && Abs(right[j].value) > abs) {
                         iright = j;
-                        sval = right[j].first;
+                        sval = right[j].value;
                         abs = Abs(sval);
                         for (size_t k = 0; k < left.size(); ++k) {
-                            if (Abs(sval-left[k].first) < T(Tol)) {
+                            if (Abs(sval-left[k].value) < T(Tol)) {
                                 ileft = k;
                                 break;
                             }
@@ -322,7 +327,7 @@ namespace Linear {
                     // Find iright by taking the closest to the value.
                     abs = T(-1);
                     for (size_t k = 0; k < right.size(); ++k) {
-                        T diff = Abs(sval - right[k].first);
+                        T diff = Abs(sval - right[k].value);
                         if (diff < abs || abs < 0) {
                             iright = k;
                             abs = diff;
@@ -333,7 +338,7 @@ namespace Linear {
                     // Find ileft by taking the closest to the value.
                     abs = T(-1);
                     for (size_t k = 0; k < left.size(); ++k) {
-                        T diff = Abs(sval - left[k].first);
+                        T diff = Abs(sval - left[k].value);
                         if (diff < abs || abs < 0) {
                             ileft = k;
                             abs = diff;
@@ -342,9 +347,9 @@ namespace Linear {
                 }
 
                 // Add it.
-                U.SetColumn(i, left[ileft].second);
+                U.SetColumn(i, left[ileft].vector);
                 S(i,i) = Sqrt(sval);
-                V.SetColumn(i, right[iright].second);
+                V.SetColumn(i, right[iright].vector);
                 i += 1;
 
                 // Remove entries

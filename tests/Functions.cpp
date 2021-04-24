@@ -39,6 +39,14 @@ int main() {
         std::cout << "||acsch(csch(one))||_{inf} = " << InfinityNorm(ACsch(Csch(one))) << std::endl;
         std::cout << "||asech(sech(one))||_{inf} = " << InfinityNorm(ASech(Sech(one))) << std::endl;
         std::cout << "||acoth(coth(one))||_{inf} = " << InfinityNorm(ACoth(Coth(one))) << std::endl;
+
+        MatrixXf B = {
+            {1,2,3}, {4,5,6}, {7,8,9}
+        };
+        B.Resize(2);
+        std::cout << "B = " << B << std::endl;
+        B = a;
+        std::cout << "B = " << B << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

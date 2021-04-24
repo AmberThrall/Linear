@@ -125,6 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0723f1599b94a71339d056656a274f1a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a0723f1599b94a71339d056656a274f1a">Matrix</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; U, P, Q, Flags2 &gt; &amp;other)</td></tr>
 <tr class="memdesc:a0723f1599b94a71339d056656a274f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_linear_1_1_matrix.html#a0723f1599b94a71339d056656a274f1a">More...</a><br /></td></tr>
 <tr class="separator:a0723f1599b94a71339d056656a274f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26da687e5c2a5ce0bd4843b6b382f5f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a26da687e5c2a5ce0bd4843b6b382f5f1">Resize</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> newSize)</td></tr>
+<tr class="memdesc:a26da687e5c2a5ce0bd4843b6b382f5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes a dynamic matrix.  <a href="class_linear_1_1_matrix.html#a26da687e5c2a5ce0bd4843b6b382f5f1">More...</a><br /></td></tr>
+<tr class="separator:a26da687e5c2a5ce0bd4843b6b382f5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745e8bde106315ebcd7c6886ba2498c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a745e8bde106315ebcd7c6886ba2498c2">Resize</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> newM, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> newN)</td></tr>
+<tr class="memdesc:a745e8bde106315ebcd7c6886ba2498c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes a dynamic matrix.  <a href="class_linear_1_1_matrix.html#a745e8bde106315ebcd7c6886ba2498c2">More...</a><br /></td></tr>
+<tr class="separator:a745e8bde106315ebcd7c6886ba2498c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98e9b44453dcb05643b9e38249e33a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9">NumRows</a> () const</td></tr>
 <tr class="separator:af98e9b44453dcb05643b9e38249e33a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a577f8387df4cefc6c49db968c838de3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a">NumColumns</a> () const</td></tr>
@@ -264,7 +270,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>Creates the M-by-N matrix \(A\) where \(a_{ij}=x\) for all \(i,j\). If M or N are set to Dynamic, this constructor will throw an exception. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates the M-by-N matrix \(A\) where \(a_{ij}=x\) for all \(i,j\). If M or N are set to Dynamic, a 0x0 matrix will be created. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Real number (default = 0) </td></tr>
   </table>
@@ -300,7 +306,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>Creates the M-by-N matrix \(A\) where \(a_{ij}=z\) for all \(i,j\). If M or N are set to Dynamic, this constructor will throw an exception. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates the M-by-N matrix \(A\) where \(a_{ij}=z\) for all \(i,j\). If M or N are set to Dynamic, a 0x0 matrix will be created. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td><a class="el" href="class_linear_1_1_complex.html" title="Class for complex numbers.">Complex</a> number </td></tr>
   </table>
@@ -888,7 +894,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>N </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of columns </dd></dl>
 
 </div>
 </div>
@@ -916,7 +922,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>M </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of rows </dd></dl>
 
 </div>
 </div>
@@ -1312,6 +1318,89 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
 
 </div>
 </div>
+<a id="a745e8bde106315ebcd7c6886ba2498c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745e8bde106315ebcd7c6886ba2498c2">&#9670;&nbsp;</a></span>Resize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_linear_1_1_matrix.html">Linear::Matrix</a>&lt; T, M, N, Flags &gt;::Resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramname"><em>newM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramname"><em>newN</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes a dynamic matrix. </p>
+<p>If M or N are dynamic, this function becomes available. If both M and N are dynamic, it resizes the matrix to newMxnewN. Otherwise it resizes the matrix to newMxN or MxnewN depending if M or N is dynamic. If neither M nor N are dynamic, this function throws an exception. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newM</td><td>New number of rows. Ignored if M is not dynamic </td></tr>
+    <tr><td class="paramname">newN</td><td>New number of columns. Ignored if N is not dynamic </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a26da687e5c2a5ce0bd4843b6b382f5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26da687e5c2a5ce0bd4843b6b382f5f1">&#9670;&nbsp;</a></span>Resize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_linear_1_1_matrix.html">Linear::Matrix</a>&lt; T, M, N, Flags &gt;::Resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes a dynamic matrix. </p>
+<p>If M or N is dynamic, this function becomes available. It resizes the matrix to newSizexN or MxnewSize depending on if N or M is dynamic. If both M and N are dynamic, it becomes an newSizexnewSize matrix. If neither M nor N are dynamic, this function throws an exception. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSize</td><td>New number of rows/columns </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8a9592c13cc33512d4f8e02069b8fbaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a9592c13cc33512d4f8e02069b8fbaa">&#9670;&nbsp;</a></span>ScaleRow()</h2>
 
@@ -1481,7 +1570,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>M*N </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of cells (Equivalent to <a class="el" href="class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9">NumRows()</a>*NumColumns()) </dd></dl>
 
 </div>
 </div>

@@ -60,4 +60,7 @@ int main() {
 
     Matrix3d matrix_copy_5(matrix_static_3);
     std::cout << "matrix_copy_5 = " << matrix_copy_5 << std::endl;
+
+    MatrixXd matrix_empty_1;
+    std::cout << "matrix_empty_1 = " << matrix_empty_1 << std::endl;
 }
