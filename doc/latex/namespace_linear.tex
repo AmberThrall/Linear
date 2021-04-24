@@ -500,6 +500,8 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s column space. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}{Solve}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Solves the matrix equation Ax=b for x. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, M $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a2f7a62232a81d15614a10da38dd738b6}{Solve}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, const \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, P $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Solves the matrix equation xA=b for x. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a5afdda12123cb445b1c801e85ba1ebe7}{Is\+Vector}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Checks if a matrix is a row or column vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a4a38ad87847e746356f53536a1f94273}{Is\+Square}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ A)
@@ -4779,10 +4781,31 @@ Returns the real number $\sinh x$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a2f7a62232a81d15614a10da38dd738b6}\label{namespace_linear_a2f7a62232a81d15614a10da38dd738b6}} 
+\index{Linear@{Linear}!Solve@{Solve}}
+\index{Solve@{Solve}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
+std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$T,M$>$ $>$\+::type Linear\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, P $>$ \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Solves the matrix equation xA=b for x. 
+
+This just recycles the old solver for Ax=b since $(xA)^\top=A^\top x^\top=b^\top$. If N != P, an exception is thrown. If there is no solution, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em A} & MxN matrix \\
+\hline
+{\em b} & Row vector of length P \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Row vector of length M 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}\label{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}} 
 \index{Linear@{Linear}!Solve@{Solve}}
 \index{Solve@{Solve}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ \\
 std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ $>$\+::type Linear\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ \&}]{b }\end{DoxyParamCaption})}
 
@@ -4793,7 +4816,10 @@ Solves the matrix equation Ax=b for x.
 This functions breaks into various cases.
 \begin{DoxyEnumerate}
 \item If A is square we have 2 special cases. a. If A is invertible, then $x=A^{-1}b$. b. If A is upper triangular or lower triangular, then we can use forward/backward subsitution to solve.
-\item If those two cases don\textquotesingle{}t hold, we employ Guassian elimination. If M != P, an exception is thrown. If there is no solution, an exception is thrown. 
+\item If those two cases don\textquotesingle{}t hold, we employ Guassian elimination.
+\end{DoxyEnumerate}
+
+If M != P, an exception is thrown. If there is no solution, an exception is thrown. 
 \begin{DoxyParams}{Parameters}
 {\em A} & MxN matrix \\
 \hline
@@ -4803,8 +4829,7 @@ This functions breaks into various cases.
 \begin{DoxyReturn}{Returns}
 Vector of length N 
 \end{DoxyReturn}
-
-\end{DoxyEnumerate}\mbox{\Hypertarget{namespace_linear_a9c410068fb3174ea9cb431fb19bbaf8d}\label{namespace_linear_a9c410068fb3174ea9cb431fb19bbaf8d}} 
+\mbox{\Hypertarget{namespace_linear_a9c410068fb3174ea9cb431fb19bbaf8d}\label{namespace_linear_a9c410068fb3174ea9cb431fb19bbaf8d}} 
 \index{Linear@{Linear}!Sqrt@{Sqrt}}
 \index{Sqrt@{Sqrt}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{Sqrt()}{Sqrt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}

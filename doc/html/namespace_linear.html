@@ -966,6 +966,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==P||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">Solve</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &amp;b)</td></tr>
 <tr class="memdesc:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the matrix equation Ax=b for x.  <a href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">More...</a><br /></td></tr>
 <tr class="separator:a5fc98fb00f4d366b8879c67c09e2bed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7a62232a81d15614a10da38dd738b6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
+<tr class="memitem:a2f7a62232a81d15614a10da38dd738b6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M==P||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, M &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2f7a62232a81d15614a10da38dd738b6">Solve</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, P &gt; &amp;b)</td></tr>
+<tr class="memdesc:a2f7a62232a81d15614a10da38dd738b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the matrix equation xA=b for x.  <a href="namespace_linear.html#a2f7a62232a81d15614a10da38dd738b6">More...</a><br /></td></tr>
+<tr class="separator:a2f7a62232a81d15614a10da38dd738b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a5afdda12123cb445b1c801e85ba1ebe7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">IsVector</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a5afdda12123cb445b1c801e85ba1ebe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a matrix is a row or column vector.  <a href="namespace_linear.html#a5afdda12123cb445b1c801e85ba1ebe7">More...</a><br /></td></tr>
@@ -8177,8 +8181,48 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a2f7a62232a81d15614a10da38dd738b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7a62232a81d15614a10da38dd738b6">&#9670;&nbsp;</a></span>Solve() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;(M==P||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;T,M&gt; &gt;::type Linear::Solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, P &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solves the matrix equation xA=b for x. </p>
+<p>This just recycles the old solver for Ax=b since \((xA)^\top=A^\top x^\top=b^\top\). If N != P, an exception is thrown. If there is no solution, an exception is thrown. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
+    <tr><td class="paramname">b</td><td>Row vector of length P </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Row vector of length M </dd></dl>
+
+</div>
+</div>
 <a id="a5fc98fb00f4d366b8879c67c09e2bed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fc98fb00f4d366b8879c67c09e2bed6">&#9670;&nbsp;</a></span>Solve()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc98fb00f4d366b8879c67c09e2bed6">&#9670;&nbsp;</a></span>Solve() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8208,7 +8252,9 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </
 <p>Solves the matrix equation Ax=b for x. </p>
 <p>This functions breaks into various cases.</p><ol type="1">
 <li>If A is square we have 2 special cases. a. If A is invertible, then \(x=A^{-1}b\). b. If A is upper triangular or lower triangular, then we can use forward/backward subsitution to solve.</li>
-<li>If those two cases don't hold, we employ Guassian elimination. If M != P, an exception is thrown. If there is no solution, an exception is thrown. <dl class="params"><dt>Parameters</dt><dd>
+<li>If those two cases don't hold, we employ Guassian elimination.</li>
+</ol>
+<p>If M != P, an exception is thrown. If there is no solution, an exception is thrown. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
     <tr><td class="paramname">b</td><td>Vector of length P </td></tr>
@@ -8216,8 +8262,6 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of length N </dd></dl>
-</li>
-</ol>
 
 </div>
 </div>

@@ -86,6 +86,7 @@ namespace Linear {
      *   a. If A is invertible, then \f$x=A^{-1}b\f$.
      *   b. If A is upper triangular or lower triangular, then we can use forward/backward subsitution to solve.
      * 2. If those two cases don't hold, we employ Guassian elimination.
+     *
      * If M != P, an exception is thrown. If there is no solution, an exception is thrown.
      * @param A MxN matrix
      * @param b Vector of length P
@@ -164,5 +165,18 @@ namespace Linear {
         }
 
         return x;
+    }
+
+    /**
+     * Solves the matrix equation xA=b for x.
+     * This just recycles the old solver for Ax=b since \f$(xA)^\top=A^\top x^\top=b^\top\f$.
+     * If N != P, an exception is thrown. If there is no solution, an exception is thrown.
+     * @param A MxN matrix
+     * @param b Row vector of length P
+     * @return Row vector of length M
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
+    typename std::enable_if<(M==P||P==Dynamic||M==Dynamic), RowVector<T,M>>::type Solve(const Matrix<T,M,N,Flags>& A, const RowVector<T,P>& b) {
+        return Transpose(Solve(Transpose(A), Transpose(b)));
     }
 }

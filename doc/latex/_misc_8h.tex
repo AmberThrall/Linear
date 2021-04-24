@@ -23,4 +23,6 @@
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\unsigned int \mbox{\hyperlink{namespace_linear_a821339a5ae70e69525e21978c45c1262}{Linear\+::\+Rank}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the dimension of the A\textquotesingle{}s column space. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==Dynamic$\vert$$\vert$M==Dynamic), Vector$<$ T, N $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}{Linear\+::\+Solve}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Vector$<$ T, P $>$ \&b)
-\begin{DoxyCompactList}\small\item\em Solves the matrix equation Ax=b for x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Solves the matrix equation Ax=b for x. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(M==P$\vert$$\vert$P==Dynamic$\vert$$\vert$M==Dynamic), Row\+Vector$<$ T, M $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a2f7a62232a81d15614a10da38dd738b6}{Linear\+::\+Solve}} (const Matrix$<$ T, M, N, Flags $>$ \&A, const Row\+Vector$<$ T, P $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Solves the matrix equation xA=b for x. \end{DoxyCompactList}\end{DoxyCompactItemize}

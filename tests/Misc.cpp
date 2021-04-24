@@ -45,7 +45,17 @@ int main() {
         std::cout << "D = " << D << std::endl;
         std::cout << "b = " << Transpose(b) << std::endl;
         std::cout << "x2 = " << Transpose(x2) << std::endl;
-        std::cout << "Dx = " << Transpose(D*x2) << std::endl;
+        std::cout << "D*x2 = " << Transpose(D*x2) << std::endl;
+
+        Matrix3d E = {
+            {1,0,0}, {2,3,0}, {4,5,6}
+        };
+        RowVector3d b3 = {1, 2, 3};
+        RowVector3d x3 = Solve(E, b3);
+        std::cout << "E = " << E << std::endl;
+        std::cout << "b3 = " << b3 << std::endl;
+        std::cout << "x3 = " << x3 << std::endl;
+        std::cout << "x3*E = " << x3*E << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;

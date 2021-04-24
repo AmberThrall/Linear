@@ -1,1 +1,46 @@
-C++17 Matrices library 
+\mbox{\hyperlink{namespace_linear}{Linear}} is a C++14 linear algebra all-\/header library.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Features}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Statically or dynamically sized matrices
+\item Multiple matrix decomposition methods, including\+: LUP, QR, Cholesky, Eigen, SVD and Schur
+\item Eigenvalue and eigenvector methods
+\item Equation solving of the form Ax=b
+\item Vectors with a distinction between row and column vectors
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Installation}\label{md__r_e_a_d_m_e_autotoc_md2}
+\mbox{\hyperlink{namespace_linear}{Linear}} is an all-\/header library. Simply copy the src/ directory to your project\textquotesingle{}s directory and include \mbox{\hyperlink{_linear_8h}{Linear.\+h}}.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Example}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Linear/Linear.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{  }
+\DoxyCodeLine{  \textcolor{comment}{// Get the eigenpairs of the matrix A}}
+\DoxyCodeLine{  \mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Matrix3d}} A = \{ }
+\DoxyCodeLine{    \{-\/4,14,0\}, \{-\/5,13,0\}, \{-\/1,0,2\} }
+\DoxyCodeLine{  \};}
+\DoxyCodeLine{  std::vector<Eigenpair<double,3>> eigenpairs = \mbox{\hyperlink{namespace_linear_a498247f6fcf1caa95824099e53ddac04}{Eigen}}(A);}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}A = "{}} << A << std::endl;}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < eigenpairs.size(); ++i) \{}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"{}("{}} << eigenpairs[i].value << \textcolor{stringliteral}{"{},"{}} << \mbox{\hyperlink{namespace_linear_a75fef6051598d5a83617f761d25c4b54}{Transpose}}(eigenpairs[i].vector) << \textcolor{stringliteral}{"{})"{}} << std::endl;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{comment}{// Compute the SVD of the matrix B}}
+\DoxyCodeLine{  \mbox{\hyperlink{class_linear_1_1_matrix}{Linear::Matrix<double,4,5>}} B = \{}
+\DoxyCodeLine{      \{1,0,0,0,2\}, \{0,0,3,0,0\}, \{0,0,0,0,0\}, \{0,2,0,0,0\}}
+\DoxyCodeLine{  \};}
+\DoxyCodeLine{  \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear::SVD<double,4,5>}} svd(B);}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}B = "{}} << B << std::endl;}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}USV* = "{}} << svd.U*svd.S*svd.Vh << std::endl;}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{comment}{// Solve the matrix equation Cx=b}}
+\DoxyCodeLine{  Matrix<double,3,4> C = \{}
+\DoxyCodeLine{      \{1,2,2,2\}, \{2,4,6,8\}, \{3,6,8,10\}}
+\DoxyCodeLine{  \};}
+\DoxyCodeLine{  \mbox{\hyperlink{namespace_linear_a88ec60e790bab6031c6d6a52531eb9e1}{Vector3d}} b = \{1,5,6\};}
+\DoxyCodeLine{  \mbox{\hyperlink{namespace_linear_ac5dde96553dbb3fc404dc26ba407a634}{Vector4d}} x = \mbox{\hyperlink{namespace_linear_a5fc98fb00f4d366b8879c67c09e2bed6}{Solve}}(C, b);}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}x = "{}} << \mbox{\hyperlink{namespace_linear_a75fef6051598d5a83617f761d25c4b54}{Transpose}}(x) << std::endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Documentation}\label{md__r_e_a_d_m_e_autotoc_md4}
+A doxygen generated documentation is available in the doc/ directory. The tests/ directory also contains various examples. 

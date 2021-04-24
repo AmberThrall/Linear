@@ -72,7 +72,62 @@ $(function() {
 <div class="title"><a class="el" href="namespace_linear.html">Linear</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>C++17 Matrices library </p>
+<div class="textblock"><p><a class="el" href="namespace_linear.html">Linear</a> is a C++14 linear algebra all-header library.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li>Statically or dynamically sized matrices</li>
+<li>Multiple matrix decomposition methods, including: LUP, QR, Cholesky, Eigen, SVD and Schur</li>
+<li>Eigenvalue and eigenvector methods</li>
+<li>Equation solving of the form Ax=b</li>
+<li>Vectors with a distinction between row and column vectors</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Installation</h1>
+<p><a class="el" href="namespace_linear.html">Linear</a> is an all-header library. Simply copy the src/ directory to your project's directory and include <a class="el" href="_linear_8h.html">Linear.h</a>.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Example</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Linear/Linear.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {  </div>
+<div class="line">  <span class="comment">// Get the eigenpairs of the matrix A</span></div>
+<div class="line">  <a class="code" href="namespace_linear.html#a9f82e64d01c7efdbe9217c33f954a83c">Matrix3d</a> A = { </div>
+<div class="line">    {-4,14,0}, {-5,13,0}, {-1,0,2} </div>
+<div class="line">  };</div>
+<div class="line">  std::vector&lt;Eigenpair&lt;double,3&gt;&gt; eigenpairs = <a class="code" href="namespace_linear.html#a498247f6fcf1caa95824099e53ddac04">Eigen</a>(A);</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;A = &quot;</span> &lt;&lt; A &lt;&lt; std::endl;</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; eigenpairs.size(); ++i) {</div>
+<div class="line">      std::cout &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; eigenpairs[i].value &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="namespace_linear.html#a75fef6051598d5a83617f761d25c4b54">Transpose</a>(eigenpairs[i].vector) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Compute the SVD of the matrix B</span></div>
+<div class="line">  <a class="code" href="class_linear_1_1_matrix.html">Linear::Matrix&lt;double,4,5&gt;</a> B = {</div>
+<div class="line">      {1,0,0,0,2}, {0,0,3,0,0}, {0,0,0,0,0}, {0,2,0,0,0}</div>
+<div class="line">  };</div>
+<div class="line">  <a class="code" href="struct_linear_1_1_s_v_d.html">Linear::SVD&lt;double,4,5&gt;</a> svd(B);</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;B = &quot;</span> &lt;&lt; B &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;USV* = &quot;</span> &lt;&lt; svd.U*svd.S*svd.Vh &lt;&lt; std::endl;</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Solve the matrix equation Cx=b</span></div>
+<div class="line">  Matrix&lt;double,3,4&gt; C = {</div>
+<div class="line">      {1,2,2,2}, {2,4,6,8}, {3,6,8,10}</div>
+<div class="line">  };</div>
+<div class="line">  <a class="code" href="namespace_linear.html#a88ec60e790bab6031c6d6a52531eb9e1">Vector3d</a> b = {1,5,6};</div>
+<div class="line">  <a class="code" href="namespace_linear.html#ac5dde96553dbb3fc404dc26ba407a634">Vector4d</a> x = <a class="code" href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">Solve</a>(C, b);</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;x = &quot;</span> &lt;&lt; <a class="code" href="namespace_linear.html#a75fef6051598d5a83617f761d25c4b54">Transpose</a>(x) &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_linear_1_1_matrix_html"><div class="ttname"><a href="class_linear_1_1_matrix.html">Linear::Matrix</a></div><div class="ttdoc">Class for matrices.</div><div class="ttdef"><b>Definition:</b> Matrix.h:19</div></div>
+<div class="ttc" id="anamespace_linear_html_a498247f6fcf1caa95824099e53ddac04"><div class="ttname"><a href="namespace_linear.html#a498247f6fcf1caa95824099e53ddac04">Linear::Eigen</a></div><div class="ttdeci">std::vector&lt; Eigenpair&lt; T, N &gt; &gt; Eigen(const Matrix&lt; T, M, N, Flags &gt; &amp;A)</div><div class="ttdoc">Calculates all eigenpairs of A.</div><div class="ttdef"><b>Definition:</b> Eigen.h:253</div></div>
+<div class="ttc" id="anamespace_linear_html_a5fc98fb00f4d366b8879c67c09e2bed6"><div class="ttname"><a href="namespace_linear.html#a5fc98fb00f4d366b8879c67c09e2bed6">Linear::Solve</a></div><div class="ttdeci">std::enable_if&lt;(M==P||P==Dynamic||M==Dynamic), Vector&lt; T, N &gt; &gt;::type Solve(const Matrix&lt; T, M, N, Flags &gt; &amp;A, const Vector&lt; T, P &gt; &amp;b)</div><div class="ttdoc">Solves the matrix equation Ax=b for x.</div><div class="ttdef"><b>Definition:</b> Misc.h:96</div></div>
+<div class="ttc" id="anamespace_linear_html_a75fef6051598d5a83617f761d25c4b54"><div class="ttname"><a href="namespace_linear.html#a75fef6051598d5a83617f761d25c4b54">Linear::Transpose</a></div><div class="ttdeci">Matrix&lt; T, N, M, Flags &gt; Transpose(const Matrix&lt; T, M, N, Flags &gt; &amp;A)</div><div class="ttdoc">Returns the NxM matrix  defined by .</div><div class="ttdef"><b>Definition:</b> Basics.h:153</div></div>
+<div class="ttc" id="anamespace_linear_html_a88ec60e790bab6031c6d6a52531eb9e1"><div class="ttname"><a href="namespace_linear.html#a88ec60e790bab6031c6d6a52531eb9e1">Linear::Vector3d</a></div><div class="ttdeci">Vector&lt; double, 3 &gt; Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.h:20</div></div>
+<div class="ttc" id="anamespace_linear_html_a9f82e64d01c7efdbe9217c33f954a83c"><div class="ttname"><a href="namespace_linear.html#a9f82e64d01c7efdbe9217c33f954a83c">Linear::Matrix3d</a></div><div class="ttdeci">Matrix&lt; double, 3, 3 &gt; Matrix3d</div><div class="ttdef"><b>Definition:</b> Matrix.h:866</div></div>
+<div class="ttc" id="anamespace_linear_html_ac5dde96553dbb3fc404dc26ba407a634"><div class="ttname"><a href="namespace_linear.html#ac5dde96553dbb3fc404dc26ba407a634">Linear::Vector4d</a></div><div class="ttdeci">Vector&lt; double, 4 &gt; Vector4d</div><div class="ttdef"><b>Definition:</b> Vector.h:21</div></div>
+<div class="ttc" id="astruct_linear_1_1_s_v_d_html"><div class="ttname"><a href="struct_linear_1_1_s_v_d.html">Linear::SVD</a></div><div class="ttdoc">Struct for SVD decomposition.</div><div class="ttdef"><b>Definition:</b> Decomp.h:268</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Documentation</h1>
+<p>A doxygen generated documentation is available in the doc/ directory. The tests/ directory also contains various examples. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
