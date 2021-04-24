@@ -51,10 +51,10 @@ namespace Linear {
      */
     template <size_t P, typename T, size_t N>
     typename std::enable_if<(P>0),Vector<T,P>>::type SubVector(const Vector<T,N>& v, size_t off = 0) {
-        if (off+P > v.Size())
+        if (off+P > v.Length())
             throw "Cannot create subvector, indices out of bounds.";
         Vector<T,P> ret(T(0));
-        for (size_t i = 0; i < ret.Size(); ++i) {
+        for (size_t i = 0; i < ret.Length(); ++i) {
             ret[i] = v[off+i];
         }
         return ret;
@@ -74,10 +74,10 @@ namespace Linear {
      */
     template <typename T, size_t N>
     Vector<T,Dynamic> SubVector(const Vector<T,N>& v, size_t size, size_t off = 0) {
-        if (size < 1 || off+size > v.Size())
+        if (size < 1 || off+size > v.Length())
             throw "Cannot create subvector, indices out of bounds.";
         Vector<T,Dynamic> ret(size,T(0));
-        for (size_t i = 0; i < ret.Size(); ++i) {
+        for (size_t i = 0; i < ret.Length(); ++i) {
             ret[i] = v[off+i];
         }
         return ret;
@@ -174,10 +174,10 @@ namespace Linear {
     Complex<T> Dot(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
         if (!IsVector(a) || !IsVector(b))
             throw "Dot product is only defined for vectors.";
-        if (a.Size() != b.Size())
+        if (a.Length() != b.Length())
             throw "Cannot take the dot product of two different sized vectors.";
         Complex<T> ret;
-        for (size_t i = 0; i < a.Size(); ++i) {
+        for (size_t i = 0; i < a.Length(); ++i) {
             ret += Conjugate(a[i])*b[i];
         }
         return ret;
@@ -200,7 +200,7 @@ namespace Linear {
             throw "Normalize is only defined for vectors.";
         T norm = Norm(v);
         if (norm < T(Tol)) {
-            for (size_t i = 0; i < v.Size(); ++i)
+            for (size_t i = 0; i < v.Length(); ++i)
                 v[i] = 0;
             return v;
         }
@@ -224,9 +224,9 @@ namespace Linear {
      */
     template<typename T, size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2>
     Matrix<T,M,N,Flags> Cross(const Matrix<T,M,N,Flags>& a, const Matrix<T,P,Q,Flags2>& b) {
-        if (!IsVector(a) || !IsVector(b) || a.Size() != 3 || b.Size() != 3)
+        if (!IsVector(a) || !IsVector(b) || a.Length() != 3 || b.Length() != 3)
             throw "The cross product is only defined for two 3-dimensional vectors.";
-        Matrix<T,M,N,Flags> ret(a.NumRows(), a.NumColumns(),T(0));
+        Matrix<T,M,N,Flags> ret(a.NumRows(), a.NumColumns(), T(0));
         ret[0] = a[1]*b[2] - a[2]*b[1];
         ret[1] = a[2]*b[0] - a[0]*b[2];
         ret[2] = a[0]*b[1] - a[1]*b[0];
@@ -252,10 +252,10 @@ namespace Linear {
     Matrix<T,P,Q,Flags2> Proj(const Matrix<T,M,N,Flags>& v, const Matrix<T,P,Q,Flags2>& onto) {
         if (!IsVector(v) || !IsVector(onto))
             throw "Vector projection doesn't work on matrices.";
-        if (v.Size() != onto.Size())
+        if (v.Length() != onto.Length())
             throw "Cannot project vector onto a vector of differing dimension.";
         if (Norm(onto) < T(Tol)) { // Special case: Proj_0(v) = 0
-            for (size_t i = 0; i < onto.Size(); ++i)
+            for (size_t i = 0; i < onto.Length(); ++i)
                 onto[i] = T(0);
             return onto;
         }
@@ -281,8 +281,8 @@ namespace Linear {
         if (v.size() == 0)
             return v;
         for (size_t i = 1; i < v.size(); ++i) {
-            if (v[i].Size() != v[0].Size())
-                throw "All vectors must be the same length.";
+            if (v[i].Length() != v[0].Length())
+                throw "All vectors must be the same length in order to perform Gram-Schmidt.";
         }
 
         std::vector<Vector<T,N>> u;

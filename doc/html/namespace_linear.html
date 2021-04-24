@@ -120,8 +120,6 @@ Typedefs</h2></td></tr>
 <tr class="separator:a493d7a7a1d5d2fc4c864aa29a5196dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a106e3159d71028be5fbb42ebf320d831"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a106e3159d71028be5fbb42ebf320d831">Complexd</a> = <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; double &gt;</td></tr>
 <tr class="separator:a106e3159d71028be5fbb42ebf320d831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69a8a2fe40b5aeb42c0d81bb59054520"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a></td></tr>
-<tr class="separator:a69a8a2fe40b5aeb42c0d81bb59054520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
 <tr class="memitem:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, N, N, Flags &gt;</td></tr>
 <tr class="separator:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,23 +212,23 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa7de4ca66fd8eb12c9855082a5df18db"><td class="memTemplParams" colspan="2">template&lt;size_t P, size_t Q, typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:aa7de4ca66fd8eb12c9855082a5df18db"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0 &amp;&amp;Q &gt;0), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa7de4ca66fd8eb12c9855082a5df18db">SubMatrix</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i=0, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j=0)</td></tr>
+<tr class="memitem:aa7de4ca66fd8eb12c9855082a5df18db"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0 &amp;&amp;Q &gt;0), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, P, Q, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa7de4ca66fd8eb12c9855082a5df18db">SubMatrix</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, size_t i=0, size_t j=0)</td></tr>
 <tr class="memdesc:aa7de4ca66fd8eb12c9855082a5df18db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the PxQ submatrix located at (i,j) If i+P&gt;M or j+Q &gt; N, an exception is raised.  <a href="namespace_linear.html#aa7de4ca66fd8eb12c9855082a5df18db">More...</a><br /></td></tr>
 <tr class="separator:aa7de4ca66fd8eb12c9855082a5df18db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84183e0067bb201a95e286de8e6b4ba6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a84183e0067bb201a95e286de8e6b4ba6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a84183e0067bb201a95e286de8e6b4ba6">SubMatrix</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i=0, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j=0)</td></tr>
+<tr class="memitem:a84183e0067bb201a95e286de8e6b4ba6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a84183e0067bb201a95e286de8e6b4ba6">SubMatrix</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, size_t nrows, size_t ncols, size_t i=0, size_t j=0)</td></tr>
 <tr class="memdesc:a84183e0067bb201a95e286de8e6b4ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the nrowsxncols submatrix located at (i,j) If i+nrows&gt;M or j+ncols &gt; N, an exception is raised.  <a href="namespace_linear.html#a84183e0067bb201a95e286de8e6b4ba6">More...</a><br /></td></tr>
 <tr class="separator:a84183e0067bb201a95e286de8e6b4ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a353d19fe717cfa428f34db524b264c2d"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a353d19fe717cfa428f34db524b264c2d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T,(M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:M-1), N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a353d19fe717cfa428f34db524b264c2d">RemoveRow</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i)</td></tr>
+<tr class="memitem:a353d19fe717cfa428f34db524b264c2d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T,(M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:M-1), N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a353d19fe717cfa428f34db524b264c2d">RemoveRow</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, size_t i)</td></tr>
 <tr class="memdesc:a353d19fe717cfa428f34db524b264c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (M-1)xN submatrix formed by removing the ith row.  <a href="namespace_linear.html#a353d19fe717cfa428f34db524b264c2d">More...</a><br /></td></tr>
 <tr class="separator:a353d19fe717cfa428f34db524b264c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cf217c60cdb387838b847f4354cab48"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a0cf217c60cdb387838b847f4354cab48"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0cf217c60cdb387838b847f4354cab48">RemoveColumn</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i)</td></tr>
+<tr class="memitem:a0cf217c60cdb387838b847f4354cab48"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0cf217c60cdb387838b847f4354cab48">RemoveColumn</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, size_t i)</td></tr>
 <tr class="memdesc:a0cf217c60cdb387838b847f4354cab48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Mx(N-1) submatrix formed by removing the ith column.  <a href="namespace_linear.html#a0cf217c60cdb387838b847f4354cab48">More...</a><br /></td></tr>
 <tr class="separator:a0cf217c60cdb387838b847f4354cab48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3314c24e28eca3cfd7794bace7202673"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a3314c24e28eca3cfd7794bace7202673"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T,(M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:M-1),(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3314c24e28eca3cfd7794bace7202673">RemoveRowAndColumn</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memitem:a3314c24e28eca3cfd7794bace7202673"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T,(M==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:M-1),(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3314c24e28eca3cfd7794bace7202673">RemoveRowAndColumn</a> (<a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; A, size_t i, size_t j)</td></tr>
 <tr class="memdesc:a3314c24e28eca3cfd7794bace7202673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (M-1)x(N-1) submatrix formed by removing the ith row and jth column.  <a href="namespace_linear.html#a3314c24e28eca3cfd7794bace7202673">More...</a><br /></td></tr>
 <tr class="separator:a3314c24e28eca3cfd7794bace7202673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75fef6051598d5a83617f761d25c4b54"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
@@ -254,11 +252,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac742a1d3567f0f56ad6d2196d2960e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the determinant of a square matrix defined by \(\sum_{i=0}^{N-1}(-1)^ia_{0i}\det(A_{0i})\) where \(A_{0i}\) is the (N-1)x(N-1) matrix obtained by deleting the 0th row and ith column.  <a href="namespace_linear.html#ac742a1d3567f0f56ad6d2196d2960e85">More...</a><br /></td></tr>
 <tr class="separator:ac742a1d3567f0f56ad6d2196d2960e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f">Minor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memitem:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f">Minor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, size_t i, size_t j)</td></tr>
 <tr class="memdesc:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-minor of a square matrix defined by \(\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#a2427bd1ff44d2875ca7f07c7d047e39f">More...</a><br /></td></tr>
 <tr class="separator:a2427bd1ff44d2875ca7f07c7d047e39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2af21abf09659a8df011d15cf6e48f26"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a2af21abf09659a8df011d15cf6e48f26"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26">Cofactor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memitem:a2af21abf09659a8df011d15cf6e48f26"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26">Cofactor</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, size_t i, size_t j)</td></tr>
 <tr class="memdesc:a2af21abf09659a8df011d15cf6e48f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j)-cofactor of a square matrix defined by \((-1)^{i+j}\det(A_{ij})\) where \(A_{ij}\) is the (N-1)x(N-1) matrix obtained by deleting the ith row and jth column.  <a href="namespace_linear.html#a2af21abf09659a8df011d15cf6e48f26">More...</a><br /></td></tr>
 <tr class="separator:a2af21abf09659a8df011d15cf6e48f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47539cd2c0b65666a67821896a450d5a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
@@ -578,7 +576,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:acdf2f90327b65fdb5e7e8408a822a49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the NxN Identity matrix.  <a href="namespace_linear.html#acdf2f90327b65fdb5e7e8408a822a49d">More...</a><br /></td></tr>
 <tr class="separator:acdf2f90327b65fdb5e7e8408a822a49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a2fe1649ccee44378fdc5e315a8eda2"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a3a2fe1649ccee44378fdc5e315a8eda2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3a2fe1649ccee44378fdc5e315a8eda2">Identity</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> n)</td></tr>
+<tr class="memitem:a3a2fe1649ccee44378fdc5e315a8eda2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3a2fe1649ccee44378fdc5e315a8eda2">Identity</a> (size_t n)</td></tr>
 <tr class="memdesc:a3a2fe1649ccee44378fdc5e315a8eda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates the nxn Identity matrix.  <a href="namespace_linear.html#a3a2fe1649ccee44378fdc5e315a8eda2">More...</a><br /></td></tr>
 <tr class="separator:a3a2fe1649ccee44378fdc5e315a8eda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ac9809fec2527eb2a9d3339b2f7ff9"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </td></tr>
@@ -586,7 +584,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a34ac9809fec2527eb2a9d3339b2f7ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the MxN all zeros matrix.  <a href="namespace_linear.html#a34ac9809fec2527eb2a9d3339b2f7ff9">More...</a><br /></td></tr>
 <tr class="separator:a34ac9809fec2527eb2a9d3339b2f7ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a767c0a935585bb291e0d6ff82f53f823"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a767c0a935585bb291e0d6ff82f53f823"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a767c0a935585bb291e0d6ff82f53f823">Zero</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols)</td></tr>
+<tr class="memitem:a767c0a935585bb291e0d6ff82f53f823"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a767c0a935585bb291e0d6ff82f53f823">Zero</a> (size_t nrows, size_t ncols)</td></tr>
 <tr class="memdesc:a767c0a935585bb291e0d6ff82f53f823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates the nrowsxncols all zeros matrix.  <a href="namespace_linear.html#a767c0a935585bb291e0d6ff82f53f823">More...</a><br /></td></tr>
 <tr class="separator:a767c0a935585bb291e0d6ff82f53f823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a9a5584160365f5fe90b095b4954869"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </td></tr>
@@ -594,7 +592,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a7a9a5584160365f5fe90b095b4954869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the MxN all ones matrix.  <a href="namespace_linear.html#a7a9a5584160365f5fe90b095b4954869">More...</a><br /></td></tr>
 <tr class="separator:a7a9a5584160365f5fe90b095b4954869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22c0c3ccb5962d06ee6d42f6daa00d9"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:ac22c0c3ccb5962d06ee6d42f6daa00d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9">One</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols)</td></tr>
+<tr class="memitem:ac22c0c3ccb5962d06ee6d42f6daa00d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9">One</a> (size_t nrows, size_t ncols)</td></tr>
 <tr class="memdesc:ac22c0c3ccb5962d06ee6d42f6daa00d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates the nrowsxncols all ones matrix.  <a href="namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9">More...</a><br /></td></tr>
 <tr class="separator:ac22c0c3ccb5962d06ee6d42f6daa00d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35423b0a411d7f0b7d796a57ab9b688f"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </td></tr>
@@ -602,15 +600,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:a35423b0a411d7f0b7d796a57ab9b688f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an MxN matrix with every entry set to z.  <a href="namespace_linear.html#a35423b0a411d7f0b7d796a57ab9b688f">More...</a><br /></td></tr>
 <tr class="separator:a35423b0a411d7f0b7d796a57ab9b688f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a922e0c71287bc7ed3abf9851410a3df9"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a922e0c71287bc7ed3abf9851410a3df9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a922e0c71287bc7ed3abf9851410a3df9">Constant</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; z)</td></tr>
+<tr class="memitem:a922e0c71287bc7ed3abf9851410a3df9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a922e0c71287bc7ed3abf9851410a3df9">Constant</a> (size_t nrows, size_t ncols, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; z)</td></tr>
 <tr class="memdesc:a922e0c71287bc7ed3abf9851410a3df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates an nrowsxncols matrix with every entry set to v.  <a href="namespace_linear.html#a922e0c71287bc7ed3abf9851410a3df9">More...</a><br /></td></tr>
 <tr class="separator:a922e0c71287bc7ed3abf9851410a3df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae728c282fdde8946fdda75085486550b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:ae728c282fdde8946fdda75085486550b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M &gt;0 &amp;&amp;N &gt;0), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ae728c282fdde8946fdda75085486550b">Basis</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memitem:ae728c282fdde8946fdda75085486550b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(M &gt;0 &amp;&amp;N &gt;0), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ae728c282fdde8946fdda75085486550b">Basis</a> (size_t i, size_t j)</td></tr>
 <tr class="memdesc:ae728c282fdde8946fdda75085486550b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an MxN basis matrix \(A\) where all entries are set to 0 except \(a_{ij}=1\).  <a href="namespace_linear.html#ae728c282fdde8946fdda75085486550b">More...</a><br /></td></tr>
 <tr class="separator:ae728c282fdde8946fdda75085486550b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fa54b4fd13c37b0296853335bedcabf"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a7fa54b4fd13c37b0296853335bedcabf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a7fa54b4fd13c37b0296853335bedcabf">Basis</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j)</td></tr>
+<tr class="memitem:a7fa54b4fd13c37b0296853335bedcabf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a7fa54b4fd13c37b0296853335bedcabf">Basis</a> (size_t nrows, size_t ncols, size_t i, size_t j)</td></tr>
 <tr class="memdesc:a7fa54b4fd13c37b0296853335bedcabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates an nrowsxncols basis matrix \(A\) where all entries are set to 0 except \(a_{ij}=1\).  <a href="namespace_linear.html#a7fa54b4fd13c37b0296853335bedcabf">More...</a><br /></td></tr>
 <tr class="separator:a7fa54b4fd13c37b0296853335bedcabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5e31f5f6b536b89379af549abdeb1a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab5e31f5f6b536b89379af549abdeb1a6">SeedRandom</a> (unsigned int seed)</td></tr>
@@ -621,15 +619,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3a80e6084878985b463ab66e347a6932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an MxN random matrix \(A\) where all entries are randomly determined between min and max.  <a href="namespace_linear.html#a3a80e6084878985b463ab66e347a6932">More...</a><br /></td></tr>
 <tr class="separator:a3a80e6084878985b463ab66e347a6932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2d213cd79736ef96c8de075e666d86a"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:ac2d213cd79736ef96c8de075e666d86a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a">Random</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> nrows, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> ncols, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; min=<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;(0.0), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; max=<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;(1.0))</td></tr>
+<tr class="memitem:ac2d213cd79736ef96c8de075e666d86a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a">Random</a> (size_t nrows, size_t ncols, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; min=<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;(0.0), <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; max=<a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;(1.0))</td></tr>
 <tr class="memdesc:ac2d213cd79736ef96c8de075e666d86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates an nrowsxncols random matrix \(A\) where all entries are randomly determined between min and max.  <a href="namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a">More...</a><br /></td></tr>
 <tr class="separator:ac2d213cd79736ef96c8de075e666d86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d5ffc910cea161f5364788ed39b4d4"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a47d5ffc910cea161f5364788ed39b4d4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, P, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a47d5ffc910cea161f5364788ed39b4d4">Givens</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; theta)</td></tr>
+<tr class="memitem:a47d5ffc910cea161f5364788ed39b4d4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, P, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a47d5ffc910cea161f5364788ed39b4d4">Givens</a> (size_t i, size_t j, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; theta)</td></tr>
 <tr class="memdesc:a47d5ffc910cea161f5364788ed39b4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an NxN givens rotation \(G(i,j,\theta)\) defined by.  <a href="namespace_linear.html#a47d5ffc910cea161f5364788ed39b4d4">More...</a><br /></td></tr>
 <tr class="separator:a47d5ffc910cea161f5364788ed39b4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1198c3b83f6c952d9338a967b29a98f4"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:a1198c3b83f6c952d9338a967b29a98f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1198c3b83f6c952d9338a967b29a98f4">Givens</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> size, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> i, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> j, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; theta)</td></tr>
+<tr class="memitem:a1198c3b83f6c952d9338a967b29a98f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1198c3b83f6c952d9338a967b29a98f4">Givens</a> (size_t size, size_t i, size_t j, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; theta)</td></tr>
 <tr class="memdesc:a1198c3b83f6c952d9338a967b29a98f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically creates a sizexsize givens rotation \(G(i,j,\theta)\) defined by.  <a href="namespace_linear.html#a1198c3b83f6c952d9338a967b29a98f4">More...</a><br /></td></tr>
 <tr class="separator:a1198c3b83f6c952d9338a967b29a98f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa425b84bc259c27bca03c2e5444c37d7"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
@@ -637,7 +635,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:aa425b84bc259c27bca03c2e5444c37d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an NxN Householder transformation \(H\) defined by \(H = I - 2vv^*.\).  <a href="namespace_linear.html#aa425b84bc259c27bca03c2e5444c37d7">More...</a><br /></td></tr>
 <tr class="separator:aa425b84bc259c27bca03c2e5444c37d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2f361b8aefb6590e8159a310213e825"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
-<tr class="memitem:ab2f361b8aefb6590e8159a310213e825"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab2f361b8aefb6590e8159a310213e825">Householder</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;x, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> k)</td></tr>
+<tr class="memitem:ab2f361b8aefb6590e8159a310213e825"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab2f361b8aefb6590e8159a310213e825">Householder</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;x, size_t k)</td></tr>
 <tr class="memdesc:ab2f361b8aefb6590e8159a310213e825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an NxN Householder transformation \(H\) such that \(Hx\) eliminates the last k elements.  <a href="namespace_linear.html#ab2f361b8aefb6590e8159a310213e825">More...</a><br /></td></tr>
 <tr class="separator:ab2f361b8aefb6590e8159a310213e825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41808ae6d65baf9db1c875f4db3ae67c"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M1, size_t N1, unsigned int Flags1, size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
@@ -692,7 +690,7 @@ Functions</h2></td></tr>
 <tr class="separator:a435b0aeb31de1bea43895e0798ced862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cf3a7acee5cd5c49eae86bd966efb6"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a72cf3a7acee5cd5c49eae86bd966efb6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a72cf3a7acee5cd5c49eae86bd966efb6">Diag</a> (std::vector&lt; <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, Flags &gt;&gt; As)</td></tr>
-<tr class="memdesc:a72cf3a7acee5cd5c49eae86bd966efb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the PxQ diagonal matrix, where \(P=\sum_{i=0}^{N-1}nrows(As[i])\) and \(Q=\sum_{i=0}^{N-1}ncols(As[i])\),.  <a href="namespace_linear.html#a72cf3a7acee5cd5c49eae86bd966efb6">More...</a><br /></td></tr>
+<tr class="memdesc:a72cf3a7acee5cd5c49eae86bd966efb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the PxQ diagonal matrix, where \(P=\sum_{i=0}^{N-1}NumRows(As[i])\) and \(Q=\sum_{i=0}^{N-1}NumColumns(As[i])\),.  <a href="namespace_linear.html#a72cf3a7acee5cd5c49eae86bd966efb6">More...</a><br /></td></tr>
 <tr class="separator:a72cf3a7acee5cd5c49eae86bd966efb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a71d08c31589656b7152aa6f742a39"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
 <tr class="memitem:af9a71d08c31589656b7152aa6f742a39"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af9a71d08c31589656b7152aa6f742a39">Diag</a> (<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; v)</td></tr>
@@ -718,10 +716,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">InverseIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; mu, unsigned int max_iterations)</td></tr>
 <tr class="memdesc:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inverse iteration on A with guess mu.  <a href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">More...</a><br /></td></tr>
 <tr class="separator:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13bd864f931921e1a30fd668137b78fe"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a13bd864f931921e1a30fd668137b78fe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a13bd864f931921e1a30fd668137b78fe">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
-<tr class="memdesc:a13bd864f931921e1a30fd668137b78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#a13bd864f931921e1a30fd668137b78fe">More...</a><br /></td></tr>
-<tr class="separator:a13bd864f931921e1a30fd668137b78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779e9a357b5de38d43695e262396b98e"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a779e9a357b5de38d43695e262396b98e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a779e9a357b5de38d43695e262396b98e">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=100)</td></tr>
+<tr class="memdesc:a779e9a357b5de38d43695e262396b98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#a779e9a357b5de38d43695e262396b98e">More...</a><br /></td></tr>
+<tr class="separator:a779e9a357b5de38d43695e262396b98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab0b3eaf397d0a0b65b7f182c6deaf892">Eigenvalues</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenvalues of A.  <a href="namespace_linear.html#ab0b3eaf397d0a0b65b7f182c6deaf892">More...</a><br /></td></tr>
@@ -731,7 +729,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a498247f6fcf1caa95824099e53ddac04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenpairs of A.  <a href="namespace_linear.html#a498247f6fcf1caa95824099e53ddac04">More...</a><br /></td></tr>
 <tr class="separator:a498247f6fcf1caa95824099e53ddac04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa47bafe9a83309607d4f2f49af582132"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:aa47bafe9a83309607d4f2f49af582132"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa47bafe9a83309607d4f2f49af582132">VietaFormulaHelper</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> data[], <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> start, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> end, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> index, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> k, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;sum, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;roots)</td></tr>
+<tr class="memitem:aa47bafe9a83309607d4f2f49af582132"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa47bafe9a83309607d4f2f49af582132">VietaFormulaHelper</a> (size_t data[], size_t start, size_t end, size_t index, size_t k, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;sum, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;roots)</td></tr>
 <tr class="separator:aa47bafe9a83309607d4f2f49af582132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a95ea0604ed3abba521182a7757b38009">CharPoly</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
@@ -746,11 +744,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a54b0a5444a9eee2e648e14376fd25120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix \(C\) defined by \(c_{ij}=a_{ij}/b_{ij}\).  <a href="namespace_linear.html#a54b0a5444a9eee2e648e14376fd25120">More...</a><br /></td></tr>
 <tr class="separator:a54b0a5444a9eee2e648e14376fd25120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177">Norm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> p=2)</td></tr>
+<tr class="memitem:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177">Norm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, size_t p=2)</td></tr>
 <tr class="memdesc:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="mdescLeft">&#160;</td><td class="mdescRight">If \(A\) is a vector, it computes the entrywise vector p-norm \(\left(\sum_{i=0}^{N-1}|a_i|^p\right)^{1/p}\).  <a href="namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177">More...</a><br /></td></tr>
 <tr class="separator:ab1a0827063fcbfb3f14c4c1e0c8d4177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac5f3c568186586145e8702ea3d5ab60"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:aac5f3c568186586145e8702ea3d5ab60"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aac5f3c568186586145e8702ea3d5ab60">EntrywiseNorm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> p=2)</td></tr>
+<tr class="memitem:aac5f3c568186586145e8702ea3d5ab60"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aac5f3c568186586145e8702ea3d5ab60">EntrywiseNorm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, size_t p=2)</td></tr>
 <tr class="memdesc:aac5f3c568186586145e8702ea3d5ab60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the entrywise p-norm \(\left(\sum_{j=0}^{N-1}\sum_{i=0}^{M-1}|a_{ij}|^p\right)^{1/p}\).  <a href="namespace_linear.html#aac5f3c568186586145e8702ea3d5ab60">More...</a><br /></td></tr>
 <tr class="separator:aac5f3c568186586145e8702ea3d5ab60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a538d89df01ac745502b47c24f155fd6b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
@@ -993,27 +991,27 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae2c5294b24c83327edb566329bcddd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a matrix is Tridiagonal.  <a href="namespace_linear.html#ae2c5294b24c83327edb566329bcddd5f">More...</a><br /></td></tr>
 <tr class="separator:ae2c5294b24c83327edb566329bcddd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a109539c9bbbd6137cdb23248a57b947a"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T , size_t N&gt; </td></tr>
-<tr class="memitem:a109539c9bbbd6137cdb23248a57b947a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a109539c9bbbd6137cdb23248a57b947a">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:a109539c9bbbd6137cdb23248a57b947a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a109539c9bbbd6137cdb23248a57b947a">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;v, size_t off=0)</td></tr>
 <tr class="memdesc:a109539c9bbbd6137cdb23248a57b947a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a subvector of a column vector.  <a href="namespace_linear.html#a109539c9bbbd6137cdb23248a57b947a">More...</a><br /></td></tr>
 <tr class="separator:a109539c9bbbd6137cdb23248a57b947a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad13f35e7fe5c5fc14e44a480adf058a0"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:ad13f35e7fe5c5fc14e44a480adf058a0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad13f35e7fe5c5fc14e44a480adf058a0">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> size, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:ad13f35e7fe5c5fc14e44a480adf058a0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad13f35e7fe5c5fc14e44a480adf058a0">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;v, size_t size, size_t off=0)</td></tr>
 <tr class="memdesc:ad13f35e7fe5c5fc14e44a480adf058a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a subvector of a column vector.  <a href="namespace_linear.html#ad13f35e7fe5c5fc14e44a480adf058a0">More...</a><br /></td></tr>
 <tr class="separator:ad13f35e7fe5c5fc14e44a480adf058a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38eed39d54ba5074adbe994cea75eb1d"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T , size_t N&gt; </td></tr>
-<tr class="memitem:a38eed39d54ba5074adbe994cea75eb1d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a38eed39d54ba5074adbe994cea75eb1d">SubVector</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:a38eed39d54ba5074adbe994cea75eb1d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a38eed39d54ba5074adbe994cea75eb1d">SubVector</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;v, size_t off=0)</td></tr>
 <tr class="memdesc:a38eed39d54ba5074adbe994cea75eb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a subvector of a row vector.  <a href="namespace_linear.html#a38eed39d54ba5074adbe994cea75eb1d">More...</a><br /></td></tr>
 <tr class="separator:a38eed39d54ba5074adbe994cea75eb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b13e2b69f9cc5b7e835ffb916c6404"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:a41b13e2b69f9cc5b7e835ffb916c6404"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a41b13e2b69f9cc5b7e835ffb916c6404">SubVector</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> size, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:a41b13e2b69f9cc5b7e835ffb916c6404"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a41b13e2b69f9cc5b7e835ffb916c6404">SubVector</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;v, size_t size, size_t off=0)</td></tr>
 <tr class="memdesc:a41b13e2b69f9cc5b7e835ffb916c6404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a subvector of a row vector.  <a href="namespace_linear.html#a41b13e2b69f9cc5b7e835ffb916c6404">More...</a><br /></td></tr>
 <tr class="separator:a41b13e2b69f9cc5b7e835ffb916c6404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a899bf35d1cb7e16e8adf23fd73245a16"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T &gt; </td></tr>
-<tr class="memitem:a899bf35d1cb7e16e8adf23fd73245a16"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a899bf35d1cb7e16e8adf23fd73245a16">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:a899bf35d1cb7e16e8adf23fd73245a16"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P &gt;0), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a899bf35d1cb7e16e8adf23fd73245a16">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &amp;v, size_t off=0)</td></tr>
 <tr class="memdesc:a899bf35d1cb7e16e8adf23fd73245a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles subvector in the size 1 case.  <a href="namespace_linear.html#a899bf35d1cb7e16e8adf23fd73245a16">More...</a><br /></td></tr>
 <tr class="separator:a899bf35d1cb7e16e8adf23fd73245a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a932c6583bdc57530a86b4c5ee6f74f2f">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &amp;v, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> size, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> off=0)</td></tr>
+<tr class="memitem:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a932c6583bdc57530a86b4c5ee6f74f2f">SubVector</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, 1 &gt; &amp;v, size_t size, size_t off=0)</td></tr>
 <tr class="memdesc:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles subvector in the size 1 case.  <a href="namespace_linear.html#a932c6583bdc57530a86b4c5ee6f74f2f">More...</a><br /></td></tr>
 <tr class="separator:a932c6583bdc57530a86b4c5ee6f74f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea9824e674e82f6dbaa0435514e64894"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P, size_t Q, unsigned int Flags2&gt; </td></tr>
@@ -1451,20 +1449,6 @@ template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">Linear::RowVectorXi</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;int,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a69a8a2fe40b5aeb42c0d81bb59054520"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69a8a2fe40b5aeb42c0d81bb59054520">&#9670;&nbsp;</a></span>size_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned int <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">Linear::size_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2963,13 +2947,13 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname">std::enable_if&lt;(M&gt;0&amp;&amp;N&gt;0), <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,M,N,Flags&gt; &gt;::type Linear::Basis </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -3009,25 +2993,25 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Basis </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -3331,13 +3315,13 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -3588,13 +3572,13 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Constant </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>, </td>
         </tr>
         <tr>
@@ -4447,7 +4431,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
 
 <p>Computes the NxN diagonal matrix. </p>
 <p class="formulaDsp">
-\[ \begin{bmatrix} v_0 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v_{N-1} \end{bmatrix}. \]
+\[ diag(v_0,\dots,v_{N-1})=\begin{bmatrix} v_0 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v_{N-1} \end{bmatrix}. \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -4480,12 +4464,12 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
 
 <p>Dynamically computes the NxN diagonal matrix. </p>
 <p class="formulaDsp">
-\[ \begin{bmatrix} v[0] &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v[N-1] \end{bmatrix}. \]
+\[ diag(v[0],\dots,v[N-1])=\begin{bmatrix} v[0] &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v[N-1] \end{bmatrix}. \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
-    <tr><td class="paramname">v</td><td>List of <a class="el" href="class_linear_1_1_complex.html" title="Class for complex numbers.">Complex</a> numbers of size N </td></tr>
+    <tr><td class="paramname">v</td><td>List of N <a class="el" href="class_linear_1_1_complex.html" title="Class for complex numbers.">Complex</a> numbers </td></tr>
   </table>
   </dd>
 </dl>
@@ -4511,14 +4495,14 @@ template&lt;typename T , unsigned int Flags&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the PxQ diagonal matrix, where \(P=\sum_{i=0}^{N-1}nrows(As[i])\) and \(Q=\sum_{i=0}^{N-1}ncols(As[i])\),. </p>
+<p>Computes the PxQ diagonal matrix, where \(P=\sum_{i=0}^{N-1}NumRows(As[i])\) and \(Q=\sum_{i=0}^{N-1}NumColumns(As[i])\),. </p>
 <p class="formulaDsp">
-\[ \begin{bmatrix} As[0] &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; As[N-1] \end{bmatrix}. \]
+\[ diag(As[0],\dots,As[N-1])=\begin{bmatrix} As[0] &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; As[N-1] \end{bmatrix}. \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
-    <tr><td class="paramname">As</td><td>List of matrices of size N </td></tr>
+    <tr><td class="paramname">As</td><td>List of N matrices </td></tr>
   </table>
   </dd>
 </dl>
@@ -4546,7 +4530,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
 
 <p>Computes the NxN diagonal matrix. </p>
 <p class="formulaDsp">
-\[ \begin{bmatrix} v_0 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v_{N-1} \end{bmatrix}. \]
+\[ diag(v_0,\dots,v_{N-1}) = \begin{bmatrix} v_0 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; v_{N-1} \end{bmatrix}. \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -4718,7 +4702,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>p</em> = <code>2</code>&#160;</td>
         </tr>
         <tr>
@@ -4945,7 +4929,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 </div><div class="memdoc">
 
 <p>Computes the Frobenius norm. </p>
-<p>This is identical EntrywiseNorm(A,2). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is identical to EntrywiseNorm(A,2). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </td></tr>
   </table>
@@ -4966,13 +4950,13 @@ template&lt;size_t P, typename T , size_t N, unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname">std::enable_if&lt;(P&gt;0), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,P,Flags&gt; &gt;::type Linear::Givens </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
@@ -5019,19 +5003,19 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Givens </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
@@ -5216,7 +5200,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>k</em>&#160;</td>
         </tr>
         <tr>
@@ -5232,7 +5216,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
   <table class="params">
     <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
     <tr><td class="paramname">x</td><td>Column vector of length N </td></tr>
-    <tr><td class="paramname">k</td><td>Number of elements to zero out. </td></tr>
+    <tr><td class="paramname">k</td><td>Number of elements to zero out </td></tr>
   </table>
   </dd>
 </dl>
@@ -5312,7 +5296,7 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Identity </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
@@ -6370,13 +6354,13 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -6617,7 +6601,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>p</em> = <code>2</code>&#160;</td>
         </tr>
         <tr>
@@ -6772,13 +6756,13 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::One </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>&#160;</td>
         </tr>
         <tr>
@@ -7100,13 +7084,13 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Random </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>, </td>
         </tr>
         <tr>
@@ -7191,7 +7175,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>&#160;</td>
         </tr>
         <tr>
@@ -7231,7 +7215,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>&#160;</td>
         </tr>
         <tr>
@@ -7271,13 +7255,13 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -8040,13 +8024,13 @@ template&lt;size_t P, size_t Q, typename T , size_t M, size_t N, unsigned int Fl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8089,25 +8073,25 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>j</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8152,7 +8136,7 @@ template&lt;size_t P, typename T , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8196,13 +8180,13 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8246,7 +8230,7 @@ template&lt;size_t P, typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8290,13 +8274,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8340,7 +8324,7 @@ template&lt;size_t P, typename T , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8384,13 +8368,13 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>off</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -8660,31 +8644,31 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="memname">void Linear::VietaFormulaHelper </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>data</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>end</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
@@ -8709,8 +8693,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a13bd864f931921e1a30fd668137b78fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13bd864f931921e1a30fd668137b78fe">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
+<a id="a779e9a357b5de38d43695e262396b98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a779e9a357b5de38d43695e262396b98e">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8727,7 +8711,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>max_iterations</em> = <code>25</code>&#160;</td>
+          <td class="paramname"><em>max_iterations</em> = <code>100</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -8792,13 +8776,13 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;T,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,Flags&gt; Linear::Zero </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>nrows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>ncols</em>&#160;</td>
         </tr>
         <tr>

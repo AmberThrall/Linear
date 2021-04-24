@@ -88,10 +88,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae20086f8106497f689a7d977abd7c63e"><td class="memTemplParams" colspan="2">template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:ae20086f8106497f689a7d977abd7c63e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#ae20086f8106497f689a7d977abd7c63e">Schur</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A)</td></tr>
-<tr class="memdesc:ae20086f8106497f689a7d977abd7c63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="struct_linear_1_1_schur.html#ae20086f8106497f689a7d977abd7c63e">More...</a><br /></td></tr>
-<tr class="separator:ae20086f8106497f689a7d977abd7c63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786ef3def36db22d434f438e8d4d97eb"><td class="memTemplParams" colspan="2">template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:a786ef3def36db22d434f438e8d4d97eb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#a786ef3def36db22d434f438e8d4d97eb">Schur</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A, unsigned int max_iterations=100)</td></tr>
+<tr class="memdesc:a786ef3def36db22d434f438e8d4d97eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="struct_linear_1_1_schur.html#a786ef3def36db22d434f438e8d4d97eb">More...</a><br /></td></tr>
+<tr class="separator:a786ef3def36db22d434f438e8d4d97eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab43fef840fd4ae23b729042226f8852a"><td class="memTemplParams" colspan="2">template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
 <tr class="memitem:ab43fef840fd4ae23b729042226f8852a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#ab43fef840fd4ae23b729042226f8852a">Compute</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A, unsigned int max_iterations=100)</td></tr>
 <tr class="memdesc:ab43fef840fd4ae23b729042226f8852a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition.  <a href="struct_linear_1_1_schur.html#ab43fef840fd4ae23b729042226f8852a">More...</a><br /></td></tr>
@@ -120,8 +120,8 @@ struct Linear::Schur&lt; T, N, Flags &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae20086f8106497f689a7d977abd7c63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae20086f8106497f689a7d977abd7c63e">&#9670;&nbsp;</a></span>Schur()</h2>
+<a id="a786ef3def36db22d434f438e8d4d97eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786ef3def36db22d434f438e8d4d97eb">&#9670;&nbsp;</a></span>Schur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,8 +137,18 @@ template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </div>
           <td class="memname"><a class="el" href="struct_linear_1_1_schur.html">Linear::Schur</a>&lt; T, N, Flags &gt;::<a class="el" href="struct_linear_1_1_schur.html">Schur</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>A</em></td><td>)</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>max_iterations</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>

@@ -95,7 +95,7 @@ namespace Linear {
         return Pow(sum, 1/T(p));
     }
     /**
-     * Computes the Frobenius norm. This is identical EntrywiseNorm(A,2).
+     * Computes the Frobenius norm. This is identical to EntrywiseNorm(A,2).
      * @param A MxN Matrix
      * @return Real number
      */

@@ -39,7 +39,7 @@ namespace Linear {
     PowerIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, unsigned int max_iterations) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
-        if (A.NumRows() != b0.NumRows())
+        if (A.NumRows() != b0.Length())
             throw "Size mismatch in PowerIteration().";
         if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in PowerIteration().";
@@ -85,7 +85,7 @@ namespace Linear {
     InverseIteration(const Matrix<T,M,N,Flags>& A, Vector<T,P> b0, Complex<T> mu, unsigned int max_iterations) {
         if (!IsSquare(A))
             throw "Eigenvectors are only defined for square matrices.";
-        if (A.NumRows() != b0.NumRows())
+        if (A.NumRows() != b0.Length())
             throw "Size mismatch in PowerIteration().";
         if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in InverseIteration().";
@@ -94,8 +94,7 @@ namespace Linear {
         SquareMatrix<T,N,Flags> B = Inverse(A-mu*eye);
         Vector<T,N> b = b0;
         for (unsigned int i = 0; i < max_iterations; ++i) {
-            Vector<T,N> bnext = B*b;
-            b = Normalize(bnext);
+            b = Normalize(B*b);
         }
         return b;
     }
@@ -110,7 +109,7 @@ namespace Linear {
      * @return Column vector of eigenvalues.
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
-    Vector<T,N> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 25) {
+    Vector<T,N> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 100) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
 
@@ -145,7 +144,7 @@ namespace Linear {
 
         // Step 5: Repeat.
         Vector<T,(N==Dynamic?Dynamic:N-1)> res = WielandtDeflationAlgorithm(Ap, max_iterations);
-        for (size_t i = 0; i < res.Size(); ++i)
+        for (size_t i = 0; i < res.Length(); ++i)
             eigenvalues[i] = res[i];
         return eigenvalues;
     }
@@ -224,7 +223,7 @@ namespace Linear {
         }
 
         // Generic case via Deflation and power iteration.
-        return WielandtDeflationAlgorithm(A, 25);
+        return WielandtDeflationAlgorithm(A, 100);
     }
 
     /**
@@ -250,7 +249,7 @@ namespace Linear {
         SquareMatrix<T,Dynamic,Flags> eye = Identity<T>(A.NumColumns());
         std::vector<Eigenpair<T,N>> eigenpairs;
         std::vector<size_t> repeats;
-        for (size_t i = 0; i < eigenvalues.Size(); ++i) {
+        for (size_t i = 0; i < eigenvalues.Length(); ++i) {
             // Check if we need to skip this one.
             bool skip = false;
             for (size_t j = 0; j < repeats.size(); ++j) {
@@ -264,7 +263,7 @@ namespace Linear {
 
             // Find the multiplicity of lambda.
             size_t multiplicity = 1;
-            for (size_t j = i+1; j < eigenvalues.Size(); ++j) {
+            for (size_t j = i+1; j < eigenvalues.Length(); ++j) {
                 if (eigenvalues[j] == eigenvalues[i]) {
                     multiplicity += 1;
                     repeats.push_back(j);
@@ -304,9 +303,6 @@ namespace Linear {
 
     template <typename T, size_t N>
     void VietaFormulaHelper(size_t data[], size_t start, size_t end, size_t index, size_t k, Complex<T> & sum, const Vector<T,N>& roots) {
-        if (roots.Size() < end)
-            throw "Vector roots in VietaFormulaHelper has invalid size.";
-
         if (index == k) {
             Complex<T> prod(T(1));
             for (size_t i = 0; i < k; ++i)

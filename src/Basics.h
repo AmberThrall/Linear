@@ -66,8 +66,6 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,(M==Dynamic?Dynamic:M-1),N,Flags> RemoveRow(Matrix<T,M,N,Flags> A, size_t i) {
-        if (A.NumRows() == 1)
-            throw "Cannot create a 0xN matrix.";
         Matrix<T,(M==Dynamic?Dynamic:M-1),N,Flags> ret(A.NumRows()-1,A.NumColumns(),T(0));
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
@@ -87,8 +85,6 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,M,(N==Dynamic?Dynamic:N-1),Flags> RemoveColumn(Matrix<T,M,N,Flags> A, size_t i) {
-        if (A.NumColumns() == 1)
-            throw "Cannot create a Mx0 matrix.";
         Matrix<T,M,(N==Dynamic?Dynamic:N-1),Flags> ret(A.NumRows(),A.NumColumns()-1,T(0));
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
@@ -109,8 +105,6 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,(M==Dynamic?Dynamic:M-1),(N==Dynamic?Dynamic:N-1),Flags> RemoveRowAndColumn(Matrix<T,M,N,Flags> A, size_t i, size_t j) {
-        if (A.NumRows() == 1 || A.NumColumns() == 1)
-            throw "Cannot create a 0x0 matrix.";
         Matrix<T,(M==Dynamic?Dynamic:M-1),(N==Dynamic?Dynamic:N-1),Flags> ret(A.NumRows()-1,A.NumColumns()-1,T(0));
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
@@ -256,8 +250,6 @@ namespace Linear {
             throw "Cannot take the minor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Minor coordinates out of bounds.";
-        if (A.NumRows() == 1)
-            return A(0,0);
 
         return Determinant(RemoveRowAndColumn(A, i, j));
     }

@@ -340,30 +340,30 @@ namespace Linear {
     template <typename T, size_t N, unsigned int Flags = 0>
     SquareMatrix<T,N,Flags> Householder(Vector<T,N> v) {
         v = Normalize(v);
-        SquareMatrix<T,N,Flags> ret = Identity<T,Flags>(v.Size()) - T(2)*v*ConjugateTranspose(v);
+        SquareMatrix<T,N,Flags> ret = Identity<T,Flags>(v.Length()) - T(2)*v*ConjugateTranspose(v);
         return ret;
     }
     /**
      * Creates an NxN Householder transformation \f$H\f$ such that \f$Hx\f$ eliminates the last k elements.
      * @param Flags Flags to pass to the matrix (default = row major)
      * @param x Column vector of length N
-     * @param k Number of elements to zero out.
+     * @param k Number of elements to zero out
      * @return NxN Matrix
      */
     template <typename T, size_t N, unsigned int Flags = 0>
     SquareMatrix<T,N,Flags> Householder(const Vector<T,N>& x, size_t k) {
-        if (k == 0 || k >= x.Size())
+        if (k == 0 || k >= x.Length())
             throw "Cannot create Householder matrix, k must be such that 1<k<x.Size().";
 
-        size_t index = x.Size()-k-1;
+        size_t index = x.Length()-k-1;
         Vector<T,Dynamic> x2 = SubVector(x,k+1,index);
         Complex<T> alpha = -Sign(x[index])*Norm(x2);
         if (Abs(alpha) < T(Tol))
             alpha = Sqrt(2);
-        Vector<T,N> v(x.Size(),T(0));
+        Vector<T,N> v(x.Length(),T(0));
         for (size_t i = 0; i < index; ++i)
             v[i] = T(0);
-        for (size_t i = 0; i < x2.Size(); ++i)
+        for (size_t i = 0; i < x2.Length(); ++i)
             v[index+i] = x2[i];
         v[index] = x2[0] - alpha;
         return Householder<T,Flags>(v);
@@ -620,10 +620,10 @@ namespace Linear {
     /**
      * Dynamically computes the NxN diagonal matrix
      * \f\[
-     *    \begin{bmatrix} v[0] & & \\ & \ddots & \\ & & v[N-1] \end{bmatrix}.
+     *    diag(v[0],\dots,v[N-1])=\begin{bmatrix} v[0] & & \\ & \ddots & \\ & & v[N-1] \end{bmatrix}.
      * \f\]
      * @param Flags Flags to pass to the matrix (default = row major)
-     * @param v List of Complex numbers of size N
+     * @param v List of N Complex numbers
      * @return NxN Matrix
      */
     template<typename T, unsigned int Flags=0>
@@ -636,12 +636,12 @@ namespace Linear {
         return ret;
     }
     /**
-     * Computes the PxQ diagonal matrix, where \f$P=\sum_{i=0}^{N-1}nrows(As[i])\f$ and \f$Q=\sum_{i=0}^{N-1}ncols(As[i])\f$,
+     * Computes the PxQ diagonal matrix, where \f$P=\sum_{i=0}^{N-1}NumRows(As[i])\f$ and \f$Q=\sum_{i=0}^{N-1}NumColumns(As[i])\f$,
      * \f\[
-     *    \begin{bmatrix} As[0] & & \\ & \ddots & \\ & & As[N-1] \end{bmatrix}.
+     *    diag(As[0],\dots,As[N-1])=\begin{bmatrix} As[0] & & \\ & \ddots & \\ & & As[N-1] \end{bmatrix}.
      * \f\]
      * @param Flags Flags to pass to the matrix (default = row major)
-     * @param As List of matrices of size N
+     * @param As List of N matrices
      * @return PxQ Matrix
      */
     template<typename T, unsigned int Flags>
@@ -656,7 +656,7 @@ namespace Linear {
     /**
      * Computes the NxN diagonal matrix
      * \f\[
-     *    \begin{bmatrix} v_0 & & \\ & \ddots & \\ & & v_{N-1} \end{bmatrix}.
+     *    diag(v_0,\dots,v_{N-1}) = \begin{bmatrix} v_0 & & \\ & \ddots & \\ & & v_{N-1} \end{bmatrix}.
      * \f\]
      * @param Flags Flags to pass to the matrix (default = row major)
      * @param v Vector of size N
@@ -665,14 +665,14 @@ namespace Linear {
     template<typename T, size_t N, unsigned int Flags=0>
     SquareMatrix<T,N> Diag(Vector<T,N> v) {
         SquareMatrix<T,N,Flags> ret(v.NumRows(), v.NumRows(), T(0));
-        for (size_t i = 0; i < v.NumRows(); ++i)
-            ret(i,i) = v(i,0);
+        for (size_t i = 0; i < v.Length(); ++i)
+            ret(i,i) = v[i];
         return ret;
     }
     /**
      * Computes the NxN diagonal matrix
      * \f\[
-     *    \begin{bmatrix} v_0 & & \\ & \ddots & \\ & & v_{N-1} \end{bmatrix}.
+     *    diag(v_0,\dots,v_{N-1})=\begin{bmatrix} v_0 & & \\ & \ddots & \\ & & v_{N-1} \end{bmatrix}.
      * \f\]
      * @param Flags Flags to pass to the matrix (default = row major)
      * @param v Row vector of size N
@@ -701,16 +701,16 @@ namespace Linear {
      */
     template <typename T, size_t N, unsigned int Flags=0>
     typename std::enable_if<(N>1||N==Dynamic), SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags>>::type Companion(const Vector<T,N>& c) {
-        if (c.Size() <= 1)
+        if (c.Length() <= 1)
             throw "Cannot create a 0x0 companion matrix.";
-        if (Abs(c[c.Size()-1]) < T(Tol))
+        if (Abs(c[c.Length()-1]) < T(Tol))
             throw "Leading coefficient cannot be zero.";
         // Create the matrix.
-        SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags> ret(c.Size()-1,T(0));
+        SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags> ret(c.Length()-1,T(0));
         for (size_t i = 0; i < ret.NumColumns()-1; ++i)
             ret(i+1,i) = T(1);
         for (size_t i = 0; i < ret.NumColumns(); ++i)
-            ret(i,ret.NumColumns()-1) = -c[i]/c[c.Size()-1];
+            ret(i,ret.NumColumns()-1) = -c[i]/c[c.Length()-1];
         return ret;
     }
     /**

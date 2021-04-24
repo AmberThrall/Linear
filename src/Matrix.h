@@ -33,7 +33,7 @@ namespace Linear {
             this->m = M;
             this->n = N;
             this->data = new Complex<T>[this->m*this->n];
-            for (size_t i = 0; i < Size(); ++i) {
+            for (size_t i = 0; i < this->m*this->n; ++i) {
                 this->data[i] = x;
             }
         }
@@ -52,7 +52,7 @@ namespace Linear {
             this->m = M;
             this->n = N;
             this->data = new Complex<T>[this->m*this->n];
-            for (size_t i = 0; i < Size(); ++i) {
+            for (size_t i = 0; i < this->m*this->n; ++i) {
                 this->data[i] = z;
             }
         }
@@ -69,7 +69,7 @@ namespace Linear {
             if (M == Dynamic) { this->m = size; }
             if (N == Dynamic) { this->n = size; }
             this->data = new Complex<T>[this->m*this->n];
-            for (size_t i = 0; i < Size(); ++i) {
+            for (size_t i = 0; i < this->m*this->n; ++i) {
                 this->data[i] = x;
             }
         }
@@ -86,7 +86,7 @@ namespace Linear {
             if (M == Dynamic) { this->m = size; }
             if (N == Dynamic) { this->n = size; }
             this->data = new Complex<T>[this->m*this->n];
-            for (size_t i = 0; i < Size(); ++i) {
+            for (size_t i = 0; i < this->m*this->n; ++i) {
                 this->data[i] = z;
             }
         }
@@ -140,7 +140,7 @@ namespace Linear {
         Matrix(std::initializer_list<T> list) {
             this->m = M;
             this->n = N;
-            if (M == Dynamic && N == Dynamic) { this->m = list.size(); this->n = 1; }
+            if (M == Dynamic && N == Dynamic) { this->m = 1; this->n = list.size(); }
             if (M != Dynamic && N == Dynamic) { this->n = (list.size() >= this->m ? list.size() / this->m : 1); }
             if (M == Dynamic && N != Dynamic) { this->m = (list.size() >= this->n ? list.size() / this->n : 1); }
             this->data = new Complex<T>[this->m*this->n];
@@ -148,12 +148,12 @@ namespace Linear {
             for (auto it = std::begin(list); it != std::end(list); ++it) {
                 this->data[i] = *it;
                 i += 1;
-                if (i == Size())
+                if (i == this->m*this->n)
                     break;
             }
 
             // Fill the remaining entries with zero.
-            for (; i < Size(); ++i)
+            for (; i < this->m*this->n; ++i)
                 this->data[i] = T(0);
         }
         /**
@@ -170,7 +170,7 @@ namespace Linear {
         Matrix(std::initializer_list<Complex<T>> list) {
             this->m = M;
             this->n = N;
-            if (M == Dynamic && N == Dynamic) { this->m = list.size(); this->n = 1; }
+            if (M == Dynamic && N == Dynamic) { this->m = 1; this->n = list.size(); }
             if (M != Dynamic && N == Dynamic) { this->n = (list.size() >= this->m ? list.size() / this->m : 1); }
             if (M == Dynamic && N != Dynamic) { this->m = (list.size() >= this->n ? list.size() / this->n : 1); }
             this->data = new Complex<T>[this->m*this->n];
@@ -178,12 +178,12 @@ namespace Linear {
             for (auto it = std::begin(list); it != std::end(list); ++it) {
                 this->data[i] = *it;
                 i += 1;
-                if (i == Size())
+                if (i == this->m*this->n)
                     break;
             }
 
             // Fill the remaining entries with zero.
-            for (; i < Size(); ++i)
+            for (; i < this->m*this->n; ++i)
                 this->data[i] = T(0);
         }
         /**
@@ -425,9 +425,23 @@ namespace Linear {
          */
         size_t NumColumns() const { return this->n; }
         /**
-         * @return Number of cells (Equivalent to NumRows()*NumColumns())
+         * @return Size of matrix as a row vector.
          */
-        size_t Size() const { return NumRows()*NumColumns(); }
+        Matrix<T,1,2> Size() const {
+            Matrix<T,1,2> ret(T(0));
+            ret[0] = NumRows();
+            ret[1] = NumColumns();
+            return ret;
+        }
+        /**
+         * For vectors, this returns the length of the vector. For matrices, returns either M or N depending on what's larger.
+         * @return MAX(NumRows(),NumColumns())
+         */
+        size_t Length() const {
+            if (NumRows() >= NumColumns())
+                return NumRows();
+            return NumColumns();
+        }
 
         /**
          * Takes row r of the matrix and returns it. If \f$r\ge M\f$, an exception is thrown.
@@ -533,12 +547,12 @@ namespace Linear {
          * @return Complex number
          */
         Complex<T> operator[] (size_t i) const {
-            if (i >= Size())
+            if (i >= this->m*this->n)
                 throw "Cannot access matrix. Index out of bounds.";
             return this->data[i];
         }
         Complex<T> & operator[] (size_t i) {
-            if (i >= Size())
+            if (i >= this->m*this->n)
                 throw "Cannot access matrix. Index out of bounds.";
             return this->data[i];
         }
@@ -714,7 +728,7 @@ namespace Linear {
         friend std::ostream& operator<<(std::ostream& out, const Matrix<T,M,N,Flags>& m) {
             if (m.NumRows() == 1) {
                 out << "(1x"<<m.NumColumns()<<")[";
-                for (size_t i = 0; i < m.Size(); ++i)
+                for (size_t i = 0; i < m.Length(); ++i)
                     out << (i > 0 ? ", " : "") << m[i];
                 out << "]";
                 return out;

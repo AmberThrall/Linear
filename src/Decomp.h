@@ -127,19 +127,14 @@ namespace Linear {
                 throw "Cannot perform QR decomposition; size mismatch.";
 
             // Perform Householder reflections.
-            std::vector<SquareMatrix<T,M,Flags>> qs;
+            this->Q = Identity<T,Flags>(A.NumRows());
             SquareMatrix<T,Dynamic,Flags> aprime = A;
             size_t niters = std::min(A.NumRows()-1,A.NumColumns());
             for (size_t k = 0; k < niters; ++k) {
                 SquareMatrix<T,Dynamic,Flags> qprime = Householder(aprime.GetColumn(0), aprime.NumRows()-1);
                 SquareMatrix<T,M,Flags> qk = (k > 0 ? Diag(Identity<T,Flags>(k), qprime) : qprime);
                 aprime = RemoveRowAndColumn(qprime*aprime, 0, 0);
-                qs.push_back(qk);
-            }
-
-            this->Q = qs[0];
-            for (size_t k = 1; k < qs.size(); ++k) {
-                this->Q = this->Q*Transpose(qs[k]);
+                this->Q = this->Q*Transpose(qk);
             }
             this->R = Transpose(this->Q)*A;
         }
@@ -229,7 +224,7 @@ namespace Linear {
             if (!IsSquare(A))
                 throw "Eigendecomposition is defined for square matrices.";
             if (A.NumColumns() != N && N != Dynamic)
-                throw "Cannot perform Cholesky decomposition; size mismatch.";
+                throw "Cannot perform Eigendecomposition; size mismatch.";
 
             std::vector<Eigenpair<T,N>> eigens = Eigen(A);
 

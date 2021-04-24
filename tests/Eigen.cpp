@@ -48,7 +48,7 @@ int main() {
         std::cout << "coeff = " << Transpose(coeff) << std::endl;
         std::cout << "D = " << D << std::endl;
         std::cout << "eig(D) = ";
-        for (size_t i = 0; i < eigenvalues_d.Size(); ++i)
+        for (size_t i = 0; i < eigenvalues_d.Length(); ++i)
             std::cout << (i > 0 ? ", " : "") << eigenvalues_d[i];
         std::cout << std::endl;
         std::cout << "charpoly(D) = " << Transpose(CharPoly(D)) << std::endl;

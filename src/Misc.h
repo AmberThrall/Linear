@@ -55,7 +55,6 @@ namespace Linear {
         std::vector<Vector<T,N>> basis;
 
         Matrix<T,M,N,Flags> B = RREF(A);
-        std::cout << "B = " << B << std::endl;
         size_t pivot = 0;
         for (size_t c = 0; c < A.NumColumns(); ++c) {
             bool add = true;
@@ -90,7 +89,7 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags, size_t P>
     typename std::enable_if<(M==P||P==Dynamic||M==Dynamic), Vector<T,N>>::type Solve(const Matrix<T,M,N,Flags>& A, const Vector<T,P>& b) {
-        if (A.NumRows() != b.Size())
+        if (A.NumRows() != b.Length())
             throw "Cannot solve matrix equation Ax=b, b is incorrect size.";
 
         Vector<T,N> x(A.NumColumns(), T(0));

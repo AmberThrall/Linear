@@ -16,13 +16,13 @@ Class for matrices.
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_linear_1_1_matrix_a8a2830d7109712e02953c896bf583a7d}{Matrix}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_matrix_ad98a3e5ec3203e23984793ff6ce5b580}{Matrix}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} size, T x)
+\mbox{\hyperlink{class_linear_1_1_matrix_ad98a3e5ec3203e23984793ff6ce5b580}{Matrix}} (size\+\_\+t size, T x)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_matrix_a90440cb1dbcd95dc3219d9cca2d19dbb}{Matrix}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} size, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
+\mbox{\hyperlink{class_linear_1_1_matrix_a90440cb1dbcd95dc3219d9cca2d19dbb}{Matrix}} (size\+\_\+t size, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_matrix_a100b35a79f15758551eedcfe62814a06}{Matrix}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} nrows, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} ncols, T x)
+\mbox{\hyperlink{class_linear_1_1_matrix_a100b35a79f15758551eedcfe62814a06}{Matrix}} (size\+\_\+t nrows, size\+\_\+t ncols, T x)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_matrix_a604065fe5f6fc3cdb9bdab0acb94c070}{Matrix}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} nrows, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} ncols, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
+\mbox{\hyperlink{class_linear_1_1_matrix_a604065fe5f6fc3cdb9bdab0acb94c070}{Matrix}} (size\+\_\+t nrows, size\+\_\+t ncols, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_linear_1_1_matrix_a8ab8597b515cfcedd17c810616142c7f}{Matrix}} (std\+::initializer\+\_\+list$<$ T $>$ list)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
@@ -36,37 +36,39 @@ Class for matrices.
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename U , size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix_a0723f1599b94a71339d056656a274f1a}{Matrix}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ U, P, Q, Flags2 $>$ \&other)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_linear_1_1_matrix_a26da687e5c2a5ce0bd4843b6b382f5f1}{Resize}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} new\+Size)
+void \mbox{\hyperlink{class_linear_1_1_matrix_a26da687e5c2a5ce0bd4843b6b382f5f1}{Resize}} (size\+\_\+t new\+Size)
 \begin{DoxyCompactList}\small\item\em Resizes a dynamic matrix. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_linear_1_1_matrix_a745e8bde106315ebcd7c6886ba2498c2}{Resize}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} newM, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} newN)
+void \mbox{\hyperlink{class_linear_1_1_matrix_a745e8bde106315ebcd7c6886ba2498c2}{Resize}} (size\+\_\+t newM, size\+\_\+t newN)
 \begin{DoxyCompactList}\small\item\em Resizes a dynamic matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows}} () const
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows}} () const
 \item 
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns}} () const
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns}} () const
 \item 
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix_af6d00ed63d7d272d004544c78b4ac908}{Size}} () const
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, 1, 2 $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a7dc69c7ae38b6f18c01a9df49c5273e4}{Size}} () const
 \item 
-\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, 1, N $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a547b794f3c2fac223fb47bdbe7ed2aaa}{Get\+Row}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r) const
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_aec01c53512ebcfdfb5a990952d54d03c}{Length}} () const
+\begin{DoxyCompactList}\small\item\em For vectors, this returns the length of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, 1, N $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a547b794f3c2fac223fb47bdbe7ed2aaa}{Get\+Row}} (size\+\_\+t r) const
 \begin{DoxyCompactList}\small\item\em Takes row r of the matrix and returns it. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, 1 $>$ \mbox{\hyperlink{class_linear_1_1_matrix_aa13e63a4135a459c620b9070985ac3d0}{Get\+Column}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} c) const
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, 1 $>$ \mbox{\hyperlink{class_linear_1_1_matrix_aa13e63a4135a459c620b9070985ac3d0}{Get\+Column}} (size\+\_\+t c) const
 \begin{DoxyCompactList}\small\item\em Takes column c of the matrix and returns it. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$(P==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==N$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), void $>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix_a5085034b13b0c7d569cb7e935a79c3ef}{Set\+Row}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&row)
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$(P==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==N$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), void $>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix_a5085034b13b0c7d569cb7e935a79c3ef}{Set\+Row}} (size\+\_\+t r, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&row)
 \begin{DoxyCompactList}\small\item\em Sets row r of the matrix to row. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$(P==M$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==1$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), void $>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix_a8cfc03cc0d37f9f1f06a7f0611a000a4}{Set\+Column}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} c, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&column)
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$(P==M$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==1$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), void $>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix_a8cfc03cc0d37f9f1f06a7f0611a000a4}{Set\+Column}} (size\+\_\+t c, const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&column)
 \begin{DoxyCompactList}\small\item\em Sets column c of the matrix to row. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}{Swap\+Rows}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r1, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r2)
+void \mbox{\hyperlink{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}{Swap\+Rows}} (size\+\_\+t r1, size\+\_\+t r2)
 \begin{DoxyCompactList}\small\item\em Swaps rows r1 and r2. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_linear_1_1_matrix_a8a9592c13cc33512d4f8e02069b8fbaa}{Scale\+Row}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ s)
+void \mbox{\hyperlink{class_linear_1_1_matrix_a8a9592c13cc33512d4f8e02069b8fbaa}{Scale\+Row}} (size\+\_\+t r, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ s)
 \begin{DoxyCompactList}\small\item\em Scales row r by s, i.\+e., $a_{ri}=sa_{ri}$ for $0\le i<N$. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_linear_1_1_matrix_ace1ccfcd1a08eb8aaaf7406d125c9729}{Add\+Rows}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r1, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r2, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ s)
+void \mbox{\hyperlink{class_linear_1_1_matrix_ace1ccfcd1a08eb8aaaf7406d125c9729}{Add\+Rows}} (size\+\_\+t r1, size\+\_\+t r2, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ s)
 \begin{DoxyCompactList}\small\item\em Scales row r2 by s then adds it to r1, i.\+e., $a_{r1,i}=a_{r1,i}+sa_{r2,i}$ for $0\le i<N$. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a7a643df923807239639922b0ce745517}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} i) const
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a7a643df923807239639922b0ce745517}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Operators. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \& \mbox{\hyperlink{class_linear_1_1_matrix_abdb2b48fadd12479ad12406de95f5216}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} i)
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \& \mbox{\hyperlink{class_linear_1_1_matrix_abdb2b48fadd12479ad12406de95f5216}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i)
 \item 
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a871634af314832a3177b62296c9ee4a7}{operator()}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} c) const
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a871634af314832a3177b62296c9ee4a7}{operator()}} (size\+\_\+t r, size\+\_\+t c) const
 \begin{DoxyCompactList}\small\item\em Returns the the data located in row r and column c. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \& \mbox{\hyperlink{class_linear_1_1_matrix_afd5c44b879be1eb747ce401b11a739ad}{operator()}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} r, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} c)
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \& \mbox{\hyperlink{class_linear_1_1_matrix_afd5c44b879be1eb747ce401b11a739ad}{operator()}} (size\+\_\+t r, size\+\_\+t c)
 \item 
 {\footnotesize template$<$typename U , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ T, U $>$\+::value $>$\+::type $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{class_linear_1_1_matrix_a345070116acdcfbd4ce6d0025d7d0db6}{operator Matrix$<$ U, M, N, Flags $>$}} ()
 \item 
@@ -164,7 +166,7 @@ Creates the M-\/by-\/N matrix $A$ where $a_{ij}=z$ for all $i,j$. If M or N are 
 \index{Matrix@{Matrix}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{size,  }\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -182,7 +184,7 @@ Creates the M-\/by-\/N matrix $A$ where $a_{ij}=x$ for all $i,j$. If M or N are 
 \index{Matrix@{Matrix}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{size,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -200,7 +202,7 @@ Creates the M-\/by-\/N matrix $A$ where $a_{ij}=z$ for all $i,j$. If M or N are 
 \index{Matrix@{Matrix}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{nrows,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{ncols,  }\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nrows,  }\item[{size\+\_\+t}]{ncols,  }\item[{T}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -220,7 +222,7 @@ Creates the M-\/by-\/N matrix $A$ where $a_{ij}=x$ for all $i,j$. If M is set to
 \index{Matrix@{Matrix}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{nrows,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{ncols,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nrows,  }\item[{size\+\_\+t}]{ncols,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -352,7 +354,7 @@ If M is set to Dynamic, it will set M to P. If N is set to Dynamic, it will set 
 \index{AddRows@{AddRows}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{AddRows()}{AddRows()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Add\+Rows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r1,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r2,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Add\+Rows (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r1,  }\item[{size\+\_\+t}]{r2,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -372,7 +374,7 @@ If $r1\ge M$ or $r2\ge M$ an exception is thrown.
 \index{GetColumn@{GetColumn}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{GetColumn()}{GetColumn()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,1$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Get\+Column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,1$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Get\+Column (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -391,7 +393,7 @@ Mx1 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}
 \index{GetRow@{GetRow}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{GetRow()}{GetRow()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,1,N$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Get\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,1,N$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Get\+Row (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -405,12 +407,26 @@ If $r\ge M$, an exception is thrown.
 \begin{DoxyReturn}{Returns}
 1xN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_matrix_aec01c53512ebcfdfb5a990952d54d03c}\label{class_linear_1_1_matrix_aec01c53512ebcfdfb5a990952d54d03c}} 
+\index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!Length@{Length}}
+\index{Length@{Length}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For vectors, this returns the length of the vector. 
+
+For matrices, returns either M or N depending on what\textquotesingle{}s larger. \begin{DoxyReturn}{Returns}
+MAX(\mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}},\mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns()}}) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}\label{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!NumColumns@{NumColumns}}
 \index{NumColumns@{NumColumns}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{NumColumns()}{NumColumns()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
 Number of columns 
@@ -420,7 +436,7 @@ Number of columns
 \index{NumRows@{NumRows}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{NumRows()}{NumRows()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
 Number of rows 
@@ -438,14 +454,14 @@ template$<$typename U , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convert
 \index{operator()@{operator()}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$\& \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$\& \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{size\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_linear_1_1_matrix_a871634af314832a3177b62296c9ee4a7}\label{class_linear_1_1_matrix_a871634af314832a3177b62296c9ee4a7}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -531,14 +547,14 @@ PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$\& \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$\& \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_linear_1_1_matrix_a7a643df923807239639922b0ce745517}\label{class_linear_1_1_matrix_a7a643df923807239639922b0ce745517}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -557,7 +573,7 @@ Returns the ith entry of the data. This accesses the data directly, the result w
 \index{Resize@{Resize}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Resize()}{Resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{newM,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{newN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{newM,  }\item[{size\+\_\+t}]{newN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -575,7 +591,7 @@ If M or N are dynamic, this function becomes available. If both M and N are dyna
 \index{Resize@{Resize}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Resize()}{Resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -591,7 +607,7 @@ If M or N is dynamic, this function becomes available. It resizes the matrix to 
 \index{ScaleRow@{ScaleRow}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{ScaleRow()}{ScaleRow()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Scale\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Scale\+Row (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -610,7 +626,7 @@ If $r\ge M$ an exception is thrown.
 \doxysubsubsection{\texorpdfstring{SetColumn()}{SetColumn()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
 template$<$size\+\_\+t P, size\+\_\+t Q$>$ \\
-std\+::enable\+\_\+if$<$(P==M$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==1$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}),void$>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Set\+Column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{c,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::enable\+\_\+if$<$(P==M$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$M==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==1$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}),void$>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Set\+Column (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -629,7 +645,7 @@ If $c\ge N$, an exception is thrown. If $P\ne M$ or $Q\ne 1$, an exception is th
 \doxysubsubsection{\texorpdfstring{SetRow()}{SetRow()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
 template$<$size\+\_\+t P, size\+\_\+t Q$>$ \\
-std\+::enable\+\_\+if$<$(P==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==N$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}),void$>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Set\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::enable\+\_\+if$<$(P==1$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})\&\&(Q==N$\vert$$\vert$Q==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}),void$>$\+::type \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Set\+Row (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q $>$ \&}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -642,22 +658,22 @@ If $r\ge M$, an exception is thrown. If $P\ne 1$ or $Q\ne N$, an exception is th
 {\em row} & PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_linear_1_1_matrix_af6d00ed63d7d272d004544c78b4ac908}\label{class_linear_1_1_matrix_af6d00ed63d7d272d004544c78b4ac908}} 
+\mbox{\Hypertarget{class_linear_1_1_matrix_a7dc69c7ae38b6f18c01a9df49c5273e4}\label{class_linear_1_1_matrix_a7dc69c7ae38b6f18c01a9df49c5273e4}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!Size@{Size}}
 \index{Size@{Size}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{Size()}{Size()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,1,2$>$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-Number of cells (Equivalent to \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}}$\ast$\+Num\+Columns()) 
+Size of matrix as a row vector. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}\label{class_linear_1_1_matrix_aafbc3e492307304eeb6adf774a6cf267}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!SwapRows@{SwapRows}}
 \index{SwapRows@{SwapRows}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
 \doxysubsubsection{\texorpdfstring{SwapRows()}{SwapRows()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
-void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Swap\+Rows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r1,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Swap\+Rows (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r1,  }\item[{size\+\_\+t}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
