@@ -712,6 +712,14 @@ namespace Linear {
          * @param m MxN Matrix.
          */
         friend std::ostream& operator<<(std::ostream& out, const Matrix<T,M,N,Flags>& m) {
+            if (m.NumRows() == 1) {
+                out << "(1x"<<m.NumColumns()<<")[";
+                for (size_t i = 0; i < m.Size(); ++i)
+                    out << (i > 0 ? ", " : "") << m[i];
+                out << "]";
+                return out;
+            }
+
             out << m.NumRows() << "x" << m.NumColumns() << std::endl;
             unsigned int longest = 5;
             for (size_t r = 0; r < m.NumRows(); ++r) {

@@ -31,7 +31,7 @@ int main() {
         for (unsigned int i = 0; i < eigenpairs_c.size(); ++i)
             std::cout << (i > 0 ? ", " : "") << eigenpairs_c[i].value;
         std::cout << std::endl;
-        std::cout << "charpoly(C) = " << CharPoly(C) << std::endl;
+        std::cout << "charpoly(C) = " << Transpose(CharPoly(C)) << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;
