@@ -47,4 +47,4 @@ int main() {
 ```
 
 ## Documentation
-A doxygen generated documentation is available in the doc/ directory. It is also avaiable online: http://amber.thrall.me/Linear/doc/html/index.html. The tests/ directory also contains various examples.
+A doxygen generated documentation is available in the doc/ directory. It is also avaiable online: [http://amber.thrall.me/Linear/doc/html/index.html](http://amber.thrall.me/Linear/doc/html/index.html). The tests/ directory also contains various examples.
