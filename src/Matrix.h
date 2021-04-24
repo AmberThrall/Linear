@@ -20,13 +20,16 @@ namespace Linear {
     public:
         /**
          * Constructor.
-         * Creates the M-by-N matrix \f$A\f$ where \f$a_{ij}=x\f$ for all \f$i,j\f$. If M or N are set to Dynamic, this constructor
-         * will throw an exception.
+         * Creates the M-by-N matrix \f$A\f$ where \f$a_{ij}=x\f$ for all \f$i,j\f$. If M or N are set to Dynamic, a 0x0 matrix will be created.
          * @param x Real number (default = 0)
          */
         Matrix(T x = T(0)) {
-            if (M == Dynamic || N == Dynamic)
-                throw "Cannot create a 0x0 matrix.";
+            if (M == Dynamic || N == Dynamic) {
+                this->m = 0;
+                this->n = 0;
+                this->data = NULL;
+                return;
+            }
             this->m = M;
             this->n = N;
             this->data = new Complex<T>[this->m*this->n];
@@ -36,13 +39,16 @@ namespace Linear {
         }
         /**
          * Constructor.
-         * Creates the M-by-N matrix \f$A\f$ where \f$a_{ij}=z\f$ for all \f$i,j\f$. If M or N are set to Dynamic, this constructor
-         * will throw an exception.
+         * Creates the M-by-N matrix \f$A\f$ where \f$a_{ij}=z\f$ for all \f$i,j\f$. If M or N are set to Dynamic, a 0x0 matrix will be created.
          * @param val Complex number
          */
         Matrix(Complex<T> z) {
-            if (M == Dynamic || N == Dynamic)
-                throw "Cannot create a 0x0 matrix.";
+            if (M == Dynamic || N == Dynamic) {
+                this->m = 0;
+                this->n = 0;
+                this->data = NULL;
+                return;
+            }
             this->m = M;
             this->n = N;
             this->data = new Complex<T>[this->m*this->n];
@@ -315,15 +321,107 @@ namespace Linear {
         }
 
         /**
-         * @return M
+         * Resizes a dynamic matrix.
+         * If M or N is dynamic, this function becomes available. It resizes the matrix to newSizexN or MxnewSize depending on if
+         * N or M is dynamic. If both M and N are dynamic, it becomes an newSizexnewSize matrix. If neither M nor N are dynamic, this
+         * function throws an exception.
+         * @param newSize New number of rows/columns
+         */
+        void Resize(size_t newSize) {
+            if (M != Dynamic && N != Dynamic)
+                throw "Cannot resize statically sized matrices.";
+
+            size_t oldM = this->m, oldN = this->n;
+            if (M == Dynamic) { this->m = newSize; }
+            if (N == Dynamic) { this->n = newSize; }
+
+            if (this->m == 0 || this->n == 0) {
+                this->m = 0;
+                this->n = 0;
+                if (this->data != NULL)
+                    delete this->data;
+                this->data = NULL;
+                return;
+            }
+
+            Complex<T> * oldData = this->data;
+            this->data = new Complex<T>[this->m*this->n];
+            for (size_t r = 0; r < this->m; ++r) {
+                for (size_t c = 0; c < this->n; ++c) {
+                    if (r >= oldM || c >= oldN) {
+                        if (Flags & ColumnMajor)
+                            this->data[c*this->m+r] = T(0);
+                        else
+                            this->data[r*this->n+c] = T(0);
+                    }
+                    else if (oldData != NULL) {
+                        if (Flags & ColumnMajor)
+                            this->data[c*this->m+r] = oldData[c*oldM+r];
+                        else
+                            this->data[r*this->n+c] = oldData[r*oldN+c];
+                    }
+                }
+            }
+            if (oldData != NULL)
+                delete oldData;
+        }
+        /**
+         * Resizes a dynamic matrix.
+         * If M or N are dynamic, this function becomes available. If both M and N are dynamic, it resizes the matrix to newMxnewN.
+         * Otherwise it resizes the matrix to newMxN or MxnewN depending if M or N is dynamic. If neither M nor N are dynamic, this
+         * function throws an exception.
+         * @param newM New number of rows. Ignored if M is not dynamic
+         * @param newN New number of columns. Ignored if N is not dynamic
+         */
+        void Resize(size_t newM, size_t newN) {
+            if (M != Dynamic && N != Dynamic)
+                throw "Cannot resize statically sized matrices.";
+
+            size_t oldM = this->m, oldN = this->n;
+            if (M == Dynamic) { this->m = newM; }
+            if (N == Dynamic) { this->n = newN; }
+
+            if (this->m == 0 || this->n == 0) {
+                this->m = 0;
+                this->n = 0;
+                if (this->data != NULL)
+                    delete this->data;
+                this->data = NULL;
+                return;
+            }
+
+            Complex<T> * oldData = this->data;
+            this->data = new Complex<T>[this->m*this->n];
+            for (size_t r = 0; r < this->m; ++r) {
+                for (size_t c = 0; c < this->n; ++c) {
+                    if (r >= oldM || c >= oldN) {
+                        if (Flags & ColumnMajor)
+                            this->data[c*this->m+r] = T(0);
+                        else
+                            this->data[r*this->n+c] = T(0);
+                    }
+                    else if (oldData != NULL) {
+                        if (Flags & ColumnMajor)
+                            this->data[c*this->m+r] = oldData[c*oldM+r];
+                        else
+                            this->data[r*this->n+c] = oldData[r*oldN+c];
+                    }
+                }
+            }
+            if (oldData != NULL)
+                delete oldData;
+        }
+
+        /**
+         * @return Number of rows
          */
         size_t NumRows() const { return this->m; }
         /**
-         * @return N
+         * @return Number of columns
          */
         size_t NumColumns() const { return this->n; }
         /**
-         * @return M*N
+         * @return Number of cells (Equivalent to NumRows()*NumColumns())
          */
         size_t Size() const { return NumRows()*NumColumns(); }
 
@@ -475,8 +573,9 @@ namespace Linear {
          */
         template <size_t P, size_t Q, unsigned int Flags2>
         Matrix<T,M,N,Flags> & operator=(const Matrix<T,P,Q,Flags2>& other) {
-            if (M == Dynamic) { this->m = other.NumRows(); }
-            if (N == Dynamic) { this->n = other.NumColumns(); }
+            if (M == Dynamic && N == Dynamic) { Resize(other.NumRows(), other.NumColumns()); }
+            else if (M == Dynamic) { Resize(other.NumRows()); }
+            else if (N == Dynamic) { Resize(other.NumColumns()); }
             if (NumRows() != other.NumRows() || NumColumns() != other.NumColumns())
                 throw "Cannot assign matrix to a matrix of different size.";
             for (size_t r = 0; r < NumRows(); ++r) {
