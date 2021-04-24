@@ -854,16 +854,45 @@ namespace Linear {
     template <typename T,size_t N, unsigned int Flags = 0>
     using SquareMatrix = Matrix<T,N,N,Flags>;
 
-    using Matrix2i = Matrix<int,2,2>;
-    using Matrix3i = Matrix<int,3,3>;
-    using Matrix4i = Matrix<int,4,4>;
-    using MatrixXi = Matrix<int,Dynamic,Dynamic>;
     using Matrix2f = Matrix<float,2,2>;
+    using Matrix2x2f = Matrix<float,2,2>;
+    using Matrix2x3f = Matrix<float,2,3>;
+    using Matrix2x4f = Matrix<float,2,4>;
     using Matrix3f = Matrix<float,3,3>;
+    using Matrix3x2f = Matrix<float,3,2>;
+    using Matrix3x3f = Matrix<float,3,3>;
+    using Matrix3x4f = Matrix<float,3,4>;
     using Matrix4f = Matrix<float,4,4>;
+    using Matrix4x2f = Matrix<float,4,2>;
+    using Matrix4x3f = Matrix<float,4,3>;
+    using Matrix4x4f = Matrix<float,4,4>;
     using MatrixXf = Matrix<float,Dynamic,Dynamic>;
+
     using Matrix2d = Matrix<double,2,2>;
+    using Matrix2x2d = Matrix<double,2,2>;
+    using Matrix2x3d = Matrix<double,2,3>;
+    using Matrix2x4d = Matrix<double,2,4>;
     using Matrix3d = Matrix<double,3,3>;
+    using Matrix3x2d = Matrix<double,3,2>;
+    using Matrix3x3d = Matrix<double,3,3>;
+    using Matrix3x4d = Matrix<double,3,4>;
     using Matrix4d = Matrix<double,4,4>;
+    using Matrix4x2d = Matrix<double,4,2>;
+    using Matrix4x3d = Matrix<double,4,3>;
+    using Matrix4x4d = Matrix<double,4,4>;
     using MatrixXd = Matrix<double,Dynamic,Dynamic>;
+
+    using Matrix2ld = Matrix<long double,2,2>;
+    using Matrix2x2ld = Matrix<long double,2,2>;
+    using Matrix2x3ld = Matrix<long double,2,3>;
+    using Matrix2x4ld = Matrix<long double,2,4>;
+    using Matrix3ld = Matrix<long double,3,3>;
+    using Matrix3x2ld = Matrix<long double,3,2>;
+    using Matrix3x3ld = Matrix<long double,3,3>;
+    using Matrix3x4ld = Matrix<long double,3,4>;
+    using Matrix4ld = Matrix<long double,4,4>;
+    using Matrix4x2ld = Matrix<long double,4,2>;
+    using Matrix4x3ld = Matrix<long double,4,3>;
+    using Matrix4x4ld = Matrix<long double,4,4>;
+    using MatrixXld = Matrix<long double,Dynamic,Dynamic>;
 }

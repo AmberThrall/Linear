@@ -8,10 +8,6 @@
 namespace Linear {
     template<typename T, size_t N>
     using Vector = Matrix<T,N,1>;
-    using Vector2i = Vector<int,2>;
-    using Vector3i = Vector<int,3>;
-    using Vector4i = Vector<int,4>;
-    using VectorXi = Vector<int,Dynamic>;
     using Vector2f = Vector<float,2>;
     using Vector3f = Vector<float,3>;
     using Vector4f = Vector<float,4>;
@@ -20,13 +16,13 @@ namespace Linear {
     using Vector3d = Vector<double,3>;
     using Vector4d = Vector<double,4>;
     using VectorXd = Vector<double,Dynamic>;
+    using Vector2ld = Vector<long double,2>;
+    using Vector3ld = Vector<long double,3>;
+    using Vector4ld = Vector<long double,4>;
+    using VectorXld = Vector<long double,Dynamic>;
 
     template<typename T, size_t N>
     using RowVector = Matrix<T,1,N>;
-    using RowVector2i = RowVector<int,2>;
-    using RowVector3i = RowVector<int,3>;
-    using RowVector4i = RowVector<int,4>;
-    using RowVectorXi = RowVector<int,Dynamic>;
     using RowVector2f = RowVector<float,2>;
     using RowVector3f = RowVector<float,3>;
     using RowVector4f = RowVector<float,4>;
@@ -35,6 +31,10 @@ namespace Linear {
     using RowVector3d = RowVector<double,3>;
     using RowVector4d = RowVector<double,4>;
     using RowVectorXd = RowVector<double,Dynamic>;
+    using RowVector2ld = RowVector<long double,2>;
+    using RowVector3ld = RowVector<long double,3>;
+    using RowVector4ld = RowVector<long double,4>;
+    using RowVectorXld = RowVector<long double,Dynamic>;
 
     /**
      * Constructs a subvector of a column vector. If P<1 or off+P>N, an exception is thrown.
@@ -372,7 +372,7 @@ namespace Linear {
     std::vector<Vector<T,1>> GramSchmidt(const std::vector<Vector<T,1>>& v) {
         if (v.size() == 0)
             return v;
-        
+
         std::vector<Vector<T,1>> res;
         for (size_t i = 0; i < v.size(); ++i) {
             res.push_back(Normalize(v[i]));
