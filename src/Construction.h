@@ -21,7 +21,7 @@ namespace Linear {
      * @return NxN Matrix
      */
     template <typename T, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(N>0), SquareMatrix<T,N,Flags>>::type Identity() {
+    SquareMatrix<T,N,Flags> Identity() {
         SquareMatrix<T,N,Flags> ret(T(0));
         for (size_t i = 0; i < N; ++i)
             ret(i,i) = T(1);
@@ -61,7 +61,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type Zero() {
+    Matrix<T,M,N,Flags> Zero() {
         Matrix<T,M,N,Flags> ret(T(0));
         return ret;
     }
@@ -98,7 +98,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type One() {
+    Matrix<T,M,N,Flags> One() {
         Matrix<T,M,N,Flags> ret(T(1));
         return ret;
     }
@@ -136,7 +136,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type Constant(Complex<T> z) {
+    Matrix<T,M,N,Flags> Constant(Complex<T> z) {
         Matrix<T,M,N,Flags> ret(z);
         return ret;
     }
@@ -229,7 +229,7 @@ namespace Linear {
      * @return MxN Matrix
      */
     template <typename T, size_t M, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(M>0&&N>0), Matrix<T,M,N,Flags>>::type Random(Complex<T> min = Complex<T>(0.0), Complex<T> max = Complex<T>(1.0)) {
+    Matrix<T,M,N,Flags> Random(Complex<T> min = Complex<T>(0.0), Complex<T> max = Complex<T>(1.0)) {
         std::uniform_real_distribution<T> distrRe(min.Re, max.Re);
         std::uniform_real_distribution<T> distrIm(min.Im, max.Im);
         Matrix<T,M,N,Flags> ret(T(0));
@@ -265,73 +265,6 @@ namespace Linear {
     }
 
     /**
-     * Creates an NxN givens rotation \f$G(i,j,\theta)\f$ defined by
-     * \f\[
-     *    G(i,j,\theta) = \begin{bmatrix}
-     *                          1 & \dots & 0 & \dots & 0 & \dots & 0 \\
-     *                          \vdots & \ddots & \vdots & & \vdots & & \vdots \\
-     *                          0 & \dots & c & \dots & -s & \dots & 0 \\
-     *                          \vdots & & \vdots & \ddots & \vdots & & \vdots \\
-     *                          0 & \dots & s & \dots & c & \dots & 0 \\
-     *                          \vdots & & \vdots & & \vdots & \ddots & \vdots \\
-     *                          0 & \dots & 0 & \dots & 0 & \dots & 1
-     *                    \end{bmatrix}
-     * \f\]
-     * where \f$c=\cos\theta\f$ and \f$s=\sin\theta\f$.
-     * @param T Type
-     * @param N Size of matrix
-     * @param Flags Flags to pass to the matrix (default = row major)
-     * @param i Index
-     * @param j Index
-     * @param theta Complex number
-     * @return NxN Matrix
-     */
-    template <size_t P, typename T, size_t N, unsigned int Flags = 0>
-    typename std::enable_if<(P>0), SquareMatrix<T,P,Flags>>::type Givens(size_t i, size_t j, Complex<T> theta) {
-        if (i >= P || j >= P)
-            throw "Cannot create Givens rotation, indices are out of bounds.";
-        SquareMatrix<T,P,Flags> ret = Identity<T,P,Flags>();
-        ret(i,i) = Cos(theta);
-        ret(i,j) = Sin(theta);
-        ret(j,i) = Sin(theta);
-        ret(j,j) = Cos(theta);
-        return ret;
-    }
-    /**
-     * Dynamically creates a sizexsize givens rotation \f$G(i,j,\theta)\f$ defined by
-     * \f\[
-     *    G(i,j,\theta) = \begin{bmatrix}
-     *                          1 & \dots & 0 & \dots & 0 & \dots & 0 \\
-     *                          \vdots & \ddots & \vdots & & \vdots & & \vdots \\
-     *                          0 & \dots & c & \dots & -s & \dots & 0 \\
-     *                          \vdots & & \vdots & \ddots & \vdots & & \vdots \\
-     *                          0 & \dots & s & \dots & c & \dots & 0 \\
-     *                          \vdots & & \vdots & & \vdots & \ddots & \vdots \\
-     *                          0 & \dots & 0 & \dots & 0 & \dots & 1
-     *                    \end{bmatrix}
-     * \f\]
-     * where \f$c=\cos\theta\f$ and \f$s=\sin\theta\f$.
-     * @param T Type
-     * @param Flags Flags to pass to the matrix (default = row major)
-     * @param size Size of matrix
-     * @param i Index
-     * @param j Index
-     * @param theta Complex number
-     * @return NxN Matrix
-     */
-    template <typename T, size_t N, unsigned int Flags = 0>
-    SquareMatrix<T,Dynamic,Flags> Givens(size_t size, size_t i, size_t j, Complex<T> theta) {
-        if (i >= size || j >= size)
-            throw "Cannot create Givens rotation, indices are out of bounds.";
-        SquareMatrix<T,Dynamic,Flags> ret = Identity<T,Flags>(size);
-        ret(i,i) = Cos(theta);
-        ret(i,j) = Sin(theta);
-        ret(j,i) = Sin(theta);
-        ret(j,j) = Cos(theta);
-        return ret;
-    }
-
-    /**
      * Creates an NxN Householder transformation \f$H\f$ defined by \f$H = I - 2vv^*.\f$
      * @param Flags Flags to pass to the matrix (default = row major)
      * @param v Column vector of length N
@@ -353,7 +286,7 @@ namespace Linear {
     template <typename T, size_t N, unsigned int Flags = 0>
     SquareMatrix<T,N,Flags> Householder(const Vector<T,N>& x, size_t k) {
         if (k == 0 || k >= x.Length())
-            throw "Cannot create Householder matrix, k must be such that 1<k<x.Size().";
+            throw "Cannot create Householder matrix, k must be such that 1<k<x.Length().";
 
         size_t index = x.Length()-k-1;
         Vector<T,Dynamic> x2 = SubVector(x,k+1,index);
@@ -535,10 +468,13 @@ namespace Linear {
      * @return (NQ)x(NQ) Matrix
      */
     template<typename T, size_t M, size_t N, unsigned int Flags1, size_t P, size_t Q, unsigned int Flags2>
-    typename std::enable_if<((M==N||M==Dynamic||N==Dynamic)&&(P==Q||P==Dynamic||Q==Dynamic)), Matrix<T,N*Q,N*Q,Flags1>>::type
-    KroneckerSum(const Matrix<T,M,N,Flags1>& A, const Matrix<T,P,Q,Flags2>& B) {
+    SquareMatrix<T,N*Q,Flags1> KroneckerSum(const Matrix<T,M,N,Flags1>& A, const Matrix<T,P,Q,Flags2>& B) {
         if (!IsSquare(A) || !IsSquare(B))
             throw "The Kronecker sum is only defined for two square matrices.";
+        if (A.NumEntries() == 0 || B.NumEntries() == 0) {
+            SquareMatrix<T,N*Q,Flags1> ret(T(0));
+            return ret;
+        }
         SquareMatrix<T,Dynamic,Flags1> In = Identity<T,Flags1>(A.NumRows());
         SquareMatrix<T,Dynamic,Flags1> Iq = Identity<T,Flags1>(B.NumRows());
         SquareMatrix<T,N*Q,Flags1> first = Kronecker(A, Iq);

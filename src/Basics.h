@@ -19,7 +19,7 @@ namespace Linear {
      * @return PxQ submatrix of A
      */
     template <size_t P, size_t Q, typename T, size_t M, size_t N, unsigned int Flags>
-    typename std::enable_if<(P>0&&Q>0),Matrix<T,P,Q,Flags>>::type SubMatrix(Matrix<T,M,N,Flags> A, size_t i = 0, size_t j = 0) {
+    Matrix<T,P,Q,Flags> SubMatrix(Matrix<T,M,N,Flags> A, size_t i = 0, size_t j = 0) {
         if (i+P > A.NumRows() || j+Q > A.NumColumns())
             throw "Cannot create submatrix, indices out of bounds.";
         Matrix<T,P,Q,Flags> ret(P,Q,T(0));
@@ -66,7 +66,14 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,(M==Dynamic?Dynamic:M-1),N,Flags> RemoveRow(Matrix<T,M,N,Flags> A, size_t i) {
+        if (A.NumRows() == 0)
+            throw "Cannot remove row from a matrix with 0 rows.";
+        if (i >= A.NumRows())
+            throw "Cannot remove row, index out of bounds.";
         Matrix<T,(M==Dynamic?Dynamic:M-1),N,Flags> ret(A.NumRows()-1,A.NumColumns(),T(0));
+        if (ret.NumEntries() == 0)
+            return ret;
+
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
                 if (r < i)
@@ -85,7 +92,14 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,M,(N==Dynamic?Dynamic:N-1),Flags> RemoveColumn(Matrix<T,M,N,Flags> A, size_t i) {
+        if (A.NumColumns() == 0)
+            throw "Cannot remove column from a matrix with 0 columns.";
+        if (i >= A.NumColumns())
+            throw "Cannot remove column, index out of bounds.";
         Matrix<T,M,(N==Dynamic?Dynamic:N-1),Flags> ret(A.NumRows(),A.NumColumns()-1,T(0));
+        if (ret.NumEntries() == 0)
+            return ret;
+
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
                 if (c < i)
@@ -105,7 +119,16 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,(M==Dynamic?Dynamic:M-1),(N==Dynamic?Dynamic:N-1),Flags> RemoveRowAndColumn(Matrix<T,M,N,Flags> A, size_t i, size_t j) {
+        if (A.NumRows() == 0)
+            throw "Cannot remove row from a matrix with 0 rows.";
+        if (A.NumColumns() == 0)
+            throw "Cannot remove column from a matrix with 0 columns.";
+        if (i >= A.NumRows() || j >= A.NumColumns())
+            throw "Cannot remove row and column, indices out of bounds.";
         Matrix<T,(M==Dynamic?Dynamic:M-1),(N==Dynamic?Dynamic:N-1),Flags> ret(A.NumRows()-1,A.NumColumns()-1,T(0));
+        if (ret.NumEntries() == 0)
+            return ret;
+
         for (size_t r = 0; r < A.NumRows(); ++r) {
             for (size_t c = 0; c < A.NumColumns(); ++c) {
                 if (r < i && c < j)
@@ -129,8 +152,8 @@ namespace Linear {
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,N,M,Flags> Transpose(const Matrix<T,M,N,Flags>& A) {
         Matrix<T,N,M,Flags> ret(A.NumColumns(), A.NumRows(), T(0));
-        for (size_t r = 0; r < A.NumColumns(); ++r) {
-            for (size_t c = 0; c < A.NumRows(); ++c) {
+        for (size_t r = 0; r < ret.NumRows(); ++r) {
+            for (size_t c = 0; c < ret.NumColumns(); ++c) {
                 ret(r,c) = A(c,r);
             }
         }
@@ -145,8 +168,8 @@ namespace Linear {
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,N,M,Flags> ConjugateTranspose(Matrix<T,M,N,Flags> A) {
         Matrix<T,N,M,Flags> ret(A.NumColumns(), A.NumRows(), T(0));
-        for (size_t r = 0; r < A.NumColumns(); ++r) {
-            for (size_t c = 0; c < A.NumRows(); ++c) {
+        for (size_t r = 0; r < ret.NumRows(); ++r) {
+            for (size_t c = 0; c < ret.NumColumns(); ++c) {
                 ret(r,c) = Conjugate(A(c,r));
             }
         }
@@ -220,6 +243,8 @@ namespace Linear {
         if (A.NumRows() != A.NumColumns())
             throw "Cannot take the determinant of a non-square matrix.";
 
+        if (A.NumRows() == 0)
+            return T(1);
         if (A.NumRows() == 1)
             return A(0,0);
         if (A.NumRows() == 2)
@@ -250,6 +275,8 @@ namespace Linear {
             throw "Cannot take the minor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Minor coordinates out of bounds.";
+        if (A.NumRows() == 1)
+            return A(i,i);
 
         return Determinant(RemoveRowAndColumn(A, i, j));
     }
@@ -269,6 +296,7 @@ namespace Linear {
             throw "Cannot take the cofactor of a non-square matrix.";
         if (i >= A.NumRows() || j >= A.NumRows())
             throw "Cofactor coordinates out of bounds.";
+
         if ((i+j) % 2 == 0)
             return Minor(A, i, j);
         return T(-1.0)*Minor(A, i, j);

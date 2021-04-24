@@ -44,6 +44,8 @@ size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e3824
 \item 
 size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns}} () const
 \item 
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_ad30daf75c0708ab43237459b4f441710}{Num\+Entries}} () const
+\item 
 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, 1, 2 $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a7dc69c7ae38b6f18c01a9df49c5273e4}{Size}} () const
 \item 
 size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_aec01c53512ebcfdfb5a990952d54d03c}{Length}} () const
@@ -418,8 +420,8 @@ size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T,
 
 For vectors, this returns the length of the vector. 
 
-For matrices, returns either M or N depending on what\textquotesingle{}s larger. \begin{DoxyReturn}{Returns}
-MAX(\mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}},\mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns()}}) 
+For matrices, returns either M or N depending on what\textquotesingle{}s larger. If empty, 0 is returned. \begin{DoxyReturn}{Returns}
+When non-\/empty, MAX(\mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}},\mbox{\hyperlink{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}{Num\+Columns()}}). Otherwise 0. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}\label{class_linear_1_1_matrix_a577f8387df4cefc6c49db968c838de3a}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!NumColumns@{NumColumns}}
@@ -430,6 +432,16 @@ size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T,
 
 \begin{DoxyReturn}{Returns}
 Number of columns 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_matrix_ad30daf75c0708ab43237459b4f441710}\label{class_linear_1_1_matrix_ad30daf75c0708ab43237459b4f441710}} 
+\index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!NumEntries@{NumEntries}}
+\index{NumEntries@{NumEntries}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{NumEntries()}{NumEntries()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Num\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Number of entries (Identical to \mbox{\hyperlink{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}{Num\+Rows()}}$\ast$\+Num\+Columns()) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}\label{class_linear_1_1_matrix_af98e9b44453dcb05643b9e38249e33a9}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!NumRows@{NumRows}}

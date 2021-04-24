@@ -43,6 +43,8 @@ namespace Linear {
             throw "Size mismatch in PowerIteration().";
         if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in PowerIteration().";
+        if (A.NumEntries() == 0)
+            throw "Cannot perform power iteration on a Mx0 or 0xN matrix.";
 
         Complex<T> lambda;
         Vector<T,N> q = b0/Norm(b0);
@@ -89,6 +91,8 @@ namespace Linear {
             throw "Size mismatch in PowerIteration().";
         if (Norm(b0) < T(Tol))
             throw "Cannot use the zero vector as the initial vector in InverseIteration().";
+        if (A.NumEntries() == 0)
+            throw "Cannot perform inverse iteration on a Mx0 or 0xN matrix.";
 
         SquareMatrix<T,N,Flags> eye = Identity<T,Flags>(A.NumRows());
         SquareMatrix<T,N,Flags> B = Inverse(A-mu*eye);
@@ -112,6 +116,10 @@ namespace Linear {
     Vector<T,N> WielandtDeflationAlgorithm(const Matrix<T,M,N,Flags>& A, unsigned int max_iterations = 100) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
+        if (A.NumEntries() == 0) {
+            Vector<T,N> eigenvalues(T(0));
+            return eigenvalues;
+        }
 
         // Final step: 1x1 matrix.
         if (A.NumRows() == 1) {
@@ -164,6 +172,10 @@ namespace Linear {
     Vector<T,N> Eigenvalues(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
+        if (A.NumEntries() == 0) {
+            Vector<T,N> eigenvalues(T(0));
+            return eigenvalues;
+        }
 
         Vector<T,N> eigenvalues(A.NumRows(), T(0));
         if (IsTriangular(A)) {
@@ -241,6 +253,10 @@ namespace Linear {
     std::vector<Eigenpair<T,N>> Eigen(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Eigenvalues are only defined for square matrices.";
+        if (A.NumEntries() == 0) {
+            std::vector<Eigenpair<T,N>> eigenpairs;
+            return eigenpairs;
+        }
 
         Vector<T,N> eigenvalues = Eigenvalues(A);
 
@@ -328,6 +344,8 @@ namespace Linear {
     Vector<T,(N==Dynamic?Dynamic:N+1)> CharPoly(const Matrix<T,M,N,Flags>& A) {
         if (!IsSquare(A))
             throw "Characteristic polynomial is only defined for square matrices.";
+        if (A.NumEntries() == 0)
+            throw "Cannot compute the characteristic polynomial of a 0x0, Mx0 or 0xN matrix.";
 
         // Check if it's the companion matrix.
         if (IsCompanion(A)) {

@@ -44,13 +44,13 @@ namespace Linear {
      *     Vector4d v = { 1, 2, 3, 4 };
      *     Vector2d w = SubVector<2>(v, 1);
      *
-     * @param P Size for subvector
+     * @param P Length for subvector
      * @param v Column vector of size N
      * @param off Offset to start the subvector (default = 0)
      * @return Column vector of size P
      */
     template <size_t P, typename T, size_t N>
-    typename std::enable_if<(P>0),Vector<T,P>>::type SubVector(const Vector<T,N>& v, size_t off = 0) {
+    Vector<T,P> SubVector(const Vector<T,N>& v, size_t off = 0) {
         if (off+P > v.Length())
             throw "Cannot create subvector, indices out of bounds.";
         Vector<T,P> ret(T(0));
@@ -68,13 +68,13 @@ namespace Linear {
      *     VectorXd w = SubVector(v, 2, 1);
      *
      * @param v Column vector of size N
-     * @param size Size for subvector
+     * @param size Length for subvector
      * @param off Offset to start the subvector (default 0)
      * @return Column vector of size size
      */
     template <typename T, size_t N>
     Vector<T,Dynamic> SubVector(const Vector<T,N>& v, size_t size, size_t off = 0) {
-        if (size < 1 || off+size > v.Length())
+        if (off+size > v.Length())
             throw "Cannot create subvector, indices out of bounds.";
         Vector<T,Dynamic> ret(size,T(0));
         for (size_t i = 0; i < ret.Length(); ++i) {
@@ -90,13 +90,13 @@ namespace Linear {
      *     RowVector4d v = { 1, 2, 3, 4 };
      *     RowVector2d w = SubVector<2>(v, 1);
      *
-     * @param P Size for subvector
+     * @param P Length for subvector
      * @param v Row vector of size N
      * @param off Offset to start the subvector (default = 0)
      * @return Row vector of size P
      */
     template <size_t P, typename T, size_t N>
-    typename std::enable_if<(P>0),RowVector<T,P>>::type SubVector(const RowVector<T,N>& v, size_t off = 0) {
+    RowVector<T,P> SubVector(const RowVector<T,N>& v, size_t off = 0) {
         return Transpose(SubVector<T,P>(Transpose(v), off));
     }
     /**
@@ -108,7 +108,7 @@ namespace Linear {
      *     RowVectorXd w = SubVector<2>(v, 2, 1);
      *
      * @param v Row vector of size N
-     * @param size Size for subvector
+     * @param size Length for subvector
      * @param off Offset to start the subvector (default = 0)
      * @return Row vector of size size
      */
@@ -124,16 +124,17 @@ namespace Linear {
      *     Vector<double,1> v = { 1 };
      *     Vector<double,1> w = SubVector<1>(v);
      *
-     * @param P Size for subvector
-     * @param v Vector of size 1
+     * @param P Length for subvector
+     * @param v Vector of length 1
      * @param off Offset to start the subvector (default = 0)
      * @return v
      */
     template <size_t P, typename T>
-    typename std::enable_if<(P>0),Vector<T,1>>::type SubVector(const Vector<T,1>& v, size_t off = 0) {
-        if (P != 1 || off != 0)
+    Vector<T,P> SubVector(const Vector<T,1>& v, size_t off = 0) {
+        if (off != 0)
             throw "Cannot create subvector, indices out of bounds.";
-        return v;
+        Vector<T,P> ret(v[0]);
+        return ret;
     }
     /**
      * Handles subvector in the size 1 case. If size is not one or off is not zero, an exception is raised.
@@ -150,9 +151,9 @@ namespace Linear {
      */
     template <typename T>
     Vector<T,Dynamic> SubVector(const Vector<T,1>& v, size_t size, size_t off = 0) {
-        if (off != 0 || size != 1)
+        if (off != 0)
             throw "Cannot create subvector, indices out of bounds.";
-        Vector<T,Dynamic> ret = v;
+        Vector<T,Dynamic> ret(size, v[0]);
         return ret;
     }
 
@@ -198,6 +199,9 @@ namespace Linear {
     Matrix<T,M,N,Flags> Normalize(Matrix<T,M,N,Flags> v) {
         if (!IsVector(v))
             throw "Normalize is only defined for vectors.";
+        if (v.Length() == 0)
+            return v;
+
         T norm = Norm(v);
         if (norm < T(Tol)) {
             for (size_t i = 0; i < v.Length(); ++i)
@@ -254,6 +258,8 @@ namespace Linear {
             throw "Vector projection doesn't work on matrices.";
         if (v.Length() != onto.Length())
             throw "Cannot project vector onto a vector of differing dimension.";
+        if (v.Length() == 0)
+            throw "Cannot project empty vector.";
         if (Norm(onto) < T(Tol)) { // Special case: Proj_0(v) = 0
             for (size_t i = 0; i < onto.Length(); ++i)
                 onto[i] = T(0);
@@ -284,6 +290,8 @@ namespace Linear {
             if (v[i].Length() != v[0].Length())
                 throw "All vectors must be the same length in order to perform Gram-Schmidt.";
         }
+        if (v[0].Length() == 0)
+            return v;
 
         std::vector<Vector<T,N>> u;
         for (size_t k = 0; k < v.size(); ++k) {
@@ -313,6 +321,7 @@ namespace Linear {
     std::vector<RowVector<T,N>> GramSchmidt(const std::vector<RowVector<T,N>>& v) {
         if (v.size() == 0)
             return v;
+
         std::vector<Vector<T,N>> vT;
         for (size_t i = 0; i < v.size(); ++i)
             vT.push_back(Transpose(v[i]));
@@ -335,6 +344,9 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     Matrix<T,M,N,Flags> GramSchmidt(Matrix<T,M,N,Flags> A) {
+        if (A.NumEntries() == 0)
+            return A;
+
         std::vector<Vector<T,M>> columns;
         for (size_t i = 0; i < A.NumColumns(); ++i)
             columns.push_back(A.GetColumn(i));
@@ -360,6 +372,7 @@ namespace Linear {
     std::vector<Vector<T,1>> GramSchmidt(const std::vector<Vector<T,1>>& v) {
         if (v.size() == 0)
             return v;
+        
         std::vector<Vector<T,1>> res;
         for (size_t i = 0; i < v.size(); ++i) {
             res.push_back(Normalize(v[i]));

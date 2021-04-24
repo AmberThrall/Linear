@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['one_345',['One',['../namespace_linear.html#a7a9a5584160365f5fe90b095b4954869',1,'Linear::One()'],['../namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9',1,'Linear::One(size_t nrows, size_t ncols)']]],
+  ['one_345',['One',['../namespace_linear.html#ae67e8d867bb815ae28a4ca272a5cb22d',1,'Linear::One()'],['../namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9',1,'Linear::One(size_t nrows, size_t ncols)']]],
   ['operator_20complex_3c_20u_20_3e_346',['operator Complex&lt; U &gt;',['../class_linear_1_1_complex.html#a6631e7aa2b7583486fbc7cca90e0c536',1,'Linear::Complex']]],
   ['operator_20matrix_3c_20u_2c_20m_2c_20n_2c_20flags_20_3e_347',['operator Matrix&lt; U, M, N, Flags &gt;',['../class_linear_1_1_matrix.html#a345070116acdcfbd4ce6d0025d7d0db6',1,'Linear::Matrix']]],
   ['operator_28_29_348',['operator()',['../class_linear_1_1_matrix.html#a871634af314832a3177b62296c9ee4a7',1,'Linear::Matrix::operator()(size_t r, size_t c) const'],['../class_linear_1_1_matrix.html#afd5c44b879be1eb747ce401b11a739ad',1,'Linear::Matrix::operator()(size_t r, size_t c)']]],

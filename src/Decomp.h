@@ -46,7 +46,9 @@ namespace Linear {
             if (!IsSquare(A))
                 throw "LUP Decomposition is only defined for square matrices.";
             if (A.NumRows() != N && N != Dynamic)
-                throw "Cannot perform LUP Decomposition; size mismatch.";
+                throw "Cannot perform LUP decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform LUP decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             this->P = Identity<T,Flags>(A.NumRows());
             for (size_t i = 0; i < A.NumRows(); ++i) {
@@ -125,6 +127,8 @@ namespace Linear {
                 throw "QR Decomposition is defined for m-by-n matrices where m>=n.";
             if ((A.NumRows() != M && M != Dynamic) || (A.NumColumns() != N && N != Dynamic))
                 throw "Cannot perform QR decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform QR decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             // Perform Householder reflections.
             this->Q = Identity<T,Flags>(A.NumRows());
@@ -172,6 +176,8 @@ namespace Linear {
                 throw "Cholesky decomposition is defined for Hermitian positive-definite matrices.";
             if (A.NumColumns() != N && N != Dynamic)
                 throw "Cannot perform Cholesky decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform Cholesky decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             this->L = Zero<T,Flags>(A.NumRows(), A.NumRows());
             this->D = Zero<T,Flags>(A.NumRows(), A.NumRows());
@@ -225,6 +231,8 @@ namespace Linear {
                 throw "Eigendecomposition is defined for square matrices.";
             if (A.NumColumns() != N && N != Dynamic)
                 throw "Cannot perform Eigendecomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform Eigendecomposition of a 0x0, Mx0 or 0xN matrix.";
 
             std::vector<Eigenpair<T,N>> eigens = Eigen(A);
 
@@ -279,6 +287,8 @@ namespace Linear {
         void Compute(const Matrix<T,P,Q,Flags2>& A) {
             if ((A.NumRows() != M && M != Dynamic) || (A.NumColumns() != N && N != Dynamic))
                 throw "Cannot perform SVD decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform SVD decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             std::vector<Eigenpair<T,M>> left = Eigen(A*ConjugateTranspose(A));
             std::vector<Eigenpair<T,N>> right = Eigen(ConjugateTranspose(A)*A);
@@ -387,6 +397,8 @@ namespace Linear {
                 throw "Hessenberg decomposition requires a square matrix.";
             if (A.NumColumns() != N && N != Dynamic)
                 throw "Cannot perform Hessenberg decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform Hessenberg decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             this->Q = Identity<T>(A.NumRows());
             this->H = A;
@@ -435,6 +447,8 @@ namespace Linear {
                 throw "Schur decomposition requires a square matrix.";
             if (A.NumColumns() != N && N != Dynamic)
                 throw "Cannot perform Schur decomposition; size mismatch.";
+            if (A.NumEntries() == 0)
+                throw "Cannot perform Schur decomposition of a 0x0, Mx0 or 0xN matrix.";
 
             SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumRows());
             this->Q = Identity<T>(A.NumRows());

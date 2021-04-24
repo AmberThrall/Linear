@@ -55,6 +55,9 @@ namespace Linear {
      */
     template <typename T, size_t M, size_t N, unsigned int Flags>
     T Norm(const Matrix<T,M,N,Flags>& A, size_t p = 2) {
+        if (A.NumEntries() == 0)
+            return T(0);
+
         if (IsVector(A)) {
             return EntrywiseNorm(A, p);
         }

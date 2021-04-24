@@ -16,6 +16,8 @@ namespace Linear {
     template <typename T, size_t M, size_t N, unsigned int Flags>
     std::vector<Vector<T,N>> NullSpace(const Matrix<T,M,N,Flags>& A) {
         std::vector<Vector<T,N>> basis;
+        if (A.NumEntries() == 0)
+            return basis;
 
         SquareMatrix<T,N,Flags> eye = Identity<T>(A.NumColumns());
         Matrix<T,(M==Dynamic||N==Dynamic?Dynamic:M+N),N,Flags> aug = RowAugmented(A, eye);
@@ -53,6 +55,8 @@ namespace Linear {
     template <typename T, size_t M, size_t N, unsigned int Flags>
     std::vector<Vector<T,N>> ColumnSpace(const Matrix<T,M,N,Flags>& A) {
         std::vector<Vector<T,N>> basis;
+        if (A.NumEntries() == 0)
+            return basis;
 
         Matrix<T,M,N,Flags> B = RREF(A);
         size_t pivot = 0;
@@ -91,6 +95,8 @@ namespace Linear {
     typename std::enable_if<(M==P||P==Dynamic||M==Dynamic), Vector<T,N>>::type Solve(const Matrix<T,M,N,Flags>& A, const Vector<T,P>& b) {
         if (A.NumRows() != b.Length())
             throw "Cannot solve matrix equation Ax=b, b is incorrect size.";
+        if (A.NumEntries() == 0)
+            throw "No solution.";
 
         Vector<T,N> x(A.NumColumns(), T(0));
 

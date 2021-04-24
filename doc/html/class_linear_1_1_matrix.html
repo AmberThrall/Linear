@@ -135,6 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af98e9b44453dcb05643b9e38249e33a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a577f8387df4cefc6c49db968c838de3a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a">NumColumns</a> () const</td></tr>
 <tr class="separator:a577f8387df4cefc6c49db968c838de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30daf75c0708ab43237459b4f441710"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#ad30daf75c0708ab43237459b4f441710">NumEntries</a> () const</td></tr>
+<tr class="separator:ad30daf75c0708ab43237459b4f441710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dc69c7ae38b6f18c01a9df49c5273e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, 1, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#a7dc69c7ae38b6f18c01a9df49c5273e4">Size</a> () const</td></tr>
 <tr class="separator:a7dc69c7ae38b6f18c01a9df49c5273e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec01c53512ebcfdfb5a990952d54d03c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_1_1_matrix.html#aec01c53512ebcfdfb5a990952d54d03c">Length</a> () const</td></tr>
@@ -899,7 +901,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
 </div><div class="memdoc">
 
 <p>For vectors, this returns the length of the vector. </p>
-<p>For matrices, returns either M or N depending on what's larger. </p><dl class="section return"><dt>Returns</dt><dd>MAX(<a class="el" href="class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9">NumRows()</a>,<a class="el" href="class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a">NumColumns()</a>) </dd></dl>
+<p>For matrices, returns either M or N depending on what's larger. If empty, 0 is returned. </p><dl class="section return"><dt>Returns</dt><dd>When non-empty, MAX(<a class="el" href="class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9">NumRows()</a>,<a class="el" href="class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a">NumColumns()</a>). Otherwise 0. </dd></dl>
 
 </div>
 </div>
@@ -928,6 +930,34 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Number of columns </dd></dl>
+
+</div>
+</div>
+<a id="ad30daf75c0708ab43237459b4f441710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad30daf75c0708ab43237459b4f441710">&#9670;&nbsp;</a></span>NumEntries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="class_linear_1_1_matrix.html">Linear::Matrix</a>&lt; T, M, N, Flags &gt;::NumEntries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Number of entries (Identical to <a class="el" href="class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9">NumRows()</a>*NumColumns()) </dd></dl>
 
 </div>
 </div>

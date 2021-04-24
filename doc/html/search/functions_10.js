@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['random_360',['Random',['../namespace_linear.html#a3a80e6084878985b463ab66e347a6932',1,'Linear::Random(Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))'],['../namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a',1,'Linear::Random(size_t nrows, size_t ncols, Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))']]],
+  ['random_360',['Random',['../namespace_linear.html#a9f7484accb8f7d3e19be5d0ef5bb5df6',1,'Linear::Random(Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))'],['../namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a',1,'Linear::Random(size_t nrows, size_t ncols, Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))']]],
   ['rank_361',['Rank',['../namespace_linear.html#a821339a5ae70e69525e21978c45c1262',1,'Linear']]],
   ['removecolumn_362',['RemoveColumn',['../namespace_linear.html#a0cf217c60cdb387838b847f4354cab48',1,'Linear']]],
   ['removerow_363',['RemoveRow',['../namespace_linear.html#a353d19fe717cfa428f34db524b264c2d',1,'Linear']]],

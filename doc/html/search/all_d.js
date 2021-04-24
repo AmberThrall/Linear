@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['one_128',['One',['../namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9',1,'Linear::One(size_t nrows, size_t ncols)'],['../namespace_linear.html#a7a9a5584160365f5fe90b095b4954869',1,'Linear::One()']]],
+  ['one_128',['One',['../namespace_linear.html#ac22c0c3ccb5962d06ee6d42f6daa00d9',1,'Linear::One(size_t nrows, size_t ncols)'],['../namespace_linear.html#ae67e8d867bb815ae28a4ca272a5cb22d',1,'Linear::One()']]],
   ['operator_20complex_3c_20u_20_3e_129',['operator Complex&lt; U &gt;',['../class_linear_1_1_complex.html#a6631e7aa2b7583486fbc7cca90e0c536',1,'Linear::Complex']]],
   ['operator_20matrix_3c_20u_2c_20m_2c_20n_2c_20flags_20_3e_130',['operator Matrix&lt; U, M, N, Flags &gt;',['../class_linear_1_1_matrix.html#a345070116acdcfbd4ce6d0025d7d0db6',1,'Linear::Matrix']]],
   ['operator_21_3d_131',['operator!=',['../class_linear_1_1_complex.html#a6f96d884b25074b6a72fea8e315c569b',1,'Linear::Complex::operator!=()'],['../class_linear_1_1_complex.html#aa71eb3c58adc81e8996f21cd603f703b',1,'Linear::Complex::operator!=()'],['../class_linear_1_1_complex.html#aa67dfe3b41c066c4d9c1ef327df42e3e',1,'Linear::Complex::operator!=()'],['../class_linear_1_1_matrix.html#ab51654777395b9f33f27c832a0baaf76',1,'Linear::Matrix::operator!=()']]],

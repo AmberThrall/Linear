@@ -79,4 +79,12 @@ int main() {
     MatrixXd matrix_empty_1;
     std::cout << "matrix_empty_1 = " << matrix_empty_1 << std::endl;
     std::cout << "size(matrix_empty_1) = " << matrix_empty_1.Size() << std::endl;
+
+    Matrix<double,Dynamic,2> matrix_empty_2;
+    std::cout << "matrix_empty_2 = " << matrix_empty_2 << std::endl;
+    std::cout << "size(matrix_empty_2) = " << matrix_empty_2.Size() << std::endl;
+
+    Matrix<double,2,Dynamic> matrix_empty_3;
+    std::cout << "matrix_empty_3 = " << matrix_empty_3 << std::endl;
+    std::cout << "size(matrix_empty_3) = " << matrix_empty_3.Size() << std::endl;
 }

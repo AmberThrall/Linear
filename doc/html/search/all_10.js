@@ -1,7 +1,7 @@
 var searchData=
 [
   ['r_153',['R',['../struct_linear_1_1_q_r.html#aa8933fc281a686ba8f124ec49054fb6d',1,'Linear::QR']]],
-  ['random_154',['Random',['../namespace_linear.html#a3a80e6084878985b463ab66e347a6932',1,'Linear::Random(Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))'],['../namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a',1,'Linear::Random(size_t nrows, size_t ncols, Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))']]],
+  ['random_154',['Random',['../namespace_linear.html#a9f7484accb8f7d3e19be5d0ef5bb5df6',1,'Linear::Random(Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))'],['../namespace_linear.html#ac2d213cd79736ef96c8de075e666d86a',1,'Linear::Random(size_t nrows, size_t ncols, Complex&lt; T &gt; min=Complex&lt; T &gt;(0.0), Complex&lt; T &gt; max=Complex&lt; T &gt;(1.0))']]],
   ['random_5fnumber_5fgenerator_155',['random_number_generator',['../namespace_linear.html#af7d29f8c4ba5c9c2816c4601fec4ade6',1,'Linear']]],
   ['rank_156',['Rank',['../namespace_linear.html#a821339a5ae70e69525e21978c45c1262',1,'Linear']]],
   ['re_157',['Re',['../class_linear_1_1_complex.html#ad40be67896adeb527f30294f609fd412',1,'Linear::Complex']]],
