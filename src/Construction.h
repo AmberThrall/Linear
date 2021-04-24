@@ -669,4 +669,248 @@ namespace Linear {
     typename std::enable_if<(N>1||N==Dynamic), SquareMatrix<T,(N==Dynamic?Dynamic:N-1),Flags>>::type Companion(const RowVector<T,N>& c) {
         return Companion<Flags>(Transpose(c));
     }
+
+    /**
+     * Computes the (N+1)x(N+1) translation matrix T such that
+     * \f\[
+     *    Tx = \begin{bmatrix}
+     *      1 & 0 & \dots & 0 & t_0 \\
+     *      0 & 1 & & 0 & t_1 \\
+     *      \vdots & & \ddots & \vdots & \vdots \\
+     *      0 & 0 & \dots & 1 & t_{N-1} \\
+     *      0 & 0 & \dots & 0 & 1
+     *    \end{bmatrix}
+     *    \begin{bmatrix} x_0\\ x_1 \\ \vdots \\ x_{N-1} \\ 1\end{bmatrix}
+     *    = \begin{bmatrix} x_0+t_0\\ x_1+t_1\\ \vdots \\ x_{N-1}+t_{N-1} \\ 1 \end{bmatrix}.
+     * \f\]
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param t Vector of length N
+     * @return (N+1)x(N+1) Matrix
+     */
+    template <typename T, size_t N, unsigned int Flags=0>
+    SquareMatrix<T,(N==Dynamic?Dynamic:N+1),Flags> Translation(const Vector<T,N>& t) {
+        SquareMatrix<T,(N==Dynamic?Dynamic:N+1),Flags> ret = Identity<T,Flags>(t.Length()+1);
+        for (size_t i = 0; i < t.Length(); ++i) {
+            ret(i,t.Length()-1) = t[i];
+        }
+        return ret;
+    }
+    /**
+     * Computes the NxN scaling matrix S such that
+     * \f\[
+     *    Sx = \begin{bmatrix}
+     *      s_0 & \dots & \\
+     *      & \ddots & \\
+     *      & & s_{N-1}
+     *    \end{bmatrix}
+     *    \begin{bmatrix} x_0\\ \vdots \\ x_{N-1}\end{bmatrix}
+     *    = \begin{bmatrix} s_0x_0\\ \vdots \\ s_{N-1}x_{N-1} \end{bmatrix}.
+     * \f\]
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param s Vector of length N
+     * @return NxN Matrix
+     */
+    template <typename T, size_t N, unsigned int Flags=0>
+    SquareMatrix<T,N,Flags> Scaling(const Vector<T,N>& s) {
+        SquareMatrix<T,N,Flags> ret = Zero<T,Flags>(s.Length(), s.Length());
+        for (size_t i = 0; i < s.Length(); ++i) {
+            ret(i,i) = s[i];
+        }
+        return ret;
+    }
+    /**
+     * Computes the 4x4 rotatation matrix
+     * \f\[
+     *    \begin{bmatrix}
+     *      1 & 0 & 0 & 0 \\
+     *      0 & \cos\theta & -\sin\theta & 0 \\
+     *      0 & \sin\theta & \cos\theta & 0 \\
+     *      0 & 0 & 0 & 1
+     *    \end{bmatrix}.
+     * \f\]
+     * If N=3, it removes the last row and column.
+     * @param N Size of matrix (either 3 or 4, default = 4)
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param theta Angle to use in radians
+     * @return NxN Matrix
+     */
+    template <typename T, size_t N=4, unsigned int Flags=0>
+    typename std::enable_if<(N==3||N==4), SquareMatrix<T,N,Flags>>::type RotationX(T theta) {
+        SquareMatrix<T,N,Flags> ret = Identity<T,N,Flags>();
+        T c = Cos(theta);
+        T s = Sin(theta);
+        ret(1,1) = c;
+        ret(1,2) = -s;
+        ret(2,1) = s;
+        ret(2,2) = c;
+        return ret;
+    }
+    /**
+     * Computes the 4x4 rotatation matrix
+     * \f\[
+     *    \begin{bmatrix}
+     *      \cos\theta & 0 & \sin\theta & 0 \\
+     *      0 & 1 & 0 & 0 \\
+     *      -\sin\theta & 0 & \cos\theta & 0 \\
+     *      0 & 0 & 0 & 1
+     *    \end{bmatrix}.
+     * \f\]
+     * If N=3, it removes the last row and column.
+     * @param N Size of matrix (either 3 or 4, default = 4)
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param theta Angle to use in radians
+     * @return NxN Matrix
+     */
+    template <typename T, size_t N=4, unsigned int Flags=0>
+    typename std::enable_if<(N==3||N==4), SquareMatrix<T,N,Flags>>::type RotationY(T theta) {
+        SquareMatrix<T,N,Flags> ret = Identity<T,N,Flags>();
+        T c = Cos(theta);
+        T s = Sin(theta);
+        ret(0,0) = c;
+        ret(0,2) = s;
+        ret(2,0) = -s;
+        ret(2,2) = c;
+        return ret;
+    }
+    /**
+     * Computes the 4x4 rotatation matrix
+     * \f\[
+     *    \begin{bmatrix}
+     *      \cos\theta & -\sin\theta & 0 & 0 \\
+     *      \sin\theta & \cos\theta & 0 & 0 \\
+     *      0 & 0 & 1 & 0 \\
+     *      0 & 0 & 0 & 1
+     *    \end{bmatrix}.
+     * \f\]
+     * If N=3, it removes the last row and column.
+     * @param N Size of matrix (either 3 or 4, default = 4)
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param theta Angle to use in radians
+     * @return NxN Matrix
+     */
+    template <typename T, size_t N, unsigned int Flags=0>
+    typename std::enable_if<(N==3||N==4), SquareMatrix<T,N,Flags>>::type RotationZ(T theta) {
+        SquareMatrix<T,N,Flags> ret = Identity<T,N,Flags>();
+        T c = Cos(theta);
+        T s = Sin(theta);
+        ret(0,0) = c;
+        ret(0,1) = -s;
+        ret(1,0) = s;
+        ret(1,1) = c;
+        return ret;
+    }
+    /**
+     * Computes the 4x4 rotatation matrix about an axis.
+     * If N=3, it removes the last row and column.
+     * @param N Size of matrix (either 3 or 4, default = 4)
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param theta Angle to use in radians
+     * @param axis Vector of length 3 representing the axis of rotation
+     * @return NxN Matrix
+     */
+    template <size_t P, typename T, size_t N=4, unsigned int Flags=0>
+    typename std::enable_if<((N==3||N==4)&&(P==3||P==Dynamic)), SquareMatrix<T,N,Flags>>::type Rotation(T theta, Vector<T,P> axis) {
+        if (axis.Length() != 3)
+            throw "Axis of rotation should be length 3.";
+        Complex<T> x = axis[0], y = axis[1], z = axis[2];
+        T c = Cos(theta);
+        T s = Sin(theta);
+        SquareMatrix<T,4,Flags> ret = {
+            { c+x*x*(1-c), x*y*(1-c)-z*s, x*z*(1-c)+y*s, 0 },
+            { y*x*(1-c)+z*s, c+y*y*(1-c), y*z*(1-c)-x*s, 0 },
+            { z*x*(1-c)-y*s, z*y*(1-c)+z*s, c+z*z*(1-c), 0 },
+            { 0, 0, 0, 1 }
+        };
+        if (N == 4)
+            return ret;
+        return RemoveRowAndColumn(ret, 3, 3);
+    }
+    /**
+     * Computes the 4x4 rotatation matrix given a quaternion q.
+     * If N=3, it removes the last row and column.
+     * @param N Size of matrix (either 3 or 4, default = 4)
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param q Vector of length 4 representing quaternion q[0]+q[1]i+q[2]j+q[3]k
+     * @return NxN Matrix
+     */
+    template <size_t P, typename T, size_t N=4, unsigned int Flags=0>
+    typename std::enable_if<((N==3||N==4)&&(P==4||P==Dynamic)), SquareMatrix<T,N,Flags>>::type Rotation(Vector<T,P> q) {
+        if (q.Length() != 4)
+            throw "Quaternion q should be length 4.";
+        T q0 = q[0];
+        T q1 = q[1];
+        T q2 = q[2];
+        T q3 = q[3];
+        SquareMatrix<T,4,Flags> ret = {
+            { 1-2*(q2*q2+q3*q3), 2*(q1*q2-q0*q3), 2*(q0*q2+q1*q3), 0 },
+            {   2*(q1*q2+q0*q3), 1-2*(q1*q1+q3*q3), 2*(q2*q3-q0*q1), 0 },
+            {   2*(q1*q3-q0*q2), 2*(q0*q1+q2*q3), 1-2*(q1*q1+q2*q2), 0 },
+            { 0, 0, 0, 1 }
+        };
+        if (N == 4)
+            return ret;
+        return RemoveRowAndColumn(ret, 3, 3);
+    }
+    /**
+     * Computes the 4x4 orthographic projection matrix.
+     * See https://en.wikipedia.org/wiki/Orthographic_projection for more information.
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @return 4x4 Matrix
+     */
+    template <typename T, unsigned int Flags=0>
+    SquareMatrix<T,4,Flags> Orthographic(T left, T right, T bottom, T top, T near, T far) {
+        SquareMatrix<T,4,Flags> ret = Zero<T,4,4,Flags>();
+        ret(0,0) = 2/(right-left);
+        ret(1,1) = 2/(top-bottom);
+        ret(2,2) = -2/(far-near);
+        ret(3,3) = 1;
+        ret(0,3) = -(right+left)/(right-left);
+        ret(1,3) = -(top+bottom)/(top-bottom);
+        ret(0,3) = -(far+near)/(far-near);
+        return ret;
+    }
+    /**
+     * Computes the 4x4 perspective projection matrix.
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param fov Field of view in radians
+     * @param aspect Aspect ratio
+     * @param near Distance to near plane
+     * @param far Distance to far plane
+     * @return 4x4 Matrix
+     */
+    template <typename T, unsigned int Flags=0>
+    SquareMatrix<T,4,Flags> Perspective(T fov, T aspect, T near, T far) {
+        T tanHalfFov = Tan(fov / T(2));
+
+        SquareMatrix<T,4,Flags> ret = Zero<T,4,4,Flags>();
+        ret(0,0) = T(1)/(aspect*tanHalfFov);
+        ret(1,1) = T(1)/(tanHalfFov);
+        ret(2,2) = -(far+near)/(far-near);
+        ret(3,2) = T(-1);
+        ret(2,3) = -(T(2)*far*near)/(far-near);
+        return ret;
+    }
+    /**
+     * Computes the 4x4 look at matrix.
+     * @param Flags Flags to pass to the matrix (default = row major)
+     * @param right Right direction
+     * @param up Up direction
+     * @param dir Forward direction
+     * @param eye Camera position
+     * @return 4x4 Matrix
+     */
+    template <typename T, size_t N1, size_t N2, size_t N3, size_t N4, unsigned int Flags=0>
+    typename std::enable_if<((N1==3||N1==Dynamic)||(N2==3||N2==Dynamic)||(N3==3||N3==Dynamic)||(N4==3||N4==Dynamic)), SquareMatrix<T,4,Flags>>::type
+    LookAt(Vector<T,N1> right, Vector<T,N2> up, Vector<T,N3> dir, Vector<T,N4> eye) {
+        if (right.Length() != 3 || up.Length() != 3 || dir.Length() != 3 || eye.Length() != 3)
+            throw "All vectors in LookAt should be length 3.";
+
+        SquareMatrix<T,4,Flags> ret = {
+            { right[0], right[1], right[2], 0 },
+            { up[0], up[1], up[2], 0 },
+            { dir[0], dir[1], dir[2], 0 },
+            { 0, 0, 0, 1 }
+        };
+        return ret*Translation(-eye);
+    }
 }

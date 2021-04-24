@@ -700,6 +700,46 @@ Functions</h2></td></tr>
 <tr class="memitem:adb36c8432926ae50addd9fbfc5ff0f23"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(N &gt;1||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N-1), Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23">Companion</a> (const <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; T, N &gt; &amp;c)</td></tr>
 <tr class="memdesc:adb36c8432926ae50addd9fbfc5ff0f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (N-1)x(N-1) companion matrix.  <a href="namespace_linear.html#adb36c8432926ae50addd9fbfc5ff0f23">More...</a><br /></td></tr>
 <tr class="separator:adb36c8432926ae50addd9fbfc5ff0f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4341ec96d8cd87d5f05b1de0a0513f2"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:af4341ec96d8cd87d5f05b1de0a0513f2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1), Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af4341ec96d8cd87d5f05b1de0a0513f2">Translation</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;t)</td></tr>
+<tr class="memdesc:af4341ec96d8cd87d5f05b1de0a0513f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (N+1)x(N+1) translation matrix T such that.  <a href="namespace_linear.html#af4341ec96d8cd87d5f05b1de0a0513f2">More...</a><br /></td></tr>
+<tr class="separator:af4341ec96d8cd87d5f05b1de0a0513f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679b6a09053c94b0ccb5538bed9753f8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:a679b6a09053c94b0ccb5538bed9753f8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a679b6a09053c94b0ccb5538bed9753f8">Scaling</a> (const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;s)</td></tr>
+<tr class="memdesc:a679b6a09053c94b0ccb5538bed9753f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the NxN scaling matrix S such that.  <a href="namespace_linear.html#a679b6a09053c94b0ccb5538bed9753f8">More...</a><br /></td></tr>
+<tr class="separator:a679b6a09053c94b0ccb5538bed9753f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4133d2042501de1d0556eabaf669c07b"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N = 4, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:a4133d2042501de1d0556eabaf669c07b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4133d2042501de1d0556eabaf669c07b">RotationX</a> (T theta)</td></tr>
+<tr class="memdesc:a4133d2042501de1d0556eabaf669c07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 rotatation matrix.  <a href="namespace_linear.html#a4133d2042501de1d0556eabaf669c07b">More...</a><br /></td></tr>
+<tr class="separator:a4133d2042501de1d0556eabaf669c07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3aa75a786bf61ce4f594b7c1962754"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N = 4, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:a6e3aa75a786bf61ce4f594b7c1962754"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a6e3aa75a786bf61ce4f594b7c1962754">RotationY</a> (T theta)</td></tr>
+<tr class="memdesc:a6e3aa75a786bf61ce4f594b7c1962754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 rotatation matrix.  <a href="namespace_linear.html#a6e3aa75a786bf61ce4f594b7c1962754">More...</a><br /></td></tr>
+<tr class="separator:a6e3aa75a786bf61ce4f594b7c1962754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59b69cd443b93d072ac494b6bd1b523"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:ad59b69cd443b93d072ac494b6bd1b523"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad59b69cd443b93d072ac494b6bd1b523">RotationZ</a> (T theta)</td></tr>
+<tr class="memdesc:ad59b69cd443b93d072ac494b6bd1b523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 rotatation matrix.  <a href="namespace_linear.html#ad59b69cd443b93d072ac494b6bd1b523">More...</a><br /></td></tr>
+<tr class="separator:ad59b69cd443b93d072ac494b6bd1b523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e8050daca1cc1c27b36cdda6eccab4"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T , size_t N = 4, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:ae4e8050daca1cc1c27b36cdda6eccab4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((N==3||N==4)&amp;&amp;(P==3||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ae4e8050daca1cc1c27b36cdda6eccab4">Rotation</a> (T theta, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; axis)</td></tr>
+<tr class="memdesc:ae4e8050daca1cc1c27b36cdda6eccab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 rotatation matrix about an axis.  <a href="namespace_linear.html#ae4e8050daca1cc1c27b36cdda6eccab4">More...</a><br /></td></tr>
+<tr class="separator:ae4e8050daca1cc1c27b36cdda6eccab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869bee4ae7e859dd0a58e4dd885ccdfd"><td class="memTemplParams" colspan="2">template&lt;size_t P, typename T , size_t N = 4, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:a869bee4ae7e859dd0a58e4dd885ccdfd"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((N==3||N==4)&amp;&amp;(P==4||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, N, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a869bee4ae7e859dd0a58e4dd885ccdfd">Rotation</a> (<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; q)</td></tr>
+<tr class="memdesc:a869bee4ae7e859dd0a58e4dd885ccdfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 rotatation matrix given a quaternion q.  <a href="namespace_linear.html#a869bee4ae7e859dd0a58e4dd885ccdfd">More...</a><br /></td></tr>
+<tr class="separator:a869bee4ae7e859dd0a58e4dd885ccdfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9784bb204bf61f836f3b5fa4415ea59f"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:a9784bb204bf61f836f3b5fa4415ea59f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, 4, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9784bb204bf61f836f3b5fa4415ea59f">Orthographic</a> (T left, T right, T bottom, T top, T near, T far)</td></tr>
+<tr class="memdesc:a9784bb204bf61f836f3b5fa4415ea59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 orthographic projection matrix.  <a href="namespace_linear.html#a9784bb204bf61f836f3b5fa4415ea59f">More...</a><br /></td></tr>
+<tr class="separator:a9784bb204bf61f836f3b5fa4415ea59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49275856ed40b7b4deab03750393a47"><td class="memTemplParams" colspan="2">template&lt;typename T , unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:aa49275856ed40b7b4deab03750393a47"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, 4, Flags &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa49275856ed40b7b4deab03750393a47">Perspective</a> (T fov, T aspect, T near, T far)</td></tr>
+<tr class="memdesc:aa49275856ed40b7b4deab03750393a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 perspective projection matrix.  <a href="namespace_linear.html#aa49275856ed40b7b4deab03750393a47">More...</a><br /></td></tr>
+<tr class="separator:aa49275856ed40b7b4deab03750393a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca972628e54111b49864437e889d3960"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N1, size_t N2, size_t N3, size_t N4, unsigned int Flags = 0&gt; </td></tr>
+<tr class="memitem:aca972628e54111b49864437e889d3960"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;((N1==3||N1==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N2==3||N2==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N3==3||N3==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N4==3||N4==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt; T, 4, Flags &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aca972628e54111b49864437e889d3960">LookAt</a> (<a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N1 &gt; right, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N2 &gt; up, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N3 &gt; dir, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N4 &gt; eye)</td></tr>
+<tr class="memdesc:aca972628e54111b49864437e889d3960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the 4x4 look at matrix.  <a href="namespace_linear.html#aca972628e54111b49864437e889d3960">More...</a><br /></td></tr>
+<tr class="separator:aca972628e54111b49864437e889d3960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08001cdbe10207225ad8a4e77ebe6c4a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </td></tr>
 <tr class="memitem:a08001cdbe10207225ad8a4e77ebe6c4a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a08001cdbe10207225ad8a4e77ebe6c4a">PowerIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, unsigned int max_iterations)</td></tr>
 <tr class="memdesc:a08001cdbe10207225ad8a4e77ebe6c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs power iteration on A.  <a href="namespace_linear.html#a08001cdbe10207225ad8a4e77ebe6c4a">More...</a><br /></td></tr>
@@ -6188,6 +6228,61 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="aca972628e54111b49864437e889d3960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca972628e54111b49864437e889d3960">&#9670;&nbsp;</a></span>LookAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N1, size_t N2, size_t N3, size_t N4, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;((N1==3||N1==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N2==3||N2==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N3==3||N3==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)||(N4==3||N4==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,4,Flags&gt; &gt;::type Linear::LookAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N1 &gt;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N2 &gt;&#160;</td>
+          <td class="paramname"><em>up</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N3 &gt;&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N4 &gt;&#160;</td>
+          <td class="paramname"><em>eye</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 look at matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">right</td><td>Right direction </td></tr>
+    <tr><td class="paramname">up</td><td>Up direction </td></tr>
+    <tr><td class="paramname">dir</td><td>Forward direction </td></tr>
+    <tr><td class="paramname">eye</td><td>Camera position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>4x4 <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
 <a id="abd31b68aefb3b7b5479ac11b708631ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd31b68aefb3b7b5479ac11b708631ad">&#9670;&nbsp;</a></span>MaxNorm()</h2>
 
@@ -6665,6 +6760,124 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>nrowsxncols <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9784bb204bf61f836f3b5fa4415ea59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9784bb204bf61f836f3b5fa4415ea59f">&#9670;&nbsp;</a></span>Orthographic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,4,Flags&gt; Linear::Orthographic </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>near</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>far</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 orthographic projection matrix. </p>
+<p>See <a href="https://en.wikipedia.org/wiki/Orthographic_projection">https://en.wikipedia.org/wiki/Orthographic_projection</a> for more information. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>4x4 <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa49275856ed40b7b4deab03750393a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49275856ed40b7b4deab03750393a47">&#9670;&nbsp;</a></span>Perspective()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,4,Flags&gt; Linear::Perspective </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>fov</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>aspect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>near</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>far</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 perspective projection matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">fov</td><td>Field of view in radians </td></tr>
+    <tr><td class="paramname">aspect</td><td>Aspect ratio </td></tr>
+    <tr><td class="paramname">near</td><td>Distance to near plane </td></tr>
+    <tr><td class="paramname">far</td><td>Distance to far plane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>4x4 <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
 
 </div>
 </div>
@@ -7165,6 +7378,181 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
+<a id="ae4e8050daca1cc1c27b36cdda6eccab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e8050daca1cc1c27b36cdda6eccab4">&#9670;&nbsp;</a></span>Rotation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t P, typename T , size_t N = 4, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;((N==3||N==4)&amp;&amp;(P==3||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::Rotation </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>theta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt;&#160;</td>
+          <td class="paramname"><em>axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 rotatation matrix about an axis. </p>
+<p>If N=3, it removes the last row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Size of matrix (either 3 or 4, default = 4) </td></tr>
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">theta</td><td>Angle to use in radians </td></tr>
+    <tr><td class="paramname">axis</td><td>Vector of length 3 representing the axis of rotation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="a869bee4ae7e859dd0a58e4dd885ccdfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869bee4ae7e859dd0a58e4dd885ccdfd">&#9670;&nbsp;</a></span>Rotation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t P, typename T , size_t N = 4, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;((N==3||N==4)&amp;&amp;(P==4||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>)), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::Rotation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt;&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 rotatation matrix given a quaternion q. </p>
+<p>If N=3, it removes the last row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Size of matrix (either 3 or 4, default = 4) </td></tr>
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">q</td><td>Vector of length 4 representing quaternion q[0]+q[1]i+q[2]j+q[3]k </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4133d2042501de1d0556eabaf669c07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4133d2042501de1d0556eabaf669c07b">&#9670;&nbsp;</a></span>RotationX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N = 4, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::RotationX </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 rotatation matrix. </p>
+<p class="formulaDsp">
+\[ \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \cos\theta &amp; -\sin\theta &amp; 0 \\ 0 &amp; \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}. \]
+</p>
+<p> If N=3, it removes the last row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Size of matrix (either 3 or 4, default = 4) </td></tr>
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">theta</td><td>Angle to use in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6e3aa75a786bf61ce4f594b7c1962754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e3aa75a786bf61ce4f594b7c1962754">&#9670;&nbsp;</a></span>RotationY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N = 4, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::RotationY </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 rotatation matrix. </p>
+<p class="formulaDsp">
+\[ \begin{bmatrix} \cos\theta &amp; 0 &amp; \sin\theta &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}. \]
+</p>
+<p> If N=3, it removes the last row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Size of matrix (either 3 or 4, default = 4) </td></tr>
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">theta</td><td>Angle to use in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad59b69cd443b93d072ac494b6bd1b523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad59b69cd443b93d072ac494b6bd1b523">&#9670;&nbsp;</a></span>RotationZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;(N==3||N==4), <a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; &gt;::type Linear::RotationZ </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the 4x4 rotatation matrix. </p>
+<p class="formulaDsp">
+\[ \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; 0 &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}. \]
+</p>
+<p> If N=3, it removes the last row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Size of matrix (either 3 or 4, default = 4) </td></tr>
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">theta</td><td>Angle to use in radians </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
+
+</div>
+</div>
 <a id="adf1ca2edead0f1f984e75d95895b6b4b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf1ca2edead0f1f984e75d95895b6b4b">&#9670;&nbsp;</a></span>Round() <span class="overload">[1/2]</span></h2>
 
@@ -7292,6 +7680,39 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MxN matrix </dd></dl>
+
+</div>
+</div>
+<a id="a679b6a09053c94b0ccb5538bed9753f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679b6a09053c94b0ccb5538bed9753f8">&#9670;&nbsp;</a></span>Scaling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,N,Flags&gt; Linear::Scaling </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the NxN scaling matrix S such that. </p>
+<p class="formulaDsp">
+\[ Sx = \begin{bmatrix} s_0 &amp; \dots &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; s_{N-1} \end{bmatrix} \begin{bmatrix} x_0\\ \vdots \\ x_{N-1}\end{bmatrix} = \begin{bmatrix} s_0x_0\\ \vdots \\ s_{N-1}x_{N-1} \end{bmatrix}. \]
+</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">s</td><td>Vector of length N </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NxN <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
 
 </div>
 </div>
@@ -8481,6 +8902,39 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_linear_1_1_complex.html" title="Class for complex numbers.">Complex</a> number </dd></dl>
+
+</div>
+</div>
+<a id="af4341ec96d8cd87d5f05b1de0a0513f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4341ec96d8cd87d5f05b1de0a0513f2">&#9670;&nbsp;</a></span>Translation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a>&lt;T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1),Flags&gt; Linear::Translation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the (N+1)x(N+1) translation matrix T such that. </p>
+<p class="formulaDsp">
+\[ Tx = \begin{bmatrix} 1 &amp; 0 &amp; \dots &amp; 0 &amp; t_0 \\ 0 &amp; 1 &amp; &amp; 0 &amp; t_1 \\ \vdots &amp; &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \dots &amp; 1 &amp; t_{N-1} \\ 0 &amp; 0 &amp; \dots &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x_0\\ x_1 \\ \vdots \\ x_{N-1} \\ 1\end{bmatrix} = \begin{bmatrix} x_0+t_0\\ x_1+t_1\\ \vdots \\ x_{N-1}+t_{N-1} \\ 1 \end{bmatrix}. \]
+</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flags</td><td>Flags to pass to the matrix (default = row major) </td></tr>
+    <tr><td class="paramname">t</td><td>Vector of length N </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(N+1)x(N+1) <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </dd></dl>
 
 </div>
 </div>

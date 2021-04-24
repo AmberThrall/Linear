@@ -50,6 +50,8 @@ size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_ad30daf75c0708ab43237459b4f
 \item 
 size\+\_\+t \mbox{\hyperlink{class_linear_1_1_matrix_aec01c53512ebcfdfb5a990952d54d03c}{Length}} () const
 \begin{DoxyCompactList}\small\item\em For vectors, this returns the length of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_linear_1_1_matrix_a14a71125b8dfd0126d66948c983a4f8a}{Data}} ()
+\item 
 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, 1, N $>$ \mbox{\hyperlink{class_linear_1_1_matrix_a547b794f3c2fac223fb47bdbe7ed2aaa}{Get\+Row}} (size\+\_\+t r) const
 \begin{DoxyCompactList}\small\item\em Takes row r of the matrix and returns it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, 1 $>$ \mbox{\hyperlink{class_linear_1_1_matrix_aa13e63a4135a459c620b9070985ac3d0}{Get\+Column}} (size\+\_\+t c) const
@@ -371,6 +373,16 @@ If $r1\ge M$ or $r2\ge M$ an exception is thrown.
 {\em s} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_linear_1_1_matrix_a14a71125b8dfd0126d66948c983a4f8a}\label{class_linear_1_1_matrix_a14a71125b8dfd0126d66948c983a4f8a}} 
+\index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!Data@{Data}}
+\index{Data@{Data}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$$\ast$ \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix}}$<$ T, M, N, Flags $>$\+::Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Pointer to matrix data. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_linear_1_1_matrix_aa13e63a4135a459c620b9070985ac3d0}\label{class_linear_1_1_matrix_aa13e63a4135a459c620b9070985ac3d0}} 
 \index{Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}!GetColumn@{GetColumn}}
 \index{GetColumn@{GetColumn}!Linear::Matrix$<$ T, M, N, Flags $>$@{Linear::Matrix$<$ T, M, N, Flags $>$}}

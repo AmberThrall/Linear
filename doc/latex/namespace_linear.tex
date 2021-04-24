@@ -366,6 +366,26 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adb36c8432926ae50addd9fbfc5ff0f23}{Companion}} (const \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$ \&c)
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1), Flags $>$ \mbox{\hyperlink{namespace_linear_af4341ec96d8cd87d5f05b1de0a0513f2}{Translation}} (const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&t)
+\begin{DoxyCompactList}\small\item\em Computes the (N+1)x(N+1) translation matrix T such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a679b6a09053c94b0ccb5538bed9753f8}{Scaling}} (const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&s)
+\begin{DoxyCompactList}\small\item\em Computes the NxN scaling matrix S such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a4133d2042501de1d0556eabaf669c07b}{RotationX}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a6e3aa75a786bf61ce4f594b7c1962754}{RotationY}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ad59b69cd443b93d072ac494b6bd1b523}{RotationZ}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==3$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae4e8050daca1cc1c27b36cdda6eccab4}{Rotation}} (T theta, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ axis)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix about an axis. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==4$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a869bee4ae7e859dd0a58e4dd885ccdfd}{Rotation}} (\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ q)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix given a quaternion q. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_a9784bb204bf61f836f3b5fa4415ea59f}{Orthographic}} (T left, T right, T bottom, T top, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 orthographic projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_aa49275856ed40b7b4deab03750393a47}{Perspective}} (T fov, T aspect, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 perspective projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N1, size\+\_\+t N2, size\+\_\+t N3, size\+\_\+t N4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N1==3$\vert$$\vert$N1==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N2==3$\vert$$\vert$N2==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N3==3$\vert$$\vert$N3==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N4==3$\vert$$\vert$N4==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, 4, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aca972628e54111b49864437e889d3960}{Look\+At}} (\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N1 $>$ right, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N2 $>$ up, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N3 $>$ dir, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N4 $>$ eye)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 look at matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a08001cdbe10207225ad8a4e77ebe6c4a}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
@@ -3626,6 +3646,33 @@ This is done via change-\/of-\/base formula, $\log_{base}x=\log x/\log base$.
 \begin{DoxyReturn}{Returns}
 Real number. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_aca972628e54111b49864437e889d3960}\label{namespace_linear_aca972628e54111b49864437e889d3960}} 
+\index{Linear@{Linear}!LookAt@{LookAt}}
+\index{LookAt@{LookAt}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{LookAt()}{LookAt()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N1, size\+\_\+t N2, size\+\_\+t N3, size\+\_\+t N4, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$((N1==3$\vert$$\vert$N1==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N2==3$\vert$$\vert$N2==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N3==3$\vert$$\vert$N3==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})$\vert$$\vert$(N4==3$\vert$$\vert$N4==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,4,Flags$>$ $>$\+::type Linear\+::\+Look\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N1 $>$}]{right,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N2 $>$}]{up,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N3 $>$}]{dir,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N4 $>$}]{eye }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 look at matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em right} & Right direction \\
+\hline
+{\em up} & Up direction \\
+\hline
+{\em dir} & Forward direction \\
+\hline
+{\em eye} & Camera position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+4x4 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_abd31b68aefb3b7b5479ac11b708631ad}\label{namespace_linear_abd31b68aefb3b7b5479ac11b708631ad}} 
 \index{Linear@{Linear}!MaxNorm@{MaxNorm}}
 \index{MaxNorm@{MaxNorm}!Linear@{Linear}}
@@ -3908,6 +3955,52 @@ Example\+: A is the 2x3 matrix \{\{1,1,1\}, \{1,1,1\}\} \begin{DoxyVerb}MatrixXd
 \begin{DoxyReturn}{Returns}
 nrowsxncols \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a9784bb204bf61f836f3b5fa4415ea59f}\label{namespace_linear_a9784bb204bf61f836f3b5fa4415ea59f}} 
+\index{Linear@{Linear}!Orthographic@{Orthographic}}
+\index{Orthographic@{Orthographic}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Orthographic()}{Orthographic()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,4,Flags$>$ Linear\+::\+Orthographic (\begin{DoxyParamCaption}\item[{T}]{left,  }\item[{T}]{right,  }\item[{T}]{bottom,  }\item[{T}]{top,  }\item[{T}]{near,  }\item[{T}]{far }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 orthographic projection matrix. 
+
+See \href{https://en.wikipedia.org/wiki/Orthographic_projection}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Orthographic\+\_\+projection}} for more information. 
+\begin{DoxyParams}{Parameters}
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+4x4 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_aa49275856ed40b7b4deab03750393a47}\label{namespace_linear_aa49275856ed40b7b4deab03750393a47}} 
+\index{Linear@{Linear}!Perspective@{Perspective}}
+\index{Perspective@{Perspective}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Perspective()}{Perspective()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,4,Flags$>$ Linear\+::\+Perspective (\begin{DoxyParamCaption}\item[{T}]{fov,  }\item[{T}]{aspect,  }\item[{T}]{near,  }\item[{T}]{far }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 perspective projection matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em fov} & Field of view in radians \\
+\hline
+{\em aspect} & Aspect ratio \\
+\hline
+{\em near} & Distance to near plane \\
+\hline
+{\em far} & Distance to far plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+4x4 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a2df7d01c6a3fdf396799c35d46e963e9}\label{namespace_linear_a2df7d01c6a3fdf396799c35d46e963e9}} 
 \index{Linear@{Linear}!Pow@{Pow}}
 \index{Pow@{Pow}!Linear@{Linear}}
@@ -4170,6 +4263,123 @@ Returns the (M-\/1)x(N-\/1) submatrix formed by removing the ith row and jth col
 \begin{DoxyReturn}{Returns}
 (M-\/1)x(N-\/1) submatrix of A 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_ae4e8050daca1cc1c27b36cdda6eccab4}\label{namespace_linear_ae4e8050daca1cc1c27b36cdda6eccab4}} 
+\index{Linear@{Linear}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==3$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+Rotation (\begin{DoxyParamCaption}\item[{T}]{theta,  }\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{axis }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 rotatation matrix about an axis. 
+
+If N=3, it removes the last row and column. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Size of matrix (either 3 or 4, default = 4) \\
+\hline
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em theta} & Angle to use in radians \\
+\hline
+{\em axis} & Vector of length 3 representing the axis of rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a869bee4ae7e859dd0a58e4dd885ccdfd}\label{namespace_linear_a869bee4ae7e859dd0a58e4dd885ccdfd}} 
+\index{Linear@{Linear}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==4$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}})), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$}]{q }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 rotatation matrix given a quaternion q. 
+
+If N=3, it removes the last row and column. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Size of matrix (either 3 or 4, default = 4) \\
+\hline
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em q} & Vector of length 4 representing quaternion q\mbox{[}0\mbox{]}+q\mbox{[}1\mbox{]}i+q\mbox{[}2\mbox{]}j+q\mbox{[}3\mbox{]}k \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a4133d2042501de1d0556eabaf669c07b}\label{namespace_linear_a4133d2042501de1d0556eabaf669c07b}} 
+\index{Linear@{Linear}!RotationX@{RotationX}}
+\index{RotationX@{RotationX}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{RotationX()}{RotationX()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+RotationX (\begin{DoxyParamCaption}\item[{T}]{theta }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 rotatation matrix. 
+
+\[ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos\theta & -\sin\theta & 0 \\ 0 & \sin\theta & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}. \] If N=3, it removes the last row and column. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Size of matrix (either 3 or 4, default = 4) \\
+\hline
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em theta} & Angle to use in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a6e3aa75a786bf61ce4f594b7c1962754}\label{namespace_linear_a6e3aa75a786bf61ce4f594b7c1962754}} 
+\index{Linear@{Linear}!RotationY@{RotationY}}
+\index{RotationY@{RotationY}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{RotationY()}{RotationY()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+RotationY (\begin{DoxyParamCaption}\item[{T}]{theta }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 rotatation matrix. 
+
+\[ \begin{bmatrix} \cos\theta & 0 & \sin\theta & 0 \\ 0 & 1 & 0 & 0 \\ -\sin\theta & 0 & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}. \] If N=3, it removes the last row and column. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Size of matrix (either 3 or 4, default = 4) \\
+\hline
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em theta} & Angle to use in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_ad59b69cd443b93d072ac494b6bd1b523}\label{namespace_linear_ad59b69cd443b93d072ac494b6bd1b523}} 
+\index{Linear@{Linear}!RotationZ@{RotationZ}}
+\index{RotationZ@{RotationZ}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{RotationZ()}{RotationZ()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$\+::type Linear\+::\+RotationZ (\begin{DoxyParamCaption}\item[{T}]{theta }\end{DoxyParamCaption})}
+
+
+
+Computes the 4x4 rotatation matrix. 
+
+\[ \begin{bmatrix} \cos\theta & -\sin\theta & 0 & 0 \\ \sin\theta & \cos\theta & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}. \] If N=3, it removes the last row and column. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Size of matrix (either 3 or 4, default = 4) \\
+\hline
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em theta} & Angle to use in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_adf1ca2edead0f1f984e75d95895b6b4b}\label{namespace_linear_adf1ca2edead0f1f984e75d95895b6b4b}} 
 \index{Linear@{Linear}!Round@{Round}}
 \index{Round@{Round}!Linear@{Linear}}
@@ -4247,6 +4457,27 @@ Computes A\textquotesingle{}s reduced row echelon form.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 MxN matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a679b6a09053c94b0ccb5538bed9753f8}\label{namespace_linear_a679b6a09053c94b0ccb5538bed9753f8}} 
+\index{Linear@{Linear}!Scaling@{Scaling}}
+\index{Scaling@{Scaling}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Scaling()}{Scaling()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ Linear\+::\+Scaling (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Computes the NxN scaling matrix S such that. 
+
+\[ Sx = \begin{bmatrix} s_0 & \dots & \\ & \ddots & \\ & & s_{N-1} \end{bmatrix} \begin{bmatrix} x_0\\ \vdots \\ x_{N-1}\end{bmatrix} = \begin{bmatrix} s_0x_0\\ \vdots \\ s_{N-1}x_{N-1} \end{bmatrix}. \] 
+\begin{DoxyParams}{Parameters}
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em s} & Vector of length N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NxN \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_ad799370689472fbdaa73efe88026d9af}\label{namespace_linear_ad799370689472fbdaa73efe88026d9af}} 
 \index{Linear@{Linear}!Sec@{Sec}}
@@ -4986,6 +5217,27 @@ If A is not square, an exception is thrown.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_af4341ec96d8cd87d5f05b1de0a0513f2}\label{namespace_linear_af4341ec96d8cd87d5f05b1de0a0513f2}} 
+\index{Linear@{Linear}!Translation@{Translation}}
+\index{Translation@{Translation}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Translation()}{Translation()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1),Flags$>$ Linear\+::\+Translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Computes the (N+1)x(N+1) translation matrix T such that. 
+
+\[ Tx = \begin{bmatrix} 1 & 0 & \dots & 0 & t_0 \\ 0 & 1 & & 0 & t_1 \\ \vdots & & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & t_{N-1} \\ 0 & 0 & \dots & 0 & 1 \end{bmatrix} \begin{bmatrix} x_0\\ x_1 \\ \vdots \\ x_{N-1} \\ 1\end{bmatrix} = \begin{bmatrix} x_0+t_0\\ x_1+t_1\\ \vdots \\ x_{N-1}+t_{N-1} \\ 1 \end{bmatrix}. \] 
+\begin{DoxyParams}{Parameters}
+{\em Flags} & Flags to pass to the matrix (default = row major) \\
+\hline
+{\em t} & Vector of length N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(N+1)x(N+1) \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a75fef6051598d5a83617f761d25c4b54}\label{namespace_linear_a75fef6051598d5a83617f761d25c4b54}} 
 \index{Linear@{Linear}!Transpose@{Transpose}}

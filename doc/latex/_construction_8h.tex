@@ -80,7 +80,27 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Linear
 {\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==Dynamic), Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_abbd0342fc6b8cda1983011b5e599f188}{Linear\+::\+Companion}} (const Vector$<$ T, N $>$ \&c)
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==Dynamic), Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adb36c8432926ae50addd9fbfc5ff0f23}{Linear\+::\+Companion}} (const Row\+Vector$<$ T, N $>$ \&c)
-\begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N+1), Flags $>$ \mbox{\hyperlink{namespace_linear_af4341ec96d8cd87d5f05b1de0a0513f2}{Linear\+::\+Translation}} (const Vector$<$ T, N $>$ \&t)
+\begin{DoxyCompactList}\small\item\em Computes the (N+1)x(N+1) translation matrix T such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a679b6a09053c94b0ccb5538bed9753f8}{Linear\+::\+Scaling}} (const Vector$<$ T, N $>$ \&s)
+\begin{DoxyCompactList}\small\item\em Computes the NxN scaling matrix S such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a4133d2042501de1d0556eabaf669c07b}{Linear\+::\+RotationX}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a6e3aa75a786bf61ce4f594b7c1962754}{Linear\+::\+RotationY}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ad59b69cd443b93d072ac494b6bd1b523}{Linear\+::\+RotationZ}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==3$\vert$$\vert$P==Dynamic)), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae4e8050daca1cc1c27b36cdda6eccab4}{Linear\+::\+Rotation}} (T theta, Vector$<$ T, P $>$ axis)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix about an axis. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==4$\vert$$\vert$P==Dynamic)), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a869bee4ae7e859dd0a58e4dd885ccdfd}{Linear\+::\+Rotation}} (Vector$<$ T, P $>$ q)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix given a quaternion q. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_a9784bb204bf61f836f3b5fa4415ea59f}{Linear\+::\+Orthographic}} (T left, T right, T bottom, T top, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 orthographic projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_aa49275856ed40b7b4deab03750393a47}{Linear\+::\+Perspective}} (T fov, T aspect, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 perspective projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N1, size\+\_\+t N2, size\+\_\+t N3, size\+\_\+t N4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N1==3$\vert$$\vert$N1==Dynamic)$\vert$$\vert$(N2==3$\vert$$\vert$N2==Dynamic)$\vert$$\vert$(N3==3$\vert$$\vert$N3==Dynamic)$\vert$$\vert$(N4==3$\vert$$\vert$N4==Dynamic)), Square\+Matrix$<$ T, 4, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aca972628e54111b49864437e889d3960}{Linear\+::\+Look\+At}} (Vector$<$ T, N1 $>$ right, Vector$<$ T, N2 $>$ up, Vector$<$ T, N3 $>$ dir, Vector$<$ T, N4 $>$ eye)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 look at matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

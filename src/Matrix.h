@@ -379,6 +379,8 @@ namespace Linear {
             if (N == Dynamic) { this->n = newSize; }
             else { this->n = N; }
 
+            if (this->m == oldM && this->n == oldN)
+                return;
             if (this->m == 0 || this->n == 0) {
                 if (this->data != NULL)
                     delete this->data;
@@ -425,6 +427,8 @@ namespace Linear {
             if (N == Dynamic) { this->n = newN; }
             else { this->n = N; }
 
+            if (this->m == oldM && this->n == oldN)
+                return;
             if (this->m == 0 || this->n == 0) {
                 if (this->data != NULL)
                     delete this->data;
@@ -485,6 +489,12 @@ namespace Linear {
             if (NumRows() >= NumColumns())
                 return NumRows();
             return NumColumns();
+        }
+        /**
+         * @return Pointer to matrix data.
+         */
+        Complex<T> * Data() {
+            return this->data;
         }
 
         /**
@@ -635,9 +645,7 @@ namespace Linear {
          */
         template <size_t P, size_t Q, unsigned int Flags2>
         Matrix<T,M,N,Flags> & operator=(const Matrix<T,P,Q,Flags2>& other) {
-            if (M == Dynamic && N == Dynamic) { Resize(other.NumRows(), other.NumColumns()); }
-            else if (M == Dynamic) { Resize(other.NumRows()); }
-            else if (N == Dynamic) { Resize(other.NumColumns()); }
+            if (M == Dynamic || N == Dynamic) { Resize(other.NumRows(), other.NumColumns()); }
             if (NumRows() != other.NumRows() || NumColumns() != other.NumColumns())
                 throw "Cannot assign matrix to a matrix of different size.";
             for (size_t r = 0; r < NumRows(); ++r) {
