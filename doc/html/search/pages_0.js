@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linear_486',['Linear',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['getting_20started_542',['Getting Started',['../md__getting_started.html',1,'']]]
 ];

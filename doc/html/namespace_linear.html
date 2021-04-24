@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -31,6 +40,21 @@
    <div id="projectname">Linear
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -42,16 +66,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('namespace_linear.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -66,7 +97,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -123,41 +153,87 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </td></tr>
 <tr class="memitem:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a569f89f9552a4bd01ea5a07b3137c5f8">SquareMatrix</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, N, N, Flags &gt;</td></tr>
 <tr class="separator:a569f89f9552a4bd01ea5a07b3137c5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0dd0f05e90405c6ff6654623e1ad117"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac0dd0f05e90405c6ff6654623e1ad117">Matrix2i</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; int, 2, 2 &gt;</td></tr>
-<tr class="separator:ac0dd0f05e90405c6ff6654623e1ad117"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ab35684bf5fe15b91e1195808755ef4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9ab35684bf5fe15b91e1195808755ef4">Matrix3i</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; int, 3, 3 &gt;</td></tr>
-<tr class="separator:a9ab35684bf5fe15b91e1195808755ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47201c62cde153a7994893e1f78692ec"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a47201c62cde153a7994893e1f78692ec">Matrix4i</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; int, 4, 4 &gt;</td></tr>
-<tr class="separator:a47201c62cde153a7994893e1f78692ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a850f7d84cd5a1cec3d72a0015b8af049"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a850f7d84cd5a1cec3d72a0015b8af049">MatrixXi</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; int, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
-<tr class="separator:a850f7d84cd5a1cec3d72a0015b8af049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37529cd9d32aca0e73ba55fa52d961e5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a37529cd9d32aca0e73ba55fa52d961e5">Matrix2f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 2, 2 &gt;</td></tr>
 <tr class="separator:a37529cd9d32aca0e73ba55fa52d961e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231999f00ad9dc6f67ba717b0152aa6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a231999f00ad9dc6f67ba717b0152aa6d">Matrix2x2f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 2, 2 &gt;</td></tr>
+<tr class="separator:a231999f00ad9dc6f67ba717b0152aa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cd8dfe7c48949f3ebc094292201215"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a38cd8dfe7c48949f3ebc094292201215">Matrix2x3f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 2, 3 &gt;</td></tr>
+<tr class="separator:a38cd8dfe7c48949f3ebc094292201215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3e857eeed419fa3d1ac1324d5cd985"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aba3e857eeed419fa3d1ac1324d5cd985">Matrix2x4f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 2, 4 &gt;</td></tr>
+<tr class="separator:aba3e857eeed419fa3d1ac1324d5cd985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac266881335bc3b75713ca8a7c9d1934e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac266881335bc3b75713ca8a7c9d1934e">Matrix3f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 3, 3 &gt;</td></tr>
 <tr class="separator:ac266881335bc3b75713ca8a7c9d1934e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedecbc7b449cc6a88e4c1aca81b3d046"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aedecbc7b449cc6a88e4c1aca81b3d046">Matrix3x2f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 3, 2 &gt;</td></tr>
+<tr class="separator:aedecbc7b449cc6a88e4c1aca81b3d046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6566e3ab21956423a617cc785c0d78ba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a6566e3ab21956423a617cc785c0d78ba">Matrix3x3f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 3, 3 &gt;</td></tr>
+<tr class="separator:a6566e3ab21956423a617cc785c0d78ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e80d8472d758098bf38c3a2f2066bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a54e80d8472d758098bf38c3a2f2066bb">Matrix3x4f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 3, 4 &gt;</td></tr>
+<tr class="separator:a54e80d8472d758098bf38c3a2f2066bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad93cd9401b69236b2c39009a33deee2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aad93cd9401b69236b2c39009a33deee2">Matrix4f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 4, 4 &gt;</td></tr>
 <tr class="separator:aad93cd9401b69236b2c39009a33deee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a750bcbf501fe4ba80b2abd0158f2da6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a750bcbf501fe4ba80b2abd0158f2da6b">Matrix4x2f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 4, 2 &gt;</td></tr>
+<tr class="separator:a750bcbf501fe4ba80b2abd0158f2da6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9196540c77acc632ccea9d16bd8298ba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9196540c77acc632ccea9d16bd8298ba">Matrix4x3f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 4, 3 &gt;</td></tr>
+<tr class="separator:a9196540c77acc632ccea9d16bd8298ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0926ffe24cd681b340485b45ed4cfbbb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a0926ffe24cd681b340485b45ed4cfbbb">Matrix4x4f</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, 4, 4 &gt;</td></tr>
+<tr class="separator:a0926ffe24cd681b340485b45ed4cfbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1785cf86a17d782a242c1d0fa02664af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1785cf86a17d782a242c1d0fa02664af">MatrixXf</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; float, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
 <tr class="separator:a1785cf86a17d782a242c1d0fa02664af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff92aa0ab7d57a87e544f08aaae1581d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aff92aa0ab7d57a87e544f08aaae1581d">Matrix2d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 2, 2 &gt;</td></tr>
 <tr class="separator:aff92aa0ab7d57a87e544f08aaae1581d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0a36f742f2b4000ac2a567d1d857f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3d0a36f742f2b4000ac2a567d1d857f5">Matrix2x2d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 2, 2 &gt;</td></tr>
+<tr class="separator:a3d0a36f742f2b4000ac2a567d1d857f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac726fe51a2680dd5434f8dad85c98b64"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac726fe51a2680dd5434f8dad85c98b64">Matrix2x3d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 2, 3 &gt;</td></tr>
+<tr class="separator:ac726fe51a2680dd5434f8dad85c98b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eab59893dee13ad66bf48ed9146a78b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a6eab59893dee13ad66bf48ed9146a78b">Matrix2x4d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 2, 4 &gt;</td></tr>
+<tr class="separator:a6eab59893dee13ad66bf48ed9146a78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f82e64d01c7efdbe9217c33f954a83c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9f82e64d01c7efdbe9217c33f954a83c">Matrix3d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 3, 3 &gt;</td></tr>
 <tr class="separator:a9f82e64d01c7efdbe9217c33f954a83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9911e5ada4ccff6bc1168168df68a584"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9911e5ada4ccff6bc1168168df68a584">Matrix3x2d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 3, 2 &gt;</td></tr>
+<tr class="separator:a9911e5ada4ccff6bc1168168df68a584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7636a0d24c3c7feb3545a1ce481dee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8a7636a0d24c3c7feb3545a1ce481dee">Matrix3x3d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 3, 3 &gt;</td></tr>
+<tr class="separator:a8a7636a0d24c3c7feb3545a1ce481dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a57e8d7ff39a6e419ef5fec547ae68c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4a57e8d7ff39a6e419ef5fec547ae68c">Matrix3x4d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 3, 4 &gt;</td></tr>
+<tr class="separator:a4a57e8d7ff39a6e419ef5fec547ae68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e63e09c10d2ef0922707eb60277552"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af7e63e09c10d2ef0922707eb60277552">Matrix4d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 4, 4 &gt;</td></tr>
 <tr class="separator:af7e63e09c10d2ef0922707eb60277552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a56d416129b5e52a8822f48adacd9b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a75a56d416129b5e52a8822f48adacd9b">Matrix4x2d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 4, 2 &gt;</td></tr>
+<tr class="separator:a75a56d416129b5e52a8822f48adacd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c45155fe6c54887103b5d073deb1e3f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8c45155fe6c54887103b5d073deb1e3f">Matrix4x3d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 4, 3 &gt;</td></tr>
+<tr class="separator:a8c45155fe6c54887103b5d073deb1e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e313ad14772077a7d23a481978d4fcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5e313ad14772077a7d23a481978d4fcc">Matrix4x4d</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, 4, 4 &gt;</td></tr>
+<tr class="separator:a5e313ad14772077a7d23a481978d4fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5139228f8ffd30d77722e861bc340560"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5139228f8ffd30d77722e861bc340560">MatrixXd</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
 <tr class="separator:a5139228f8ffd30d77722e861bc340560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9548eb90f1a8d2756a8b4c60f3c9a93b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a9548eb90f1a8d2756a8b4c60f3c9a93b">Matrix2ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 2, 2 &gt;</td></tr>
+<tr class="separator:a9548eb90f1a8d2756a8b4c60f3c9a93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd0bf390d0682431d83432dbc0c3d88"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a2fd0bf390d0682431d83432dbc0c3d88">Matrix2x2ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 2, 2 &gt;</td></tr>
+<tr class="separator:a2fd0bf390d0682431d83432dbc0c3d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643c41a70f766632d827f42c330219f6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a643c41a70f766632d827f42c330219f6">Matrix2x3ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 2, 3 &gt;</td></tr>
+<tr class="separator:a643c41a70f766632d827f42c330219f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af454be76a8ff1aa69f0de7527585c631"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af454be76a8ff1aa69f0de7527585c631">Matrix2x4ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 2, 4 &gt;</td></tr>
+<tr class="separator:af454be76a8ff1aa69f0de7527585c631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c325a7b3aa16b5dbb44fa759affb9ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3c325a7b3aa16b5dbb44fa759affb9ad">Matrix3ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 3, 3 &gt;</td></tr>
+<tr class="separator:a3c325a7b3aa16b5dbb44fa759affb9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b132748a0849fd4501504e1c7eb20e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a03b132748a0849fd4501504e1c7eb20e">Matrix3x2ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 3, 2 &gt;</td></tr>
+<tr class="separator:a03b132748a0849fd4501504e1c7eb20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b174d0bd742d3dedc4fe4a6ef0e8c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a77b174d0bd742d3dedc4fe4a6ef0e8c8">Matrix3x3ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 3, 3 &gt;</td></tr>
+<tr class="separator:a77b174d0bd742d3dedc4fe4a6ef0e8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55486f6cc74db200f2e8a706480dc13"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa55486f6cc74db200f2e8a706480dc13">Matrix3x4ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 3, 4 &gt;</td></tr>
+<tr class="separator:aa55486f6cc74db200f2e8a706480dc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8324f482d08105a6972711c4a9e476c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ac8324f482d08105a6972711c4a9e476c">Matrix4ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 4, 4 &gt;</td></tr>
+<tr class="separator:ac8324f482d08105a6972711c4a9e476c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abedfd09cb62392f48c4d8eadaa8f973f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#abedfd09cb62392f48c4d8eadaa8f973f">Matrix4x2ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 4, 2 &gt;</td></tr>
+<tr class="separator:abedfd09cb62392f48c4d8eadaa8f973f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bb8324eba6429ceba157b2f0e8c084"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a62bb8324eba6429ceba157b2f0e8c084">Matrix4x3ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 4, 3 &gt;</td></tr>
+<tr class="separator:a62bb8324eba6429ceba157b2f0e8c084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7627512516503caddac173ed9d92c21f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a7627512516503caddac173ed9d92c21f">Matrix4x4ld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, 4, 4 &gt;</td></tr>
+<tr class="separator:a7627512516503caddac173ed9d92c21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986b5e50e39b869ac219d199cfb9c3c9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a986b5e50e39b869ac219d199cfb9c3c9">MatrixXld</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; long double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
+<tr class="separator:a986b5e50e39b869ac219d199cfb9c3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, N, 1 &gt;</td></tr>
 <tr class="separator:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf23e6c2db37a625f7fad20d5b4591e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aaf23e6c2db37a625f7fad20d5b4591e4">Vector2i</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; int, 2 &gt;</td></tr>
-<tr class="separator:aaf23e6c2db37a625f7fad20d5b4591e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3013c839d596121f7f8de5d8f16c0f96"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3013c839d596121f7f8de5d8f16c0f96">Vector3i</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; int, 3 &gt;</td></tr>
-<tr class="separator:a3013c839d596121f7f8de5d8f16c0f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06af543b90d0d4b6545375718bdcbf7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af06af543b90d0d4b6545375718bdcbf7">Vector4i</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; int, 4 &gt;</td></tr>
-<tr class="separator:af06af543b90d0d4b6545375718bdcbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf0b9c33a0d2a4fd67340a776fd196a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adf0b9c33a0d2a4fd67340a776fd196a8">VectorXi</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; int, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
-<tr class="separator:adf0b9c33a0d2a4fd67340a776fd196a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453ced1a00e94d167e83202dfcdcbc6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a453ced1a00e94d167e83202dfcdcbc6f">Vector2f</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; float, 2 &gt;</td></tr>
 <tr class="separator:a453ced1a00e94d167e83202dfcdcbc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051ad58e76a5595f80e7001df279afa7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a051ad58e76a5595f80e7001df279afa7">Vector3f</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; float, 3 &gt;</td></tr>
@@ -174,17 +250,17 @@ Typedefs</h2></td></tr>
 <tr class="separator:ac5dde96553dbb3fc404dc26ba407a634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5cd091f3064dff9950231671bf0b78"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8a5cd091f3064dff9950231671bf0b78">VectorXd</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
 <tr class="separator:a8a5cd091f3064dff9950231671bf0b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37da7eef963bfd9bca73d9039159470"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab37da7eef963bfd9bca73d9039159470">Vector2ld</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; long double, 2 &gt;</td></tr>
+<tr class="separator:ab37da7eef963bfd9bca73d9039159470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c8f9c97e2b14e7eeb485b49218bfbf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a89c8f9c97e2b14e7eeb485b49218bfbf">Vector3ld</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; long double, 3 &gt;</td></tr>
+<tr class="separator:a89c8f9c97e2b14e7eeb485b49218bfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45cb5a6efe5d8a0a146534e7e40d694"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab45cb5a6efe5d8a0a146534e7e40d694">Vector4ld</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; long double, 4 &gt;</td></tr>
+<tr class="separator:ab45cb5a6efe5d8a0a146534e7e40d694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732f55f348d0c074bda21f964d3fb441"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a732f55f348d0c074bda21f964d3fb441">VectorXld</a> = <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; long double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
+<tr class="separator:a732f55f348d0c074bda21f964d3fb441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a> = <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, 1, N &gt;</td></tr>
 <tr class="separator:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dcc2d295ae27aed5de14e315fc43771"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5dcc2d295ae27aed5de14e315fc43771">RowVector2i</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; int, 2 &gt;</td></tr>
-<tr class="separator:a5dcc2d295ae27aed5de14e315fc43771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb41f9fbc4b6ccdb1ee44a884d09b6d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#abb41f9fbc4b6ccdb1ee44a884d09b6d3">RowVector3i</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; int, 3 &gt;</td></tr>
-<tr class="separator:abb41f9fbc4b6ccdb1ee44a884d09b6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37158bcc169e311b75dcd17174783a14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a37158bcc169e311b75dcd17174783a14">RowVector4i</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; int, 4 &gt;</td></tr>
-<tr class="separator:a37158bcc169e311b75dcd17174783a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8dee2ac4d5dc4789eed46ccf91c777f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">RowVectorXi</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; int, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
-<tr class="separator:af8dee2ac4d5dc4789eed46ccf91c777f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d5d6e5a4098d02d818eb08bbed27dcd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3d5d6e5a4098d02d818eb08bbed27dcd">RowVector2f</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; float, 2 &gt;</td></tr>
 <tr class="separator:a3d5d6e5a4098d02d818eb08bbed27dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74fc933d1470d702af99a6d04e24eba8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a74fc933d1470d702af99a6d04e24eba8">RowVector3f</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; float, 3 &gt;</td></tr>
@@ -201,6 +277,14 @@ Typedefs</h2></td></tr>
 <tr class="separator:af213d660fb68360ca761d1b0fa614efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b1b5a12d11bdb75ae13a725c9889f5e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1b1b5a12d11bdb75ae13a725c9889f5e">RowVectorXd</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
 <tr class="separator:a1b1b5a12d11bdb75ae13a725c9889f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05077dce6cf433df1a070ea914c48581"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a05077dce6cf433df1a070ea914c48581">RowVector2ld</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; long double, 2 &gt;</td></tr>
+<tr class="separator:a05077dce6cf433df1a070ea914c48581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4419c119d0317ec146a207d5d0f1f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5c4419c119d0317ec146a207d5d0f1f0">RowVector3ld</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; long double, 3 &gt;</td></tr>
+<tr class="separator:a5c4419c119d0317ec146a207d5d0f1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6c0ca21f5298ee4f87a80925ca7189"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4f6c0ca21f5298ee4f87a80925ca7189">RowVector4ld</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; long double, 4 &gt;</td></tr>
+<tr class="separator:a4f6c0ca21f5298ee4f87a80925ca7189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1556fa3843894b8d034023df49fd8329"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1556fa3843894b8d034023df49fd8329">RowVectorXld</a> = <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt; long double, <a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a> &gt;</td></tr>
+<tr class="separator:a1556fa3843894b8d034023df49fd8329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -1167,14 +1251,140 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0dd0f05e90405c6ff6654623e1ad117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0dd0f05e90405c6ff6654623e1ad117">&#9670;&nbsp;</a></span>Matrix2i</h2>
+<a id="a9548eb90f1a8d2756a8b4c60f3c9a93b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9548eb90f1a8d2756a8b4c60f3c9a93b">&#9670;&nbsp;</a></span>Matrix2ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#ac0dd0f05e90405c6ff6654623e1ad117">Linear::Matrix2i</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;int,2,2&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a9548eb90f1a8d2756a8b4c60f3c9a93b">Linear::Matrix2ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,2,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d0a36f742f2b4000ac2a567d1d857f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d0a36f742f2b4000ac2a567d1d857f5">&#9670;&nbsp;</a></span>Matrix2x2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a3d0a36f742f2b4000ac2a567d1d857f5">Linear::Matrix2x2d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,2,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a231999f00ad9dc6f67ba717b0152aa6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231999f00ad9dc6f67ba717b0152aa6d">&#9670;&nbsp;</a></span>Matrix2x2f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a231999f00ad9dc6f67ba717b0152aa6d">Linear::Matrix2x2f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,2,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fd0bf390d0682431d83432dbc0c3d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd0bf390d0682431d83432dbc0c3d88">&#9670;&nbsp;</a></span>Matrix2x2ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a2fd0bf390d0682431d83432dbc0c3d88">Linear::Matrix2x2ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,2,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac726fe51a2680dd5434f8dad85c98b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac726fe51a2680dd5434f8dad85c98b64">&#9670;&nbsp;</a></span>Matrix2x3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#ac726fe51a2680dd5434f8dad85c98b64">Linear::Matrix2x3d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,2,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38cd8dfe7c48949f3ebc094292201215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cd8dfe7c48949f3ebc094292201215">&#9670;&nbsp;</a></span>Matrix2x3f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a38cd8dfe7c48949f3ebc094292201215">Linear::Matrix2x3f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,2,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a643c41a70f766632d827f42c330219f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643c41a70f766632d827f42c330219f6">&#9670;&nbsp;</a></span>Matrix2x3ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a643c41a70f766632d827f42c330219f6">Linear::Matrix2x3ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,2,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6eab59893dee13ad66bf48ed9146a78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eab59893dee13ad66bf48ed9146a78b">&#9670;&nbsp;</a></span>Matrix2x4d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a6eab59893dee13ad66bf48ed9146a78b">Linear::Matrix2x4d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,2,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba3e857eeed419fa3d1ac1324d5cd985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3e857eeed419fa3d1ac1324d5cd985">&#9670;&nbsp;</a></span>Matrix2x4f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#aba3e857eeed419fa3d1ac1324d5cd985">Linear::Matrix2x4f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,2,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af454be76a8ff1aa69f0de7527585c631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af454be76a8ff1aa69f0de7527585c631">&#9670;&nbsp;</a></span>Matrix2x4ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#af454be76a8ff1aa69f0de7527585c631">Linear::Matrix2x4ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,2,4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1209,14 +1419,140 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ab35684bf5fe15b91e1195808755ef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ab35684bf5fe15b91e1195808755ef4">&#9670;&nbsp;</a></span>Matrix3i</h2>
+<a id="a3c325a7b3aa16b5dbb44fa759affb9ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c325a7b3aa16b5dbb44fa759affb9ad">&#9670;&nbsp;</a></span>Matrix3ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a9ab35684bf5fe15b91e1195808755ef4">Linear::Matrix3i</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;int,3,3&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a3c325a7b3aa16b5dbb44fa759affb9ad">Linear::Matrix3ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,3,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9911e5ada4ccff6bc1168168df68a584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9911e5ada4ccff6bc1168168df68a584">&#9670;&nbsp;</a></span>Matrix3x2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a9911e5ada4ccff6bc1168168df68a584">Linear::Matrix3x2d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,3,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedecbc7b449cc6a88e4c1aca81b3d046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedecbc7b449cc6a88e4c1aca81b3d046">&#9670;&nbsp;</a></span>Matrix3x2f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#aedecbc7b449cc6a88e4c1aca81b3d046">Linear::Matrix3x2f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,3,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03b132748a0849fd4501504e1c7eb20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b132748a0849fd4501504e1c7eb20e">&#9670;&nbsp;</a></span>Matrix3x2ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a03b132748a0849fd4501504e1c7eb20e">Linear::Matrix3x2ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,3,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a7636a0d24c3c7feb3545a1ce481dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7636a0d24c3c7feb3545a1ce481dee">&#9670;&nbsp;</a></span>Matrix3x3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a8a7636a0d24c3c7feb3545a1ce481dee">Linear::Matrix3x3d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,3,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6566e3ab21956423a617cc785c0d78ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6566e3ab21956423a617cc785c0d78ba">&#9670;&nbsp;</a></span>Matrix3x3f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a6566e3ab21956423a617cc785c0d78ba">Linear::Matrix3x3f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,3,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77b174d0bd742d3dedc4fe4a6ef0e8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b174d0bd742d3dedc4fe4a6ef0e8c8">&#9670;&nbsp;</a></span>Matrix3x3ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a77b174d0bd742d3dedc4fe4a6ef0e8c8">Linear::Matrix3x3ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,3,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a57e8d7ff39a6e419ef5fec547ae68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a57e8d7ff39a6e419ef5fec547ae68c">&#9670;&nbsp;</a></span>Matrix3x4d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a4a57e8d7ff39a6e419ef5fec547ae68c">Linear::Matrix3x4d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,3,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54e80d8472d758098bf38c3a2f2066bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e80d8472d758098bf38c3a2f2066bb">&#9670;&nbsp;</a></span>Matrix3x4f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a54e80d8472d758098bf38c3a2f2066bb">Linear::Matrix3x4f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,3,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa55486f6cc74db200f2e8a706480dc13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55486f6cc74db200f2e8a706480dc13">&#9670;&nbsp;</a></span>Matrix3x4ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#aa55486f6cc74db200f2e8a706480dc13">Linear::Matrix3x4ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,3,4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1251,14 +1587,140 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a47201c62cde153a7994893e1f78692ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47201c62cde153a7994893e1f78692ec">&#9670;&nbsp;</a></span>Matrix4i</h2>
+<a id="ac8324f482d08105a6972711c4a9e476c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8324f482d08105a6972711c4a9e476c">&#9670;&nbsp;</a></span>Matrix4ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a47201c62cde153a7994893e1f78692ec">Linear::Matrix4i</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;int,4,4&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#ac8324f482d08105a6972711c4a9e476c">Linear::Matrix4ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,4,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75a56d416129b5e52a8822f48adacd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a56d416129b5e52a8822f48adacd9b">&#9670;&nbsp;</a></span>Matrix4x2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a75a56d416129b5e52a8822f48adacd9b">Linear::Matrix4x2d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,4,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a750bcbf501fe4ba80b2abd0158f2da6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750bcbf501fe4ba80b2abd0158f2da6b">&#9670;&nbsp;</a></span>Matrix4x2f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a750bcbf501fe4ba80b2abd0158f2da6b">Linear::Matrix4x2f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,4,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abedfd09cb62392f48c4d8eadaa8f973f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abedfd09cb62392f48c4d8eadaa8f973f">&#9670;&nbsp;</a></span>Matrix4x2ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#abedfd09cb62392f48c4d8eadaa8f973f">Linear::Matrix4x2ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,4,2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c45155fe6c54887103b5d073deb1e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c45155fe6c54887103b5d073deb1e3f">&#9670;&nbsp;</a></span>Matrix4x3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a8c45155fe6c54887103b5d073deb1e3f">Linear::Matrix4x3d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,4,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9196540c77acc632ccea9d16bd8298ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9196540c77acc632ccea9d16bd8298ba">&#9670;&nbsp;</a></span>Matrix4x3f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a9196540c77acc632ccea9d16bd8298ba">Linear::Matrix4x3f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,4,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62bb8324eba6429ceba157b2f0e8c084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bb8324eba6429ceba157b2f0e8c084">&#9670;&nbsp;</a></span>Matrix4x3ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a62bb8324eba6429ceba157b2f0e8c084">Linear::Matrix4x3ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,4,3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e313ad14772077a7d23a481978d4fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e313ad14772077a7d23a481978d4fcc">&#9670;&nbsp;</a></span>Matrix4x4d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a5e313ad14772077a7d23a481978d4fcc">Linear::Matrix4x4d</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;double,4,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0926ffe24cd681b340485b45ed4cfbbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0926ffe24cd681b340485b45ed4cfbbb">&#9670;&nbsp;</a></span>Matrix4x4f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a0926ffe24cd681b340485b45ed4cfbbb">Linear::Matrix4x4f</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;float,4,4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7627512516503caddac173ed9d92c21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7627512516503caddac173ed9d92c21f">&#9670;&nbsp;</a></span>Matrix4x4ld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a7627512516503caddac173ed9d92c21f">Linear::Matrix4x4ld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,4,4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1293,14 +1755,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a850f7d84cd5a1cec3d72a0015b8af049"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a850f7d84cd5a1cec3d72a0015b8af049">&#9670;&nbsp;</a></span>MatrixXi</h2>
+<a id="a986b5e50e39b869ac219d199cfb9c3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986b5e50e39b869ac219d199cfb9c3c9">&#9670;&nbsp;</a></span>MatrixXld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a850f7d84cd5a1cec3d72a0015b8af049">Linear::MatrixXi</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;int,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a986b5e50e39b869ac219d199cfb9c3c9">Linear::MatrixXld</a> = typedef <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt;long double,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1351,14 +1813,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a5dcc2d295ae27aed5de14e315fc43771"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dcc2d295ae27aed5de14e315fc43771">&#9670;&nbsp;</a></span>RowVector2i</h2>
+<a id="a05077dce6cf433df1a070ea914c48581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05077dce6cf433df1a070ea914c48581">&#9670;&nbsp;</a></span>RowVector2ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a5dcc2d295ae27aed5de14e315fc43771">Linear::RowVector2i</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;int,2&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a05077dce6cf433df1a070ea914c48581">Linear::RowVector2ld</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;long double,2&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1393,14 +1855,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="abb41f9fbc4b6ccdb1ee44a884d09b6d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb41f9fbc4b6ccdb1ee44a884d09b6d3">&#9670;&nbsp;</a></span>RowVector3i</h2>
+<a id="a5c4419c119d0317ec146a207d5d0f1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4419c119d0317ec146a207d5d0f1f0">&#9670;&nbsp;</a></span>RowVector3ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#abb41f9fbc4b6ccdb1ee44a884d09b6d3">Linear::RowVector3i</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;int,3&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a5c4419c119d0317ec146a207d5d0f1f0">Linear::RowVector3ld</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;long double,3&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1435,14 +1897,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a37158bcc169e311b75dcd17174783a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37158bcc169e311b75dcd17174783a14">&#9670;&nbsp;</a></span>RowVector4i</h2>
+<a id="a4f6c0ca21f5298ee4f87a80925ca7189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f6c0ca21f5298ee4f87a80925ca7189">&#9670;&nbsp;</a></span>RowVector4ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a37158bcc169e311b75dcd17174783a14">Linear::RowVector4i</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;int,4&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a4f6c0ca21f5298ee4f87a80925ca7189">Linear::RowVector4ld</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;long double,4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1477,14 +1939,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="af8dee2ac4d5dc4789eed46ccf91c777f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8dee2ac4d5dc4789eed46ccf91c777f">&#9670;&nbsp;</a></span>RowVectorXi</h2>
+<a id="a1556fa3843894b8d034023df49fd8329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1556fa3843894b8d034023df49fd8329">&#9670;&nbsp;</a></span>RowVectorXld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">Linear::RowVectorXi</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;int,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a1556fa3843894b8d034023df49fd8329">Linear::RowVectorXld</a> = typedef <a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">RowVector</a>&lt;long double,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1551,14 +2013,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="aaf23e6c2db37a625f7fad20d5b4591e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf23e6c2db37a625f7fad20d5b4591e4">&#9670;&nbsp;</a></span>Vector2i</h2>
+<a id="ab37da7eef963bfd9bca73d9039159470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab37da7eef963bfd9bca73d9039159470">&#9670;&nbsp;</a></span>Vector2ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#aaf23e6c2db37a625f7fad20d5b4591e4">Linear::Vector2i</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;int,2&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#ab37da7eef963bfd9bca73d9039159470">Linear::Vector2ld</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;long double,2&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1593,14 +2055,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a3013c839d596121f7f8de5d8f16c0f96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3013c839d596121f7f8de5d8f16c0f96">&#9670;&nbsp;</a></span>Vector3i</h2>
+<a id="a89c8f9c97e2b14e7eeb485b49218bfbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c8f9c97e2b14e7eeb485b49218bfbf">&#9670;&nbsp;</a></span>Vector3ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#a3013c839d596121f7f8de5d8f16c0f96">Linear::Vector3i</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;int,3&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a89c8f9c97e2b14e7eeb485b49218bfbf">Linear::Vector3ld</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;long double,3&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1635,14 +2097,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="af06af543b90d0d4b6545375718bdcbf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af06af543b90d0d4b6545375718bdcbf7">&#9670;&nbsp;</a></span>Vector4i</h2>
+<a id="ab45cb5a6efe5d8a0a146534e7e40d694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45cb5a6efe5d8a0a146534e7e40d694">&#9670;&nbsp;</a></span>Vector4ld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#af06af543b90d0d4b6545375718bdcbf7">Linear::Vector4i</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;int,4&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#ab45cb5a6efe5d8a0a146534e7e40d694">Linear::Vector4ld</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;long double,4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1677,14 +2139,14 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="adf0b9c33a0d2a4fd67340a776fd196a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf0b9c33a0d2a4fd67340a776fd196a8">&#9670;&nbsp;</a></span>VectorXi</h2>
+<a id="a732f55f348d0c074bda21f964d3fb441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a732f55f348d0c074bda21f964d3fb441">&#9670;&nbsp;</a></span>VectorXld</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespace_linear.html#adf0b9c33a0d2a4fd67340a776fd196a8">Linear::VectorXi</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;int,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
+          <td class="memname">using <a class="el" href="namespace_linear.html#a732f55f348d0c074bda21f964d3fb441">Linear::VectorXld</a> = typedef <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;long double,<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -9258,9 +9720,13 @@ template&lt;typename T , unsigned int Flags = 0&gt; </div>
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_linear.html">Linear</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

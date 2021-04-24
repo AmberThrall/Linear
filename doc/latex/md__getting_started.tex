@@ -1,0 +1,105 @@
+Matrices in \mbox{\hyperlink{namespace_linear}{Linear}} are comprised of the following things\+:
+\begin{DoxyEnumerate}
+\item A type format to use, i.\+e., float, double, etc.
+\item Two non-\/negative integers M and N representing the number of rows and number of columns respectively.
+\item Whether the matrix is row-\/major or column-\/major for storage.
+\item An array of Complex numbers.
+\end{DoxyEnumerate}
+
+Construction of a row-\/major matrix A then follows by the code 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Matrix<double,3,3> A = \{}
+\DoxyCodeLine{    \{1,2,3\}, \{4,5,6\}, \{7,8,9\}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ This construction is a bit cumbersome, so the shortcuts Matrix\{M\}x\{N\}\{T\} have been added, where M=2,3,4; N=2,3,4 and T=f,d,ld for float, double, and long double respectively. For square matrices, the shortcuts Matrix\{N\}\{T\} have also been added alongside with Square\+Matrix$<$typename T, size\+\_\+t N, unsigned int Flags=0$>$. So we can concise our code as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Matrix3d}} A = \{}
+\DoxyCodeLine{    \{1,2,3\}, \{4,5,6\}, \{7,8,9\}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ Note these two code snippets are identical.\hypertarget{md__getting_started_autotoc_md1}{}\doxysection{Operators}\label{md__getting_started_autotoc_md1}
+Matrices in \mbox{\hyperlink{namespace_linear}{Linear}} have all the operators one would except. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Matrix3d}} A = \{}
+\DoxyCodeLine{    \{1,2,3\}, \{4,5,6\}, \{7,8,9\}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Matrix3d}} B(1.0);}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A+B = "{}} << A+B << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A-\/B = "{}} << A-\/B << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}AB = "{}} << A*B << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}BA = "{}} << B*A << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A*2 = "{}} << A*2.0 << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A/2 = "{}} << A/2.0 << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A==B = "{}} << A==B << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}A!=B = "{}} << A!=B << std::endl;}
+
+\end{DoxyCode}
+ Note here that B is the 3x3 row-\/major matrix with every entry set to 1.\hypertarget{md__getting_started_autotoc_md2}{}\doxysection{Accessing}\label{md__getting_started_autotoc_md2}
+There are multiple ways to determine the size of a matrix A. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Matrix3d}} A = \{}
+\DoxyCodeLine{    \{1,2,3\}, \{4,5,6\}, \{7,8,9\}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{std::cout << A.NumRows() << std::endl;}
+\DoxyCodeLine{std::cout << A.NumColumns() << std::endl;}
+\DoxyCodeLine{std::cout << A.Size() << std::endl;}
+\DoxyCodeLine{std::cout << A(1,0) << std::endl;}
+
+\end{DoxyCode}
+ The above code prints out 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3}
+\DoxyCodeLine{3}
+\DoxyCodeLine{(1x2)[3, 3]}
+\DoxyCodeLine{4}
+
+\end{DoxyCode}
+ A few things to point out here. First, indices for matrices start at 0 for both row and column. Second, the order for the accessor A(1,0) is always (row,column) even if the matrix is column-\/major. Finally, A.\+Size() returns a 1x2 Matrix containing the dimensions of A.\hypertarget{md__getting_started_autotoc_md3}{}\doxysection{Dynamic Sizing}\label{md__getting_started_autotoc_md3}
+So far we have been working with statically sized matrices. Statically sized matrices have a set size, given by their template parameters, and never change. Unfortunately, statically sized matrices must have the size determined at compile time. If we need to determine their size at runtime we can make use of dynamically sized matrices. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Matrix<double,Dynamic,Dynamic> A = \{}
+\DoxyCodeLine{    \{1,2,3\}, \{4,5,6\}, \{7,8,9\}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ The keyword \textquotesingle{}Dynamic\textquotesingle{} replacing the previous 3\textquotesingle{}s given as sizes indicate to the matrix that is dynamically sized. Construction of dynamically sized matrices has several methods. The first is with initializer lists, as seen above. A in the above code is a 3x3 matrix whose size was determined dynamically. A few other constructors are 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a5139228f8ffd30d77722e861bc340560}{MatrixXd}} A(3, 1.0);}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a5139228f8ffd30d77722e861bc340560}{MatrixXd}} B(3, 3, 1.0);}
+
+\end{DoxyCode}
+ Both A and B here are dynamically sized 3x3 matrices with every entry set to one (note Matrix\+Xd is a shortcut for Matrix$<$double,\+Dynamic,\+Dynamic$>$). One benefit of dynamically sized matrices, is that their size can change. There are two ways to do this, the assignment operator \textquotesingle{}=\textquotesingle{} and the Resize function. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_af7e63e09c10d2ef0922707eb60277552}{Matrix4d}} A(1.0);}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a5139228f8ffd30d77722e861bc340560}{MatrixXd}} B(3, 1.0);}
+\DoxyCodeLine{B = A;}
+\DoxyCodeLine{B.Resize(3, 3);}
+
+\end{DoxyCode}
+ If a matrix resize is attempted on a statically sized matrix, an exception is thrown.
+
+Finally, you can combine static and dynamic sizing. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Matrix<double,3,Dynamic> A(3, 1.0);}
+
+\end{DoxyCode}
+ In the above code we create a 3x3 matrix where the number of rows is static at 3, and the number of columns is dynamically determined to be 3. The constructor A($\ast$,3,1.\+0) would have also worked. Just the first parameter would be ignored.\hypertarget{md__getting_started_autotoc_md4}{}\doxysection{Vectors}\label{md__getting_started_autotoc_md4}
+Column and row vectors in \mbox{\hyperlink{namespace_linear}{Linear}} are just special cases of matrices. The shortcut Vector$<$typename T, size\+\_\+t N$>$ is identical to Matrix$<$\+T,\+N,1$>$. Likewise the shortcut Row\+Vector$<$typename T, size\+\_\+t N$>$ is identical to Matrix$<$\+T,1,\+N$>$. Like before, there are a few more shortcuts. Namely Vector\{N\}\{T\} and Row\+Vector\{N\}\{T\} where N=2,3,4 and T=f,d,ld. The code below is an example of a vector construction of length 3. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_linear_a88ec60e790bab6031c6d6a52531eb9e1}{Vector3d}} x = \{1,2,3\};}
+\DoxyCodeLine{std::cout << x.Length() << std::endl;}
+\DoxyCodeLine{std::cout << x[1] << std::endl;}
+
+\end{DoxyCode}
+ The above code prints out 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3}
+\DoxyCodeLine{2}
+
+\end{DoxyCode}
+ Notice that a new size accessor pops up for vectors, Length. This does exactly what it sounds like, it gets the length of the vector.
+
+While vectors can be accessed by x(i,0), it is suggested to use the square brackets x\mbox{[}i\mbox{]}. That way one doesn\textquotesingle{}t have to worry about if x is a row or column vector. 

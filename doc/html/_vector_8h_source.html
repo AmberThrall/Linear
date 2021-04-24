@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -31,6 +40,21 @@
    <div id="projectname">Linear
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -42,16 +66,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_vector_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -66,11 +97,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Vector.h</div>  </div>
@@ -86,33 +112,33 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_linear.html">Linear</a> {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">   10</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector</a> = <a class="code" href="class_linear_1_1_matrix.html">Matrix&lt;T,N,1&gt;</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespace_linear.html#aaf23e6c2db37a625f7fad20d5b4591e4">   11</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2i</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;int,2&gt;</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespace_linear.html#a3013c839d596121f7f8de5d8f16c0f96">   12</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3i</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;int,3&gt;</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespace_linear.html#af06af543b90d0d4b6545375718bdcbf7">   13</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4i</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;int,4&gt;</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespace_linear.html#adf0b9c33a0d2a4fd67340a776fd196a8">   14</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXi</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;int,Dynamic&gt;</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespace_linear.html#a453ced1a00e94d167e83202dfcdcbc6f">   15</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,2&gt;</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_linear.html#a051ad58e76a5595f80e7001df279afa7">   16</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,3&gt;</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespace_linear.html#a50d03fdceb34e3c4bbdeb7b5f657adfd">   17</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,4&gt;</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespace_linear.html#a897f4aebd8b70aaaaf5c0486bea6345e">   18</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXf</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,Dynamic&gt;</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespace_linear.html#ad3596b0fd73e199a0421814642ef721e">   19</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,2&gt;</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespace_linear.html#a88ec60e790bab6031c6d6a52531eb9e1">   20</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,3&gt;</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespace_linear.html#ac5dde96553dbb3fc404dc26ba407a634">   21</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,4&gt;</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespace_linear.html#a8a5cd091f3064dff9950231671bf0b78">   22</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXd</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespace_linear.html#a453ced1a00e94d167e83202dfcdcbc6f">   11</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,2&gt;</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespace_linear.html#a051ad58e76a5595f80e7001df279afa7">   12</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,3&gt;</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespace_linear.html#a50d03fdceb34e3c4bbdeb7b5f657adfd">   13</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4f</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,4&gt;</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespace_linear.html#a897f4aebd8b70aaaaf5c0486bea6345e">   14</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXf</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;float,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespace_linear.html#ad3596b0fd73e199a0421814642ef721e">   15</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,2&gt;</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_linear.html#a88ec60e790bab6031c6d6a52531eb9e1">   16</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,3&gt;</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespace_linear.html#ac5dde96553dbb3fc404dc26ba407a634">   17</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4d</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,4&gt;</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespace_linear.html#a8a5cd091f3064dff9950231671bf0b78">   18</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXd</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;double,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespace_linear.html#ab37da7eef963bfd9bca73d9039159470">   19</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector2ld</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;long double,2&gt;</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespace_linear.html#a89c8f9c97e2b14e7eeb485b49218bfbf">   20</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector3ld</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;long double,3&gt;</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespace_linear.html#ab45cb5a6efe5d8a0a146534e7e40d694">   21</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">Vector4ld</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;long double,4&gt;</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespace_linear.html#a732f55f348d0c074bda21f964d3fb441">   22</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">VectorXld</a> = <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;long double,Dynamic&gt;</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">   25</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector</a> = <a class="code" href="class_linear_1_1_matrix.html">Matrix&lt;T,1,N&gt;</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespace_linear.html#a5dcc2d295ae27aed5de14e315fc43771">   26</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2i</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;int,2&gt;</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespace_linear.html#abb41f9fbc4b6ccdb1ee44a884d09b6d3">   27</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3i</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;int,3&gt;</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespace_linear.html#a37158bcc169e311b75dcd17174783a14">   28</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4i</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;int,4&gt;</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">   29</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXi</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;int,Dynamic&gt;</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespace_linear.html#a3d5d6e5a4098d02d818eb08bbed27dcd">   30</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,2&gt;</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespace_linear.html#a74fc933d1470d702af99a6d04e24eba8">   31</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,3&gt;</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespace_linear.html#ae79a928c9a954cea266f4ab570e1babb">   32</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,4&gt;</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespace_linear.html#a551d041e1197ce0caa7056d1a8b6f516">   33</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXf</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,Dynamic&gt;</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespace_linear.html#a030dff8ce7e1eb2b81db7b78790db2f2">   34</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,2&gt;</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespace_linear.html#a5df1beff4be8735784186c20fb380ba9">   35</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,3&gt;</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespace_linear.html#af213d660fb68360ca761d1b0fa614efa">   36</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,4&gt;</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespace_linear.html#a1b1b5a12d11bdb75ae13a725c9889f5e">   37</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXd</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespace_linear.html#a3d5d6e5a4098d02d818eb08bbed27dcd">   26</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,2&gt;</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespace_linear.html#a74fc933d1470d702af99a6d04e24eba8">   27</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,3&gt;</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespace_linear.html#ae79a928c9a954cea266f4ab570e1babb">   28</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4f</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,4&gt;</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespace_linear.html#a551d041e1197ce0caa7056d1a8b6f516">   29</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXf</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;float,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespace_linear.html#a030dff8ce7e1eb2b81db7b78790db2f2">   30</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,2&gt;</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespace_linear.html#a5df1beff4be8735784186c20fb380ba9">   31</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,3&gt;</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespace_linear.html#af213d660fb68360ca761d1b0fa614efa">   32</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4d</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,4&gt;</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespace_linear.html#a1b1b5a12d11bdb75ae13a725c9889f5e">   33</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXd</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;double,Dynamic&gt;</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespace_linear.html#a05077dce6cf433df1a070ea914c48581">   34</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector2ld</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;long double,2&gt;</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespace_linear.html#a5c4419c119d0317ec146a207d5d0f1f0">   35</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector3ld</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;long double,3&gt;</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespace_linear.html#a4f6c0ca21f5298ee4f87a80925ca7189">   36</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVector4ld</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;long double,4&gt;</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespace_linear.html#a1556fa3843894b8d034023df49fd8329">   37</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="class_linear_1_1_matrix.html">RowVectorXld</a> = <a class="code" href="class_linear_1_1_matrix.html">RowVector&lt;long double,Dynamic&gt;</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> P, <span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespace_linear.html#ae3ce3207a36cef86615394b93f344f91">   53</a></span>&#160;    <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;T,P&gt;</a> <a class="code" href="namespace_linear.html#ae3ce3207a36cef86615394b93f344f91">SubVector</a>(<span class="keyword">const</span> <a class="code" href="class_linear_1_1_matrix.html">Vector&lt;T,N&gt;</a>&amp; v, <span class="keywordtype">size_t</span> off = 0) {</div>
@@ -265,7 +291,7 @@ $(function() {
 <div class="line"><a name="l00372"></a><span class="lineno"><a class="line" href="namespace_linear.html#a16daf9e218dcc43cd4a03fbbcce1a2ea">  372</a></span>&#160;    std::vector&lt;Vector&lt;T,1&gt;&gt; <a class="code" href="namespace_linear.html#a52882b24b8703ab5565cec02174f5f43">GramSchmidt</a>(<span class="keyword">const</span> std::vector&lt;<a class="code" href="class_linear_1_1_matrix.html">Vector&lt;T,1&gt;</a>&gt;&amp; v) {</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (v.size() == 0)</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordflow">return</span> v;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        std::vector&lt;Vector&lt;T,1&gt;&gt; res;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; v.size(); ++i) {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            res.push_back(<a class="code" href="namespace_linear.html#aa335597bce965c73014808d379a5e4ef">Normalize</a>(v[i]));</div>
@@ -297,9 +323,13 @@ $(function() {
 <div class="ttc" id="anamespace_linear_html_ae3ce3207a36cef86615394b93f344f91"><div class="ttname"><a href="namespace_linear.html#ae3ce3207a36cef86615394b93f344f91">Linear::SubVector</a></div><div class="ttdeci">Vector&lt; T, P &gt; SubVector(const Vector&lt; T, N &gt; &amp;v, size_t off=0)</div><div class="ttdoc">Constructs a subvector of a column vector.</div><div class="ttdef"><b>Definition:</b> Vector.h:53</div></div>
 <div class="ttc" id="anamespace_linear_html_aea9824e674e82f6dbaa0435514e64894"><div class="ttname"><a href="namespace_linear.html#aea9824e674e82f6dbaa0435514e64894">Linear::Dot</a></div><div class="ttdeci">Complex&lt; T &gt; Dot(const Matrix&lt; T, M, N, Flags &gt; &amp;a, const Matrix&lt; T, P, Q, Flags2 &gt; &amp;b)</div><div class="ttdoc">Computes the dot product of two vectors a and b both of size N, .</div><div class="ttdef"><b>Definition:</b> Vector.h:175</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_vector_8h.html">Vector.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
