@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['norm_110',['Norm',['../namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177',1,'Linear']]],
-  ['normalize_111',['Normalize',['../namespace_linear.html#aa335597bce965c73014808d379a5e4ef',1,'Linear']]],
-  ['nullity_112',['Nullity',['../namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850',1,'Linear']]],
-  ['nullspace_113',['NullSpace',['../namespace_linear.html#a379225b58ff09eb6efdd4ecf979ca426',1,'Linear']]],
-  ['numcolumns_114',['NumColumns',['../class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a',1,'Linear::Matrix']]],
-  ['numrows_115',['NumRows',['../class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9',1,'Linear::Matrix']]]
+  ['norm_117',['Norm',['../namespace_linear.html#ab1a0827063fcbfb3f14c4c1e0c8d4177',1,'Linear']]],
+  ['normalize_118',['Normalize',['../namespace_linear.html#aa335597bce965c73014808d379a5e4ef',1,'Linear']]],
+  ['nullity_119',['Nullity',['../namespace_linear.html#a8435044a6bea68c8fd3dcf308127b850',1,'Linear']]],
+  ['nullspace_120',['NullSpace',['../namespace_linear.html#a379225b58ff09eb6efdd4ecf979ca426',1,'Linear']]],
+  ['numcolumns_121',['NumColumns',['../class_linear_1_1_matrix.html#a577f8387df4cefc6c49db968c838de3a',1,'Linear::Matrix']]],
+  ['numrows_122',['NumRows',['../class_linear_1_1_matrix.html#af98e9b44453dcb05643b9e38249e33a9',1,'Linear::Matrix']]]
 ];

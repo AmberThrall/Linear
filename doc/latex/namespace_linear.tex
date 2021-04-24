@@ -5,6 +5,20 @@
 \item 
 class \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}
 \begin{DoxyCompactList}\small\item\em Class for complex numbers. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_l_u_p}{LUP}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_l_u_p}{LUP}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_cholesky}{Cholesky}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_cholesky}{Cholesky}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_eigendecomposition}{Eigendecomposition}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_eigendecomposition}{Eigendecomposition}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}}
+\begin{DoxyCompactList}\small\item\em Struct for real \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}
 \begin{DoxyCompactList}\small\item\em Class for matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
@@ -95,6 +109,13 @@ using \mbox{\hyperlink{namespace_linear_a5df1beff4be8735784186c20fb380ba9}{Row\+
 using \mbox{\hyperlink{namespace_linear_af213d660fb68360ca761d1b0fa614efa}{Row\+Vector4d}} = \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ double, 4 $>$
 \item 
 using \mbox{\hyperlink{namespace_linear_a1b1b5a12d11bdb75ae13a725c9889f5e}{Row\+Vector\+Xd}} = \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ double, \mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678}{SVDType}} \{ \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}
+, \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a9ff04ee6816bad90d566dcb05e87462d}{THIN\+\_\+\+SVD}}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -349,22 +370,6 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adb36c8432926ae50addd9fbfc5ff0f23}{Companion}} (const \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Row\+Vector}}$<$ T, N $>$ \&c)
 \begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_aa26b079aa55163415073496c04c0e7f9}{LUP}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ A)
-\begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}{QR}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}{LL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ac447da29fa17099383a35795724dc608}{LDL}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LDL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}{Eigendecomposition}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the Eigendecomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, M, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a40ac3a75e4fa4b638b92bf5ed828b96f}{SVD}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the SVD decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}{Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Reduces the matrix A to Hessenberg. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}{Schur}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} max\+\_\+iterations=100)
-\begin{DoxyCompactList}\small\item\em Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that $A=QUQ^*$ where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), std\+::pair$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a780523f50686e31b35ff8f45223ac4bb}{Power\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
@@ -496,11 +501,11 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a7070e8382c6b41fbdfb124e4d5718183}{Is\+Hermitian}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Checks if a matrix is Hermitian. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_aece2ef864f93d42cd61f3cab924d581d}{Is\+Upper\+Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Checks if a matrix is upper Hessenberg. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks if a matrix is upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a69513b3a8904414cce5df833a1f79a27}{Is\+Lower\+Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Checks if a matrix is lower Hessenberg. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks if a matrix is lower \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_add87da41bd664140cbaff6352e01dd6b}{Is\+Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a)
-\begin{DoxyCompactList}\small\item\em Checks if a matrix is Hessenberg. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks if a matrix is \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_ae2c5294b24c83327edb566329bcddd5f}{Is\+Tridiagonal}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&a)
 \begin{DoxyCompactList}\small\item\em Checks if a matrix is Tridiagonal. \end{DoxyCompactList}\item 
 {\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N$>$ }\\std\+::enable\+\_\+if$<$(P $>$0), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a109539c9bbbd6137cdb23248a57b947a}{Sub\+Vector}} (const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&v, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} off=0)
@@ -808,6 +813,25 @@ using \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Linea
 \doxysubsubsection{\texorpdfstring{VectorXi}{VectorXi}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{namespace_linear_adf0b9c33a0d2a4fd67340a776fd196a8}{Linear\+::\+Vector\+Xi}} = typedef \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$int,\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$>$}
 
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_linear_aefca39410c04888aedf8d5652ccbf678}\label{namespace_linear_aefca39410c04888aedf8d5652ccbf678}} 
+\index{Linear@{Linear}!SVDType@{SVDType}}
+\index{SVDType@{SVDType}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{SVDType}{SVDType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678}{Linear\+::\+SVDType}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FULL\_SVD@{FULL\_SVD}!Linear@{Linear}}\index{Linear@{Linear}!FULL\_SVD@{FULL\_SVD}}}\mbox{\Hypertarget{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}\label{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}} 
+FULL\+\_\+\+SVD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{THIN\_SVD@{THIN\_SVD}!Linear@{Linear}}\index{Linear@{Linear}!THIN\_SVD@{THIN\_SVD}}}\mbox{\Hypertarget{namespace_linear_aefca39410c04888aedf8d5652ccbf678a9ff04ee6816bad90d566dcb05e87462d}\label{namespace_linear_aefca39410c04888aedf8d5652ccbf678a9ff04ee6816bad90d566dcb05e87462d}} 
+THIN\+\_\+\+SVD&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
@@ -2616,32 +2640,13 @@ std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_linear_1_1_complex}{Complex
 
 Calculates all eigenpairs of A. 
 
-This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or Inverse\+Iteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely $(tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2$. Third, if neither of the first two cases handles the matrix, we attempt to calculate the Schur decomposition of A. If that fails, we resort to calling Wielandt\+Deflation\+Algorithm. 
+This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or Inverse\+Iteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely $(tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2$. Third, if neither of the first two cases handles the matrix, we attempt to calculate the \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition of A. If that fails, we resort to calling Wielandt\+Deflation\+Algorithm. 
 \begin{DoxyParams}{Parameters}
 {\em A} & MxN matrix \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 List of pairs $(\lambda_i,v_i)$ such that $Av_i\approx \lambda v_i$ 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}\label{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}} 
-\index{Linear@{Linear}!Eigendecomposition@{Eigendecomposition}}
-\index{Eigendecomposition@{Eigendecomposition}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Eigendecomposition()}{Eigendecomposition()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::tuple$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Eigendecomposition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the Eigendecomposition of A. 
-
-This finds NxN matrix V and NxN matrix D such that $A=VDV^{-1}$, D is diagonal with the eigenvalues of A along the diagonal and V is the eigenvectors of A. If A is not square or V is not invertible, then an exception is thrown. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Tuple $(V, D, V^{-1})$ 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}\label{namespace_linear_aabd5e5b53cac430776fe625ce7744b13}} 
 \index{Linear@{Linear}!EigenvectorHelper@{EigenvectorHelper}}
@@ -2983,25 +2988,6 @@ Matrix2d B = GramSchmidt(A);
 \begin{DoxyReturn}{Returns}
 MxN matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}\label{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}} 
-\index{Linear@{Linear}!Hessenberg@{Hessenberg}}
-\index{Hessenberg@{Hessenberg}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Hessenberg()}{Hessenberg()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Reduces the matrix A to Hessenberg. 
-
-This finds NxN matrix Q and NxN matrix H such that $A=QHQ^*$ where Q is unitary and H is upper Hessenberg. If A is not square, an exception is thrown. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pair (Q,H) 
-\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_ab2f361b8aefb6590e8159a310213e825}\label{namespace_linear_ab2f361b8aefb6590e8159a310213e825}} 
 \index{Linear@{Linear}!Householder@{Householder}}
 \index{Householder@{Householder}!Linear@{Linear}}
@@ -3208,7 +3194,7 @@ bool Linear\+::\+Is\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mbox{\hyp
 
 
 
-Checks if a matrix is Hessenberg. 
+Checks if a matrix is \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -3216,7 +3202,7 @@ Checks if a matrix is Hessenberg.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if A is either lower or upper Hessenberg 
+True if A is either lower or upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a69513b3a8904414cce5df833a1f79a27}\label{namespace_linear_a69513b3a8904414cce5df833a1f79a27}} 
 \index{Linear@{Linear}!IsLowerHessenberg@{IsLowerHessenberg}}
@@ -3227,7 +3213,7 @@ bool Linear\+::\+Is\+Lower\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mb
 
 
 
-Checks if a matrix is lower Hessenberg. 
+Checks if a matrix is lower \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -3368,7 +3354,7 @@ Checks if a matrix is Tridiagonal.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if A is both lower and upper Hessenberg 
+True if A is both lower and upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_aece2ef864f93d42cd61f3cab924d581d}\label{namespace_linear_aece2ef864f93d42cd61f3cab924d581d}} 
 \index{Linear@{Linear}!IsUpperHessenberg@{IsUpperHessenberg}}
@@ -3379,7 +3365,7 @@ bool Linear\+::\+Is\+Upper\+Hessenberg (\begin{DoxyParamCaption}\item[{const \mb
 
 
 
-Checks if a matrix is upper Hessenberg. 
+Checks if a matrix is upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -3468,44 +3454,6 @@ Computes the (NQ)x(\+NQ) Kronecker sum defined by.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 (NQ)x(\+NQ) \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ac447da29fa17099383a35795724dc608}\label{namespace_linear_ac447da29fa17099383a35795724dc608}} 
-\index{Linear@{Linear}!LDL@{LDL}}
-\index{LDL@{LDL}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{LDL()}{LDL()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+LDL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the LDL$\ast$ decomposition of A. 
-
-This finds NxN matrix L and NxN matrix D such that $A=LDL^*$, L is lower unit triangular and D is diagonal. If A is not square then an exception is thrown. If A is not a Hermitian positive-\/definite matrix, the decomposition may fail. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pair (L, D) 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}\label{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}} 
-\index{Linear@{Linear}!LL@{LL}}
-\index{LL@{LL}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{LL()}{LL()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ Linear\+::\+LL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the LL$\ast$ decomposition of A. 
-
-This finds NxN matrix L such that $A=LL^*$ and L is lower triangular with real and positive diagonal entries. If A is not square then an exception is thrown. If A is not a Hermitian positive-\/definite matrix, the decomposition may fail. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-L 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a31adf7e5584b1123cea11cb34327aedb}\label{namespace_linear_a31adf7e5584b1123cea11cb34327aedb}} 
 \index{Linear@{Linear}!Log@{Log}}
@@ -3691,25 +3639,6 @@ This is done via change-\/of-\/base formula, $\log_{base}x=\log x/\log base$.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Real number. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_aa26b079aa55163415073496c04c0e7f9}\label{namespace_linear_aa26b079aa55163415073496c04c0e7f9}} 
-\index{Linear@{Linear}!LUP@{LUP}}
-\index{LUP@{LUP}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{LUP()}{LUP()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::tuple$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+LUP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the LUP decomposition of A. 
-
-This finds NxN matrix L, NxN matrix U and NxN matrix P such that $PA=LU$, L is lower triangular, U is upper triangular and P is a permutation matrix. If A is not square an exception is thrown. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Tuple (L,U,P) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_abd31b68aefb3b7b5479ac11b708631ad}\label{namespace_linear_abd31b68aefb3b7b5479ac11b708631ad}} 
 \index{Linear@{Linear}!MaxNorm@{MaxNorm}}
@@ -4113,25 +4042,6 @@ Vector2d w = Proj(v,onto);
 \begin{DoxyReturn}{Returns}
 Column vector if onto is a column vector, otherwise row vector. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}\label{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}} 
-\index{Linear@{Linear}!QR@{QR}}
-\index{QR@{QR}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{QR()}{QR()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ $>$ Linear\+::\+QR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the LUP decomposition of A. 
-
-This finds MxN matrix Q and NxN matrix R such that $A=QR$ and R is upper triangular. Moreover, if A is square then Q is unitary. If M $<$ N, then an exception is thrown. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pair (Q,R) 
-\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a3a80e6084878985b463ab66e347a6932}\label{namespace_linear_a3a80e6084878985b463ab66e347a6932}} 
 \index{Linear@{Linear}!Random@{Random}}
 \index{Random@{Random}!Linear@{Linear}}
@@ -4351,25 +4261,6 @@ Computes A\textquotesingle{}s reduced row echelon form.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 MxN matrix 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}\label{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}} 
-\index{Linear@{Linear}!Schur@{Schur}}
-\index{Schur@{Schur}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{Schur()}{Schur()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::pair$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+Schur (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{max\+\_\+iterations = {\ttfamily 100} }\end{DoxyParamCaption})}
-
-
-
-Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that $A=QUQ^*$ where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks. 
-
-The matrix U and A have the same eigenvalues. If A is not square, an exception is thrown. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pair (Q,U) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_ad799370689472fbdaa73efe88026d9af}\label{namespace_linear_ad799370689472fbdaa73efe88026d9af}} 
 \index{Linear@{Linear}!Sec@{Sec}}
@@ -4976,25 +4867,6 @@ VectorXd w = SubVector(v, 2, 1);
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Column vector of size size 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a40ac3a75e4fa4b638b92bf5ed828b96f}\label{namespace_linear_a40ac3a75e4fa4b638b92bf5ed828b96f}} 
-\index{Linear@{Linear}!SVD@{SVD}}
-\index{SVD@{SVD}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{SVD()}{SVD()}}
-{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::tuple$<$\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,M,Flags$>$,\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$,\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ $>$ Linear\+::\+SVD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
-
-
-
-Computes the SVD decomposition of A. 
-
-This finds MxM matrix U, MxN matrix S and NxN matrix V such that $A=USV^*$ where U and V are both unitary, and S is a rectangular diagonal matrix containing the real non-\/negative singular values in decreasing order. 
-\begin{DoxyParams}{Parameters}
-{\em A} & MxN matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Tuple (U,S,V) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a07397a4ac6ba93790c8f8a36ba8e31c5}\label{namespace_linear_a07397a4ac6ba93790c8f8a36ba8e31c5}} 
 \index{Linear@{Linear}!Tan@{Tan}}

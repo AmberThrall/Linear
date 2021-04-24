@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['im_356',['Im',['../class_linear_1_1_complex.html#a380eb6fb4ff7149ee15acdf72b4b6239',1,'Linear::Complex']]]
+  ['h_383',['H',['../struct_linear_1_1_hessenberg.html#a0da096df550ee4ac21ce744181a6a2b1',1,'Linear::Hessenberg']]]
 ];

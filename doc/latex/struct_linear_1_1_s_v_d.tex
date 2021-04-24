@@ -1,0 +1,117 @@
+\hypertarget{struct_linear_1_1_s_v_d}{}\doxysection{Linear\+::SVD$<$ T, M, N, Flags, Type $>$ Struct Template Reference}
+\label{struct_linear_1_1_s_v_d}\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition.  
+
+
+
+
+{\ttfamily \#include $<$Decomp.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{struct_linear_1_1_s_v_d_a17bd70fd01cfd6083ab56fe85349d4f6}{SVD}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\void \mbox{\hyperlink{struct_linear_1_1_s_v_d_afd963fa6029945b3a8502bfc2c83fdd8}{Compute}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::conditional\+\_\+t$<$ Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, M, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M,(M $>$N?N\+:M), Flags $>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d_a3ab688cd4cd5ede648a8498bd3c42099}{U}}
+\item 
+std\+::conditional\+\_\+t$<$ Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T,(M $>$N?N\+:M), Flags $>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d_abceb172455f3610f1b818c0698f353df}{S}}
+\item 
+std\+::conditional\+\_\+t$<$ Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T,(M $>$N?N\+:M), N, Flags $>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d_a02ffcd514f4a69ed69faf46792710991}{Vh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$\newline
+struct Linear\+::\+SVD$<$ T, M, N, Flags, Type $>$}
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition. 
+
+This struct finds MxM matrix U, MxN matrix S and NxN matrix V such that $A=USV^*$ where U and V are both unitary, and S is a rectangular diagonal matrix containing the real non-\/negative singular values of A in decreasing order. If THIN\+\_\+\+SVD is passed, then U is MxK, S is KxK, and Vh is KxN where K=min(\+M,\+N). 
+\begin{DoxyParams}{Parameters}
+{\em T} & Type to store matrix entries as. \\
+\hline
+{\em M} & Number of rows for U and S. Dynamic is allowed for M. \\
+\hline
+{\em N} & Number of columns for S and Vh. Dynamic is allowed for N. \\
+\hline
+{\em Flags} & Flags to pass to the matrices (default = row major). \\
+\hline
+{\em Type} & Either FULL\+\_\+\+SVD or THIN\+\_\+\+SVD (default = FULL\+\_\+\+SVD). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_s_v_d_a17bd70fd01cfd6083ab56fe85349d4f6}\label{struct_linear_1_1_s_v_d_a17bd70fd01cfd6083ab56fe85349d4f6}} 
+\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}!SVD@{SVD}}
+\index{SVD@{SVD}!Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+\doxysubsubsection{\texorpdfstring{SVD()}{SVD()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$ \\
+template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
+\mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD}}$<$ T, M, N, Flags, Type $>$\+::\mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Just calls Compute. 
+\begin{DoxyParams}{Parameters}
+{\em A} & PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_s_v_d_afd963fa6029945b3a8502bfc2c83fdd8}\label{struct_linear_1_1_s_v_d_afd963fa6029945b3a8502bfc2c83fdd8}} 
+\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}!Compute@{Compute}}
+\index{Compute@{Compute}!Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$ \\
+template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
+void \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD}}$<$ T, M, N, Flags, Type $>$\+::Compute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, Q, Flags2 $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition. 
+
+If P != M or Q != N, then an exception is thrown. If the matrix is not diagonalizable, an exception will be thrown. 
+\begin{DoxyParams}{Parameters}
+{\em A} & PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_s_v_d_abceb172455f3610f1b818c0698f353df}\label{struct_linear_1_1_s_v_d_abceb172455f3610f1b818c0698f353df}} 
+\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}!S@{S}}
+\index{S@{S}!Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+\doxysubsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$ \\
+std\+::conditional\+\_\+t$<$Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,(M$>$N?N\+:M),Flags$>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD}}$<$ T, M, N, Flags, Type $>$\+::S}
+
+Rectangular diagonal matrix containing the singular values of A in decreasing order \mbox{\Hypertarget{struct_linear_1_1_s_v_d_a3ab688cd4cd5ede648a8498bd3c42099}\label{struct_linear_1_1_s_v_d_a3ab688cd4cd5ede648a8498bd3c42099}} 
+\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}!U@{U}}
+\index{U@{U}!Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+\doxysubsubsection{\texorpdfstring{U}{U}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$ \\
+std\+::conditional\+\_\+t$<$Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,M,Flags$>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,(M$>$N?N\+:M),Flags$>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD}}$<$ T, M, N, Flags, Type $>$\+::U}
+
+Unitary matrix containing the left singular vectors \mbox{\Hypertarget{struct_linear_1_1_s_v_d_a02ffcd514f4a69ed69faf46792710991}\label{struct_linear_1_1_s_v_d_a02ffcd514f4a69ed69faf46792710991}} 
+\index{Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}!Vh@{Vh}}
+\index{Vh@{Vh}!Linear::SVD$<$ T, M, N, Flags, Type $>$@{Linear::SVD$<$ T, M, N, Flags, Type $>$}}
+\doxysubsubsection{\texorpdfstring{Vh}{Vh}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0, SVDType Type = FULL\+\_\+\+SVD$>$ \\
+std\+::conditional\+\_\+t$<$Type==\mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{FULL\+\_\+\+SVD}}, \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$, \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,(M$>$N?N\+:M),N,Flags$>$ $>$ \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD}}$<$ T, M, N, Flags, Type $>$\+::Vh}
+
+Vh=V$\ast$ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_decomp_8h}{Decomp.\+h}}\end{DoxyCompactItemize}

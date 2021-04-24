@@ -9,27 +9,32 @@
 {\ttfamily \#include \char`\"{}Eigen.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_linear_1_1_l_u_p}{Linear\+::\+LUP$<$ T, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_l_u_p}{LUP}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_q_r}{Linear\+::\+QR$<$ T, M, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_cholesky}{Linear\+::\+Cholesky$<$ T, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_cholesky}{Cholesky}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_eigendecomposition}{Linear\+::\+Eigendecomposition$<$ T, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_eigendecomposition}{Eigendecomposition}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_s_v_d}{Linear\+::\+SVD$<$ T, M, N, Flags, Type $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg$<$ T, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_linear_1_1_schur}{Linear\+::\+Schur$<$ T, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Struct for real \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespace_linear}{Linear}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_aa26b079aa55163415073496c04c0e7f9}{Linear\+::\+LUP}} (Matrix$<$ T, M, N, Flags $>$ A)
-\begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ Square\+Matrix$<$ T, N, Flags $>$, Matrix$<$ T, M, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ad3420e34ecc066e096dab30ee75140d1}{Linear\+::\+QR}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LUP decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a0ef85ac416f2414a3621ece9854a90af}{Linear\+::\+LL}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_ac447da29fa17099383a35795724dc608}{Linear\+::\+LDL}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the LDL$\ast$ decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a0cca773e4ba2bf13d412c5212448950b}{Linear\+::\+Eigendecomposition}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the Eigendecomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::tuple$<$ Square\+Matrix$<$ T, M, Flags $>$, Matrix$<$ T, M, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a40ac3a75e4fa4b638b92bf5ed828b96f}{Linear\+::\+SVD}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Computes the SVD decomposition of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a3ec2551c2f8d6c875e695baf1adee679}{Linear\+::\+Hessenberg}} (const Matrix$<$ T, M, N, Flags $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Reduces the matrix A to Hessenberg. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::pair$<$ Square\+Matrix$<$ T, N, Flags $>$, Square\+Matrix$<$ T, N, Flags $>$ $>$ \mbox{\hyperlink{namespace_linear_a00b63e8a885faf0f6636bbc94e7d1154}{Linear\+::\+Schur}} (const Matrix$<$ T, M, N, Flags $>$ \&A, size\+\_\+t max\+\_\+iterations=100)
-\begin{DoxyCompactList}\small\item\em Computes the real Schur decomposition of A This finds NxN matrix Q and NxN matrix U such that $A=QUQ^*$ where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+enum \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678}{Linear\+::\+SVDType}} \{ \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a0e0dbdc197c2e1b19b4cdcbd47c0ca9f}{Linear\+::\+FULL\+\_\+\+SVD}}
+, \mbox{\hyperlink{namespace_linear_aefca39410c04888aedf8d5652ccbf678a9ff04ee6816bad90d566dcb05e87462d}{Linear\+::\+THIN\+\_\+\+SVD}}
+ \}
+\end{DoxyCompactItemize}

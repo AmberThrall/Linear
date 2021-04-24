@@ -250,12 +250,11 @@ namespace Linear {
         }
 
         try {
-            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(A);
-            SquareMatrix<T,N,Flags> D = std::get<1>(decomp);
-            for (size_t i = 0; i < D.NumRows(); ++i) {
-                D(i,i) = Exp(D(i,i));
+            Eigendecomposition<T,N,Flags> eigen(A);
+            for (size_t i = 0; i < eigen.D.NumRows(); ++i) {
+                eigen.D(i,i) = Exp(eigen.D(i,i));
             }
-            return std::get<0>(decomp)*D*std::get<2>(decomp);
+            return eigen.Q*eigen.D*eigen.Qinv;
         }
         catch (...) {}
 
@@ -343,12 +342,11 @@ namespace Linear {
         }
 
         try {
-            std::tuple<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> decomp = Eigendecomposition(A);
-            SquareMatrix<T,N,Flags> D = std::get<1>(decomp);
-            for (size_t i = 0; i < D.NumRows(); ++i) {
-                D(i,i) = Pow(D(i,i), power);
+            Eigendecomposition<T,N,Flags> eigen(A);
+            for (size_t i = 0; i < eigen.D.NumRows(); ++i) {
+                eigen.D(i,i) = Pow(eigen.D(i,i), power);
             }
-            return std::get<0>(decomp)*D*std::get<2>(decomp);
+            return eigen.Q*eigen.D*eigen.Qinv;
         }
         catch (...) {}
 

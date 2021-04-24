@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qr_321',['QR',['../namespace_linear.html#ad3420e34ecc066e096dab30ee75140d1',1,'Linear']]]
+  ['qr_347',['QR',['../struct_linear_1_1_q_r.html#a29267f9fb1258cef06b7818d4bff4f08',1,'Linear::QR']]]
 ];

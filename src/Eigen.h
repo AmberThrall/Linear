@@ -153,6 +153,7 @@ namespace Linear {
             throw "Eigenvectors are only defined for square matrices.";
 
         bool isReal = IsReal(A);
+
         SquareMatrix<T,Dynamic,Flags> eye = Identity<T>(A.NumColumns());
         std::vector<std::pair<Complex<T>,Vector<T,N>>> eigenpairs;
         for (size_t i = 0; i < eigenvalues.size(); ++i) {
@@ -167,14 +168,20 @@ namespace Linear {
 
             std::vector<Vector<T,N>> basis = NullSpace(A - eigenvalues[i]*eye);
             if (basis.size() != multiplicity) {
-                Vector<T,N> b0;
-                if (!isReal || !IsReal(eigenvalues[i]))
-                    b0 = Random<T>(A.NumRows(), 1, Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
-                else
-                    b0 = Random<T>(A.NumRows(), 1, T(-1), T(1));
-                Vector<T,N> eigenvector = InverseIteration(A, b0, eigenvalues[i], 25);
-                for (size_t j = 0; j < multiplicity; ++j)
-                    eigenpairs.push_back(std::make_pair(eigenvalues[i], eigenvector));
+                if (Determinant(A-eigenvalues[i]*eye) != T(0)) {
+                    Vector<T,N> b0;
+                    if (!isReal || !IsReal(eigenvalues[i]))
+                        b0 = Random<T>(A.NumRows(), 1, Complex<T>(T(-1),T(-1)), Complex<T>(T(1),T(1)));
+                    else
+                        b0 = Random<T>(A.NumRows(), 1, T(-1), T(1));
+                    Vector<T,N> eigenvector = InverseIteration(A, b0, eigenvalues[i], 25);
+                    for (size_t j = 0; j < multiplicity; ++j)
+                        eigenpairs.push_back(std::make_pair(eigenvalues[i], eigenvector));
+                }
+                else {
+                    for (size_t j = 0; j < multiplicity; ++j)
+                        eigenpairs.push_back(std::make_pair(eigenvalues[i], Zero<T>(A.NumColumns(),1)));
+                }
             }
             else {
                 for (size_t j = 0; j < multiplicity; ++j)
@@ -217,27 +224,27 @@ namespace Linear {
             return EigenvectorHelper(A, std::vector<Complex<T>>({lambda1, lambda2}));
         }
 
-        std::pair<SquareMatrix<T,N,Flags>,SquareMatrix<T,N,Flags>> schur = Schur(A);
+        Schur<T,N,Flags> schur(A);
         bool schurFailed = false;
         std::vector<Complex<T>> eigenvalues;
         for (size_t i = 0; i < A.NumRows(); ++i) {
-            if (i == A.NumRows()-1 || Abs(schur.second(i+1,i)) < T(Tol)) { // 1x1 block.
+            if (i == A.NumRows()-1 || Abs(schur.U(i+1,i)) < T(Tol)) { // 1x1 block.
                 // Check it's all zeros below
                 for (size_t r=i+2; r < A.NumRows(); ++r) {
-                    if (Abs(schur.second(r,i)) >= T(Tol)) {
+                    if (Abs(schur.U(r,i)) >= T(Tol)) {
                         schurFailed = true;
                         break;
                     }
                 }
                 if (schurFailed)
                     break;
-                eigenvalues.push_back(schur.first(i,i));
+                eigenvalues.push_back(schur.U(i,i));
             }
-            else if (i < A.NumRows()-1 && Abs(schur.second(i+1,i)) >= T(Tol)) { // 2x2 block.
+            else if (i < A.NumRows()-1 && Abs(schur.U(i+1,i)) >= T(Tol)) { // 2x2 block.
                 // Check it's all zeros below
                 for (size_t c=i; c <= i+1; ++c) {
                     for (size_t r=i+2; r < A.NumRows(); ++r) {
-                        if (Abs(schur.second(r,c)) >= T(Tol)) {
+                        if (Abs(schur.U(r,c)) >= T(Tol)) {
                             schurFailed = true;
                             break;
                         }
@@ -246,7 +253,7 @@ namespace Linear {
                 if (schurFailed)
                     break;
 
-                SquareMatrix<T,2,Flags> block = SubMatrix<2,2>(schur.first, i, i);
+                SquareMatrix<T,2,Flags> block = SubMatrix<2,2>(schur.U, i, i);
                 std::vector<std::pair<Complex<T>,Vector<T,2>>> eig = Eigen(block);
                 eigenvalues.push_back(eig[0].first);
                 eigenvalues.push_back(eig[1].first);

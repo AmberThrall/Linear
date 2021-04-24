@@ -4,81 +4,91 @@ using namespace Linear;
 
 int main() {
     try {
-        Matrix3f a = {
+        Matrix3f A = {
             {12,-51,4}, {6,167,-68}, {-4,24,-41}
         };
 
-        std::pair<Matrix3f,Matrix3f> qr = QR(a);
-        std::cout << "a = " << a << std::endl;
-        std::cout << "q = " << qr.first << std::endl;
-        std::cout << "r = " << qr.second << std::endl;
-        std::cout << "qr = " << qr.first*qr.second << std::endl;
-        std::cout << "q^Tq = " << Transpose(qr.first)*qr.first << std::endl;
+        QR<float,3,3> qr(A);
+        std::cout << "A = " << A << std::endl;
+        std::cout << "Q = " << qr.Q << std::endl;
+        std::cout << "R = " << qr.R << std::endl;
+        std::cout << "QR = " << qr.Q*qr.R << std::endl;
+        std::cout << "Q*Q = " << ConjugateTranspose(qr.Q)*qr.Q << std::endl;
+        std::cout << "=======================" << std::endl;
 
         Matrix3f B = {
             {1,2,3},{4,5,6},{7,8,9}
         };
-        std::tuple<Matrix3f,Matrix3f,Matrix3f> lup = LUP(B);
+        LUP<float,3> lup(B);
         std::cout << "B = " << B << std::endl;
-        std::cout << "L = " << std::get<0>(lup) << std::endl;
-        std::cout << "U = " << std::get<1>(lup) << std::endl;
-        std::cout << "P = " << std::get<2>(lup) << std::endl;
-        std::cout << "PB = " << std::get<2>(lup)*B << std::endl;
-        std::cout << "LU = " << std::get<0>(lup)*std::get<1>(lup) << std::endl;
+        std::cout << "L = " << lup.L << std::endl;
+        std::cout << "U = " << lup.U << std::endl;
+        std::cout << "P = " << lup.P << std::endl;
+        std::cout << "PB = " << lup.P*B << std::endl;
+        std::cout << "LU = " << lup.L*lup.U << std::endl;
+        std::cout << "=======================" << std::endl;
 
-        Matrix3f c = {
+        Matrix3d C = {
             {4,12,-16}, {12,37,-43}, {-16,-43,98}
         };
 
-        Matrix3f l = LL(c);
-        std::cout << "c = " << c << std::endl;
-        std::cout << "l = " << l << std::endl;
-        std::cout << "ll* = " << l*ConjugateTranspose(l) << std::endl;
+        Cholesky<double,3> cholesky(C);
+        std::cout << "C = " << C << std::endl;
+        std::cout << "L = " << cholesky.L << std::endl;
+        std::cout << "D = " << cholesky.D << std::endl;
+        std::cout << "LDL* = " << cholesky.L*cholesky.D*cholesky.Lh << std::endl;
+        std::cout << "=======================" << std::endl;
 
-        std::pair<Matrix3f,Matrix3f> ld = LDL(c);
-        std::cout << "c = " << c << std::endl;
-        std::cout << "l = " << ld.first << std::endl;
-        std::cout << "d = " << ld.second << std::endl;
-        std::cout << "ldl* = " << ld.first*ld.second*ConjugateTranspose(ld.first) << std::endl;
-
-        Matrix2f d = {
+        Matrix2d E = {
             {1,0}, {1,3}
         };
-        std::tuple<Matrix2f,Matrix2f,Matrix2f> qd = Eigendecomposition(d);
-        std::cout << "d = " << d << std::endl;
-        std::cout << "q = " << std::get<0>(qd) << std::endl;
-        std::cout << "d = " << std::get<1>(qd) << std::endl;
-        std::cout << "q^{-1} = " << std::get<2>(qd) << std::endl;
-        std::cout << "qdq^{-1} = " << std::get<0>(qd)*std::get<1>(qd)*std::get<2>(qd) << std::endl;
+        Eigendecomposition<double,2> eigen(E);
+        std::cout << "E = " << E << std::endl;
+        std::cout << "Q = " << eigen.Q << std::endl;
+        std::cout << "D = " << eigen.D << std::endl;
+        std::cout << "Q^{-1} = " << eigen.Qinv << std::endl;
+        std::cout << "QDQ^{-1} = " << eigen.Q*eigen.D*eigen.Qinv << std::endl;
+        std::cout << "=======================" << std::endl;
 
-        Matrix<float,4,5> e = {
-            {1,0,0,0,2}, {0,0,3,0,0}, {0,0,0,0,0}, {0,2,0,0,0}
-        };
-        std::tuple<Matrix4f,Matrix<float,4,5>,Matrix<float,5,5>> svd = SVD(e);
-        std::cout << "e = " << e << std::endl;
-        std::cout << "u = " << std::get<0>(svd) << std::endl;
-        std::cout << "s = " << std::get<1>(svd) << std::endl;
-        std::cout << "v* = " << ConjugateTranspose(std::get<2>(svd)) << std::endl;
-        std::cout << "usv* = " << std::get<0>(svd)*std::get<1>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
-        std::cout << "uu* = " << std::get<0>(svd)*ConjugateTranspose(std::get<0>(svd)) << std::endl;
-        std::cout << "vv* = " << std::get<2>(svd)*ConjugateTranspose(std::get<2>(svd)) << std::endl;
-
-        Matrix4d F  = {
+        Matrix4d F = {
             {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}
         };
-        std::pair<Matrix4d,Matrix4d> qh = Hessenberg(F);
+        Hessenberg<double,4> hess(F);
         std::cout << "F = " << F << std::endl;
-        std::cout << "Q = " << qh.first << std::endl;
-        std::cout << "H = " << qh.second << std::endl;
-        std::cout << "QHQ* = " << qh.first*qh.second*ConjugateTranspose(qh.first) << std::endl;
-        std::cout << "QQ* = " << qh.first*ConjugateTranspose(qh.first);
+        std::cout << "Q = " << hess.Q << std::endl;
+        std::cout << "H = " << hess.H << std::endl;
+        std::cout << "QHQ* = " << hess.Q*hess.H*hess.Qh << std::endl;
+        std::cout << "QQ* = " << hess.Q*hess.Qh << std::endl;
+        std::cout << "=======================" << std::endl;
 
-        std::pair<Matrix4d,Matrix4d> schur = Schur(F);
+        Schur<double,4> schur(F);
         std::cout << "F = " << F << std::endl;
-        std::cout << "Q = " << schur.first << std::endl;
-        std::cout << "U = " << schur.second << std::endl;
-        std::cout << "QUQ* = " << schur.second*schur.first*ConjugateTranspose(schur.second) << std::endl;
-        std::cout << "UU* = " << schur.second*ConjugateTranspose(schur.second);
+        std::cout << "Q = " << schur.Q << std::endl;
+        std::cout << "U = " << schur.U << std::endl;
+        std::cout << "QUQ* = " << schur.Q*schur.U*schur.Qh << std::endl;
+        std::cout << "QQ* = " << schur.Q*schur.Qh;
+        std::cout << "=======================" << std::endl;
+
+        Matrix<double,4,5> G = {
+            {1,0,0,0,2}, {0,0,3,0,0}, {0,0,0,0,0}, {0,2,0,0,0}
+        };
+        SVD<double,4,5> svd(G);
+        std::cout << "G = " << G << std::endl;
+        std::cout << "U = " << svd.U << std::endl;
+        std::cout << "S = " << svd.S << std::endl;
+        std::cout << "V* = " << svd.Vh << std::endl;
+        std::cout << "USV* = " << svd.U*svd.S*svd.Vh << std::endl;
+        std::cout << "UU* = " << svd.U*ConjugateTranspose(svd.U) << std::endl;
+        std::cout << "V*V = " << svd.Vh*ConjugateTranspose(svd.Vh) << std::endl;
+        std::cout << "=======================" << std::endl;
+
+        SVD<double,4,5,0,THIN_SVD> svdThin(G);
+        std::cout << "G = " << G << std::endl;
+        std::cout << "U = " << svdThin.U << std::endl;
+        std::cout << "S = " << svdThin.S << std::endl;
+        std::cout << "V* = " << svdThin.Vh << std::endl;
+        std::cout << "USV = " << svdThin.U*svdThin.S*svdThin.Vh << std::endl;
+        std::cout << "=======================" << std::endl;
     }
     catch (const char* what) {
         std::cerr << "Error: " << what << std::endl;
