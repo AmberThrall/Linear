@@ -9,3 +9,11 @@
 #include "Functions.h"
 #include "Misc.h"
 #include "Types.h"
+
+/*! \mainpage Overview
+ *
+ * This is the doxygen-generated documentation for Linear. If you're just starting with Linear, I suggest the
+ * [**Getting Started**](md__getting_started.html) guide.
+ *
+ * Otherwise, feel free to browse the tree on the left.
+ */

@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -31,6 +40,21 @@
    <div id="projectname">Linear
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -42,17 +66,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('namespacemembers_type.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,8 +120,35 @@ $(function() {
 <li>Matrix2f
 : <a class="el" href="namespace_linear.html#a37529cd9d32aca0e73ba55fa52d961e5">Linear</a>
 </li>
-<li>Matrix2i
-: <a class="el" href="namespace_linear.html#ac0dd0f05e90405c6ff6654623e1ad117">Linear</a>
+<li>Matrix2ld
+: <a class="el" href="namespace_linear.html#a9548eb90f1a8d2756a8b4c60f3c9a93b">Linear</a>
+</li>
+<li>Matrix2x2d
+: <a class="el" href="namespace_linear.html#a3d0a36f742f2b4000ac2a567d1d857f5">Linear</a>
+</li>
+<li>Matrix2x2f
+: <a class="el" href="namespace_linear.html#a231999f00ad9dc6f67ba717b0152aa6d">Linear</a>
+</li>
+<li>Matrix2x2ld
+: <a class="el" href="namespace_linear.html#a2fd0bf390d0682431d83432dbc0c3d88">Linear</a>
+</li>
+<li>Matrix2x3d
+: <a class="el" href="namespace_linear.html#ac726fe51a2680dd5434f8dad85c98b64">Linear</a>
+</li>
+<li>Matrix2x3f
+: <a class="el" href="namespace_linear.html#a38cd8dfe7c48949f3ebc094292201215">Linear</a>
+</li>
+<li>Matrix2x3ld
+: <a class="el" href="namespace_linear.html#a643c41a70f766632d827f42c330219f6">Linear</a>
+</li>
+<li>Matrix2x4d
+: <a class="el" href="namespace_linear.html#a6eab59893dee13ad66bf48ed9146a78b">Linear</a>
+</li>
+<li>Matrix2x4f
+: <a class="el" href="namespace_linear.html#aba3e857eeed419fa3d1ac1324d5cd985">Linear</a>
+</li>
+<li>Matrix2x4ld
+: <a class="el" href="namespace_linear.html#af454be76a8ff1aa69f0de7527585c631">Linear</a>
 </li>
 <li>Matrix3d
 : <a class="el" href="namespace_linear.html#a9f82e64d01c7efdbe9217c33f954a83c">Linear</a>
@@ -99,8 +156,35 @@ $(function() {
 <li>Matrix3f
 : <a class="el" href="namespace_linear.html#ac266881335bc3b75713ca8a7c9d1934e">Linear</a>
 </li>
-<li>Matrix3i
-: <a class="el" href="namespace_linear.html#a9ab35684bf5fe15b91e1195808755ef4">Linear</a>
+<li>Matrix3ld
+: <a class="el" href="namespace_linear.html#a3c325a7b3aa16b5dbb44fa759affb9ad">Linear</a>
+</li>
+<li>Matrix3x2d
+: <a class="el" href="namespace_linear.html#a9911e5ada4ccff6bc1168168df68a584">Linear</a>
+</li>
+<li>Matrix3x2f
+: <a class="el" href="namespace_linear.html#aedecbc7b449cc6a88e4c1aca81b3d046">Linear</a>
+</li>
+<li>Matrix3x2ld
+: <a class="el" href="namespace_linear.html#a03b132748a0849fd4501504e1c7eb20e">Linear</a>
+</li>
+<li>Matrix3x3d
+: <a class="el" href="namespace_linear.html#a8a7636a0d24c3c7feb3545a1ce481dee">Linear</a>
+</li>
+<li>Matrix3x3f
+: <a class="el" href="namespace_linear.html#a6566e3ab21956423a617cc785c0d78ba">Linear</a>
+</li>
+<li>Matrix3x3ld
+: <a class="el" href="namespace_linear.html#a77b174d0bd742d3dedc4fe4a6ef0e8c8">Linear</a>
+</li>
+<li>Matrix3x4d
+: <a class="el" href="namespace_linear.html#a4a57e8d7ff39a6e419ef5fec547ae68c">Linear</a>
+</li>
+<li>Matrix3x4f
+: <a class="el" href="namespace_linear.html#a54e80d8472d758098bf38c3a2f2066bb">Linear</a>
+</li>
+<li>Matrix3x4ld
+: <a class="el" href="namespace_linear.html#aa55486f6cc74db200f2e8a706480dc13">Linear</a>
 </li>
 <li>Matrix4d
 : <a class="el" href="namespace_linear.html#af7e63e09c10d2ef0922707eb60277552">Linear</a>
@@ -108,8 +192,35 @@ $(function() {
 <li>Matrix4f
 : <a class="el" href="namespace_linear.html#aad93cd9401b69236b2c39009a33deee2">Linear</a>
 </li>
-<li>Matrix4i
-: <a class="el" href="namespace_linear.html#a47201c62cde153a7994893e1f78692ec">Linear</a>
+<li>Matrix4ld
+: <a class="el" href="namespace_linear.html#ac8324f482d08105a6972711c4a9e476c">Linear</a>
+</li>
+<li>Matrix4x2d
+: <a class="el" href="namespace_linear.html#a75a56d416129b5e52a8822f48adacd9b">Linear</a>
+</li>
+<li>Matrix4x2f
+: <a class="el" href="namespace_linear.html#a750bcbf501fe4ba80b2abd0158f2da6b">Linear</a>
+</li>
+<li>Matrix4x2ld
+: <a class="el" href="namespace_linear.html#abedfd09cb62392f48c4d8eadaa8f973f">Linear</a>
+</li>
+<li>Matrix4x3d
+: <a class="el" href="namespace_linear.html#a8c45155fe6c54887103b5d073deb1e3f">Linear</a>
+</li>
+<li>Matrix4x3f
+: <a class="el" href="namespace_linear.html#a9196540c77acc632ccea9d16bd8298ba">Linear</a>
+</li>
+<li>Matrix4x3ld
+: <a class="el" href="namespace_linear.html#a62bb8324eba6429ceba157b2f0e8c084">Linear</a>
+</li>
+<li>Matrix4x4d
+: <a class="el" href="namespace_linear.html#a5e313ad14772077a7d23a481978d4fcc">Linear</a>
+</li>
+<li>Matrix4x4f
+: <a class="el" href="namespace_linear.html#a0926ffe24cd681b340485b45ed4cfbbb">Linear</a>
+</li>
+<li>Matrix4x4ld
+: <a class="el" href="namespace_linear.html#a7627512516503caddac173ed9d92c21f">Linear</a>
 </li>
 <li>MatrixXd
 : <a class="el" href="namespace_linear.html#a5139228f8ffd30d77722e861bc340560">Linear</a>
@@ -117,8 +228,8 @@ $(function() {
 <li>MatrixXf
 : <a class="el" href="namespace_linear.html#a1785cf86a17d782a242c1d0fa02664af">Linear</a>
 </li>
-<li>MatrixXi
-: <a class="el" href="namespace_linear.html#a850f7d84cd5a1cec3d72a0015b8af049">Linear</a>
+<li>MatrixXld
+: <a class="el" href="namespace_linear.html#a986b5e50e39b869ac219d199cfb9c3c9">Linear</a>
 </li>
 </ul>
 
@@ -133,8 +244,8 @@ $(function() {
 <li>RowVector2f
 : <a class="el" href="namespace_linear.html#a3d5d6e5a4098d02d818eb08bbed27dcd">Linear</a>
 </li>
-<li>RowVector2i
-: <a class="el" href="namespace_linear.html#a5dcc2d295ae27aed5de14e315fc43771">Linear</a>
+<li>RowVector2ld
+: <a class="el" href="namespace_linear.html#a05077dce6cf433df1a070ea914c48581">Linear</a>
 </li>
 <li>RowVector3d
 : <a class="el" href="namespace_linear.html#a5df1beff4be8735784186c20fb380ba9">Linear</a>
@@ -142,8 +253,8 @@ $(function() {
 <li>RowVector3f
 : <a class="el" href="namespace_linear.html#a74fc933d1470d702af99a6d04e24eba8">Linear</a>
 </li>
-<li>RowVector3i
-: <a class="el" href="namespace_linear.html#abb41f9fbc4b6ccdb1ee44a884d09b6d3">Linear</a>
+<li>RowVector3ld
+: <a class="el" href="namespace_linear.html#a5c4419c119d0317ec146a207d5d0f1f0">Linear</a>
 </li>
 <li>RowVector4d
 : <a class="el" href="namespace_linear.html#af213d660fb68360ca761d1b0fa614efa">Linear</a>
@@ -151,8 +262,8 @@ $(function() {
 <li>RowVector4f
 : <a class="el" href="namespace_linear.html#ae79a928c9a954cea266f4ab570e1babb">Linear</a>
 </li>
-<li>RowVector4i
-: <a class="el" href="namespace_linear.html#a37158bcc169e311b75dcd17174783a14">Linear</a>
+<li>RowVector4ld
+: <a class="el" href="namespace_linear.html#a4f6c0ca21f5298ee4f87a80925ca7189">Linear</a>
 </li>
 <li>RowVectorXd
 : <a class="el" href="namespace_linear.html#a1b1b5a12d11bdb75ae13a725c9889f5e">Linear</a>
@@ -160,8 +271,8 @@ $(function() {
 <li>RowVectorXf
 : <a class="el" href="namespace_linear.html#a551d041e1197ce0caa7056d1a8b6f516">Linear</a>
 </li>
-<li>RowVectorXi
-: <a class="el" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">Linear</a>
+<li>RowVectorXld
+: <a class="el" href="namespace_linear.html#a1556fa3843894b8d034023df49fd8329">Linear</a>
 </li>
 </ul>
 
@@ -183,8 +294,8 @@ $(function() {
 <li>Vector2f
 : <a class="el" href="namespace_linear.html#a453ced1a00e94d167e83202dfcdcbc6f">Linear</a>
 </li>
-<li>Vector2i
-: <a class="el" href="namespace_linear.html#aaf23e6c2db37a625f7fad20d5b4591e4">Linear</a>
+<li>Vector2ld
+: <a class="el" href="namespace_linear.html#ab37da7eef963bfd9bca73d9039159470">Linear</a>
 </li>
 <li>Vector3d
 : <a class="el" href="namespace_linear.html#a88ec60e790bab6031c6d6a52531eb9e1">Linear</a>
@@ -192,8 +303,8 @@ $(function() {
 <li>Vector3f
 : <a class="el" href="namespace_linear.html#a051ad58e76a5595f80e7001df279afa7">Linear</a>
 </li>
-<li>Vector3i
-: <a class="el" href="namespace_linear.html#a3013c839d596121f7f8de5d8f16c0f96">Linear</a>
+<li>Vector3ld
+: <a class="el" href="namespace_linear.html#a89c8f9c97e2b14e7eeb485b49218bfbf">Linear</a>
 </li>
 <li>Vector4d
 : <a class="el" href="namespace_linear.html#ac5dde96553dbb3fc404dc26ba407a634">Linear</a>
@@ -201,8 +312,8 @@ $(function() {
 <li>Vector4f
 : <a class="el" href="namespace_linear.html#a50d03fdceb34e3c4bbdeb7b5f657adfd">Linear</a>
 </li>
-<li>Vector4i
-: <a class="el" href="namespace_linear.html#af06af543b90d0d4b6545375718bdcbf7">Linear</a>
+<li>Vector4ld
+: <a class="el" href="namespace_linear.html#ab45cb5a6efe5d8a0a146534e7e40d694">Linear</a>
 </li>
 <li>VectorXd
 : <a class="el" href="namespace_linear.html#a8a5cd091f3064dff9950231671bf0b78">Linear</a>
@@ -210,14 +321,17 @@ $(function() {
 <li>VectorXf
 : <a class="el" href="namespace_linear.html#a897f4aebd8b70aaaaf5c0486bea6345e">Linear</a>
 </li>
-<li>VectorXi
-: <a class="el" href="namespace_linear.html#adf0b9c33a0d2a4fd67340a776fd196a8">Linear</a>
+<li>VectorXld
+: <a class="el" href="namespace_linear.html#a732f55f348d0c074bda21f964d3fb441">Linear</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -31,6 +40,21 @@
    <div id="projectname">Linear
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -42,16 +66,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_vector_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -66,11 +97,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
@@ -98,14 +124,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Linear::Vector</a> = Matrix&lt; T, N, 1 &gt;</td></tr>
 <tr class="separator:a89a3a94b7d8b9a7b36e9f8c98f3a2f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf23e6c2db37a625f7fad20d5b4591e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aaf23e6c2db37a625f7fad20d5b4591e4">Linear::Vector2i</a> = Vector&lt; int, 2 &gt;</td></tr>
-<tr class="separator:aaf23e6c2db37a625f7fad20d5b4591e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3013c839d596121f7f8de5d8f16c0f96"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3013c839d596121f7f8de5d8f16c0f96">Linear::Vector3i</a> = Vector&lt; int, 3 &gt;</td></tr>
-<tr class="separator:a3013c839d596121f7f8de5d8f16c0f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06af543b90d0d4b6545375718bdcbf7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af06af543b90d0d4b6545375718bdcbf7">Linear::Vector4i</a> = Vector&lt; int, 4 &gt;</td></tr>
-<tr class="separator:af06af543b90d0d4b6545375718bdcbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf0b9c33a0d2a4fd67340a776fd196a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#adf0b9c33a0d2a4fd67340a776fd196a8">Linear::VectorXi</a> = Vector&lt; int, Dynamic &gt;</td></tr>
-<tr class="separator:adf0b9c33a0d2a4fd67340a776fd196a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453ced1a00e94d167e83202dfcdcbc6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a453ced1a00e94d167e83202dfcdcbc6f">Linear::Vector2f</a> = Vector&lt; float, 2 &gt;</td></tr>
 <tr class="separator:a453ced1a00e94d167e83202dfcdcbc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051ad58e76a5595f80e7001df279afa7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a051ad58e76a5595f80e7001df279afa7">Linear::Vector3f</a> = Vector&lt; float, 3 &gt;</td></tr>
@@ -122,17 +140,17 @@ Typedefs</h2></td></tr>
 <tr class="separator:ac5dde96553dbb3fc404dc26ba407a634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5cd091f3064dff9950231671bf0b78"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8a5cd091f3064dff9950231671bf0b78">Linear::VectorXd</a> = Vector&lt; double, Dynamic &gt;</td></tr>
 <tr class="separator:a8a5cd091f3064dff9950231671bf0b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37da7eef963bfd9bca73d9039159470"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab37da7eef963bfd9bca73d9039159470">Linear::Vector2ld</a> = Vector&lt; long double, 2 &gt;</td></tr>
+<tr class="separator:ab37da7eef963bfd9bca73d9039159470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c8f9c97e2b14e7eeb485b49218bfbf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a89c8f9c97e2b14e7eeb485b49218bfbf">Linear::Vector3ld</a> = Vector&lt; long double, 3 &gt;</td></tr>
+<tr class="separator:a89c8f9c97e2b14e7eeb485b49218bfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45cb5a6efe5d8a0a146534e7e40d694"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab45cb5a6efe5d8a0a146534e7e40d694">Linear::Vector4ld</a> = Vector&lt; long double, 4 &gt;</td></tr>
+<tr class="separator:ab45cb5a6efe5d8a0a146534e7e40d694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732f55f348d0c074bda21f964d3fb441"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a732f55f348d0c074bda21f964d3fb441">Linear::VectorXld</a> = Vector&lt; long double, Dynamic &gt;</td></tr>
+<tr class="separator:a732f55f348d0c074bda21f964d3fb441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a35a747d6e3c877b1aeeaad3b1951f8e1">Linear::RowVector</a> = Matrix&lt; T, 1, N &gt;</td></tr>
 <tr class="separator:a35a747d6e3c877b1aeeaad3b1951f8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dcc2d295ae27aed5de14e315fc43771"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5dcc2d295ae27aed5de14e315fc43771">Linear::RowVector2i</a> = RowVector&lt; int, 2 &gt;</td></tr>
-<tr class="separator:a5dcc2d295ae27aed5de14e315fc43771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb41f9fbc4b6ccdb1ee44a884d09b6d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#abb41f9fbc4b6ccdb1ee44a884d09b6d3">Linear::RowVector3i</a> = RowVector&lt; int, 3 &gt;</td></tr>
-<tr class="separator:abb41f9fbc4b6ccdb1ee44a884d09b6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37158bcc169e311b75dcd17174783a14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a37158bcc169e311b75dcd17174783a14">Linear::RowVector4i</a> = RowVector&lt; int, 4 &gt;</td></tr>
-<tr class="separator:a37158bcc169e311b75dcd17174783a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8dee2ac4d5dc4789eed46ccf91c777f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#af8dee2ac4d5dc4789eed46ccf91c777f">Linear::RowVectorXi</a> = RowVector&lt; int, Dynamic &gt;</td></tr>
-<tr class="separator:af8dee2ac4d5dc4789eed46ccf91c777f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d5d6e5a4098d02d818eb08bbed27dcd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a3d5d6e5a4098d02d818eb08bbed27dcd">Linear::RowVector2f</a> = RowVector&lt; float, 2 &gt;</td></tr>
 <tr class="separator:a3d5d6e5a4098d02d818eb08bbed27dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74fc933d1470d702af99a6d04e24eba8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a74fc933d1470d702af99a6d04e24eba8">Linear::RowVector3f</a> = RowVector&lt; float, 3 &gt;</td></tr>
@@ -149,6 +167,14 @@ Typedefs</h2></td></tr>
 <tr class="separator:af213d660fb68360ca761d1b0fa614efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b1b5a12d11bdb75ae13a725c9889f5e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1b1b5a12d11bdb75ae13a725c9889f5e">Linear::RowVectorXd</a> = RowVector&lt; double, Dynamic &gt;</td></tr>
 <tr class="separator:a1b1b5a12d11bdb75ae13a725c9889f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05077dce6cf433df1a070ea914c48581"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a05077dce6cf433df1a070ea914c48581">Linear::RowVector2ld</a> = RowVector&lt; long double, 2 &gt;</td></tr>
+<tr class="separator:a05077dce6cf433df1a070ea914c48581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4419c119d0317ec146a207d5d0f1f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a5c4419c119d0317ec146a207d5d0f1f0">Linear::RowVector3ld</a> = RowVector&lt; long double, 3 &gt;</td></tr>
+<tr class="separator:a5c4419c119d0317ec146a207d5d0f1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6c0ca21f5298ee4f87a80925ca7189"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a4f6c0ca21f5298ee4f87a80925ca7189">Linear::RowVector4ld</a> = RowVector&lt; long double, 4 &gt;</td></tr>
+<tr class="separator:a4f6c0ca21f5298ee4f87a80925ca7189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1556fa3843894b8d034023df49fd8329"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a1556fa3843894b8d034023df49fd8329">Linear::RowVectorXld</a> = RowVector&lt; long double, Dynamic &gt;</td></tr>
+<tr class="separator:a1556fa3843894b8d034023df49fd8329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -210,9 +236,13 @@ Functions</h2></td></tr>
 <tr class="separator:a16daf9e218dcc43cd4a03fbbcce1a2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_vector_8h.html">Vector.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
