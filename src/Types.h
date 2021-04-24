@@ -75,6 +75,45 @@ namespace Linear {
     bool IsDiagonal(const Matrix<T,M,N,Flags>& A) {
         return (IsUpperTriangular(A) && IsLowerTriangular(A));
     }
+    /**
+     * Checks if A is the identity matrix.
+     * @param A MxN matrix
+     * @return True if A is the identity
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsIdentity(const Matrix<T,M,N,Flags>& A) {
+        if (!IsDiagonal(A))
+            return false;
+        for (size_t i = 0; i < A.NumRows(); ++i) {
+            if (Abs(A(i,i)-T(1)) > T(Tol))
+                return false;
+        }
+        return true;
+    }
+    /**
+     * Checks if A is a companion matrix
+     * @param A MxN matrix
+     * @return True if A is a companion matrix
+     */
+    template <typename T, size_t M, size_t N, unsigned int Flags>
+    bool IsCompanion(const Matrix<T,M,N,Flags>& A) {
+        if (!IsSquare(A))
+            return false;
+
+        for (size_t i = 0; i < A.NumColumns()-1; ++i) {
+            if (Abs(A(0,i)) > T(Tol))
+                return false;
+        }
+        for (size_t r = 1; r < A.NumRows(); ++r) {
+            for (size_t c = 0; c < A.NumColumns()-1; ++c) {
+                if (r-1 == c && Abs(A(r,c)-T(1)) > T(Tol))
+                    return false;
+                if (r-1 != c && Abs(A(r,c)) > T(Tol))
+                    return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * Checks if a matrix is symmetric.

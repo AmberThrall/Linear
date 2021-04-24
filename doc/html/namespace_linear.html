@@ -103,7 +103,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct for <a class="el" href="struct_linear_1_1_hessenberg.html" title="Struct for Hessenberg decomposition.">Hessenberg</a> decomposition.  <a href="struct_linear_1_1_hessenberg.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html">Schur</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct for real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for real Schur decomposition.">Schur</a> decomposition.  <a href="struct_linear_1_1_schur.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct for <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition.  <a href="struct_linear_1_1_schur.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct for eigenpairs.  <a href="struct_linear_1_1_eigenpair.html#details">More...</a><br /></td></tr>
@@ -718,20 +718,21 @@ Functions</h2></td></tr>
 <tr class="memitem:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(P==N||P==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>||N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>), <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">InverseIteration</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, P &gt; b0, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; mu, unsigned int max_iterations)</td></tr>
 <tr class="memdesc:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inverse iteration on A with guess mu.  <a href="namespace_linear.html#aa72afaa60a8a2c5a12a9ad62b25fe274">More...</a><br /></td></tr>
 <tr class="separator:aa72afaa60a8a2c5a12a9ad62b25fe274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02cec0240170945e1e08ba414d512c85"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a02cec0240170945e1e08ba414d512c85"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a02cec0240170945e1e08ba414d512c85">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
-<tr class="memdesc:a02cec0240170945e1e08ba414d512c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#a02cec0240170945e1e08ba414d512c85">More...</a><br /></td></tr>
-<tr class="separator:a02cec0240170945e1e08ba414d512c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724b60ca20852de6271aa88f1bdd7407"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
-<tr class="memitem:a724b60ca20852de6271aa88f1bdd7407"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a724b60ca20852de6271aa88f1bdd7407">EigenvectorHelper</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; eigenvalues)</td></tr>
-<tr class="separator:a724b60ca20852de6271aa88f1bdd7407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bd864f931921e1a30fd668137b78fe"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a13bd864f931921e1a30fd668137b78fe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a13bd864f931921e1a30fd668137b78fe">WielandtDeflationAlgorithm</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
+<tr class="memdesc:a13bd864f931921e1a30fd668137b78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation.  <a href="namespace_linear.html#a13bd864f931921e1a30fd668137b78fe">More...</a><br /></td></tr>
+<tr class="separator:a13bd864f931921e1a30fd668137b78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ab0b3eaf397d0a0b65b7f182c6deaf892">Eigenvalues</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenvalues of A.  <a href="namespace_linear.html#ab0b3eaf397d0a0b65b7f182c6deaf892">More...</a><br /></td></tr>
+<tr class="separator:ab0b3eaf397d0a0b65b7f182c6deaf892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498247f6fcf1caa95824099e53ddac04"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a498247f6fcf1caa95824099e53ddac04"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt; T, N &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a498247f6fcf1caa95824099e53ddac04">Eigen</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a498247f6fcf1caa95824099e53ddac04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all eigenpairs of A.  <a href="namespace_linear.html#a498247f6fcf1caa95824099e53ddac04">More...</a><br /></td></tr>
 <tr class="separator:a498247f6fcf1caa95824099e53ddac04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa7846a684bbbd713d8a38163d0c9ba"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:affa7846a684bbbd713d8a38163d0c9ba"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#affa7846a684bbbd713d8a38163d0c9ba">VietaFormulaHelper</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> data[], <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> start, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> end, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> index, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> k, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;sum, const std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; &amp;roots)</td></tr>
-<tr class="separator:affa7846a684bbbd713d8a38163d0c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47bafe9a83309607d4f2f49af582132"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:aa47bafe9a83309607d4f2f49af582132"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#aa47bafe9a83309607d4f2f49af582132">VietaFormulaHelper</a> (<a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> data[], <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> start, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> end, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> index, <a class="el" href="namespace_linear.html#a69a8a2fe40b5aeb42c0d81bb59054520">size_t</a> k, <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt; &amp;sum, const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;roots)</td></tr>
+<tr class="separator:aa47bafe9a83309607d4f2f49af582132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a95ea0604ed3abba521182a7757b38009"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T,(N==<a class="el" href="namespace_linear.html#a4895328b97c3a485bb1481f7c4dfee00">Dynamic</a>?Dynamic:N+1)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a95ea0604ed3abba521182a7757b38009">CharPoly</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a95ea0604ed3abba521182a7757b38009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the characteristic polynomial.  <a href="namespace_linear.html#a95ea0604ed3abba521182a7757b38009">More...</a><br /></td></tr>
@@ -959,6 +960,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a8ace5baab7409ef4333f6e5a7a4a5f5b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a8ace5baab7409ef4333f6e5a7a4a5f5b">IsDiagonal</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a8ace5baab7409ef4333f6e5a7a4a5f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if A is a diagonal matrix.  <a href="namespace_linear.html#a8ace5baab7409ef4333f6e5a7a4a5f5b">More...</a><br /></td></tr>
 <tr class="separator:a8ace5baab7409ef4333f6e5a7a4a5f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad553be0fe4f27c1fbacca91118964b84"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:ad553be0fe4f27c1fbacca91118964b84"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#ad553be0fe4f27c1fbacca91118964b84">IsIdentity</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:ad553be0fe4f27c1fbacca91118964b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if A is the identity matrix.  <a href="namespace_linear.html#ad553be0fe4f27c1fbacca91118964b84">More...</a><br /></td></tr>
+<tr class="separator:ad553be0fe4f27c1fbacca91118964b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d90ec869ba15e389a193e093600810"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
+<tr class="memitem:a73d90ec869ba15e389a193e093600810"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a73d90ec869ba15e389a193e093600810">IsCompanion</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
+<tr class="memdesc:a73d90ec869ba15e389a193e093600810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if A is a companion matrix.  <a href="namespace_linear.html#a73d90ec869ba15e389a193e093600810">More...</a><br /></td></tr>
+<tr class="separator:a73d90ec869ba15e389a193e093600810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a5ffde409dccc3a25bdaeee150843fd"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </td></tr>
 <tr class="memitem:a6a5ffde409dccc3a25bdaeee150843fd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_linear.html#a6a5ffde409dccc3a25bdaeee150843fd">IsSymmetric</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;A)</td></tr>
 <tr class="memdesc:a6a5ffde409dccc3a25bdaeee150843fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a matrix is symmetric.  <a href="namespace_linear.html#a6a5ffde409dccc3a25bdaeee150843fd">More...</a><br /></td></tr>
@@ -4613,18 +4622,18 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 </div><div class="memdoc">
 
 <p>Calculates all eigenpairs of A. </p>
-<p>This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or InverseIteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely \((tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2\). Third, if neither of the first two cases handles the matrix, we attempt to calculate the <a class="el" href="struct_linear_1_1_schur.html" title="Struct for real Schur decomposition.">Schur</a> decomposition of A. If that fails, we resort to calling WielandtDeflationAlgorithm. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or InverseIteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely \((tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2\). Third, if neither of the first two cases handles the matrix, we attempt to calculate the <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition of A. If that fails, we resort to calling WielandtDeflationAlgorithm. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>List of pairs \((\lambda_i,v_i)\) such that \(Av_i\approx \lambda v_i\) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>List of Eigenpairs </dd></dl>
 
 </div>
 </div>
-<a id="a724b60ca20852de6271aa88f1bdd7407"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a724b60ca20852de6271aa88f1bdd7407">&#9670;&nbsp;</a></span>EigenvectorHelper()</h2>
+<a id="ab0b3eaf397d0a0b65b7f182c6deaf892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b3eaf397d0a0b65b7f182c6deaf892">&#9670;&nbsp;</a></span>Eigenvalues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4632,24 +4641,23 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt;T,N&gt; &gt; Linear::EigenvectorHelper </td>
+          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; Linear::Eigenvalues </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>eigenvalues</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates all eigenvalues of A. </p>
+<p>This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or InverseIteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely \((tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2\). Third, if neither of the first two cases handles the matrix, we attempt to calculate the <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition of A. If that fails, we resort to calling WielandtDeflationAlgorithm. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Column vector of eigenvalues. </dd></dl>
 
 </div>
 </div>
@@ -5438,6 +5446,35 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags, size_t P&gt; </
 
 </div>
 </div>
+<a id="a73d90ec869ba15e389a193e093600810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d90ec869ba15e389a193e093600810">&#9670;&nbsp;</a></span>IsCompanion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Linear::IsCompanion </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if A is a companion matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if A is a companion matrix </dd></dl>
+
+</div>
+</div>
 <a id="a8ace5baab7409ef4333f6e5a7a4a5f5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ace5baab7409ef4333f6e5a7a4a5f5b">&#9670;&nbsp;</a></span>IsDiagonal()</h2>
 
@@ -5522,6 +5559,35 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if A is either lower or upper <a class="el" href="struct_linear_1_1_hessenberg.html" title="Struct for Hessenberg decomposition.">Hessenberg</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad553be0fe4f27c1fbacca91118964b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad553be0fe4f27c1fbacca91118964b84">&#9670;&nbsp;</a></span>IsIdentity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Linear::IsIdentity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if A is the identity matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>MxN matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if A is the identity </dd></dl>
 
 </div>
 </div>
@@ -8583,13 +8649,13 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
 
 </div>
 </div>
-<a id="affa7846a684bbbd713d8a38163d0c9ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affa7846a684bbbd713d8a38163d0c9ba">&#9670;&nbsp;</a></span>VietaFormulaHelper()</h2>
+<a id="aa47bafe9a83309607d4f2f49af582132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47bafe9a83309607d4f2f49af582132">&#9670;&nbsp;</a></span>VietaFormulaHelper()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void Linear::VietaFormulaHelper </td>
@@ -8630,7 +8696,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="class_linear_1_1_complex.html">Complex</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt; T, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>roots</em>&#160;</td>
         </tr>
         <tr>
@@ -8643,8 +8709,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a02cec0240170945e1e08ba414d512c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02cec0240170945e1e08ba414d512c85">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
+<a id="a13bd864f931921e1a30fd668137b78fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bd864f931921e1a30fd668137b78fe">&#9670;&nbsp;</a></span>WielandtDeflationAlgorithm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8652,7 +8718,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="struct_linear_1_1_eigenpair.html">Eigenpair</a>&lt;T,N&gt; &gt; Linear::WielandtDeflationAlgorithm </td>
+          <td class="memname"><a class="el" href="namespace_linear.html#a89a3a94b7d8b9a7b36e9f8c98f3a2f88">Vector</a>&lt;T,N&gt; Linear::WielandtDeflationAlgorithm </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M, N, Flags &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -8679,7 +8745,7 @@ template&lt;typename T , size_t M, size_t N, unsigned int Flags&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>List of pairs \((\lambda_i,v_i)\) such that \(Av_i\approx \lambda v_i\) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Column vector of eigenvalues. </dd></dl>
 
 </div>
 </div>

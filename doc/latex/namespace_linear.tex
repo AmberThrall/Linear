@@ -18,7 +18,7 @@ struct \mbox{\hyperlink{struct_linear_1_1_s_v_d}{SVD}}
 struct \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}
 \begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}}
-\begin{DoxyCompactList}\small\item\em Struct for real \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Struct for \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}
 \begin{DoxyCompactList}\small\item\em Struct for eigenpairs. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}
@@ -376,13 +376,13 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Performs power iteration on A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P$>$ }\\std\+::enable\+\_\+if$<$(P==N$\vert$$\vert$P==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}$\vert$$\vert$N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}), \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aa72afaa60a8a2c5a12a9ad62b25fe274}{Inverse\+Iteration}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, P $>$ b0, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ mu, unsigned int max\+\_\+iterations)
 \begin{DoxyCompactList}\small\item\em Performs inverse iteration on A with guess mu. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a02cec0240170945e1e08ba414d512c85}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a13bd864f931921e1a30fd668137b78fe}{Wielandt\+Deflation\+Algorithm}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, unsigned int max\+\_\+iterations=25)
 \begin{DoxyCompactList}\small\item\em Performs a combination of deflation and power iteration to get every eigenpair of A Since power iteration returns the largest eigenvalue, if we want to compute the eigenvalues we need to use deflation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}{Eigenvector\+Helper}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A, std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ eigenvalues)
-\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_ab0b3eaf397d0a0b65b7f182c6deaf892}{Eigenvalues}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Calculates all eigenvalues of A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\std\+::vector$<$ \mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a498247f6fcf1caa95824099e53ddac04}{Eigen}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Calculates all eigenpairs of A. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}{Vieta\+Formula\+Helper}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} data\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} start, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} end, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} index, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} k, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&sum, const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&roots)
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\void \mbox{\hyperlink{namespace_linear_aa47bafe9a83309607d4f2f49af582132}{Vieta\+Formula\+Helper}} (\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} data\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} start, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} end, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} index, \mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}} k, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&sum, const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&roots)
 \item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T,(N==\mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Dynamic}}?Dynamic\+:N+1)$>$ \mbox{\hyperlink{namespace_linear_a95ea0604ed3abba521182a7757b38009}{Char\+Poly}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Computes the characteristic polynomial. \end{DoxyCompactList}\item 
@@ -498,6 +498,10 @@ void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Seed\+
 \begin{DoxyCompactList}\small\item\em Checks if A is lower triangular form or upper triangular form. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a8ace5baab7409ef4333f6e5a7a4a5f5b}{Is\+Diagonal}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Checks if A is a diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_ad553be0fe4f27c1fbacca91118964b84}{Is\+Identity}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is the identity matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a73d90ec869ba15e389a193e093600810}{Is\+Companion}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Checks if A is a companion matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a6a5ffde409dccc3a25bdaeee150843fd}{Is\+Symmetric}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Checks if a matrix is symmetric. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\bool \mbox{\hyperlink{namespace_linear_a7070e8382c6b41fbdfb124e4d5718183}{Is\+Hermitian}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&A)
@@ -2648,15 +2652,27 @@ This function handles various cases. First, if the matrix is either upper or low
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-List of pairs $(\lambda_i,v_i)$ such that $Av_i\approx \lambda v_i$ 
+List of Eigenpairs 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}\label{namespace_linear_a724b60ca20852de6271aa88f1bdd7407}} 
-\index{Linear@{Linear}!EigenvectorHelper@{EigenvectorHelper}}
-\index{EigenvectorHelper@{EigenvectorHelper}!Linear@{Linear}}
-\doxysubsubsection{\texorpdfstring{EigenvectorHelper()}{EigenvectorHelper()}}
+\mbox{\Hypertarget{namespace_linear_ab0b3eaf397d0a0b65b7f182c6deaf892}\label{namespace_linear_ab0b3eaf397d0a0b65b7f182c6deaf892}} 
+\index{Linear@{Linear}!Eigenvalues@{Eigenvalues}}
+\index{Eigenvalues@{Eigenvalues}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{Eigenvalues()}{Eigenvalues()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$\mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,N$>$ $>$ Linear\+::\+Eigenvector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$}]{eigenvalues }\end{DoxyParamCaption})}
+\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ Linear\+::\+Eigenvalues (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
 
+
+
+Calculates all eigenvalues of A. 
+
+This function handles various cases. First, if the matrix is either upper or lower triangular, then the eigenvalues are simply across the diagonal. Allowing us to pull them directly out of the matrix and use either the Nullspace or Inverse\+Iteration to calculate their corresponding eigenvectors. Second, if the matrix is 2x2, then a easy direct formula exists to calculate the eigenvalues. Namely $(tr(A)\pm\sqrt{tr(A)^2-4det(A)})/2$. Third, if neither of the first two cases handles the matrix, we attempt to calculate the \mbox{\hyperlink{struct_linear_1_1_schur}{Schur}} decomposition of A. If that fails, we resort to calling Wielandt\+Deflation\+Algorithm. 
+\begin{DoxyParams}{Parameters}
+{\em A} & MxN matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Column vector of eigenvalues. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}\label{namespace_linear_a54b0a5444a9eee2e648e14376fd25120}} 
 \index{Linear@{Linear}!EntrywiseDivision@{EntrywiseDivision}}
 \index{EntrywiseDivision@{EntrywiseDivision}!Linear@{Linear}}
@@ -3149,6 +3165,25 @@ More information\+: \href{https://en.wikipedia.org/wiki/Inverse_iteration}{\text
 \begin{DoxyReturn}{Returns}
 Vector v such that $Av\approx\lambda v$ where $\lambda$ is the eigenvalue of A closest to mu 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_a73d90ec869ba15e389a193e093600810}\label{namespace_linear_a73d90ec869ba15e389a193e093600810}} 
+\index{Linear@{Linear}!IsCompanion@{IsCompanion}}
+\index{IsCompanion@{IsCompanion}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{IsCompanion()}{IsCompanion()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
+bool Linear\+::\+Is\+Companion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Checks if A is a companion matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & MxN matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A is a companion matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a8ace5baab7409ef4333f6e5a7a4a5f5b}\label{namespace_linear_a8ace5baab7409ef4333f6e5a7a4a5f5b}} 
 \index{Linear@{Linear}!IsDiagonal@{IsDiagonal}}
 \index{IsDiagonal@{IsDiagonal}!Linear@{Linear}}
@@ -3205,6 +3240,25 @@ Checks if a matrix is \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if A is either lower or upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_linear_ad553be0fe4f27c1fbacca91118964b84}\label{namespace_linear_ad553be0fe4f27c1fbacca91118964b84}} 
+\index{Linear@{Linear}!IsIdentity@{IsIdentity}}
+\index{IsIdentity@{IsIdentity}!Linear@{Linear}}
+\doxysubsubsection{\texorpdfstring{IsIdentity()}{IsIdentity()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
+bool Linear\+::\+Is\+Identity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Checks if A is the identity matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & MxN matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A is the identity 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a69513b3a8904414cce5df833a1f79a27}\label{namespace_linear_a69513b3a8904414cce5df833a1f79a27}} 
 \index{Linear@{Linear}!IsLowerHessenberg@{IsLowerHessenberg}}
@@ -5022,19 +5076,19 @@ Returns the NxM matrix $B=A^\top$ defined by $b_{ij}=a_{ji}$.
 \begin{DoxyReturn}{Returns}
 NxM matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}\label{namespace_linear_affa7846a684bbbd713d8a38163d0c9ba}} 
+\mbox{\Hypertarget{namespace_linear_aa47bafe9a83309607d4f2f49af582132}\label{namespace_linear_aa47bafe9a83309607d4f2f49af582132}} 
 \index{Linear@{Linear}!VietaFormulaHelper@{VietaFormulaHelper}}
 \index{VietaFormulaHelper@{VietaFormulaHelper}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{VietaFormulaHelper()}{VietaFormulaHelper()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void Linear\+::\+Vieta\+Formula\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{data\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{start,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{end,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{sum,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$$>$ \&}]{roots }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+void Linear\+::\+Vieta\+Formula\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{data\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{start,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{end,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{namespace_linear_a69a8a2fe40b5aeb42c0d81bb59054520}{size\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{sum,  }\item[{const \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$ T, N $>$ \&}]{roots }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespace_linear_a02cec0240170945e1e08ba414d512c85}\label{namespace_linear_a02cec0240170945e1e08ba414d512c85}} 
+\mbox{\Hypertarget{namespace_linear_a13bd864f931921e1a30fd668137b78fe}\label{namespace_linear_a13bd864f931921e1a30fd668137b78fe}} 
 \index{Linear@{Linear}!WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}}
 \index{WielandtDeflationAlgorithm@{WielandtDeflationAlgorithm}!Linear@{Linear}}
 \doxysubsubsection{\texorpdfstring{WielandtDeflationAlgorithm()}{WielandtDeflationAlgorithm()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ \\
-std\+::vector$<$\mbox{\hyperlink{struct_linear_1_1_eigenpair}{Eigenpair}}$<$T,N$>$ $>$ Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
+\mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Vector}}$<$T,N$>$ Linear\+::\+Wielandt\+Deflation\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \&}]{A,  }\item[{unsigned int}]{max\+\_\+iterations = {\ttfamily 25} }\end{DoxyParamCaption})}
 
 
 
@@ -5048,7 +5102,7 @@ The general idea is that once an eigenvalue is calculated, we reduce A to a slig
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-List of pairs $(\lambda_i,v_i)$ such that $Av_i\approx \lambda v_i$ 
+Column vector of eigenvalues. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespace_linear_a34ac9809fec2527eb2a9d3339b2f7ff9}\label{namespace_linear_a34ac9809fec2527eb2a9d3339b2f7ff9}} 
 \index{Linear@{Linear}!Zero@{Zero}}

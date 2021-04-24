@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Struct for real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for real Schur decomposition.">Schur</a> decomposition.  
+<p>Struct for <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition.  
  <a href="struct_linear_1_1_schur.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_decomp_8h_source.html">Decomp.h</a>&gt;</code></p>
@@ -92,10 +92,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae20086f8106497f689a7d977abd7c63e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#ae20086f8106497f689a7d977abd7c63e">Schur</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A)</td></tr>
 <tr class="memdesc:ae20086f8106497f689a7d977abd7c63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="struct_linear_1_1_schur.html#ae20086f8106497f689a7d977abd7c63e">More...</a><br /></td></tr>
 <tr class="separator:ae20086f8106497f689a7d977abd7c63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a82df78cf5ab3476b2f834c87466fb5"><td class="memTemplParams" colspan="2">template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
-<tr class="memitem:a5a82df78cf5ab3476b2f834c87466fb5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#a5a82df78cf5ab3476b2f834c87466fb5">Compute</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A, unsigned int max_iterations=25)</td></tr>
-<tr class="memdesc:a5a82df78cf5ab3476b2f834c87466fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the <a class="el" href="struct_linear_1_1_hessenberg.html" title="Struct for Hessenberg decomposition.">Hessenberg</a> decomposition.  <a href="struct_linear_1_1_schur.html#a5a82df78cf5ab3476b2f834c87466fb5">More...</a><br /></td></tr>
-<tr class="separator:a5a82df78cf5ab3476b2f834c87466fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab43fef840fd4ae23b729042226f8852a"><td class="memTemplParams" colspan="2">template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </td></tr>
+<tr class="memitem:ab43fef840fd4ae23b729042226f8852a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_linear_1_1_schur.html#ab43fef840fd4ae23b729042226f8852a">Compute</a> (const <a class="el" href="class_linear_1_1_matrix.html">Matrix</a>&lt; T, M2, N2, Flags2 &gt; &amp;A, unsigned int max_iterations=100)</td></tr>
+<tr class="memdesc:ab43fef840fd4ae23b729042226f8852a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition.  <a href="struct_linear_1_1_schur.html#ab43fef840fd4ae23b729042226f8852a">More...</a><br /></td></tr>
+<tr class="separator:ab43fef840fd4ae23b729042226f8852a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -110,8 +110,8 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T, size_t N, unsigned int Flags = 0&gt;<br />
 struct Linear::Schur&lt; T, N, Flags &gt;</h3>
 
-<p>Struct for real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for real Schur decomposition.">Schur</a> decomposition. </p>
-<p>This struct NxN matrix Q and NxN matrix U such that \(A=QUQ^*\) where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks. The matrix U and A have the same eigenvalues. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Struct for <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition. </p>
+<p>This struct NxN matrix Q and NxN matrix U such that \(A=QUQ^*\) where Q is unitary and U is block upper triangular with block sizes 1x1 and 2x2. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">T</td><td>Type to store matrix entries as. </td></tr>
     <tr><td class="paramname">N</td><td>Number of rows/columns for Q and U (both square). Dynamic is allowed for N. </td></tr>
@@ -159,8 +159,8 @@ template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5a82df78cf5ab3476b2f834c87466fb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a82df78cf5ab3476b2f834c87466fb5">&#9670;&nbsp;</a></span>Compute()</h2>
+<a id="ab43fef840fd4ae23b729042226f8852a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab43fef840fd4ae23b729042226f8852a">&#9670;&nbsp;</a></span>Compute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +182,7 @@ template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>max_iterations</em> = <code>25</code>&#160;</td>
+          <td class="paramname"><em>max_iterations</em> = <code>100</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -197,7 +197,7 @@ template&lt;size_t M2, size_t N2, unsigned int Flags2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Computes the <a class="el" href="struct_linear_1_1_hessenberg.html" title="Struct for Hessenberg decomposition.">Hessenberg</a> decomposition. </p>
+<p>Computes the real <a class="el" href="struct_linear_1_1_schur.html" title="Struct for Schur decomposition.">Schur</a> decomposition. </p>
 <p>If A is not square or Q != N, then an exception is thrown. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>M2xN2 <a class="el" href="class_linear_1_1_matrix.html" title="Class for matrices.">Matrix</a> </td></tr>
@@ -255,7 +255,7 @@ template&lt;typename T , size_t N, unsigned int Flags = 0&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Block upper triangular with 1x1 and 2x2 blocks. </p>
+<p>Block upper triangular with block sizes 1x1 and 2x2. </p>
 
 </div>
 </div>

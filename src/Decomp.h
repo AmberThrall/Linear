@@ -409,9 +409,9 @@ namespace Linear {
     };
 
     /**
-     * Struct for real Schur decomposition.
-     * This struct NxN matrix Q and NxN matrix U such that \f$A=QUQ^*\f$ where Q is unitary and U is block upper triangular with 1x1 and 2x2 blocks.
-     * The matrix U and A have the same eigenvalues.
+     * Struct for Schur decomposition.
+     * This struct NxN matrix Q and NxN matrix U such that \f$A=QUQ^*\f$ where Q is unitary and U is block upper triangular with block
+     * sizes 1x1 and 2x2.
      * @param T Type to store matrix entries as.
      * @param N Number of rows/columns for Q and U (both square). Dynamic is allowed for N.
      * @param Flags Flags to pass to the matrices (default = row major).
@@ -419,7 +419,7 @@ namespace Linear {
     template <typename T, size_t N, unsigned int Flags = 0>
     struct Schur {
         SquareMatrix<T,N,Flags> Q; /*!< Unitary matrix */
-        SquareMatrix<T,N,Flags> U; /*!< Block upper triangular with 1x1 and 2x2 blocks.*/
+        SquareMatrix<T,N,Flags> U; /*!< Block upper triangular with block sizes 1x1 and 2x2. */
         SquareMatrix<T,N,Flags> Qh; /*!< Qh=ConjugateTranspose(Q) */
 
         /**
@@ -431,11 +431,11 @@ namespace Linear {
             Compute(A);
         }
         /**
-        * Computes the Hessenberg decomposition. If A is not square or Q != N, then an exception is thrown.
+        * Computes the real Schur decomposition. If A is not square or Q != N, then an exception is thrown.
         * @param A M2xN2 Matrix
         */
         template <size_t M2, size_t N2, unsigned int Flags2>
-        void Compute(const Matrix<T,M2,N2,Flags2>& A, unsigned int max_iterations = 25) {
+        void Compute(const Matrix<T,M2,N2,Flags2>& A, unsigned int max_iterations = 100) {
             if (!IsSquare(A))
                 throw "Schur decomposition requires a square matrix.";
             if (A.NumColumns() != N && N != Dynamic)
@@ -453,9 +453,8 @@ namespace Linear {
             for (size_t i = A.NumRows()-1; i >= 1; i--) {
                 size_t k = 0;
                 while (k < max_iterations && Abs(this->U(i,i-1)) > T(Tol)) {
-                    Complex<T> sigma = U(i,i);
-                    QR<T,N,N,Flags> qr(this->U-sigma*eye);
-                    this->U = qr.R*qr.Q + sigma*eye;
+                    QR<T,N,N,Flags> qr(this->U);
+                    this->U = qr.R*qr.Q;
                     this->Q = this->Q*qr.Q;
                     k += 1;
                 }
