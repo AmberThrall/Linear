@@ -1,0 +1,98 @@
+\hypertarget{_vector_8h}{}\doxysection{src/\+Vector.h File Reference}
+\label{_vector_8h}\index{src/Vector.h@{src/Vector.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespace_linear_a89a3a94b7d8b9a7b36e9f8c98f3a2f88}{Linear\+::\+Vector}} = Matrix$<$ T, N, 1 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_aaf23e6c2db37a625f7fad20d5b4591e4}{Linear\+::\+Vector2i}} = Vector$<$ int, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a3013c839d596121f7f8de5d8f16c0f96}{Linear\+::\+Vector3i}} = Vector$<$ int, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_af06af543b90d0d4b6545375718bdcbf7}{Linear\+::\+Vector4i}} = Vector$<$ int, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_adf0b9c33a0d2a4fd67340a776fd196a8}{Linear\+::\+Vector\+Xi}} = Vector$<$ int, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a453ced1a00e94d167e83202dfcdcbc6f}{Linear\+::\+Vector2f}} = Vector$<$ float, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a051ad58e76a5595f80e7001df279afa7}{Linear\+::\+Vector3f}} = Vector$<$ float, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a50d03fdceb34e3c4bbdeb7b5f657adfd}{Linear\+::\+Vector4f}} = Vector$<$ float, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a897f4aebd8b70aaaaf5c0486bea6345e}{Linear\+::\+Vector\+Xf}} = Vector$<$ float, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_ad3596b0fd73e199a0421814642ef721e}{Linear\+::\+Vector2d}} = Vector$<$ double, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a88ec60e790bab6031c6d6a52531eb9e1}{Linear\+::\+Vector3d}} = Vector$<$ double, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_ac5dde96553dbb3fc404dc26ba407a634}{Linear\+::\+Vector4d}} = Vector$<$ double, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a8a5cd091f3064dff9950231671bf0b78}{Linear\+::\+Vector\+Xd}} = Vector$<$ double, Dynamic $>$
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespace_linear_a35a747d6e3c877b1aeeaad3b1951f8e1}{Linear\+::\+Row\+Vector}} = Matrix$<$ T, 1, N $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a5dcc2d295ae27aed5de14e315fc43771}{Linear\+::\+Row\+Vector2i}} = Row\+Vector$<$ int, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_abb41f9fbc4b6ccdb1ee44a884d09b6d3}{Linear\+::\+Row\+Vector3i}} = Row\+Vector$<$ int, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a37158bcc169e311b75dcd17174783a14}{Linear\+::\+Row\+Vector4i}} = Row\+Vector$<$ int, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_af8dee2ac4d5dc4789eed46ccf91c777f}{Linear\+::\+Row\+Vector\+Xi}} = Row\+Vector$<$ int, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a3d5d6e5a4098d02d818eb08bbed27dcd}{Linear\+::\+Row\+Vector2f}} = Row\+Vector$<$ float, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a74fc933d1470d702af99a6d04e24eba8}{Linear\+::\+Row\+Vector3f}} = Row\+Vector$<$ float, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_ae79a928c9a954cea266f4ab570e1babb}{Linear\+::\+Row\+Vector4f}} = Row\+Vector$<$ float, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a551d041e1197ce0caa7056d1a8b6f516}{Linear\+::\+Row\+Vector\+Xf}} = Row\+Vector$<$ float, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a030dff8ce7e1eb2b81db7b78790db2f2}{Linear\+::\+Row\+Vector2d}} = Row\+Vector$<$ double, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a5df1beff4be8735784186c20fb380ba9}{Linear\+::\+Row\+Vector3d}} = Row\+Vector$<$ double, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_af213d660fb68360ca761d1b0fa614efa}{Linear\+::\+Row\+Vector4d}} = Row\+Vector$<$ double, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a1b1b5a12d11bdb75ae13a725c9889f5e}{Linear\+::\+Row\+Vector\+Xd}} = Row\+Vector$<$ double, Dynamic $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N$>$ }\\Vector$<$ T, P $>$ \mbox{\hyperlink{namespace_linear_ae3ce3207a36cef86615394b93f344f91}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, N $>$ \&v, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Constructs a subvector of a column vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\Vector$<$ T, Dynamic $>$ \mbox{\hyperlink{namespace_linear_ad13f35e7fe5c5fc14e44a480adf058a0}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, N $>$ \&v, size\+\_\+t size, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Constructs a subvector of a column vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N$>$ }\\Row\+Vector$<$ T, P $>$ \mbox{\hyperlink{namespace_linear_a2b6823b75a547940033ddfd84037e4f2}{Linear\+::\+Sub\+Vector}} (const Row\+Vector$<$ T, N $>$ \&v, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Constructs a subvector of a row vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\Row\+Vector$<$ T, Dynamic $>$ \mbox{\hyperlink{namespace_linear_a41b13e2b69f9cc5b7e835ffb916c6404}{Linear\+::\+Sub\+Vector}} (const Row\+Vector$<$ T, N $>$ \&v, size\+\_\+t size, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Constructs a subvector of a row vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T $>$ }\\Vector$<$ T, P $>$ \mbox{\hyperlink{namespace_linear_a88b35348fb5414d74f673fca6d41488f}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, 1 $>$ \&v, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Handles subvector in the size 1 case. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\Vector$<$ T, Dynamic $>$ \mbox{\hyperlink{namespace_linear_a932c6583bdc57530a86b4c5ee6f74f2f}{Linear\+::\+Sub\+Vector}} (const Vector$<$ T, 1 $>$ \&v, size\+\_\+t size, size\+\_\+t off=0)
+\begin{DoxyCompactList}\small\item\em Handles subvector in the size 1 case. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\Complex$<$ T $>$ \mbox{\hyperlink{namespace_linear_aea9824e674e82f6dbaa0435514e64894}{Linear\+::\+Dot}} (const Matrix$<$ T, M, N, Flags $>$ \&a, const Matrix$<$ T, P, Q, Flags2 $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Computes the dot product of two vectors a and b both of size N, $\sum{i=0}^{N-1}\overline{a_i}b_i$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aa335597bce965c73014808d379a5e4ef}{Linear\+::\+Normalize}} (Matrix$<$ T, M, N, Flags $>$ v)
+\begin{DoxyCompactList}\small\item\em Normalize a vector, $v=\frac{v}{\|v\|}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a1d7c9f59b6085207a5a193a64513fb0e}{Linear\+::\+Cross}} (const Matrix$<$ T, M, N, Flags $>$ \&a, const Matrix$<$ T, P, Q, Flags2 $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Computes the cross product of two vectors a and b both of length 3. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\Matrix$<$ T, P, Q, Flags2 $>$ \mbox{\hyperlink{namespace_linear_a77d94e43e14353375a9623891abf7674}{Linear\+::\+Proj}} (const Matrix$<$ T, M, N, Flags $>$ \&v, const Matrix$<$ T, P, Q, Flags2 $>$ \&onto)
+\begin{DoxyCompactList}\small\item\em Computes the vector projection $\proj_{onto}v = \frac{Dot(onto,v)}{Dot(onto,onto)}onto$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\std\+::vector$<$ Vector$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a52882b24b8703ab5565cec02174f5f43}{Linear\+::\+Gram\+Schmidt}} (const std\+::vector$<$ Vector$<$ T, N $>$$>$ \&v)
+\begin{DoxyCompactList}\small\item\em Performs Gram-\/\+Schmidt on a list of column vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\std\+::vector$<$ Row\+Vector$<$ T, N $>$ $>$ \mbox{\hyperlink{namespace_linear_a3c113241bb590bf2e6594e48332de47e}{Linear\+::\+Gram\+Schmidt}} (const std\+::vector$<$ Row\+Vector$<$ T, N $>$$>$ \&v)
+\begin{DoxyCompactList}\small\item\em Performs Gram-\/\+Schmidt on a list of row vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ac9d5b1c46e1ccaef77dc4695032a0c95}{Linear\+::\+Gram\+Schmidt}} (Matrix$<$ T, M, N, Flags $>$ A)
+\begin{DoxyCompactList}\small\item\em Performs Gram-\/\+Schmidt on the columns of A. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ Vector$<$ T, 1 $>$ $>$ \mbox{\hyperlink{namespace_linear_a16daf9e218dcc43cd4a03fbbcce1a2ea}{Linear\+::\+Gram\+Schmidt}} (const std\+::vector$<$ Vector$<$ T, 1 $>$$>$ \&v)
+\begin{DoxyCompactList}\small\item\em Performs Gram-\/\+Schmidt on a list of length 1 vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}

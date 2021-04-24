@@ -1,0 +1,108 @@
+\hypertarget{_construction_8h}{}\doxysection{src/\+Construction.h File Reference}
+\label{_construction_8h}\index{src/Construction.h@{src/Construction.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Basics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a85bb94647263800efb2653d7e1247569}{Linear\+::\+Identity}} ()
+\begin{DoxyCompactList}\small\item\em Creates the NxN Identity matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_a3a2fe1649ccee44378fdc5e315a8eda2}{Linear\+::\+Identity}} (size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Dynamically creates the nxn Identity matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a6edaad3ecca76f4d16a089db3106aa21}{Linear\+::\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Creates the MxN all zeros matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_a767c0a935585bb291e0d6ff82f53f823}{Linear\+::\+Zero}} (size\+\_\+t nrows, size\+\_\+t ncols)
+\begin{DoxyCompactList}\small\item\em Dynamically creates the nrowsxncols all zeros matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ae67e8d867bb815ae28a4ca272a5cb22d}{Linear\+::\+One}} ()
+\begin{DoxyCompactList}\small\item\em Creates the MxN all ones matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_ac22c0c3ccb5962d06ee6d42f6daa00d9}{Linear\+::\+One}} (size\+\_\+t nrows, size\+\_\+t ncols)
+\begin{DoxyCompactList}\small\item\em Dynamically creates the nrowsxncols all ones matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aa2e21a506f268132d9a5f5493d511110}{Linear\+::\+Constant}} (Complex$<$ T $>$ z)
+\begin{DoxyCompactList}\small\item\em Creates an MxN matrix with every entry set to z. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_a922e0c71287bc7ed3abf9851410a3df9}{Linear\+::\+Constant}} (size\+\_\+t nrows, size\+\_\+t ncols, Complex$<$ T $>$ z)
+\begin{DoxyCompactList}\small\item\em Dynamically creates an nrowsxncols matrix with every entry set to v. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(M $>$0 \&\&N $>$0), Matrix$<$ T, M, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae728c282fdde8946fdda75085486550b}{Linear\+::\+Basis}} (size\+\_\+t i, size\+\_\+t j)
+\begin{DoxyCompactList}\small\item\em Creates an MxN basis matrix $A$ where all entries are set to 0 except $a_{ij}=1$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_a7fa54b4fd13c37b0296853335bedcabf}{Linear\+::\+Basis}} (size\+\_\+t nrows, size\+\_\+t ncols, size\+\_\+t i, size\+\_\+t j)
+\begin{DoxyCompactList}\small\item\em Dynamically creates an nrowsxncols basis matrix $A$ where all entries are set to 0 except $a_{ij}=1$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_linear_ab5e31f5f6b536b89379af549abdeb1a6}{Linear\+::\+Seed\+Random}} (unsigned int seed)
+\begin{DoxyCompactList}\small\item\em Seeds the random number generator used in Random. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ }\\Matrix$<$ T, M, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a9f7484accb8f7d3e19be5d0ef5bb5df6}{Linear\+::\+Random}} (Complex$<$ T $>$ min=Complex$<$ T $>$(0.\+0), Complex$<$ T $>$ max=Complex$<$ T $>$(1.\+0))
+\begin{DoxyCompactList}\small\item\em Creates an MxN random matrix $A$ where all entries are randomly determined between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_ac2d213cd79736ef96c8de075e666d86a}{Linear\+::\+Random}} (size\+\_\+t nrows, size\+\_\+t ncols, Complex$<$ T $>$ min=Complex$<$ T $>$(0.\+0), Complex$<$ T $>$ max=Complex$<$ T $>$(1.\+0))
+\begin{DoxyCompactList}\small\item\em Dynamically creates an nrowsxncols random matrix $A$ where all entries are randomly determined between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_aa425b84bc259c27bca03c2e5444c37d7}{Linear\+::\+Householder}} (Vector$<$ T, N $>$ v)
+\begin{DoxyCompactList}\small\item\em Creates an NxN Householder transformation $H$ defined by $H = I - 2vv^*.$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_ab2f361b8aefb6590e8159a310213e825}{Linear\+::\+Householder}} (const Vector$<$ T, N $>$ \&x, size\+\_\+t k)
+\begin{DoxyCompactList}\small\item\em Creates an NxN Householder transformation $H$ such that $Hx$ eliminates the last k elements. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M1, size\+\_\+t N1, unsigned int Flags1, size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$(M1==M2$\vert$$\vert$M1==Dynamic$\vert$$\vert$M2==Dynamic), Matrix$<$ T, M1,(N1==Dynamic$\vert$$\vert$N2==Dynamic?Dynamic\+:\+N1+N2), Flags1 $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a41808ae6d65baf9db1c875f4db3ae67c}{Linear\+::\+Augmented}} (const Matrix$<$ T, M1, N1, Flags1 $>$ \&left, const Matrix$<$ T, M2, N2, Flags2 $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Creates the M1x(N1+\+N2) augmented matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M1, size\+\_\+t N1, unsigned int Flags1, size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ }\\std\+::enable\+\_\+if$<$(N1==N2$\vert$$\vert$N1==Dynamic$\vert$$\vert$N2==Dynamic), Matrix$<$ T,(M1==Dynamic$\vert$$\vert$M2==Dynamic?Dynamic\+:\+M1+M2), N1, Flags1 $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a26d70952425cf8d5b1c47f2e955f0794}{Linear\+::\+Row\+Augmented}} (const Matrix$<$ T, M1, N1, Flags1 $>$ \&top, const Matrix$<$ T, M2, N2, Flags2 $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Creates the (M1+\+M2)x\+N1 row augmented matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M1, size\+\_\+t N1, unsigned int Flags1, size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2, size\+\_\+t M3, size\+\_\+t N3, unsigned int Flags3, size\+\_\+t M4, size\+\_\+t N4, unsigned int Flags4$>$ }\\std\+::enable\+\_\+if$<$((M1+M3==M2+M4$\vert$$\vert$M1==Dynamic$\vert$$\vert$M2==Dynamic$\vert$$\vert$M3==Dynamic$\vert$$\vert$M4==Dynamic)\&\&(N1+N2==N3+N4$\vert$$\vert$N1==Dynamic$\vert$$\vert$N2==Dynamic$\vert$$\vert$N3==Dynamic$\vert$$\vert$N4==Dynamic)), Matrix$<$ T,(M1==Dynamic$\vert$$\vert$M2==Dynamic$\vert$$\vert$M3==Dynamic$\vert$$\vert$M4==Dynamic?Dynamic\+:\+M1+M3),(N1==Dynamic$\vert$$\vert$N2==Dynamic$\vert$$\vert$N3==Dynamic$\vert$$\vert$N4==Dynamic?Dynamic\+:\+N1+N2), Flags1 $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a3c5f7ca55d215c55cecdf35d84b26336}{Linear\+::\+Block}} (const Matrix$<$ T, M1, N1, Flags1 $>$ \&tl, const Matrix$<$ T, M2, N2, Flags2 $>$ \&tr, const Matrix$<$ T, M3, N3, Flags3 $>$ \&bl, const Matrix$<$ T, M4, N4, Flags4 $>$ \&br)
+\begin{DoxyCompactList}\small\item\em Creates the (M1+\+M3)x(N1+\+N2) block matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==Dynamic$\vert$$\vert$P==Dynamic)\&\&(N==Q$\vert$$\vert$N==Dynamic$\vert$$\vert$Q==Dynamic)), Matrix$<$ T,(M==Dynamic?Dynamic\+:M+1),(N==Dynamic?Dynamic\+:N+1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ab111802095d5e6ee717a51515b19da55}{Linear\+::\+Block}} (const Matrix$<$ T, M, N, Flags $>$ \&tl, const Vector$<$ T, P $>$ \&tr, const Row\+Vector$<$ T, Q $>$ \&bl, Complex$<$ T $>$ br)
+\begin{DoxyCompactList}\small\item\em Creates the (M+1)x(N+1) block matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags, size\+\_\+t P, size\+\_\+t Q$>$ }\\std\+::enable\+\_\+if$<$((M==P$\vert$$\vert$M==Dynamic$\vert$$\vert$P==Dynamic)\&\&(N==Q$\vert$$\vert$N==Dynamic$\vert$$\vert$Q==Dynamic)), Matrix$<$ T,(M==Dynamic?Dynamic\+:M+1),(N==Dynamic?Dynamic\+:N+1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_abca7e4e924a8c0ec306516647312b601}{Linear\+::\+Block}} (Complex$<$ T $>$ tl, const Row\+Vector$<$ T, Q $>$ \&tr, const Vector$<$ T, P $>$ \&bl, const Matrix$<$ T, M, N, Flags $>$ \&br)
+\begin{DoxyCompactList}\small\item\em Creates the (M+1)x(N+1) block matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags1, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\Matrix$<$ T, M $\ast$P, Q $\ast$N, Flags1 $>$ \mbox{\hyperlink{namespace_linear_a9f2ac959255643fb30cdf1490c2500c7}{Linear\+::\+Kronecker}} (const Matrix$<$ T, M, N, Flags1 $>$ \&A, const Matrix$<$ T, P, Q, Flags2 $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Computes the (MP)x(\+NQ) block matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags1, size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\Square\+Matrix$<$ T, N $\ast$Q, Flags1 $>$ \mbox{\hyperlink{namespace_linear_a81bc1392f3c7c41bc31ccbe890ee2ec5}{Linear\+::\+Kronecker\+Sum}} (const Matrix$<$ T, M, N, Flags1 $>$ \&A, const Matrix$<$ T, P, Q, Flags2 $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Computes the (NQ)x(\+NQ) Kronecker sum defined by. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M1, size\+\_\+t N1, unsigned int Flags1, size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ }\\Matrix$<$ T,(M1==Dynamic$\vert$$\vert$M2==Dynamic?Dynamic\+:\+M1+M2),(N1==Dynamic$\vert$$\vert$N2==Dynamic?Dynamic\+:\+N1+N2), Flags1 $>$ \mbox{\hyperlink{namespace_linear_ae92ddc3fd509d5a792a7843ddf57c77e}{Linear\+::\+Diag}} (const Matrix$<$ T, M1, N1, Flags1 $>$ \&A, const Matrix$<$ T, M2, N2, Flags2 $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Computes the (M1+\+M2)x(N1+\+N2) block diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags$>$ }\\Matrix$<$ T,(M==Dynamic?Dynamic\+:M+1),(N==Dynamic?Dynamic\+:N+1), Flags $>$ \mbox{\hyperlink{namespace_linear_a1debb6e24983d93a467c3ef5767cc7ce}{Linear\+::\+Diag}} (const Matrix$<$ T, M, N, Flags $>$ \&A, Complex$<$ T $>$ z)
+\begin{DoxyCompactList}\small\item\em Computes the (M+1)x(N+1) block diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Matrix$<$ T, 2, 2, Flags $>$ \mbox{\hyperlink{namespace_linear_ab965420a26e777925793f7076cb69a83}{Linear\+::\+Diag}} (Complex$<$ T $>$ z, Complex$<$ T $>$ w)
+\begin{DoxyCompactList}\small\item\em Computes the 2x2 diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t M1, size\+\_\+t N1, unsigned int Flags1, size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2, typename... Ts$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags1 $>$ \mbox{\hyperlink{namespace_linear_a4eea15606a5935837295c1d507804eaf}{Linear\+::\+Diag}} (const Matrix$<$ T, M1, N1, Flags1 $>$ \&a, const Matrix$<$ T, M2, N2, Flags2 $>$ \&b, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\Matrix$<$ T, Dynamic, Dynamic $>$ \mbox{\hyperlink{namespace_linear_a8a6415b21f9f4f89e0fe69f6e05268d2}{Linear\+::\+Diag}} (Complex$<$ T $>$ a, Complex$<$ T $>$ b, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, Dynamic $>$ \mbox{\hyperlink{namespace_linear_a435b0aeb31de1bea43895e0798ced862}{Linear\+::\+Diag}} (std\+::vector$<$ Complex$<$ T $>$$>$ v)
+\begin{DoxyCompactList}\small\item\em Dynamically computes the NxN diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags$>$ }\\Matrix$<$ T, Dynamic, Dynamic, Flags $>$ \mbox{\hyperlink{namespace_linear_a72cf3a7acee5cd5c49eae86bd966efb6}{Linear\+::\+Diag}} (std\+::vector$<$ Matrix$<$ T, Dynamic, Dynamic, Flags $>$$>$ As)
+\begin{DoxyCompactList}\small\item\em Computes the PxQ diagonal matrix, where $P=\sum_{i=0}^{N-1}NumRows(As[i])$ and $Q=\sum_{i=0}^{N-1}NumColumns(As[i])$,. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_af9a71d08c31589656b7152aa6f742a39}{Linear\+::\+Diag}} (Vector$<$ T, N $>$ v)
+\begin{DoxyCompactList}\small\item\em Computes the NxN diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N $>$ \mbox{\hyperlink{namespace_linear_a5c0e7ed43fc20bca580e5720897cea65}{Linear\+::\+Diag}} (Row\+Vector$<$ T, N $>$ v)
+\begin{DoxyCompactList}\small\item\em Computes the NxN diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==Dynamic), Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_abbd0342fc6b8cda1983011b5e599f188}{Linear\+::\+Companion}} (const Vector$<$ T, N $>$ \&c)
+\begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N $>$1$\vert$$\vert$N==Dynamic), Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N-\/1), Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_adb36c8432926ae50addd9fbfc5ff0f23}{Linear\+::\+Companion}} (const Row\+Vector$<$ T, N $>$ \&c)
+\begin{DoxyCompactList}\small\item\em Computes the (N-\/1)x(N-\/1) companion matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T,(N==Dynamic?Dynamic\+:N+1), Flags $>$ \mbox{\hyperlink{namespace_linear_af4341ec96d8cd87d5f05b1de0a0513f2}{Linear\+::\+Translation}} (const Vector$<$ T, N $>$ \&t)
+\begin{DoxyCompactList}\small\item\em Computes the (N+1)x(N+1) translation matrix T such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, N, Flags $>$ \mbox{\hyperlink{namespace_linear_a679b6a09053c94b0ccb5538bed9753f8}{Linear\+::\+Scaling}} (const Vector$<$ T, N $>$ \&s)
+\begin{DoxyCompactList}\small\item\em Computes the NxN scaling matrix S such that. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a4133d2042501de1d0556eabaf669c07b}{Linear\+::\+RotationX}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a6e3aa75a786bf61ce4f594b7c1962754}{Linear\+::\+RotationY}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$(N==3$\vert$$\vert$N==4), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ad59b69cd443b93d072ac494b6bd1b523}{Linear\+::\+RotationZ}} (T theta)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==3$\vert$$\vert$P==Dynamic)), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_ae4e8050daca1cc1c27b36cdda6eccab4}{Linear\+::\+Rotation}} (T theta, Vector$<$ T, P $>$ axis)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix about an axis. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, typename T , size\+\_\+t N = 4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N==3$\vert$$\vert$N==4)\&\&(P==4$\vert$$\vert$P==Dynamic)), Square\+Matrix$<$ T, N, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_a869bee4ae7e859dd0a58e4dd885ccdfd}{Linear\+::\+Rotation}} (Vector$<$ T, P $>$ q)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 rotatation matrix given a quaternion q. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_a9784bb204bf61f836f3b5fa4415ea59f}{Linear\+::\+Orthographic}} (T left, T right, T bottom, T top, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 orthographic projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , unsigned int Flags = 0$>$ }\\Square\+Matrix$<$ T, 4, Flags $>$ \mbox{\hyperlink{namespace_linear_aa49275856ed40b7b4deab03750393a47}{Linear\+::\+Perspective}} (T fov, T aspect, T near, T far)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 perspective projection matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N1, size\+\_\+t N2, size\+\_\+t N3, size\+\_\+t N4, unsigned int Flags = 0$>$ }\\std\+::enable\+\_\+if$<$((N1==3$\vert$$\vert$N1==Dynamic)$\vert$$\vert$(N2==3$\vert$$\vert$N2==Dynamic)$\vert$$\vert$(N3==3$\vert$$\vert$N3==Dynamic)$\vert$$\vert$(N4==3$\vert$$\vert$N4==Dynamic)), Square\+Matrix$<$ T, 4, Flags $>$ $>$\+::type \mbox{\hyperlink{namespace_linear_aca972628e54111b49864437e889d3960}{Linear\+::\+Look\+At}} (Vector$<$ T, N1 $>$ right, Vector$<$ T, N2 $>$ up, Vector$<$ T, N3 $>$ dir, Vector$<$ T, N4 $>$ eye)
+\begin{DoxyCompactList}\small\item\em Computes the 4x4 look at matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespace_linear_af7d29f8c4ba5c9c2816c4601fec4ade6}{Linear\+::random\+\_\+number\+\_\+generator}}
+\end{DoxyCompactItemize}

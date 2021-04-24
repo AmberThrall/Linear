@@ -1,0 +1,693 @@
+\hypertarget{class_linear_1_1_complex}{}\doxysection{Linear\+::Complex$<$ T $>$ Class Template Reference}
+\label{class_linear_1_1_complex}\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+
+
+Class for complex numbers.  
+
+
+
+
+{\ttfamily \#include $<$Complex.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex_ab620d2f355ead906bc1c818b89ac643c}{Complex}} (T re=0, T im=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U $>$ }\\\mbox{\hyperlink{class_linear_1_1_complex_abb919405e7bb75339ac887b56401aaf0}{Complex}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ U $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ T, U $>$\+::value $>$\+::type $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{class_linear_1_1_complex_a6631e7aa2b7583486fbc7cca90e0c536}{operator Complex$<$ U $>$}} ()
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_ad3b422a08847473403e02641e2879271}{operator=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \&other)
+\begin{DoxyCompactList}\small\item\em Assigns the complex number to another complex number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_a753ec9b46a372ac2fbc5cab38b3c89d3}{operator=}} (const T \&other)
+\begin{DoxyCompactList}\small\item\em Assigns the complex number to the real number other. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_a9662c840230b6f48fd540183b8fcfacf}{operator+=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_a4076f73247d46b6fb32ba4e4757e73a4}{operator+=}} (const T \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_acaa0362890c87c62ef9c7cd66f59ac0d}{operator-\/=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_ad8e474c954bee07334580809f6fae2ac}{operator-\/=}} (const T \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_a1770bc30f00834d38b13650587eaaa27}{operator$\ast$=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_ae2b1e32db2e66ec7f80286953c360dbf}{operator$\ast$=}} (const T \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_a157f28f89f3f3646c839c5f59add36e0}{operator/=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} \& \mbox{\hyperlink{class_linear_1_1_complex_aae431d74b91f79c490c18a2f4347e0a9}{operator/=}} (const T \&other)
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_af006fb60800a48f158d7c9d4a0e5ebc5}{operator-\/}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_adf003fbc8132e9f81d0dde8f300d9a82}{i}} ()
+\begin{DoxyCompactList}\small\item\em Static function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{class_linear_1_1_complex_ad40be67896adeb527f30294f609fd412}{Re}}
+\item 
+T \mbox{\hyperlink{class_linear_1_1_complex_a380eb6fb4ff7149ee15acdf72b4b6239}{Im}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a3f934f94210ca9aafb9889d472dc157a}{operator+}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $z+w=(a+c)+(b+d)i$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a508f1ec668aca822f8e0e19296b3dc68}{operator+}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $z+x=(a+x)+bi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_ad9a255003216914db4f63cf8696e07a2}{operator+}} (const T \&x, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $x+z=(x+a)+bi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a5774df84fba38b809fe52ee32f342945}{operator-\/}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $z-w=(a-c)+(b-d)i$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a8acc71218e15bb1a902fa656c24edfaf}{operator-\/}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $z-x=(a-x)+bi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a19255f7fb47fd1bc817915fd0cd0d45e}{operator-\/}} (const T \&x, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $x-z=(x-a)-bi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_ac78ba8be11c42f026f58299bb6b58acf}{operator$\ast$}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $zw=(ac-bd)+(ad+bc)i$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a2fb8e4c8e03ef5ca6d4e52f0c84b5572}{operator$\ast$}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $zx=ax+bxi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_aac73aabc2e316eeb7a85548603bbed86}{operator$\ast$}} (const T \&x, \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z)
+\begin{DoxyCompactList}\small\item\em Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $xz=xa+xbi$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_af20c7c32878dabd51b5a55acac7810bb}{operator/}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $\frac{z}{w}=\frac{1}{c^2+d^2}((ac+bd)+(bc-ad)i)$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_ad774b99be4f5d7795668681388bd37a9}{operator/}} (\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $\frac{z}{x}=\frac{a}{x}+\frac{b}{x}i$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \mbox{\hyperlink{class_linear_1_1_complex_a792e1ebfccee2e2e5fc29c5c1d732c61}{operator/}} (const T \&x, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $\frac{x}{z}=\frac{1}{a^2+b^2}(xa-xbi)$. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_linear_1_1_complex_a6b7994cd802196490b50155b22384bb0}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Takes a complex number $z=a+bi$ and writes to out. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_a52d885f7709a8678483aecc2629637c8}{operator==}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Compares two complex numbers $z=a+bi$ and $w=c+di$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_a3c53fdcca94138f65f87db3c8b19fb5d}{operator==}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Compares a complex number $z=a+bi$ and a real number $x$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_a1d6be3db7fdf2d92b165aa12eaa12b30}{operator==}} (const T \&x, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Compares a real number $x$ and a complex numbers $z=a+bi$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_a6f96d884b25074b6a72fea8e315c569b}{operator!=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Compares two complex numbers $z=a+bi$ and $w=c+di$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_aa71eb3c58adc81e8996f21cd603f703b}{operator!=}} (const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z, const T \&x)
+\begin{DoxyCompactList}\small\item\em Compares a complex number $z=a+bi$ and a real number $x$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_linear_1_1_complex_aa67dfe3b41c066c4d9c1ef327df42e3e}{operator!=}} (const T \&x, const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&z)
+\begin{DoxyCompactList}\small\item\em Compares a real number $x$ and a complex numbers $z=a+bi$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Linear\+::\+Complex$<$ T $>$}
+
+Class for complex numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Type to store the real and imaginary part as. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_linear_1_1_complex_ab620d2f355ead906bc1c818b89ac643c}\label{class_linear_1_1_complex_ab620d2f355ead906bc1c818b89ac643c}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!Complex@{Complex}}
+\index{Complex@{Complex}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Complex()}{Complex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} (\begin{DoxyParamCaption}\item[{T}]{re = {\ttfamily 0},  }\item[{T}]{im = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Creates the complex number re+im$\ast$i. 
+\begin{DoxyParams}{Parameters}
+{\em re} & The real part of the complex number. (default = 0) \\
+\hline
+{\em im} & The imaginary part of the complex number. (default = 0) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_linear_1_1_complex_abb919405e7bb75339ac887b56401aaf0}\label{class_linear_1_1_complex_abb919405e7bb75339ac887b56401aaf0}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!Complex@{Complex}}
+\index{Complex@{Complex}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Complex()}{Complex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ U $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Copies a complex number. 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_linear_1_1_complex_adf003fbc8132e9f81d0dde8f300d9a82}\label{class_linear_1_1_complex_adf003fbc8132e9f81d0dde8f300d9a82}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!i@{i}}
+\index{i@{i}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{i()}{i()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::i (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Static function. 
+
+Creates and returns the complex number i. \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a6631e7aa2b7583486fbc7cca90e0c536}\label{class_linear_1_1_complex_a6631e7aa2b7583486fbc7cca90e0c536}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator Complex$<$ U $>$@{operator Complex$<$ U $>$}}
+\index{operator Complex$<$ U $>$@{operator Complex$<$ U $>$}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator Complex$<$ U $>$()}{operator Complex< U >()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ T, U $>$\+::value $>$\+::type $\ast$  = nullptr$>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ U $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_a1770bc30f00834d38b13650587eaaa27}\label{class_linear_1_1_complex_a1770bc30f00834d38b13650587eaaa27}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_ae2b1e32db2e66ec7f80286953c360dbf}\label{class_linear_1_1_complex_ae2b1e32db2e66ec7f80286953c360dbf}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_a9662c840230b6f48fd540183b8fcfacf}\label{class_linear_1_1_complex_a9662c840230b6f48fd540183b8fcfacf}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_a4076f73247d46b6fb32ba4e4757e73a4}\label{class_linear_1_1_complex_a4076f73247d46b6fb32ba4e4757e73a4}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const T \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_af006fb60800a48f158d7c9d4a0e5ebc5}\label{class_linear_1_1_complex_af006fb60800a48f158d7c9d4a0e5ebc5}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_acaa0362890c87c62ef9c7cd66f59ac0d}\label{class_linear_1_1_complex_acaa0362890c87c62ef9c7cd66f59ac0d}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_ad8e474c954bee07334580809f6fae2ac}\label{class_linear_1_1_complex_ad8e474c954bee07334580809f6fae2ac}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const T \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_a157f28f89f3f3646c839c5f59add36e0}\label{class_linear_1_1_complex_a157f28f89f3f3646c839c5f59add36e0}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_aae431d74b91f79c490c18a2f4347e0a9}\label{class_linear_1_1_complex_aae431d74b91f79c490c18a2f4347e0a9}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_linear_1_1_complex_ad3b422a08847473403e02641e2879271}\label{class_linear_1_1_complex_ad3b422a08847473403e02641e2879271}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns the complex number to another complex number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to complex number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a753ec9b46a372ac2fbc5cab38b3c89d3}\label{class_linear_1_1_complex_a753ec9b46a372ac2fbc5cab38b3c89d3}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}\& \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const T \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns the complex number to the real number other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Real number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to complex number. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_linear_1_1_complex_a6f96d884b25074b6a72fea8e315c569b}\label{class_linear_1_1_complex_a6f96d884b25074b6a72fea8e315c569b}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares two complex numbers $z=a+bi$ and $w=c+di$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a\ne c$ or $b\ne d$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_aa71eb3c58adc81e8996f21cd603f703b}\label{class_linear_1_1_complex_aa71eb3c58adc81e8996f21cd603f703b}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares a complex number $z=a+bi$ and a real number $x$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a\ne x$ or $b\ne 0$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_aa67dfe3b41c066c4d9c1ef327df42e3e}\label{class_linear_1_1_complex_aa67dfe3b41c066c4d9c1ef327df42e3e}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares a real number $x$ and a complex numbers $z=a+bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a\ne x$ or $b\ne 0$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_ac78ba8be11c42f026f58299bb6b58acf}\label{class_linear_1_1_complex_ac78ba8be11c42f026f58299bb6b58acf}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $zw=(ac-bd)+(ad+bc)i$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a2fb8e4c8e03ef5ca6d4e52f0c84b5572}\label{class_linear_1_1_complex_a2fb8e4c8e03ef5ca6d4e52f0c84b5572}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $zx=ax+bxi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_aac73aabc2e316eeb7a85548603bbed86}\label{class_linear_1_1_complex_aac73aabc2e316eeb7a85548603bbed86}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $xz=xa+xbi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a3f934f94210ca9aafb9889d472dc157a}\label{class_linear_1_1_complex_a3f934f94210ca9aafb9889d472dc157a}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $z+w=(a+c)+(b+d)i$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a508f1ec668aca822f8e0e19296b3dc68}\label{class_linear_1_1_complex_a508f1ec668aca822f8e0e19296b3dc68}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $z+x=(a+x)+bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_ad9a255003216914db4f63cf8696e07a2}\label{class_linear_1_1_complex_ad9a255003216914db4f63cf8696e07a2}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $x+z=(x+a)+bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a5774df84fba38b809fe52ee32f342945}\label{class_linear_1_1_complex_a5774df84fba38b809fe52ee32f342945}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $z-w=(a-c)+(b-d)i$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a8acc71218e15bb1a902fa656c24edfaf}\label{class_linear_1_1_complex_a8acc71218e15bb1a902fa656c24edfaf}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $z-x=(a-x)+bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a19255f7fb47fd1bc817915fd0cd0d45e}\label{class_linear_1_1_complex_a19255f7fb47fd1bc817915fd0cd0d45e}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $x-z=(x-a)-bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_af20c7c32878dabd51b5a55acac7810bb}\label{class_linear_1_1_complex_af20c7c32878dabd51b5a55acac7810bb}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes two complex numbers $z=a+bi$ and $w=c+di$ and returns the complex number $\frac{z}{w}=\frac{1}{c^2+d^2}((ac+bd)+(bc-ad)i)$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_ad774b99be4f5d7795668681388bd37a9}\label{class_linear_1_1_complex_ad774b99be4f5d7795668681388bd37a9}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a complex number $z=a+bi$ and real number $x$ and returns the complex number $\frac{z}{x}=\frac{a}{x}+\frac{b}{x}i$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a792e1ebfccee2e2e5fc29c5c1d732c61}\label{class_linear_1_1_complex_a792e1ebfccee2e2e5fc29c5c1d732c61}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$T$>$ operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a real number $x$ and complex number $z=a+bi$ returns the complex number $\frac{x}{z}=\frac{1}{a^2+b^2}(xa-xbi)$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a6b7994cd802196490b50155b22384bb0}\label{class_linear_1_1_complex_a6b7994cd802196490b50155b22384bb0}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Takes a complex number $z=a+bi$ and writes to out. 
+
+If $z=0$, then simply $0$ will be written. If $z=bi$, then it will write just $bi$. If $z=a$, then it will write just $a$. Otherwise the full $a+bi$ will be written, with \char`\"{}+\char`\"{} replaced by \char`\"{}-\/\char`\"{} if $b<0$. 
+\begin{DoxyParams}{Parameters}
+{\em out} & Reference to std\+::ostream. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_linear_1_1_complex_a52d885f7709a8678483aecc2629637c8}\label{class_linear_1_1_complex_a52d885f7709a8678483aecc2629637c8}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares two complex numbers $z=a+bi$ and $w=c+di$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em w} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a=c$ and $b=d$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a3c53fdcca94138f65f87db3c8b19fb5d}\label{class_linear_1_1_complex_a3c53fdcca94138f65f87db3c8b19fb5d}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z,  }\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares a complex number $z=a+bi$ and a real number $x$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+{\em x} & Real number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a=x$ and $b=0$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linear_1_1_complex_a1d6be3db7fdf2d92b165aa12eaa12b30}\label{class_linear_1_1_complex_a1d6be3db7fdf2d92b165aa12eaa12b30}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const \mbox{\hyperlink{class_linear_1_1_complex}{Complex}}$<$ T $>$ \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares a real number $x$ and a complex numbers $z=a+bi$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real number. \\
+\hline
+{\em z} & \mbox{\hyperlink{class_linear_1_1_complex}{Complex}} number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If $a=x$ and $b=0$ it returns true. Otherwise it returns false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_linear_1_1_complex_a380eb6fb4ff7149ee15acdf72b4b6239}\label{class_linear_1_1_complex_a380eb6fb4ff7149ee15acdf72b4b6239}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!Im@{Im}}
+\index{Im@{Im}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Im}{Im}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::Im}
+
+Imaginary part of the complex number \mbox{\Hypertarget{class_linear_1_1_complex_ad40be67896adeb527f30294f609fd412}\label{class_linear_1_1_complex_ad40be67896adeb527f30294f609fd412}} 
+\index{Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}!Re@{Re}}
+\index{Re@{Re}!Linear::Complex$<$ T $>$@{Linear::Complex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Re}{Re}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_linear_1_1_complex}{Linear\+::\+Complex}}$<$ T $>$\+::Re}
+
+Real part of the complex number 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_complex_8h}{Complex.\+h}}\end{DoxyCompactItemize}

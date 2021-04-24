@@ -1,0 +1,113 @@
+\hypertarget{struct_linear_1_1_hessenberg}{}\doxysection{Linear\+::Hessenberg$<$ T, N, Flags $>$ Struct Template Reference}
+\label{struct_linear_1_1_hessenberg}\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition.  
+
+
+
+
+{\ttfamily \#include $<$Decomp.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ }\\\mbox{\hyperlink{struct_linear_1_1_hessenberg_ac42761b86fb2ea9abe32dacd789c4253}{Hessenberg}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M2, N2, Flags2 $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ }\\void \mbox{\hyperlink{struct_linear_1_1_hessenberg_a11ac361d1f20b57e4da8728c88157b78}{Compute}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M2, N2, Flags2 $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Computes the \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg_a238fb37bc08236b9258b82bffed902a8}{Q}}
+\item 
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg_a0da096df550ee4ac21ce744181a6a2b1}{H}}
+\item 
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg_a2101988a304f1e22404d56053bbe0020}{Qh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t N, unsigned int Flags = 0$>$\newline
+struct Linear\+::\+Hessenberg$<$ T, N, Flags $>$}
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. 
+
+This struct NxN matrix Q and NxN matrix H such that $A=QHQ^*$ where Q is unitary and H is upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}}. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Type to store matrix entries as. \\
+\hline
+{\em N} & Number of rows/columns for Q and H (both square). Dynamic is allowed for N. \\
+\hline
+{\em Flags} & Flags to pass to the matrices (default = row major). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_hessenberg_ac42761b86fb2ea9abe32dacd789c4253}\label{struct_linear_1_1_hessenberg_ac42761b86fb2ea9abe32dacd789c4253}} 
+\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}!Hessenberg@{Hessenberg}}
+\index{Hessenberg@{Hessenberg}!Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Hessenberg()}{Hessenberg()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+template$<$size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ \\
+\mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg}}$<$ T, N, Flags $>$\+::\mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M2, N2, Flags2 $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Just calls Compute. 
+\begin{DoxyParams}{Parameters}
+{\em A} & M2x\+N2 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_hessenberg_a11ac361d1f20b57e4da8728c88157b78}\label{struct_linear_1_1_hessenberg_a11ac361d1f20b57e4da8728c88157b78}} 
+\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}!Compute@{Compute}}
+\index{Compute@{Compute}!Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+template$<$size\+\_\+t M2, size\+\_\+t N2, unsigned int Flags2$>$ \\
+void \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg}}$<$ T, N, Flags $>$\+::Compute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M2, N2, Flags2 $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} decomposition. 
+
+If A is not square or Q != N, then an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em A} & M2x\+N2 \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_hessenberg_a0da096df550ee4ac21ce744181a6a2b1}\label{struct_linear_1_1_hessenberg_a0da096df550ee4ac21ce744181a6a2b1}} 
+\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}!H@{H}}
+\index{H@{H}!Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg}}$<$ T, N, Flags $>$\+::H}
+
+Upper \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Hessenberg}} matrix \mbox{\Hypertarget{struct_linear_1_1_hessenberg_a238fb37bc08236b9258b82bffed902a8}\label{struct_linear_1_1_hessenberg_a238fb37bc08236b9258b82bffed902a8}} 
+\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}!Q@{Q}}
+\index{Q@{Q}!Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg}}$<$ T, N, Flags $>$\+::Q}
+
+Unitary matrix \mbox{\Hypertarget{struct_linear_1_1_hessenberg_a2101988a304f1e22404d56053bbe0020}\label{struct_linear_1_1_hessenberg_a2101988a304f1e22404d56053bbe0020}} 
+\index{Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}!Qh@{Qh}}
+\index{Qh@{Qh}!Linear::Hessenberg$<$ T, N, Flags $>$@{Linear::Hessenberg$<$ T, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Qh}{Qh}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ \mbox{\hyperlink{struct_linear_1_1_hessenberg}{Linear\+::\+Hessenberg}}$<$ T, N, Flags $>$\+::Qh}
+
+Qh=Conjugate\+Transpose(\+Q) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_decomp_8h}{Decomp.\+h}}\end{DoxyCompactItemize}

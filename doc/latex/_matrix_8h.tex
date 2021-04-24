@@ -1,0 +1,53 @@
+\hypertarget{_matrix_8h}{}\doxysection{src/\+Matrix.h File Reference}
+\label{_matrix_8h}\index{src/Matrix.h@{src/Matrix.h}}
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Complex.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Global.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_linear_1_1_matrix}{Linear\+::\+Matrix$<$ T, M, N, Flags $>$}}
+\begin{DoxyCompactList}\small\item\em Class for matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_linear}{Linear}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, unsigned int Flags = 0$>$ }\\using \mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Linear\+::\+Square\+Matrix}} = Matrix$<$ T, N, N, Flags $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_ac0dd0f05e90405c6ff6654623e1ad117}{Linear\+::\+Matrix2i}} = Matrix$<$ int, 2, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a9ab35684bf5fe15b91e1195808755ef4}{Linear\+::\+Matrix3i}} = Matrix$<$ int, 3, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a47201c62cde153a7994893e1f78692ec}{Linear\+::\+Matrix4i}} = Matrix$<$ int, 4, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a850f7d84cd5a1cec3d72a0015b8af049}{Linear\+::\+Matrix\+Xi}} = Matrix$<$ int, Dynamic, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a37529cd9d32aca0e73ba55fa52d961e5}{Linear\+::\+Matrix2f}} = Matrix$<$ float, 2, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_ac266881335bc3b75713ca8a7c9d1934e}{Linear\+::\+Matrix3f}} = Matrix$<$ float, 3, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_aad93cd9401b69236b2c39009a33deee2}{Linear\+::\+Matrix4f}} = Matrix$<$ float, 4, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a1785cf86a17d782a242c1d0fa02664af}{Linear\+::\+Matrix\+Xf}} = Matrix$<$ float, Dynamic, Dynamic $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_aff92aa0ab7d57a87e544f08aaae1581d}{Linear\+::\+Matrix2d}} = Matrix$<$ double, 2, 2 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a9f82e64d01c7efdbe9217c33f954a83c}{Linear\+::\+Matrix3d}} = Matrix$<$ double, 3, 3 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_af7e63e09c10d2ef0922707eb60277552}{Linear\+::\+Matrix4d}} = Matrix$<$ double, 4, 4 $>$
+\item 
+using \mbox{\hyperlink{namespace_linear_a5139228f8ffd30d77722e861bc340560}{Linear\+::\+Matrix\+Xd}} = Matrix$<$ double, Dynamic, Dynamic $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{namespace_linear_a4895328b97c3a485bb1481f7c4dfee00}{Linear\+::\+Dynamic}} = 0
+\item 
+const unsigned int \mbox{\hyperlink{namespace_linear_ae23ff19653bc67be5aa49764b3fb7621}{Linear\+::\+Row\+Major}} = 0x0000
+\item 
+const unsigned int \mbox{\hyperlink{namespace_linear_a2c58d57088f03c630476e0da3e350547}{Linear\+::\+Column\+Major}} = 0x0001
+\end{DoxyCompactItemize}

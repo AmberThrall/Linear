@@ -1,0 +1,106 @@
+\hypertarget{struct_linear_1_1_q_r}{}\doxysection{Linear\+::QR$<$ T, M, N, Flags $>$ Struct Template Reference}
+\label{struct_linear_1_1_q_r}\index{Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}}
+
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition.  
+
+
+
+
+{\ttfamily \#include $<$Decomp.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\\mbox{\hyperlink{struct_linear_1_1_q_r_a29267f9fb1258cef06b7818d4bff4f08}{QR}} (const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, \mbox{\hyperlink{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}{Q}}, Flags2 $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ }\\void \mbox{\hyperlink{struct_linear_1_1_q_r_a87391c0dcde3898313e69b997d60fded}{Compute}} (\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, \mbox{\hyperlink{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}{Q}}, Flags2 $>$ A)
+\begin{DoxyCompactList}\small\item\em Computes the \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, M, N, Flags $>$ \mbox{\hyperlink{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}{Q}}
+\item 
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$ T, N, Flags $>$ \mbox{\hyperlink{struct_linear_1_1_q_r_aa8933fc281a686ba8f124ec49054fb6d}{R}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$\newline
+struct Linear\+::\+QR$<$ T, M, N, Flags $>$}
+
+Struct for \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition. 
+
+This struct finds MxN matrix Q, NxN matrix R such that $A=QR$ and R is upper triangular. Moreover, if Q is square then Q is unitary. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Type to store matrix entries as. \\
+\hline
+{\em M} & Number of rows for Q. Dynamic is allowed for M. \\
+\hline
+{\em N} & Number of columns for Q and R (R is square). Dynamic is allowed for N. \\
+\hline
+{\em Flags} & Flags to pass to the matrices (default = row major). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_q_r_a29267f9fb1258cef06b7818d4bff4f08}\label{struct_linear_1_1_q_r_a29267f9fb1258cef06b7818d4bff4f08}} 
+\index{Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}!QR@{QR}}
+\index{QR@{QR}!Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{QR()}{QR()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
+\mbox{\hyperlink{struct_linear_1_1_q_r}{Linear\+::\+QR}}$<$ T, M, N, Flags $>$\+::\mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, \mbox{\hyperlink{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}{Q}}, Flags2 $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Just calls Compute. 
+\begin{DoxyParams}{Parameters}
+{\em A} & PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_q_r_a87391c0dcde3898313e69b997d60fded}\label{struct_linear_1_1_q_r_a87391c0dcde3898313e69b997d60fded}} 
+\index{Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}!Compute@{Compute}}
+\index{Compute@{Compute}!Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+template$<$size\+\_\+t P, size\+\_\+t Q, unsigned int Flags2$>$ \\
+void \mbox{\hyperlink{struct_linear_1_1_q_r}{Linear\+::\+QR}}$<$ T, M, N, Flags $>$\+::Compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$ T, P, \mbox{\hyperlink{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}{Q}}, Flags2 $>$}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the \mbox{\hyperlink{struct_linear_1_1_q_r}{QR}} decomposition. 
+
+If P != M or Q != N, then an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em A} & PxQ \mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}\label{struct_linear_1_1_q_r_a7d94d932f95686f4cdc6559ec452dcfe}} 
+\index{Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}!Q@{Q}}
+\index{Q@{Q}!Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{class_linear_1_1_matrix}{Matrix}}$<$T,M,N,Flags$>$ \mbox{\hyperlink{struct_linear_1_1_q_r}{Linear\+::\+QR}}$<$ T, M, N, Flags $>$\+::Q}
+
+Unitary when square \mbox{\Hypertarget{struct_linear_1_1_q_r_aa8933fc281a686ba8f124ec49054fb6d}\label{struct_linear_1_1_q_r_aa8933fc281a686ba8f124ec49054fb6d}} 
+\index{Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}!R@{R}}
+\index{R@{R}!Linear::QR$<$ T, M, N, Flags $>$@{Linear::QR$<$ T, M, N, Flags $>$}}
+\doxysubsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N, unsigned int Flags = 0$>$ \\
+\mbox{\hyperlink{namespace_linear_a569f89f9552a4bd01ea5a07b3137c5f8}{Square\+Matrix}}$<$T,N,Flags$>$ \mbox{\hyperlink{struct_linear_1_1_q_r}{Linear\+::\+QR}}$<$ T, M, N, Flags $>$\+::R}
+
+Upper triangular matrix 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_decomp_8h}{Decomp.\+h}}\end{DoxyCompactItemize}
