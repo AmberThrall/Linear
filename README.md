@@ -19,13 +19,13 @@ Linear is an all-header library. Simply copy the src/ directory to your project'
 
 int main() {  
   // Get the eigenpairs of the matrix A
-  Matrix3d A = { 
+  Linear::Matrix3d A = { 
     {-4,14,0}, {-5,13,0}, {-1,0,2} 
   };
-  std::vector<Eigenpair<double,3>> eigenpairs = Eigen(A);
+  std::vector<Linear::Eigenpair<double,3>> eigenpairs = Linear::Eigen(A);
   std::cout << "A = " << A << std::endl;
   for (size_t i = 0; i < eigenpairs.size(); ++i) {
-      std::cout << "(" << eigenpairs[i].value << "," << Transpose(eigenpairs[i].vector) << ")" << std::endl;
+      std::cout << "(" << eigenpairs[i].value << "," << Linear::Transpose(eigenpairs[i].vector) << ")" << std::endl;
   }
   
   // Compute the SVD of the matrix B
@@ -37,12 +37,12 @@ int main() {
   std::cout << "USV* = " << svd.U*svd.S*svd.Vh << std::endl;
   
   // Solve the matrix equation Cx=b
-  Matrix<double,3,4> C = {
+  Linear::Matrix<double,3,4> C = {
       {1,2,2,2}, {2,4,6,8}, {3,6,8,10}
   };
-  Vector3d b = {1,5,6};
-  Vector4d x = Solve(C, b);
-  std::cout << "x = " << Transpose(x) << std::endl;
+  Linear::Vector3d b = {1,5,6};
+  Linear::Vector4d x = Solve(C, b);
+  std::cout << "x = " << Linear::Transpose(x) << std::endl;
 }
 ```
 
