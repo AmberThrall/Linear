@@ -41,7 +41,7 @@ int main() {
       {1,2,2,2}, {2,4,6,8}, {3,6,8,10}
   };
   Linear::Vector3d b = {1,5,6};
-  Linear::Vector4d x = Solve(C, b);
+  Linear::Vector4d x = Linear::Solve(C, b);
   std::cout << "x = " << Linear::Transpose(x) << std::endl;
 }
 ```
